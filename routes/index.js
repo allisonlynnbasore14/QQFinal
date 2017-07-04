@@ -39,7 +39,7 @@ var readingScores = function(req, res){
 
 
 var home = function(req, res){
-    res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "score": products().first()});
+    res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM });
 };
 //   //db.add(Lizard("Bob"));
 //   //this makes a new lizard but does not update the db in hard code
