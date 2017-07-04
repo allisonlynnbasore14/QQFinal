@@ -2,19 +2,6 @@
 var express = require('express');
 var router = express.Router();
 var constants = require('../constants');
-// var TAFFY = require('taffy');
-
-//     var products = TAFFY([{
-//         "item":1,
-//         "name":"Blue Ray Player",
-//         "price":99.99
-//     }, {
-//         "item":2,
-//         name:"3D TV",
-//         price:1799.99
-//     }]);
-
-
 
 //function that constructs and returns lizard object
 function Entry(id, score){
