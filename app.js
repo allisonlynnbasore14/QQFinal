@@ -1,5 +1,4 @@
 
-console.log('heeeee')
 var fs = require('fs')
 var mymodule = require('./mymodule.js')
 var http = require('http')
@@ -92,8 +91,9 @@ app.get('/AllDone', index.AllDone);
 
 app.get('/db', index.db)
 
-//app.listen(2000);
-
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
 //ONE WAY TO WRITE IT
 
