@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+    <body>
+    <div class = "Content">
+		 <form id = "questionsPropsQ2" name = "Questions">
+		 1. To give something to each term:
+		 	<select name="Submission1">
+	    		<option value="A"> Idenity </option>
+	    		<option value="B"> Associative </option>
+	    		<option value="C"> Distributive </option>
+	    		<option value="D"> Commutative </option>
+	    		<option value="E"> Inverse </option>
+	  		</select>
+	  		<br>
+	  	2. Opposite:
+		 	<select name="Submission2">
+	    		<option value="A"> Idenity </option>
+	    		<option value="B"> Associative </option>
+	    		<option value="C"> Distributive </option>
+	    		<option value="D"> Commutative </option>
+	    		<option value="E"> Inverse </option>
+	  		</select>
+	  		<br>
+	  	3. Switching or transposing the order:
+		 	<select name="Submission3">
+	    		<option value="A"> Idenity </option>
+	    		<option value="B"> Associative </option>
+	    		<option value="C"> Distributive </option>
+	    		<option value="D"> Commutative </option>
+	    		<option value="E"> Inverse </option>
+	  		</select>
+	  		<br>
+	  	4. To hang out or be grouped together:
+			<select name="Submission4">
+	    		<option value="A"> Idenity </option>
+	    		<option value="B"> Associative </option>
+	    		<option value="C"> Distributive </option>
+	    		<option value="D"> Commutative </option>
+	    		<option value="E"> Inverse </option>
+	  		</select>
+	  		<br>
+	  	5. Multiplying by the reciprocal:
+			<select name="Submission5">
+	    		<option value="A"> Idenity </option>
+	    		<option value="B"> Associative </option>
+	    		<option value="C"> Distributive </option>
+	    		<option value="D"> Commutative </option>
+	    		<option value="E"> Inverse </option>
+	  		</select>
+	  		<br>
+	  	6. Special unique pair of numbers:
+			<select name="Submission6">
+	    		<option value="A"> Idenity </option>
+	    		<option value="B"> Associative </option>
+	    		<option value="C"> Distributive </option>
+	    		<option value="D"> Commutative </option>
+	    		<option value="E"> Inverse </option>
+	  		</select>
+	  	<br>
+	  	7. Similar to a commuter plane traveling back and forth from two locations:
+			<select name="Submission7">
+	    		<option value="A"> Idenity </option>
+	    		<option value="B"> Associative </option>
+	    		<option value="C"> Distributive </option>
+	    		<option value="D"> Commutative </option>
+	    		<option value="E"> Inverse </option>
+	  		</select>
+	  	<br>
+	  	8. The order stays the same, but the parentheses change places:
+			<select name="Submission8">
+	    		<option value="A"> Idenity </option>
+	    		<option value="B"> Associative </option>
+	    		<option value="C"> Distributive </option>
+	    		<option value="D"> Commutative </option>
+	    		<option value="E"> Inverse </option>
+	  		</select>
+		</form>
+	</div>
+
+	</div>
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( PropsQ2Ans,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value,
+      document.Questions.Submission7.value,
+      document.Questions.Submission8.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

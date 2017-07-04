@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+  <body>
+	<div class = "Content">
+		<div class = 'SequenceQHelp'>
+		Formulas:
+		<br>
+		Arithmetic Sequence
+		xn = a + d(n-1)
+		<br>
+		Geometric Sequence
+		xn = ar^(n-1)
+		</div>
+		<form id = "questions" name = "Questions">
+		1. 2, 12, 24, 48, … 
+		 	<select name="Submission1">
+	    		<option value="A"> 3,072 Difference </option>
+	    		<option value="B"> 3,072 Ratio  </option>
+	    		<option value="C"> Neither </option>
+	    		<option value="D"> 120  Difference </option>
+	  		</select>
+	  		<br>
+	  	2. 55, 49, 43, 37, …
+		 	<select name="Submission2">
+	    		<option value="A"> 1 Difference </option>
+	    		<option value="B"> 1 Ratio  </option>
+	    		<option value="C"> Neither </option>
+	    		<option value="D"> 7  Difference </option>
+	    	</select>
+	  		<br>
+	  	3. 1, 4, 9, 16, 25, …
+		 	<select name="Submission3">
+	    		<option value="A"> 100 Difference </option>
+	    		<option value="B"> 100 Ratio  </option>
+	    		<option value="C"> Neither </option>
+	    		<option value="D"> 45  Difference </option>
+	  		</select>
+	  		<br>
+	  	4. I, IV, VII, X, XIII, XVI, …
+		<select name="Submission4">
+			<option value="A"> XXVII Difference </option>
+			<option value="B"> XXVII Ratio </option>
+			<option value="C"> Neither </option>
+			<option value="D"> XXI Difference </option>
+		</select>
+		<br>
+	  	5. -76, -63, -50, -37, -24, …
+		<select name="Submission5">
+			<option value="A"> 28 Difference </option>
+			<option value="B"> 41 Ratio </option>
+			<option value="C"> Neither </option>
+			<option value="D"> 41 Difference </option>
+	  		</select>
+		</form>
+	</div>
+
+ </body>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( SequenceQAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

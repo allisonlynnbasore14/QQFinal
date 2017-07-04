@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+    <body>
+	<div class = "Content">
+		 <form id = "questionsProbTF" name = "Questions">
+		 1) Which two properties specifically involve the use of the numbers one and zero?
+		 	<select name="Submission1">
+	    		<option value="A"> Idenity/Inverse </option>
+	    		<option value="B"> Associative </option>
+	    		<option value="C"> Distributive </option>
+	    		<option value="D"> Commutative </option>
+	  		</select>
+	  		<br>
+	  	2) What is the opposite of distributive
+		 	<select name="Submission2">
+	    		<option value="A"> Undistributive </option>
+	    		<option value="B"> Indistributive </option>
+	    		<option value="C"> Commutative </option>
+	    		<option value="D"> Factor </option>
+	  		</select>
+	  		<br>
+	  	3) Of the three properties: Commutative, Distributive and Associative, which work with both addition and subtraction?
+		 	<select name="Submission3">
+	    		<option value="A"> Associative and Distributive </option>
+	    		<option value="B"> Associative and Commutative </option>
+	    		<option value="C"> Distributive and Commutative </option>
+	    		<option value="D"> Idenity and Distributive </option>
+	  		</select>
+	  		<br>
+	  	4) Using the commutative property, complete this equation: 4*x*2 + 7*y*3 =  
+			<select name="Submission4">
+	    		<option value="A"> 7*y*3 + 4*x*2 </option>
+	    		<option value="B"> 21*y + 8*x </option>
+	    		<option value="C"> x*2*4 + y*3*7 </option>
+	    		<option value="D"> All of the Above </option>
+	  		</select>
+	  		<br>
+	  	5) Which property is represented here: (a + b) + c = a + (b + c)
+			<select name="Submission5">
+	    		<option value="A"> Idenity/Inverse </option>
+	    		<option value="B"> Associative </option>
+	    		<option value="C"> Distributive </option>
+	    		<option value="D"> Commutative </option>
+	  		</select>
+	  		<br>
+	  	6) Which property is represented here: (a + b) + c = c + (a + b)
+			<select name="Submission6">
+	    		<option value="A"> Idenity/Inverse </option>
+	    		<option value="B"> Associative </option>
+	    		<option value="C"> Distributive </option>
+	    		<option value="D"> Commutative </option>
+	  		</select>
+		</form>
+	</div>
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( PropsQAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

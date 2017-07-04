@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+
+<body>
+	<div class = "Content">
+		<p class = "Tocopy">
+			The Pythagorean Theorem states that in a right triangle, the sum of the square of the legs is equal to the square of the hypotenuse.
+		</p>
+		<img class = "TPic" src="http://ncalculators.com/images/pythagoras-theorem.gif">
+		 <form name = "Questions">
+			 <textarea name = "Poem" id = "PCopy" >
+			 </textarea>
+		 </form>
+	</div>
+<script type="text/javascript">
+	function sendAnswers(){
+		processAnswers(	PTheoremCopyAns,
+			[document.getElementById("PCopy").value], 'copy')
+	}
+</script>
+
+</body>
+
+</html>

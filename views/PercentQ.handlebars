@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+  <body>
+	<div class = "Content">
+		<table class="TablePercent">
+		  <tr>
+		    <th>%</th>
+		    <th>Decimal</th> 
+		    <th>Fraction</th>
+		  </tr>
+		  <tr>
+		    <td>75%</td>
+		    <td>0.75</td>
+		    <td>3/4</td>
+		  </tr>
+		  <tr>
+		    <td>A</td>
+		    <td>0.37</td>
+		    <td>B</td>
+		  </tr>
+		  <tr>
+		    <td>C</td>
+		    <td>D</td>
+		    <td>1/4</td>
+		  </tr>
+		  <tr>
+		    <td>66%</td>
+		    <td>0.66</td>
+		    <td>E</td>
+		  </tr>
+		  <tr>
+		    <td>F</td>
+		    <td>0.375</td>
+		    <td>G</td>
+		  </tr>
+		  <tr>
+		    <td>500%</td>
+		    <td>H</td>
+		    <td>5/1</td>
+		  </tr>
+		  <tr>
+		    <td>0.2%</td>
+		    <td>I</td>
+		    <td>J</td>
+		  </tr>
+		</table>
+		 <form id = "questionsPercent" name = "Questions">
+	  		A
+	  		<input type="text" name="Submission1" size="10">
+	  		B
+	  		<input type="text" name="Submission2" size="10">
+	  		C
+	  		<input type="text" name="Submission3" size="10">
+	  		D
+	  		<input type="text" name="Submission4" size="10">
+	  		E
+	  		<input type="text" name="Submission5" size="10">
+	  		F
+	  		<input type="text" name="Submission6" size="10">
+	  		G
+	  		<input type="text" name="Submission7" size="10">
+	  		H
+	  		<input type="text" name="Submission8" size="10">
+	  		I
+	  		<input type="text" name="Submission9" size="10">
+	  		J
+	  		<input type="text" name="Submission10" size="10">
+	</div>
+  </div>
+ </body>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( PercentQAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value,
+      document.Questions.Submission7.value,
+      document.Questions.Submission8.value,
+      document.Questions.Submission9.value,
+      document.Questions.Submission10.value
+      ], 'includes')
+  }
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<script type="text/javascript" src="./../javascripts/grading.js"></script>
+
+</head>
+
+<body>
+	<p id='AnswerDisplay'>
+	</p>
+	<div class = "Content">
+		 <form id = "questions" name = "Questions">
+		 1) Is 574 divisible by two? Explain.
+		 	<select name="Submission1">
+	    		<option value="Y1">Yes, becasue it ends in an even number </option>
+	    		<option value="Y2">Yes, becasue it ends in an odd numbers</option>
+	    		<option value="N1">No, becasue it ends in an even number</option>
+	    		<option value="N2">No, becasue it ends in an even number</option>
+	  		</select>
+	  	2) What number in the hundred’s place would make this number divisible by three:
+	  		71,
+	  		<select name="Submission2">
+	    		<option value="0">0</option>
+	    		<option value="1">1</option>
+	    		<option value="2">2</option>
+	    		<option value="3">3</option>
+	    		<option value="5">6</option>
+	    		<option value="6">9</option>
+	  		</select>
+	  		57?
+	  		<br>
+	  	3) Arrange the digits {3, 4, 0, 5} to create a number that is divisible by both five and two.
+			<select name="Submission3">
+	    		<option value="A">3405</option>
+	    		<option value="B">0453</option>
+	    		<option value="C">5034</option>
+	    		<option value="D">3450</option>
+	  		</select>
+		</form>
+	</div>
+
+<script type="text/javascript">
+	function sendAnswers(){
+		processAnswers(	DRulesQAns,
+			[document.Questions.Submission1.value,
+			document.Questions.Submission2.value,
+			document.Questions.Submission3.value])
+	}
+</script>
+
+</body>
+
+</html>

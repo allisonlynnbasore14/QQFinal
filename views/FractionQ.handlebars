@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+  <body>
+	<div class = "Content">
+		<form id = "questions" name = "Questions">
+			1. The GCF of 10 and 14 is 2. What is the reduced fraction form of 10&frasl;14?
+		 	<select name="Submission1">
+	    		<option value="A">  10&frasl;14 because 10 and 14 cannot be reduced.
+	    		 </option>
+	    		<option value="B"> 5&frasl;14 because 10 divided by 2 is 5</option>
+	    		<option value="C"> 5&frasl;7 because 10 divided by 2 is 5 and 14 divided by 2 is 7.</option>
+	    		<option value="D"> 10&frasl;7 because 14 divided by 2 is 7.</option>
+	  		</select>
+	  		<br>
+	  		2. The LCM of 10 and 14 is 70. What is the sum of 9&frasl;10 and 5&frasl;14?
+	  		<select style = "width:600px;" name="Submission2">
+	    		<option value="A">  88&frasl;70 because 9&frasl;10 times 7 is 63&frasl;70, 5&frasl;14 times 5 is 25&frasl;70, and 63 + 25 is 88.
+	    		 </option>
+	    		<option value="B"> 88&frasl;70 because 9&frasl;10 times 7 is 63&frasl;70, 5&frasl;14 times 5 is 25&frasl;70, and 63 - 25 is 88.</option>
+	    		<option value="C"> 5&frasl;98 because 9&frasl;10 times 7 is 63&frasl;70, 5&frasl;14 times 7 is 35&frasl;98, and 63 + 35 is 98.</option>
+	    		<option value="D"> 5&frasl;98 because 9&frasl;10 times 7 is 63&frasl;70, 5&frasl;14 times 7 is 35&frasl;98, and 63 - 35 is 98.</option>
+	  		</select>
+	  		<br>
+	  		3. What are the steps for multiplying mixed numbers?
+	  		<select name="Submission3" style = "width:600px;">
+	    		<option value="A">  With the first fraction, multiply the denominator by the whole number. Add that product to the numerator. Repeat for second fraction. Reduce. Multiply the numerators and denominators.
+	    		 </option>
+	    		<option value="B"> With the first fraction, add the denominator to the whole number. Multiply that product to the numerator. Repeat for second fraction. Reduce. Multiply the numerators and denominators.</option>
+	    		<option value="C"> With the first fraction, multiply the numerator by the whole number. Add that product to the denominator. Repeat for second fraction. Reduce. Multiply the numerators and denominators.</option>
+	    		<option value="D"> With the first fraction, multiply the denominator by the whole number. Add that product to the numerator. Repeat for second fraction. Reduce. Add the numerators and denominators. </option>
+	  		</select>
+		</form>
+	</div>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( FractionQAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value])
+  }
+</script>
+
+</body>
+
+</html>

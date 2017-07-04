@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+  <body>
+	<div class = "Content">
+		<form id = "questions" name = "Questions">
+		What is (5<sup>4</sup>) * (5<sup>8</sup>)?
+	 	<select name="Submission1">
+    		<option value="Y1">5^10</option>
+    		<option value="Y2">5^11</option>
+    		<option value="N1">5^12</option>
+    		<option value="N2">5^13</option>
+  		</select>
+  		<br>
+  		What is (5<sup>4</sup>)<sup>2</sup>?
+	 	<select name="Submission2">
+    		<option value="Y1">5^16</option>
+    		<option value="Y2">5^2</option>
+    		<option value="N1">5^6</option>
+    		<option value="N2">5^8</option>
+  		</select>
+  		<br>
+  		What is 5<sup>0</sup>?
+  		<select name="Submission3">
+    		<option value="Y1">1</option>
+    		<option value="Y2">0</option>
+    		<option value="N1">5</option>
+    		<option value="N2">-5</option>
+  		</select>
+  		<br>
+  		What is 5<sup>-1</sup>?
+  		<select name="Submission4">
+    		<option value="Y1">5&frasl;-1 </option>
+    		<option value="Y2">1&frasl;-5 </option>
+    		<option value="N1">1&frasl;5 </option>
+    		<option value="N2">5&frasl;1 </option>
+  		</select>
+  		<br>
+  		What is 5<sup>5</sup> &frasl; 5<sup>2</sup>?
+  		<select name="Submission5">
+    		<option value="Y1">5^3</option>
+    		<option value="Y2">5^-3</option>
+    		<option value="N1">5^2</option>
+    		<option value="N2">5^-2</option>
+  		</select>
+  		<br>
+  		Scientific Notation has the decimal after the what?
+  		 <select name="Submission6">
+    		<option value="Y1"> The first zero</option>
+    		<option value="Y2">The last zero</option>
+    		<option value="N1">Last number</option>
+    		<option value="N2">First significant digit</option>
+  		</select>
+  		<br>
+  		Scientific Notation is when a number is multiplied by a?
+   		 <select name="Submission7">
+    		<option value="Y1"> 1 to a power</option>
+    		<option value="Y2">10 to a power</option>
+    		<option value="N1">100 to a power</option>
+    		<option value="N2">1000 to a power</option>
+    	</select>
+    	<br>
+    	What is 420,000 in Scientific Notation? 
+   		 <select name="Submission8">
+    		<option value="Y1">42 * 5^6 </option>
+    		<option value="Y2">42 * 10^6</option>
+    		<option value="N1">4.2 * 10^5</option>
+    		<option value="N2">40 * 10^4</option>
+    	</select>
+    	<br>
+    	What is 0.000042 in Scientific Notation?  
+   		 <select name="Submission9">
+    		<option value="A"> 4.2 * 10^5 </option>
+    		<option value="B">4.2 * 10^-5</option>
+    		<option value="C">42 * 10^4</option>
+    		<option value="D">42 * 10^-5</option>
+    	</select>
+    	<br>
+		</form>
+	</div>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( ExponentQ2Ans,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value,
+      document.Questions.Submission7.value,
+      document.Questions.Submission8.value,
+      document.Questions.Submission9.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

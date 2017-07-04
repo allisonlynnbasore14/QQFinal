@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+
+  <body>
+	<div class = "Content">
+		<form id = "questions" name = "Questions">
+		Using LCM to create like terms and combine fractions example: The LCM of 18 and 24 is 72. We convert each fraction and combine like terms.
+		5&frasl;18 + 7&frasl;24 = 5*4&frasl;18*4 + 7*3&frasl;24*3 = 20&frasl;72 + 21&frasl;72 = 41&frasl;72.
+		<br>
+		1. The LCM of 60 and 90 is 180. What is the combined fraction of: 11&frasl;60 + 47&frasl;90?
+		 	<select name="Submission1">
+	    		<option value="A"> (11&frasl;60) * 2 is 22&frasl;120, (47&frasl;90) * 3 is 141&frasl;270 so (22+141)&frasl;390 = 163/390 
+	    		 </option>
+	    		<option value="B"> (11&frasl;60) * 3 is 33&frasl;180, (47&frasl;90) * 2 is 94&frasl;180 so (33+94)&frasl;180 = 127/180 </option>
+	    		<option value="C"> (11&frasl;60) / 3 is 11&frasl;20, (47&frasl;90) / 2 is 47&frasl;45 so (33+47)&frasl;65 = 77/65 </option>
+	    		<option value="D"> (11&frasl;60) / 3 is 11&frasl;20, (47&frasl;90) / 4.5 is 47&frasl;20 so (33+47)&frasl;20 = 77/20 </option>
+	  		</select>
+	  	<br>
+		2. The LCM of 40 and 80 is 80. What is the combined fraction of: 3&frasl;40 + 7&frasl;80
+		 	<select name="Submission2">
+	    		<option value="A"> (3&frasl;40) / 2 is 1.5&frasl;80, (7&frasl;80) / 1 is 7&frasl;80 so (1.5+7)&frasl;(80) = 8.5/80  
+	    		 </option>
+	    		<option value="B"> (3&frasl;40) / 2 is 1.5&frasl;20, (7&frasl;80) / 1 is 7&frasl;80 so (1.5+7)&frasl;(80 + 20) = 8.5/100 </option>
+	    		<option value="C"> (3&frasl;40) * 2 is 6&frasl;40, (7&frasl;80) * 1 is 7&frasl;80 so (6+7)&frasl;(40 + 80) = 13/120 </option>
+	    		<option value="D"> (3&frasl;40) * 2 is 6&frasl;80, (7&frasl;80) * 1 is 7&frasl;80 so (6+7)&frasl;80 = 13/80 </option>
+	  		</select>
+		</form>
+	</div>
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( FractionLCMQAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value])
+  }
+</script>
+
+</body>
+
+</html>

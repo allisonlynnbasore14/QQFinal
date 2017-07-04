@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+<body>
+
+	<div class = "Content">
+		<p class = "Tocopy">
+			I'm #2 and I'll be your friend,
+			<br>
+			as long as an even #'s on the 	end.
+			<br><br>
+			#3 will work for me, you see,
+			<br>
+			if the sum is divisible by 3.
+			<br><br>
+			The #4 won't be such a chore,
+			<br>
+			if the last 2 are divisible by 4.
+			<br><br>
+			The #5 is my biggest hero,
+			<br>
+			he has to end in 5 or 0.
+			<br><br>
+			The #6 will always go into me,
+			<br>
+			as long as so does 2 and 3.
+			<br><br>
+			#9 will go into me just fine,
+			<br>
+			if the sum is divisible by 9.
+			<br><br>
+			I'm #10 and this you should know,
+			<br>
+			I always end in a big fat 0!
+		</p>
+		 <form name = "Div_Rules">
+		 <textarea name = "Poem" id = "Poem" >
+		 </textarea>
+		</form>
+	</div>
+
+
+<script type="text/javascript">
+	function sendAnswers(){
+		processAnswers(	DRulesCopyAns,
+			[document.getElementById("Poem").value], 'copy')
+	}
+</script>
+
+</body>
+
+</html>

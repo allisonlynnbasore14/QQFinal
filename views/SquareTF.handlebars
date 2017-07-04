@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+  <body>
+	<div class = "Content">
+		 <form name = "Questions">
+	  		Eighty-eight is a square number.
+	  		  	<select name="Submission1">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		Eleven squared is 111.
+	  		  	<select name="Submission2">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		Eight ate eight and threw up on the floor. Eight squared is 64.
+	  		  	<select name="Submission3">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		The square root of 16 is 2^2
+	  		  	<select name="Submission4">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		Nine’s squared number is 18 and
+ 	        it’s square root is 3.
+	  		  	<select name="Submission5">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		The last two digits of 13 squared
+ 	         and 14 squared are transposed. 
+ 	         	<select name="Submission6">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		The difference between 152 and 52
+  	          equals 10^2. 
+ 	         	<select name="Submission7">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		The numbers one and zero are both prime. 
+ 	         	<select name="Submission8">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		
+	</div>
+  </div>
+ </body>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( SquareTFAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value,
+      document.Questions.Submission7.value,
+      document.Questions.Submission8.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

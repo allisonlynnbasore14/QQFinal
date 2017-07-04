@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+  <body>
+	<div class = "Content">
+		 <form id = 'questionsProbTF' name = "Questions">
+	  		1. Probability is wanted out of what is not wanted.
+	  		  	<select name="Submission1">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		2. Odds is wanted out of what is not wanted.
+	  		  	<select name="Submission2">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		3. The probability of flipping heads on a coin would be 50%.
+	  		  	<select name="Submission3">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		4. The odds of flipping heads on a coin would be 1 to 1.
+	  		  	<select name="Submission4">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		5. The odds of drawing a 4 out of the numbers 1-10 would be 10%.
+	  		  	<select name="Submission5">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		6. If the chance of rain (probability) is 80%, then the odds would be 8 to 2 
+ 	         	<select name="Submission6">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		7. 4! = 12
+ 	         	<select name="Submission7">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+	  		 	<br>
+	  		8. There are 120 ways to arrange 5 objects.
+ 	         	<select name="Submission8">
+	    			<option value="F">False</option>
+	    			<option value="T">True</option>
+	  		 	</select>
+		</div>
+    </div>
+ </body>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( ProbTFAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value,
+      document.Questions.Submission7.value,
+      document.Questions.Submission8.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

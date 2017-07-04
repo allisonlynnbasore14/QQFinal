@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+
+  <body>
+	<p id='AnswerDisplay'>
+	</p>
+	<div class = "WhiteBox">
+		<form id = "questions" name = "Questions">
+		An exponent shows how many times to
+	 	<select name="Submission1">
+    		<option value="Y1">Multiply </option>
+    		<option value="Y2">Divide</option>
+    		<option value="N1">Add</option>
+    		<option value="N2">Subtract</option>
+  		</select>
+  		the number. To multiply powers with the same base, 
+	 	<select name="Submission2">
+    		<option value="Y1">Multiply </option>
+    		<option value="Y2">Divide</option>
+    		<option value="N1">Add</option>
+    		<option value="N2">Subtract</option>
+  		</select>
+  		thier exponents. To divide power with the same base,
+  		<select name="Submission3">
+    		<option value="Y1">Multiply </option>
+    		<option value="Y2">Divide</option>
+    		<option value="N1">Add</option>
+    		<option value="N2">Subtract</option>
+  		</select>
+  		thier exponents. Any base to the zero power always equals 
+  		<select name="Submission4">
+    		<option value="Y1">0 </option>
+    		<option value="Y2">1</option>
+    		<option value="N1">2</option>
+    		<option value="N2">3</option>
+  		</select>
+  		. For any nonzero base to a 
+  		<select name="Submission5">
+    		<option value="Y1">Low</option>
+    		<option value="Y2">High</option>
+    		<option value="N1">Positive</option>
+    		<option value="N2">Negative</option>
+  		</select>
+  		power the term is inversed to the other of the fraction. A number written in Scientific Notation has the decimal
+  		 <select name="Submission6">
+    		<option value="Y1"> In place of </option>
+    		<option value="Y2">On top of</option>
+    		<option value="N1">After</option>
+    		<option value="N2">Before</option>
+  		</select>
+  		the initial value and is put to a power of
+   		 <select name="Submission7">
+    		<option value="Y1"> 1 </option>
+    		<option value="Y2">10</option>
+    		<option value="N1">100</option>
+    		<option value="N2">1000</option>
+    	</select>
+    	. 572,000,000 = 
+   		 <select name="Submission8">
+    		<option value="Y1"> 5.72 </option>
+    		<option value="Y2">57.2</option>
+    		<option value="N1">572</option>
+    		<option value="N2">5720</option>
+    	</select>
+    	times 10 to the 
+   		 <select name="Submission9">
+    		<option value="A"> 11 </option>
+    		<option value="B">10</option>
+    		<option value="C">8</option>
+    		<option value="D">7</option>
+    	</select>
+    	power.
+		</form>
+	</div>
+  </body>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( ExponentQAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value,
+      document.Questions.Submission7.value,
+      document.Questions.Submission8.value,
+      document.Questions.Submission9.value])
+  }
+</script>
+
+</body>
+
+</html>

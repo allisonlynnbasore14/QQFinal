@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+    <body>
+	<div class = "Content">
+		 <form id = "questions" name = "Questions">
+		 1) What is the probability of rolling a 5.
+		 	<select name="Submission1">
+	    		<option value="A"> 1/4 </option>
+	    		<option value="B"> 1/5</option>
+	    		<option value="C"> 1/6</option>
+	    		<option value="D"> 1/7</option>
+	  		</select>
+	  	<br><br>
+	  	2) What are the odds of rolling a 5.
+		 	<select name="Submission2">
+	    		<option value="A"> 1:3 </option>
+	    		<option value="B"> 1:4 </option>
+	    		<option value="C"> 1:5 </option>
+	    		<option value="D"> 1:6 </option>
+	  		</select>
+	  	<br><br>
+	  	3) What is the probability of rolling a 3 and then an even number.
+		 	<select name="Submission3">
+	    		<option value="A"> 1/8 </option>
+	    		<option value="B"> 1/10 </option>
+	    		<option value="C"> 1/12 </option>
+	    		<option value="D"> 1/14 </option>
+	  		</select>
+	  	<br><br>
+	  	4) How many ways can the letters of the word CAT be arranged?
+			<select name="Submission4">
+	    		<option value="A"> 5! </option>
+	    		<option value="B"> 4! </option>
+	    		<option value="C"> 3! </option>
+	    		<option value="D"> 2! </option>
+	  		</select>
+	</form>
+		</div>
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( ProbQ3Ans,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

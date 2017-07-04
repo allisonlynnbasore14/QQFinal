@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	 <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+<body>
+	<div class = "Content">
+		<p id = "Options">
+			A. A small cute angle, less than 90 degrees
+			<br><br>
+			B. A perfect angle, exactly 90 degrees noted by a box
+			<br><br>
+			C. A pair of angles that make a corner and add up to 90 degrees
+			<br><br>
+			D. A pair of angles that make a straight line and add up to 180 degrees
+			<br><br>
+			E. A pair of angles that are in the same position and are congruent
+			<br><br>
+			F. A pair of angles that are inside parallel lines and are supplementary
+		</p>
+		
+		 <form id = "questionsMatch" name = "Questions">
+		A) 
+	  		<select name="Submission1">
+	    		<option value="A">Corresponding Angles</option>
+	    		<option value="B">Supplementary Angles</option>
+	    		<option value="C">Right Angle</option>
+	    		<option value="D">Complementary Angles</option>
+	    		<option value="E">Obtuse Angle</option>
+	    		<option value="F">Consecutive Interior Angles</option>
+	    		<option value="G">Acute Angle</option>
+	  		</select>
+	  	B)
+	  		<select name="Submission2">
+	    		<option value="A">Corresponding Angles</option>
+	    		<option value="B">Supplementary Angles</option>
+	    		<option value="C">Right Angle</option>
+	    		<option value="D">Complementary Angles</option>
+	    		<option value="E">Obtuse Angle</option>
+	    		<option value="F">Consecutive Interior Angles</option>
+	    		<option value="G">Acute Angle</option>
+	  		</select>
+	  	C)
+	  		<select name="Submission3">
+	    		<option value="A">Corresponding Angles</option>
+	    		<option value="B">Supplementary Angles</option>
+	    		<option value="C">Right Angle</option>
+	    		<option value="D">Complementary Angles</option>
+	    		<option value="E">Obtuse Angle</option>
+	    		<option value="F">Consecutive Interior Angles</option>
+	    		<option value="G">Acute Angle</option>
+	  		</select>
+	  	D)
+	  		<select name="Submission4">
+	    		<option value="A">Corresponding Angles</option>
+	    		<option value="B">Supplementary Angles</option>
+	    		<option value="C">Right Angle</option>
+	    		<option value="D">Complementary Angles</option>
+	    		<option value="E">Obtuse Angle</option>
+	    		<option value="F">Consecutive Interior Angles</option>
+	    		<option value="G">Acute Angle</option>
+	  		</select>
+	  	E)
+	  		<select name="Submission5">
+	    		<option value="A">Corresponding Angles</option>
+	    		<option value="B">Supplementary Angles</option>
+	    		<option value="C">Right Angle</option>
+	    		<option value="D">Complementary Angles</option>
+	    		<option value="E">Obtuse Angle</option>
+	    		<option value="F">Consecutive Interior Angles</option>
+	    		<option value="G">Acute Angle</option>
+	  		</select>
+
+	  	F)
+	  		<select name="Submission6">
+	    		<option value="A">Corresponding Angles</option>
+	    		<option value="B">Supplementary Angles</option>
+	    		<option value="C">Right Angle</option>
+	    		<option value="D">Complementary Angles</option>
+	    		<option value="E">Obtuse Angle</option>
+	    		<option value="F">Consecutive Interior Angles</option>
+	    		<option value="G">Acute Angle</option>
+	  		</select>
+		</form>
+	</div>
+<script type="text/javascript">
+	function sendAnswers(){
+		processAnswers(	AnglesMatchAns,
+			[document.Questions.Submission1.value,
+			document.Questions.Submission2.value,
+			document.Questions.Submission3.value,
+			document.Questions.Submission4.value,
+			document.Questions.Submission5.value,
+			document.Questions.Submission6.value])
+	}
+</script>
+
+</body>
+
+</html>

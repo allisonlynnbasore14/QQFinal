@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+  <body>
+	<div class = "Content">
+		<form id = "questions" name = "Questions">
+		Example: To multiply fractions, sometimes you must first convert them to improper fractions.
+		<br>
+		2 4&frasl;5 * 3 6&frasl;7  = ((2*5)+4)&frasl;5 * ((3*7)+6)&frasl;7 = 14&frasl;5 * 27&frasl;7 == 54&frasl;5 = 10 4&frasl;5.
+		<br>
+		1. What is 3 1&frasl;4 and 2 4&frasl;5 as improper fractions?
+		 	<select name="Submission1">
+	    		<option value="A"> 3&frasl;12 and 8&frasl;10
+	    		 </option>
+	    		<option value="B"> 12&frasl;4 and 40&frasl;5</option>
+	    		<option value="C"> 13&frasl;4 and 14&frasl;5</option>
+	    		<option value="D"> 4&frasl;13 and 5&frasl;14 </option>
+	  		</select>
+	  	<br>
+		2. What is 2 5&frasl;7 and 2 7&frasl;10 as improper fractions?
+		 	<select name="Submission2">
+	    		<option value="A"> 19&frasl;7 and 17&frasl;10
+	    		 </option>
+	    		<option value="B"> 10&frasl;17 and 17&frasl;10</option>
+	    		<option value="C"> 19&frasl;7 and 14&frasl;20</option>
+	    		<option value="D"> 10&frasl;17 and 14&frasl;20 </option>
+	  		</select>
+	  	<br> <br>
+		</form>
+	</div>
+	
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( FractionGCFQAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value])
+  }
+</script>
+
+</body>
+
+</html>

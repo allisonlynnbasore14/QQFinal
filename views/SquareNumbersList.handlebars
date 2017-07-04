@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+<body>
+	<div class = "Content">
+		<p class = "TocopyPrime">
+			Example:
+			<br>
+			2*2 = 4, so 4 is a square number.
+		</p>
+		 <form name = "Qustions">
+		 <textarea name = "Poem" id = "Poem" >
+		 </textarea>
+		</form>
+	</div>
+</body>
+<script type="text/javascript">
+	function sendAnswers(){
+		processAnswers(	SquareNumbersListAns,
+			[document.getElementById("Poem").value], 'copy')
+	}
+</script>
+
+</body>
+
+</html>

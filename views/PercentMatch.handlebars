@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+<body>
+	<div class = "Content">
+		<p id = "Options">
+			A. percent
+			<br><br>
+			B. 75%
+			<br><br>
+			C. (part 'is')/(whole 'of')
+			<br><br>
+			D. part 'is' =
+			<br><br>
+			E. 10%
+			<br><br>
+			F. 12/24
+			<br><br>
+			G. 'of'
+			<br><br>
+			H. 'is'
+		
+		 <form id = "questionsMatch" name = "Questions">
+		A) 
+	  		<select name="Submission1">
+	    		<option value="A">% * whole 'of'</option>
+	    		<option value="B">out of 100</option>
+	    		<option value="C">1/10</option>
+	    		<option value="D">50%</option>
+	    		<option value="E">3/4</option>
+	    		<option value="F">%/100</option>
+	    		<option value="G">= equals</option>
+	    		<option value="H">* multiply</option>
+	  		</select><br>
+	  	B)
+	  		<select name="Submission2">
+	    		<option value="A">% * whole 'of'</option>
+	    		<option value="B">out of 100</option>
+	    		<option value="C">1/10</option>
+	    		<option value="D">50%</option>
+	    		<option value="E">3/4</option>
+	    		<option value="F">%/100</option>
+	    		<option value="G">= equals</option>
+	    		<option value="H">* multiply</option>
+	  		</select><br>
+	  	C)
+	  		<select name="Submission3">
+	    		<option value="A">% * whole 'of'</option>
+	    		<option value="B">out of 100</option>
+	    		<option value="C">1/10</option>
+	    		<option value="D">50%</option>
+	    		<option value="E">3/4</option>
+	    		<option value="F">%/100</option>
+	    		<option value="G">= equals</option>
+	    		<option value="H">* multiply</option>
+	  		</select><br>
+	  	D)
+	  		<select name="Submission4">
+	    		<option value="A">% * whole 'of'</option>
+	    		<option value="B">out of 100</option>
+	    		<option value="C">1/10</option>
+	    		<option value="D">50%</option>
+	    		<option value="E">3/4</option>
+	    		<option value="F">%/100</option>
+	    		<option value="G">= equals</option>
+	    		<option value="H">* multiply</option>
+	  		</select><br>
+	  	E)
+	  		<select name="Submission5">
+	    		<option value="A">% * whole 'of'</option>
+	    		<option value="B">out of 100</option>
+	    		<option value="C">1/10</option>
+	    		<option value="D">50%</option>
+	    		<option value="E">3/4</option>
+	    		<option value="F">%/100</option>
+	    		<option value="G">= equals</option>
+	    		<option value="H">* multiply</option>
+	  		</select><br>
+
+	  	F)
+	  		<select name="Submission6">
+	    		<option value="A">% * whole 'of'</option>
+	    		<option value="B">out of 100</option>
+	    		<option value="C">1/10</option>
+	    		<option value="D">50%</option>
+	    		<option value="E">3/4</option>
+	    		<option value="F">%/100</option>
+	    		<option value="G">= equals</option>
+	    		<option value="H">* multiply</option>
+	  		</select><br>
+	  	G)
+	  		<select name="Submission7">
+	    		<option value="A">% * whole 'of'</option>
+	    		<option value="B">out of 100</option>
+	    		<option value="C">1/10</option>
+	    		<option value="D">50%</option>
+	    		<option value="E">3/4</option>
+	    		<option value="F">%/100</option>
+	    		<option value="G">= equals</option>
+	    		<option value="H">* multiply</option>
+	  		</select><br>
+	  	H)
+	  		<select name="Submission8">
+	    		<option value="A">% * whole 'of'</option>
+	    		<option value="B">out of 100</option>
+	    		<option value="C">1/10</option>
+	    		<option value="D">50%</option>
+	    		<option value="E">3/4</option>
+	    		<option value="F">%/100</option>
+	    		<option value="G">= equals</option>
+	    		<option value="H">* multiply</option>
+	  		</select>
+		</form>
+	</div>
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( PercentMatchAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value,
+      document.Questions.Submission7.value,
+      document.Questions.Submission8.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

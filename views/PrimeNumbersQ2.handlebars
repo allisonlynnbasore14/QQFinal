@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+  <body>
+	<div class = "Content">
+		 <form id = "questions" name = "Questions">
+	  		1) Is the number 1 prime? Why?
+	  		  <select name="Submission1">
+	    		<option value="Y1">Yes, because nothing goes into it.</option>
+	    		<option value="Y2">Yes, because it is below 10 and and odd number.</option>
+	    		<option value="N1">No, because it is an idenity.</option>
+	    		<option value="N2">No, because it is odd.</option>
+	  		</select>
+	  		2) What is the only even prime number?
+	  		<select name="Submission2">
+	    		<option value="3">3</option>
+	    		<option value="2">2</option>
+	    		<option value="1">1</option>
+	    		<option value="0">0</option>
+	  		</select>
+	  		3) What is the sum of the first nine primes?
+	  	  	<select name="Submission3">
+	    		<option value="58">58</option>
+	    		<option value="59">59</option>
+	    		<option value="100">100</option>
+	    		<option value="9">9</option>
+	  		</select>
+	  		4) Which range of numbers has the MOST prime numbers included?
+	  		<select name="Submission4">
+	    		<option value="A">30-40</option>
+	    		<option value="B">40-50</option>
+	    		<option value="C">50-60</option>
+	    		<option value="D">60-70</option>
+	  		</select>
+	  		5) How many primes are under 100?
+	  		<select name="Submission5">
+	    		<option value="10">10</option>
+	    		<option value="100">100</option>
+	    		<option value="25">25</option>
+	    		<option value="26">26</option>
+	  		</select>
+	  		6) Which prime numbers can you use to test for other prime numbers under 100.
+	  		<select name="Submission6">
+	    		<option value="A">1,2,3,7,9</option>
+	    		<option value="B">2,3,7,9</option>
+	    		<option value="C">3,7,9</option>
+	    		<option value="D">7,9</option>
+	  		</select>
+	  		7) What is the opposite of a prime numebrs?
+	  		<select name="Submission7">
+	    		<option value="A">Anti-prime</option>
+	    		<option value="B">Composite</option>
+	    		<option value="C">There is no opposite</option>
+	    		<option value="D">Even</option>
+	  		</select>
+	</div>
+  </div>
+ </body>
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( PrimeNumbersQ2Ans,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value,
+      document.Questions.Submission7.value
+      ])
+  }
+</script>
+</body>
+
+</html>

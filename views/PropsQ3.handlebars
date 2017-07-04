@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+    <body>
+    	<div class = 'Content'>
+			 <form id = "questionsPropsQ3" name = "Questions">
+			 A. Start Equation: 5(3+7) - 15 <br>
+			 B. 15 + 35 - 15
+			 	<select name="Submission1">
+		    		<option value="A"> Idenity </option>
+		    		<option value="B"> Associative </option>
+		    		<option value="C"> Distributive </option>
+		    		<option value="D"> Commutative </option>
+		    		<option value="E"> Inverse </option>
+		  		</select>
+		  	<br>
+		  	C. 15 - 15 + 35
+			 	<select name="Submission2">
+		    		<option value="A"> Idenity </option>
+		    		<option value="B"> Associative </option>
+		    		<option value="C"> Distributive </option>
+		    		<option value="D"> Commutative </option>
+		    		<option value="E"> Inverse </option>
+		  		</select>
+		  	<br>
+		  	D. 0 + 35
+			 	<select name="Submission3">
+		    		<option value="A"> Idenity </option>
+		    		<option value="B"> Associative </option>
+		    		<option value="C"> Distributive </option>
+		    		<option value="D"> Commutative </option>
+		    		<option value ="E"> Inverse </option>
+		  		</select>
+		  	<br>
+		  	E. 35
+		  		<select name="Submission4">
+		    		<option value="A"> Idenity </option>
+		    		<option value="B"> Associative </option>
+		    		<option value="C"> Distributive </option>
+		    		<option value="D"> Commutative </option>
+		    		<option valu0 ="E"> Inverse </option>
+		  		</select>
+		  	<div class = 'line'>
+			</div>
+		  	A. 2 * 25 * 1/2 <br>
+		  	B. 25 * 2 * 1/2
+				<select name="Submission5">
+		    		<option value="A"> Idenity </option>
+		    		<option value="B"> Associative </option>
+		    		<option value="C"> Distributive </option>
+		    		<option value="D"> Commutative </option>
+		    		<option value="E"> Inverse </option>
+		  		</select>
+		  		<br>
+		  	C. 25 * (2 * 1/2)
+				<select name="Submission6">
+		    		<option value="A"> Idenity </option>
+		    		<option value="B"> Associative </option>
+		    		<option value="C"> Distributive </option>
+		    		<option value="D"> Commutative </option>
+		    		<option value="E"> Inverse </option>
+		  		</select>
+		  	<br>
+		  	D. 25 * (1)
+				<select name="Submission7">
+		    		<option value="A"> Idenity </option>
+		    		<option value="B"> Associative </option>
+		    		<option value="C"> Distributive </option>
+		    		<option value="D"> Commutative </option>
+		    		<option value="E"> Inverse </option>
+		  		</select>
+		  	<br>
+		  	E. 25
+		  		<select name="Submission8">
+		    		<option value="A"> Idenity </option>
+		    		<option value="B"> Associative </option>
+		    		<option value="C"> Distributive </option>
+		    		<option value="D"> Commutative </option>
+		    		<option value="E"> Inverse </option>
+		  		</select>
+			</form>
+		</div>
+	</div>
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( PropsQ3Ans,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value,
+      document.Questions.Submission7.value,
+      document.Questions.Submission8.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

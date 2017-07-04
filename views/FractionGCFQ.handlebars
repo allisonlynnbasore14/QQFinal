@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+
+  <body>
+	<div class = "Content">
+		<form id = "questions" name = "Questions">
+		Using GCF to factor out largest amount and reduce fractions example: The GCF of 18 and 24 is 6. To reduce, we divide each value.
+		18&frasl;24 (divided by 6) = 3&frasl;4
+		<br>
+		1. The GCF of 60 and 90 is 30. What is the reduced fraction of: 60&frasl;90?
+		 	<select name="Submission1">
+	    		<option value="A"> 60 / 30 is 2 and 90 / 30 = 3, so 2/3.
+	    		 </option>
+	    		<option value="B"> 60 / 30 is 3 and 90 / 30 = 2, so 3/2. </option>
+	    		<option value="C"> 60 * 30 is 1800 and 90 * 30 = 2700, so 1800/2700.</option>
+	    		<option value="D"> 60 / 30 is 30 and 90 / 30 = 30, so 30/30 = 1. </option>
+	  		</select>
+	  	<br> <br>
+	  	2. The GCF of 108 and 27 is 27. What is the reduced fraction of: 108&frasl;81 ?
+	  		<select name="Submission2">
+	    		<option value="A"> 108 / 27 is 10 and 27 / 27 = 1, so 10/1 = 10.
+	    		 </option>
+	    		<option value="B"> 108 / 27 is 1 and 27 / 27 = 4, so 1/4. </option>
+	    		<option value="C"> 108 * 27 is 2916 and 27 * 27 = 729, so 2916/729.</option>
+	    		<option value="D"> 108 / 27 is 4 and 27 / 27 = 1, so 4/1 = 4. </option>
+	  		</select>
+		</form>
+	</div>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( FractionGCFQAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value])
+  }
+</script>
+
+</body>
+
+</html>

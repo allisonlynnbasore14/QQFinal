@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+
+  <body>
+	<div class = "Content">
+		<form id = "questions" name = "Questions">
+		What is (4<sup>-2</sup>)?
+	 	<select name="Submission1">
+    		<option value="Y1">1/4</option>
+    		<option value="Y2">1/8</option>
+    		<option value="N1">1/16</option>
+    		<option value="N2">1/32</option>
+  		</select>
+  		<br>
+  		What is x<sup>5</sup> * x<sup>7</sup>? 
+	 	<select name="Submission2">
+    		<option value="Y1">x^35</option>
+    		<option value="Y2">x^-2</option>
+    		<option value="N1">x^12</option>
+    		<option value="N2">x^2</option>
+  		</select>
+  		<br>
+  		What is (x<sup>8</sup>)<sup>3</sup>
+  		<select name="Submission3">
+    		<option value="Y1">x^512</option>
+    		<option value="Y2">x^5</option>
+    		<option value="N1">x^11</option>
+    		<option value="N2">x^24</option>
+  		</select>
+  		<br>
+  		What is 17<sup>11</sup>&frasl; 17<sup>8</sup>
+  		<select name="Submission4">
+    		<option value="Y1">17^11 </option>
+    		<option value="Y2">17^3 </option>
+    		<option value="N1">17^8 </option>
+    		<option value="N2">17^88</option>
+  		</select>
+  		<br>
+  		What is 2,349<sup>0</sup>?
+  		<select name="Submission5">
+    		<option value="Y1">1</option>
+    		<option value="Y2">0</option>
+    		<option value="N1">-1</option>
+    		<option value="N2">2,349</option>
+  		</select>
+  		<br>
+  		What is 6,360,000,000 in Scientific notation?
+  		 <select name="Submission6">
+    		<option value="Y1"> 6.36 * 100^9</option>
+    		<option value="Y2">636 * 1000^9</option>
+    		<option value="N1">6.36 * 10^9</option>
+    		<option value="N2">63.6 * 100^8</option>
+  		</select>
+  		<br>
+  		What is 0.003 in Scientific notation?
+   		 <select name="Submission7">
+    		<option value="Y1"> 300 * 10^-1</option>
+    		<option value="Y2">0.003</option>
+    		<option value="N1">3 * 10^-3</option>
+    		<option value="N2">30 * 10^-2></option>
+    	</select>
+    	<br>
+    	What is 5.7003 * 10<sup>-7</sup> in standard form?
+   		 <select name="Submission8">
+    		<option value="Y1">0.0057003 </option>
+    		<option value="Y2">0.57003</option>
+    		<option value="N1">5.7003</option>
+    		<option value="N2">57,003,000</option>
+    	</select>
+    	<br>
+    	What is 5.7003 * 10<sup>7</sup> in standard form?  
+   		 <select name="Submission9">
+    		<option value="A">  570,030 </option>
+    		<option value="B"> 57,003,000</option>
+    		<option value="C"> 5,703,000 </option>
+    		<option value="D">0.0057003</option>
+    	</select>
+    	<br>
+		</form>
+	</div>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( ExponentQ3Ans,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value,
+      document.Questions.Submission7.value,
+      document.Questions.Submission8.value,
+      document.Questions.Submission9.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

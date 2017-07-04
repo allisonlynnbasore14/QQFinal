@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+    <body>
+
+	<div class = "Content">
+		<p id = "WordsProbQ">
+		Word Bank: <br> percent, want, multiply, divide, not wanted, factorial, total, 3!
+		</p>
+		 <form id = "questions" name = "Questions">
+		 Probability is
+			<input type="text" size="10" name="Submission1">
+	  	divided by the
+		 	<input type="text" size="10" name="Submission2">
+	  	. To find the odds is a simular process, but you divide by 
+		 	<input type="text" size="10" name="Submission3">
+	  	instead. In mathematics the exclamation point means 
+			<input type="text" size="10" name="Submission4">
+	  	. There are
+			<input type="text" size="10" name="Submission5">
+		possible ways to arrange three itmes. To determine the probability of two independent events, like rolling dice,
+			<input type="text" size="10" name="Submission6">
+	  	the probability ratios. Probability is usually written in
+	  		<input type="text" size="10" name="Submission7">
+	  	form.
+	</form>
+</div>
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( ProbQAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value,
+      document.Questions.Submission7.value
+      ], 'includes')
+  }
+</script>
+</body>
+
+</html>

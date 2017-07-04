@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+  <body>
+	<div class = "Content">
+		<div id = 'questions'>
+			<div id = 'NumsHeading'>
+				Arithmetic Sequence: terms have a difference:
+			</div>
+			Example: 1, 4, 7, 10, 13, 16, 19, ... The difference between each term is 3.
+			<br>
+			The formula is:
+			xn = a + d(n-1)
+			<br>
+			x is the term, a is the first term, n is the number of term place, d is difference amount.
+			<br>
+			<div id = 'NumsHeading'>
+				Geomatric Sequence: terms have a ratio:
+			</div>
+			Example: 3, 12, 48, 192, 768, 3072, 12288, ...
+			<br>
+			The ratio between each term is 4.
+			xn = ar^(n-1)
+			<div class = 'line'>
+			</div>
+			<div id = 'NumsHeading'>
+				Roman Numbers:
+			</div>
+				one I, two II, three III, four IV, five V,   	ten X,    fifty L,   100  C,   500 D,   1000 M.
+		</div>
+	</div>
+ </body>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( SequenceStudyAns,
+      [])
+  }
+</script>
+
+</body>
+
+</html>

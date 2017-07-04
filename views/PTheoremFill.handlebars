@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+<body>
+
+	<div class = "Content">
+		 <form name = "Questions">
+		 	The
+	  		<input type="text" size="10" name="Submission1">
+	  		Theorem states that in a 
+	  		<input type="text" size="10" name="Submission2">
+	  		triangle, the
+	  		<input type="text" size="10" name="Submission3">
+	  		of the square of the
+	  		<input type="text" size="10" name="Submission4">
+	  		is equal to the
+	  		<input type="text" size="10" name="Submission5">
+	  		of the
+	  		<input type="text" size="10" name="Submission6">
+	  		.
+		</form>
+		<p id = "Words">
+			Word Bank: 
+			<br>
+			sum, right, hypotenuse, square, legs, Pythagorean
+		</p>
+	</div>
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( PTheoremFillAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value,
+      document.Questions.Submission6.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

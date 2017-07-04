@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+<body>
+
+	<div class = "Content">
+		<img class = "TPic" src="http://www.mathwarehouse.com/geometry/triangles/images/right-triangles/3-4-5-right-triangles/6-8-10_A_1.png">
+		 <form name = "Questions">
+		 	What is the length of the hypotenuse of the right triangle below?
+		 	<select name="Submission1">
+	    		<option value="A"> 8
+	    		 </option>
+	    		<option value="B"> 6</option>
+	    		<option value="C"> 10 </option>
+	    		<option value="D"> 14 </option>
+	  		</select>
+		</form>
+	</div>
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( PTheoremQAns,
+      [document.Questions.Submission1.value])
+  }
+</script>
+
+</body>
+
+</html>

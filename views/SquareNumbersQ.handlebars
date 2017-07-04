@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+    <body>
+	<div class = "Content">
+		 <form id = "questions" name = "Questions">
+		 1) Which two square numbers is 200 in-between?
+		 	<select name="Submission1">
+	    		<option value="A"> 199 and 201 </option>
+	    		<option value="B"> 196 and 201 </option>
+	    		<option value="C"> 199 and 225 </option>
+	    		<option value="D"> 196 and 225 </option>
+	  		</select>
+	  		<br><br>
+	  	2) Which two square numbers have a sum of 100?
+		 	<select name="Submission2">
+	    		<option value="A"> 25 and 75 </option>
+	    		<option value="B"> 36 and 64 </option>
+	    		<option value="C"> 33 and 67 </option>
+	    		<option value="D"> 77 and 23 </option>
+	  		</select>
+	  		<br><br>
+	  	3) A dozen dozens makes a gross.  How many are in a gross?
+		 	<select name="Submission3">
+	    		<option value="A"> 144 </option>
+	    		<option value="B"> 12 </option>
+	    		<option value="C"> 121 </option>
+	    		<option value="D"> 11 </option>
+	  		</select>
+	  		<br><br>
+	  	4) Which square number is 75 closest too?
+			<select name="Submission4">
+	    		<option value="A"> 75 </option>
+	    		<option value="B"> 100 </option>
+	    		<option value="C"> 81 </option>
+	    		<option value="D"> 64 </option>
+	  		</select>
+	</form>
+
+	</div>
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( SquareNumbersQAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>
+		QuarterQuizes
+	</title>
+
+</head>
+
+<script type="text/javascript" src="./../javascripts/grading.js"></script>
+
+    <body>
+        
+	<p id='AnswerDisplay'>
+	</p>
+	<div class = "Content">
+		 <form id = "questions" name = "Questions">
+			 1) An acute angle is
+			 	<select name="Submission1">
+		    		<option value="A"> between 0 and 30 </option>
+		    		<option value="B"> between 0 and 60 </option>
+		    		<option value="C"> between 0 and 90 </option>
+		    		<option value="D"> between 0 and 100 </option>
+		  		</select>
+		  	2) A right angle is
+			 	<select name="Submission2">
+		    		<option value="A"> between 90 and 91 degrees </option>
+		    		<option value="B"> 100 degrees</option>
+		    		<option value="C"> between 100 and 101 degrees </option>
+		    		<option value="D"> 90 degrees </option>
+		  		</select>
+		  	3) An obtuse angle is
+			 	<select name="Submission3">
+		    		<option value="A"> between 90 and 180 degrees</option>
+		    		<option value="B"> between 100 and 180 degrees</option>
+		    		<option value="C"> between 60 and 120 degrees</option>
+		    		<option value="D"> between 70 and 140 degrees</option>
+		  		</select>
+		  	4) The sum of complementary angles is 
+				<select name="Submission4">
+		    		<option value="A"> equal to 100 degrees</option>
+		    		<option value="B"> equal to 90 degrees</option>
+		    		<option value="C"> equal to 80 degrees</option>
+		    		<option value="D"> euqal to 70 degrees</option>
+		  		</select>
+		  	5) The sum of supplementary angles is
+				<select name="Submission5">
+		    		<option value="A"> equal to 180 degrees</option>
+		    		<option value="B"> equal to 90 degrees</option>
+		    		<option value="C"> equal to 100 degrees</option>
+		    		<option value="D"> euqal to 30 degrees</option>
+		  		</select>
+			6) Corresponding angles are 
+				<select name="Submission6">
+		    		<option value="A"> complementary </option>
+		    		<option value="B"> equal to 180</option>
+		    		<option value="C"> supplementary </option>
+		    		<option value="D"> equal </option>
+		  		</select>
+		  	7) Conseutive-interior angles are
+		  	<select name="Submission7">
+		    		<option value="A"> complementary </option>
+		    		<option value="B"> equal to 180</option>
+		    		<option value="C"> supplementary </option>
+		    		<option value="D"> equal </option>
+		  		</select>
+		</form>
+	</div>
+
+<script type="text/javascript">
+	function sendAnswers(){
+		processAnswers(	AnglesQAns,
+			[document.Questions.Submission1.value,
+			document.Questions.Submission2.value,
+			document.Questions.Submission3.value,
+			document.Questions.Submission4.value,
+			document.Questions.Submission5.value,
+			document.Questions.Submission6.value,
+			document.Questions.Submission7.value])
+	}
+</script>
+
+</body>
+
+</html>

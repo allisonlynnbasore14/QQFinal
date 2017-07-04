@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+  <body>
+	<div class = "Content">
+		<form id = "questions" name = "Questions">
+		1. GCF stands for Greatest 
+		 	<select name="Submission1">
+	    		<option value="A"> Cra Cra </option>
+	    		<option value="B"> Creative </option>
+	    		<option value="C"> Critical </option>
+	    		<option value="D"> Common </option>
+	  		</select>
+	  		Factor
+	  		<br>
+	  	2. GCF is the
+		 	<select name="Submission2">
+	    		<option value="A"> greatest </option>
+	    		<option value="B"> least  </option>
+	    		<option value="C"> odd </option>
+	    		<option value="D"> even </option>
+	    	</select>
+	    	number that goes into numbers and is used to add fractions.
+	  		<br>
+	  	3. LCM stands for
+		 	<select name="Submission3">
+	    		<option value="A"> Littest </option>
+	    		<option value="B"> Least  </option>
+	    		<option value="C"> Loose </option>
+	    		<option value="D"> Ludacris </option>
+	  		</select>
+	  		Common Multiple.
+	  		<br>
+	  	4. LCM is the
+		<select name="Submission4">
+    		<option value="A"> greatest </option>
+    		<option value="B"> least  </option>
+    		<option value="C"> odd </option>
+    		<option value="D"> even </option>
+		</select>
+		number that numbers go into and is used for 
+		<br>
+	  	5. -76, -63, -50, -37, -24, …
+		<select name="Submission5">
+			<option value="A"> 28 Difference </option>
+			<option value="B"> 41 Ratio </option>
+			<option value="C"> Neither </option>
+			<option value="D"> 41 Difference </option>
+	  		</select>
+		</form>
+	</div>
+
+ </body>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( SequenceQAns,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value,
+      document.Questions.Submission5.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>

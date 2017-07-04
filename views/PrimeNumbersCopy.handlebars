@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+<body>
+	<div class = "Content">
+		<p class = "TocopyPrime">
+			A prime number is only divisible by one and itself.
+			<br>
+			1 is an identity, it is not prime. 
+			<br>
+			The opposite of prime is composite.
+		</p>
+		 <form name = "Questions">
+		 <textarea name = "Poem" id = "Poem" >
+		 </textarea>
+		</form>
+	</div>
+<script type="text/javascript">
+	function sendAnswers(){
+		processAnswers(	PrimeNumbersCopyAns,
+			[document.getElementById("Poem").value], 'copy')
+	}
+</script>
+
+</body>
+
+</html>

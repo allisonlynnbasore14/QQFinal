@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+
+  <body>
+	<div class = "Content">
+		<form id = "questions" name = "Questions">
+		1. Define Percents:
+		 	<select name="Submission1">
+	    		<option value="A"> not wanted over total </option>
+	    		<option value="B"> not wanted over wanted  </option>
+	    		<option value="C"> wanted over total </option>
+	    		<option value="D"> wanted over unwanted  </option>
+	  		</select>
+	  		<br><br>
+	  	2. State the percent proportion:
+		 	<select name="Submission2">
+	    		<option value="A"> (part 'of')/(whole 'is') = %/100 </option>
+	    		<option value="B"> (part 'is')/(whole 'of') = %/100  </option>
+	    		<option value="C"> (part 'is')/(whole 'of') = 100/% </option>
+	    		<option value="D"> (whole 'of')/(part 'is') = 100/% </option>
+	  		</select>
+	  		<br><br>
+	  	3. State the percent equation:
+		 	<select name="Submission3">
+	    		<option value="A"> not wanted/wanted</option>
+	    		<option value="B"> wanted/not wanted </option>
+	    		<option value="C">  whole 'is' = % * part 'of'</option>
+	    		<option value="D"> part 'is' = % * whole 'of' </option>
+	  		</select>
+	  		<br><br>
+	  	4. What operations are represented by the words: “of ” ? What about “ is” ?
+		 	<select name="Submission4">
+	    		<option value="A"> of = * , is = '=' </option>
+	    		<option value="B"> of = / , is = '*' </option>
+	    		<option value="C"> of = * , is = '=' </option>
+	    		<option value="D"> of = /, is = '*'</option>
+	  		</select>
+	  		<br><br>
+	 </form>
+	</div>
+ </body>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( PercentQ3Ans,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value,
+      document.Questions.Submission3.value,
+      document.Questions.Submission4.value
+      ])
+  }
+</script>
+</body>
+
+</html>

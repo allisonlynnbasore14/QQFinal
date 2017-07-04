@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+<body>
+	<div class = "Content">
+		<p class = "TocopyPrime">
+			List all the prime numbers under 100. Remember there are 25 in total.
+		</p>
+		 <form name = "Qustions">
+		 <textarea name = "Poem" id = "Poem" >
+		 </textarea>
+		</form>
+	</div>
+<script type="text/javascript">
+	function sendAnswers(){
+		processAnswers(	PrimeNumbersListAns,
+			[document.getElementById("Poem").value], 'copy')
+	}
+</script>
+
+</body>
+
+</html>
