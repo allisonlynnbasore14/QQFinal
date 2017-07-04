@@ -1,17 +1,14 @@
 {
-  "name": "quarterquizzes",
+  "name": "finalqq",
   "version": "1.0.0",
-  "description": "mathquizzes",
-  "main": "Database.js",
+  "description": "math quzzes for high school students",
+  "main": "routes/index.js",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-    "engines": {
-      "node": "7.10.0"
-    , "npm": "4.2.0"    
-  },
-  "dependencies": {
-    "express": "4.0.0"
   },
   "author": "",
   "license": "ISC"
