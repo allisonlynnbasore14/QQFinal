@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script type="text/javascript" src="./../javascripts/grading.js"></script>
+</head>
+
+  <body>
+	<div class = "Content">
+		<div class = 'SequenceQ2Help'>
+		Direct Variation:
+		<br>
+		y = k*x
+		Y is constantly proportional to x. 
+		<br><br>
+		Indirect Variation:
+		<br>
+		y = k/x
+		Y is inversly proportional to x. 
+		</div>
+		<form id = "questions" name = "Questions">
+		1. What is the sum of the first five terms of a directly proportional geometric sequence beginning at 10 with a ratio of 2.
+		 	<select name="Submission1">
+	    		<option value="A"> 52 </option>
+	    		<option value="B"> 310</option>
+	    		<option value="C"> 150</option>
+	    		<option value="D"> 70 </option>
+	  		</select>
+	  		<br>
+	  	2. What is the sum of the first five terms of an indirectly proportional geometric sequence beginning at 1, with an k value of 1000. {Hint: 2nd term is 1000/2 = 500}
+		 	<select name="Submission2">
+	    		<option value="A"> 65.5 </option>
+	    		<option value="B"> 125  </option>
+	    		<option value="C"> 2000 </option>
+	    		<option value="D"> 1940.5 </option>
+	    	</select>
+		</form>
+	</div>
+
+ </body>
+
+<script type="text/javascript">
+  function sendAnswers(){
+    processAnswers( SequenceQ2Ans,
+      [document.Questions.Submission1.value,
+      document.Questions.Submission2.value
+      ])
+  }
+</script>
+
+</body>
+
+</html>
