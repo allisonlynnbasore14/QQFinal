@@ -2,7 +2,7 @@
   "name": "finalqq",
   "version": "1.0.0",
   "description": "math quzzes for high school students",
-  "main": "routes/index.js",
+  "main": "app.js",
   "dependencies": {
     "express": "4.15.3",
     "morgan": "^1.8.2"
