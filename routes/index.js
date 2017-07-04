@@ -279,6 +279,10 @@ var db = function(req, res){
   res.render('db')
 };
 
+var login = function(req, res){
+  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
+};
+
 module.exports.home = home;
 
 module.exports.DRulesCopy = DRulesCopy;
@@ -348,6 +352,8 @@ module.exports.FreePass = FreePass;
 module.exports.readingScores = readingScores;
 
 module.exports.db = db;
+
+module.exports.login = login;
 
 module.exports.AllDone = AllDone;
 

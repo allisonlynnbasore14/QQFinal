@@ -88,6 +88,9 @@
 	// Home
 	var Home = [];
 
+	// Login
+	var Login = [];
+
 	// These variabels are for getting the document guesses
 
 function CoverFunc(div) {

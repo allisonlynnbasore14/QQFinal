@@ -24,6 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', index.home);
 
+app.get('/login', index.login);
+
 app.get('/DRulesCopy', index.DRulesCopy);
 app.get('/DRulesQ2', index.DRulesQ2);
 app.get('/DRulesQ', index.DRulesQ);

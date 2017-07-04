@@ -17,6 +17,7 @@ var constants = module.exports = {
     	DICE: 'For a regular dice, answer the questions about Probability and Odds.',
     	SEQUENCE: 'Determine if the sequence has a difference, ratio or neither.  Then find the 10th term and use the formulas if necessary.',
         HOME: 'Click Submit to start your next quarter quiz.',
+        LOGIN: 'Type the name of the mathematician that was given to you and hit enter to get started!',
     },
     TITLE:{
         ANG: 'Angles',
@@ -33,5 +34,6 @@ var constants = module.exports = {
         DRU: 'Division Rules',
         DON: 'Horray!',
         HOM: 'Welcome to Quarter Quizzes!',
+        LOG: 'Login to QQ'
     }
 }
