@@ -26,7 +26,7 @@
 	    		<option value="C"> odd </option>
 	    		<option value="D"> even </option>
 	    	</select>
-	    	number that goes into numbers and is used to add fractions.
+	    	number that goes into numbers and is used to reduce fractions.
 	  		<br>
 	  	3. LCM stands for
 		 	<select name="Submission3">
@@ -44,15 +44,7 @@
     		<option value="C"> odd </option>
     		<option value="D"> even </option>
 		</select>
-		number that numbers go into and is used for 
-		<br>
-	  	5. -76, -63, -50, -37, -24, …
-		<select name="Submission5">
-			<option value="A"> 28 Difference </option>
-			<option value="B"> 41 Ratio </option>
-			<option value="C"> Neither </option>
-			<option value="D"> 41 Difference </option>
-	  		</select>
+		number that numbers go into and is used for adding fractions.
 		</form>
 	</div>
 
@@ -60,12 +52,11 @@
 
 <script type="text/javascript">
   function sendAnswers(){
-    processAnswers( SequenceQAns,
+    processAnswers( FractionQ2Ans,
       [document.Questions.Submission1.value,
       document.Questions.Submission2.value,
       document.Questions.Submission3.value,
       document.Questions.Submission4.value,
-      document.Questions.Submission5.value
       ])
   }
 </script>

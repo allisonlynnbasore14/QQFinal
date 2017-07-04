@@ -1,15 +1,16 @@
 
+
+
 var fs = require('fs')
 var mymodule = require('./mymodule.js')
 var http = require('http')
 var path = require('path');
+var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 
 var express = require('express');
-
-var logger = require('morgan');
 var index = require('./routes/index');
 var app = express();
 
@@ -73,9 +74,11 @@ app.get('/FractionLCMQ', index.FractionLCMQ);
 app.get('/FractionImpQ', index.FractionImpQ);
 app.get('/FractionQ', index.FractionQ);
 app.get('/FractionQ2', index.FractionQ2);
+app.get('/FractionStudy', index.FractionStudy);
 
 app.get('/SequenceQ', index.SequenceQ);
 app.get('/SequenceStudy', index.SequenceStudy);
+app.get('/SequenceQ2', index.SequenceQ2);
 
 app.get('/ExponentStudy', index.ExponentStudy);
 app.get('/ExponentQ', index.ExponentQ);

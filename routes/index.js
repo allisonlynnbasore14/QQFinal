@@ -26,7 +26,7 @@ var readingScores = function(req, res){
 
 
 var home = function(req, res){
-    res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM });
+    res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM});
 };
 //   //db.add(Lizard("Bob"));
 //   //this makes a new lizard but does not update the db in hard code
@@ -210,19 +210,23 @@ var FractionGCFQ = function(req, res){
 };
 
 var FractionLCMQ = function(req, res){
-  res.render("FractionLCMQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.FRA + ' II'});
+  res.render("FractionLCMQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.FRA + ' III'});
 };
 
 var FractionImpQ= function(req, res){
-  res.render("FractionImpQ", {"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.FRA + ' III'});
+  res.render("FractionImpQ", {"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.FRA + ' IV'});
 };
 
 var FractionQ= function(req, res){
-  res.render("FractionQ", {"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.FRA + ' IV'});
+  res.render("FractionQ", {"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.FRA + ' V'});
 };
 
 var FractionQ2 = function(req, res){
-  res.render("FractionQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.FRA + ' V'});
+  res.render("FractionQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.FRA + ' VI'});
+};
+
+var FractionStudy = function(req, res){
+  res.render("FractionStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.FRA + ' II'});
 };
 
 /////////////////////////////Sequences
@@ -233,6 +237,10 @@ var SequenceQ = function(req, res){
 
 var SequenceStudy = function(req, res){
   res.render("SequenceStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.SQU + ' I'});
+};
+
+var SequenceQ2 = function(req, res){
+  res.render("SequenceQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.SQU + ' III'});
 };
 
 /////////////////////////////Exponents
@@ -323,9 +331,11 @@ module.exports.FractionLCMQ = FractionLCMQ;
 module.exports.FractionImpQ = FractionImpQ;
 module.exports.FractionQ = FractionQ;
 module.exports.FractionQ2 = FractionQ2;
+module.exports.FractionStudy = FractionStudy;
 
 module.exports.SequenceQ = SequenceQ;
 module.exports.SequenceStudy = SequenceStudy;
+module.exports.SequenceQ2 = SequenceQ2;
 
 module.exports.ExponentStudy = ExponentStudy;
 module.exports.ExponentQ = ExponentQ;
