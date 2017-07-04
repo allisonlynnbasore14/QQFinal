@@ -93,7 +93,7 @@ app.get('/AllDone', index.AllDone);
 
 app.get('/db', index.db)
 
-app.listen(2000);
+//app.listen(2000);
 
 
 //ONE WAY TO WRITE IT
