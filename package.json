@@ -4,7 +4,7 @@
   "description": "math quzzes for high school students",
   "main": "routes/index.js",
   "dependencies": {
-    "express": "^4.15.3",
+    "express": "^4.15.3"
   },
   "devDependencies": {},
   "scripts": {
