@@ -4,12 +4,12 @@
   "description": "math quzzes for high school students",
   "main": "routes/index.js",
   "dependencies": {
-    "express": "^4.15.3",
-    "morgan" : "^1.8.2"
+    "express": "4.15.3",
+    "morgan": "^1.8.2"
   },
-    "engines": {
+  "engines": {
     "node": "7.10.0",
-    "npm" : "4.2.0"
+    "npm": "4.2.0"
   },
   "devDependencies": {},
   "scripts": {
