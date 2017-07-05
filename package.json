@@ -8,14 +8,15 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "pg": "6.4.0"
   },
   "engines": {
     "node": "7.10.0",
     "npm": "4.2.0"
   },
-  "repository" :
-  { "type" : "git"
+  "repository": {
+    "type": "git"
   },
   "devDependencies": {},
   "scripts": {
