@@ -18,7 +18,6 @@ var app = express();
 var pg = require('pg');
 
 pg.defaults.ssl = true;
-console.log('heeeeeeeeeeee')
 pg.connect(process.env.DATABASE_URL, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
@@ -116,7 +115,7 @@ app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
-//app.listen(2000);
+//app.listen(2200);
 
 //ONE WAY TO WRITE IT
 
