@@ -18,6 +18,7 @@ var app = express();
 var pg = require('pg');
 
 pg.defaults.ssl = true;
+console.log('heeeeeeeeeeee')
 pg.connect(process.env.DATABASE_URL, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
