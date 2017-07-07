@@ -29,6 +29,8 @@ pg.connect(process.env.DATABASE_URL, function(err, client) {
     });
 });
 
+console.log(process.env.DATABASE_URL);
+
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -112,11 +114,11 @@ app.get('/AheorkllDone', index.AllDone);
 
 app.get('/db', index.db)
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+// app.listen(process.env.PORT || 3000, function(){
+//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });
 
-//app.listen(2200);
+app.listen(2200);
 
 //ONE WAY TO WRITE IT
 
