@@ -132,7 +132,7 @@ app.get('/ExponentQ4', index.ExponentQ4);
 
 app.get('/FreePass', index.FreePass);
 
-app.get('/readingScores', index.readingScores);
+// app.get('/readingScores', index.readingScores);
 
 app.get('/AllDone', index.AllDone);
 
