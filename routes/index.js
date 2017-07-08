@@ -366,7 +366,7 @@ module.exports.ExponentQ4 = ExponentQ4;
 
 module.exports.FreePass = FreePass;
 
-module.exports.readingScores = readingScores;
+// module.exports.readingScores = readingScores;
 
 module.exports.login = login;
 
