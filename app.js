@@ -17,17 +17,41 @@ var app = express();
 
 var pg = require('pg');
 
-pg.defaults.ssl = true;
-pg.connect(process.env.DATABASE_URL, function(err, client) {
-  if (err) throw err;
-  console.log('Connected to postgres! Getting schemas...');
 
-  client
-    .query('SELECT table_schema,table_name FROM information_schema.tables;')
-    .on('row', function(row) {
-      console.log(JSON.stringify(row));
+app.get('/db', function (request, response) {
+  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('SELECT * FROM test_table', function(err, result) {
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+      else
+       { response.render('pages/db', {results: result.rows} ); }
     });
+  });
 });
+
+// pg.defaults.ssl = true;
+// pg.connect(process.env.DATABASE_URL, function(err, client) {
+//   if (err) throw err;
+//   console.log('Connected to postgres! Getting schemas...');
+
+//   client
+//     .query('SELECT table_schema,table_name FROM information_schema.tables;')
+//     .on('row', function(row) {
+//       console.log(JSON.stringify(row));
+//     });
+// });
+
+
+// const pg = require('pg');
+// const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
+
+// const client = new pg.Client(connectionString);
+// client.connect();
+// const query = client.query(
+//   'CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
+// query.on('end', () => { client.end(); });
+
 
 console.log(process.env.DATABASE_URL);
 
@@ -114,11 +138,11 @@ app.get('/AheorkllDone', index.AllDone);
 
 app.get('/db', index.db)
 
-// app.listen(process.env.PORT || 3000, function(){
-//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-// });
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
-app.listen(2200);
+//app.listen(2200);
 
 //ONE WAY TO WRITE IT
 
