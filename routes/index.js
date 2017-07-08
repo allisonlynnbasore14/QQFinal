@@ -40,7 +40,7 @@ function Entry(id, score){
 
 var home = function(req, res){
       pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('SELECT * FROM test_table', function(err, result) {
+    client.query('SELECT * FROM test_table WHERE id = 1' , function(err, result) {
       console.log(result, '99999999999999999999999999999999999999999999999999999')
       done();
       if (err)
