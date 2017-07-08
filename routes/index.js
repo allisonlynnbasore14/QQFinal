@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var constants = require('../constants');
-var pg = require('pg');
+//var pg = require('pg');
 //function that constructs and returns lizard object
 function Entry(id, score){
   var score = {
@@ -33,7 +33,7 @@ var home = function(req, res){
     //    { console.error(err); response.send("Error " + err); }
     // });
     // console.log(result)
-    // res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM});
+    res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM});
 };
 //   //db.add(Lizard("Bob"));
 //   //this makes a new lizard but does not update the db in hard code
