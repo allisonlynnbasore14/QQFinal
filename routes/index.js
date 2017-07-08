@@ -358,17 +358,17 @@ module.exports.login = login;
 
 module.exports.AllDone = AllDone;
 
-var Liz = function(req, res){
-  var lizards = db.getAll();
-  console.log(lizards)
-  var msg = "Lizard names are: ";
-  lizards.forEach(function(liz){
-    msg = msg + liz.name + ",";
-  })
-  res.render("lizards", {"lizard": [
-  msg]
-});
-};
+// var Liz = function(req, res){
+//   var lizards = db.getAll();
+//   console.log(lizards)
+//   var msg = "Lizard names are: ";
+//   lizards.forEach(function(liz){
+//     msg = msg + liz.name + ",";
+//   })
+//   res.render("lizards", {"lizard": [
+//   msg]
+// });
+// };
 
 // //get all lizard names
 // router.get('/names', function(req, res, next){
