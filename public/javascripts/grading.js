@@ -2,6 +2,7 @@
 // This file has the answers to all the quizzes as an array next to the name of the file.
 // It also has the grading functions
 
+	var pg = require('pg');
 
 	//Angles
 	var AnglesMatchAns=['G','C','D','B','A','F'];
@@ -138,7 +139,6 @@ function TurnBluePrimeQ(id, val){
 }
 
 function login(name){
-	console.log(name, '5555555555555555555555555')
 	window.location.href='/'
 }
 
