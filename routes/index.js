@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var constants = require('../constants');
-var pg = require('pg');
+//var pg = require('pg');
 //function that constructs and returns lizard object
 function Entry(id, score){
   var score = {
