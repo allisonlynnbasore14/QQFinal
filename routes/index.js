@@ -26,14 +26,14 @@ var readingScores = function(req, res){
 
 
 var home = function(req, res){
-      pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('SELECT * FROM test_table', function(err, result) {
-      done();
-      if (err)
-       { console.error(err); response.send("Error " + err); }
-    });
-    console.log(result)
-    res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM});
+    //   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    // client.query('SELECT * FROM test_table', function(err, result) {
+    //   done();
+    //   if (err)
+    //    { console.error(err); response.send("Error " + err); }
+    // });
+    // console.log(result)
+    // res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM});
 };
 //   //db.add(Lizard("Bob"));
 //   //this makes a new lizard but does not update the db in hard code
