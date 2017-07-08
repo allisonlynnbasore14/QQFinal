@@ -55,8 +55,6 @@ var app = express();
 // query.on('end', () => { client.end(); });
 
 
-console.log(process.env.DATABASE_URL);
-
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -138,7 +136,7 @@ app.get('/readingScores', index.readingScores);
 
 app.get('/AllDone', index.AllDone);
 
-app.get('/db', index.db)
+// app.get('/db', index.db)
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
