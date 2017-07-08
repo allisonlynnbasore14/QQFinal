@@ -35,5 +35,77 @@ var constants = module.exports = {
         DON: 'Horray!',
         HOM: 'Welcome to Quarter Quizzes!',
         LOG: 'Login to QQ'
+    },
+    ORDER:{
+
+        PER1: 1,
+        PER2: 2,
+        PER3: 3,
+        PER4: 4,
+        PER5: 5,
+
+        PRO1: 6,
+        PRO2: 7,
+        PRO3: 8,
+        PRO4: 9,
+        PRO5: 10,
+        PRO6: 11,
+
+        FRE1: 12,
+
+        DRU1: 13,
+        DRU2: 14,
+        DRU3: 15,
+
+        PIN1: 16,
+        PIN2: 17,
+        PIN3: 18,
+        PIN4: 19,
+        PIN5: 20,
+
+        EXP1: 21,
+        EXP2: 22,
+        EXP3: 23,
+        EXP4: 24,
+        EXP5: 25,
+
+        FRA1: 26,
+        FRA2: 27,
+        FRA3: 28,
+        FRA4: 29,
+        FRA5: 30,
+        FRA6: 31,
+
+        FRE2: 32,
+
+        SQU1: 33,
+        SQU2: 34,
+        SQU3: 35,
+        SQU4: 36,
+        SQU5: 37,
+
+        PTH1: 38,
+        PTH2: 39,
+        PTH3: 40,
+
+        ANG1: 41,
+        ANG2: 42,
+        ANG3: 43,
+        ANG4: 44,
+        ANG5: 45,
+
+        FRE3: 46,
+
+        PRB1: 47,
+        PRB2: 48,
+        PRB3: 49,
+        PRB4: 50,
+        PRB5: 51,
+
+        SEQ1: 52,
+        SEQ2: 53,
+        SEQ3: 54,
+
+        DON: 55,
     }
 }

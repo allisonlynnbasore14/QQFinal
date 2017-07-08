@@ -41,15 +41,7 @@ function Entry(id, score){
 var home = function(req, res){
       pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_table WHERE id = 1' , function(err, result) {
-      console.log(result, '99999999999999999999999999999999999999999999999999999')
       var name = result.rows[0].name;
-      console.log(name)
-      done();
-      if (err)
-       { console.error(err); response.send("Error " + err); }
-    });
-    client.query('SELECT name FROM test_table where id = 1', function(err, result) {
-      console.log(result, '7777777777777777777777799')
       done();
       if (err)
        { console.error(err); response.send("Error " + err); }
