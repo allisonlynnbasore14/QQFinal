@@ -14,9 +14,6 @@ var express = require('express');
 var index = require('./routes/index');
 var app = express();
 
-
-var pg = require('pg');
-
 // app.get('/db', function (request, response) {
 //   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 //     client.query('SELECT * FROM test_table', function(err, result) {
@@ -139,7 +136,7 @@ app.get('/FreePass', index.FreePass);
 
 app.get('/readingScores', index.readingScores);
 
-app.get('/AheorkllDone', index.AllDone);
+app.get('/AllDone', index.AllDone);
 
 app.get('/db', index.db)
 
