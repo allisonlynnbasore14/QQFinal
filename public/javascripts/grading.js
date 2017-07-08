@@ -2,8 +2,6 @@
 // This file has the answers to all the quizzes as an array next to the name of the file.
 // It also has the grading functions
 
-	var pg = require('pg');
-
 	//Angles
 	var AnglesMatchAns=['G','C','D','B','A','F'];
 	var AnglesQAns=['C','D','A','B','A','D','C'];
@@ -136,10 +134,6 @@ function TurnBluePrimeQ(id, val){
 		UnCountPrimeQ(id, val)
 		clickCount[val-1] = clickCount[val-1] + 1
 	}
-}
-
-function login(name){
-	window.location.href='/'
 }
 
 function CountPrimeQ(id, val){

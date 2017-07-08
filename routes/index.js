@@ -12,6 +12,12 @@ function Entry(id, score){
   return score;
 }
 
+
+function login(name){
+  window.location.href='/'
+  console.log(name, 'JJJJJjjjjjj')
+}
+
 // var readingScores = function(req, res){
 //   db.add(Entry("Bob", '90%'));
 //   //this makes a new lizard but does not update the db in hard code
