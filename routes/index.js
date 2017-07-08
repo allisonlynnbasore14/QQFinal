@@ -46,6 +46,8 @@ var home = function(req, res){
       if (err)
        { console.error(err); response.send("Error " + err); }
     });
+    var query = pgClient.query("SELECT name from test_table where id = 1");
+    console.log(query, '0000000000000000000000000000000000')
     res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM});
   });
 };
