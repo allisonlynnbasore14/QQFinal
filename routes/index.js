@@ -30,9 +30,8 @@ var home = function(req, res){
     client.query('SELECT * FROM test_table', function(err, result) {
       done();
       if (err)
-       { console.error(err); response.send("Error " + err); }
+       { console.error(err) }
     });
-    console.log(result)
     res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM});
   });
 };
