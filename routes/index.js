@@ -24,7 +24,7 @@ var readingScores = function(req, res){
   res.render("readingScores", {"SCORE": [ msg ] } );
 };
 
-      console.log(process.env.DATABASE_URL)
+      console.log(process.env.DATABASE_URL, 'ppppppppppppppppppppppppppppppppppppppppppppppppppp')
 var home = function(req, res){
       pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
