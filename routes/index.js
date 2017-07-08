@@ -46,8 +46,12 @@ var home = function(req, res){
       if (err)
        { console.error(err); response.send("Error " + err); }
     });
-    var query = client.query("SELECT name FROM test_table where id = 1");
-    console.log(query, '0000000000000000000000000000000000')
+    client.query('SELECT name FROM test_table where id = 1', function(err, result) {
+      console.log(result, '7777777777777777777777799')
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+    });
     res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM});
   });
 };
