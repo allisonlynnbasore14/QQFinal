@@ -12,23 +12,36 @@ function Entry(id, score){
   return score;
 }
 
-var readingScores = function(req, res){
-  db.add(Entry("Bob", '90%'));
-  //this makes a new lizard but does not update the db in hard code
-  var scores = db.getAll();
-  console.log(scores)
-  var msg = "The scores are: ";
-  scores.forEach(function(scr){
-    msg = msg + scr.id + "," + scr.score;
-  })
-  res.render("readingScores", {"SCORE": [ msg ] } );
-};
+// var readingScores = function(req, res){
+//   db.add(Entry("Bob", '90%'));
+//   //this makes a new lizard but does not update the db in hard code
+//   var scores = db.getAll();
+//   console.log(scores)
+//   var msg = "The scores are: ";
+//   scores.forEach(function(scr){
+//     msg = msg + scr.id + "," + scr.score;
+//   })
+//   res.render("readingScores", {"SCORE": [ msg ] } );
+// };
+
+
+
+// const pg = require('pg');
+// const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
+
+// const client = new pg.Client(connectionString);
+// client.connect();
+// const query = client.query(
+//   'CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
+// query.on('end', () => { client.end(); });
+
+// insert into test_table values (61, 'testNumber1');
+
 
 var home = function(req, res){
       pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
-
-      console.log(result, 'ppppppppppppppppppppppppppppppppppppppppppppppppppp')
+      console.log(result)
       done();
       if (err)
        { console.error(err); response.send("Error " + err); }
