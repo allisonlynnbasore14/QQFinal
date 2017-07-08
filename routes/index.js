@@ -278,10 +278,6 @@ var AllDone = function(req, res){
   res.render("AllDone",{"title": constants.TITLE.DON});
 };
 
-var db = function(req, res){
-  res.render('db')
-};
-
 var login = function(req, res){
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
 };

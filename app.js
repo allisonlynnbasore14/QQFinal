@@ -17,17 +17,31 @@ var app = express();
 
 var pg = require('pg');
 
-app.get('/db', function (request, response) {
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+// app.get('/db', function (request, response) {
+//   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+//     client.query('SELECT * FROM test_table', function(err, result) {
+//       done();
+//       if (err)
+//        { console.error(err); response.send("Error " + err); }
+//       else
+//        {app.get('/db', index.db); }
+//     });
+//   });
+// });
+
+var db = function(req, res){
+	  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
       done();
       if (err)
        { console.error(err); response.send("Error " + err); }
       else
-       {app.get('/db', index.db); }
+         {res.render('db')}
     });
   });
-});
+};
+
+//module.exports.db = db;
 
 // pg.defaults.ssl = true;
 // pg.connect(process.env.DATABASE_URL, function(err, client) {
