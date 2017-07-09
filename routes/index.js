@@ -18,6 +18,8 @@ function login(name){
   console.log(name, 'JJJJJjjjjjj')
 }
 
+
+module.exports.login = login;
 // var readingScores = function(req, res){
 //   db.add(Entry("Bob", '90%'));
 //   //this makes a new lizard but does not update the db in hard code
@@ -304,6 +306,7 @@ var AllDone = function(req, res){
 
 var login = function(req, res){
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
+  console.log(req, 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk')
 };
 
 module.exports.home = home;
