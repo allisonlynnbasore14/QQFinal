@@ -2,7 +2,7 @@
 // This file has the answers to all the quizzes as an array next to the name of the file.
 // It also has the grading functions
 
-	import { pg } from 'pg';
+	import 'pg' as pg;
 
 
 	//Angles
