@@ -2,9 +2,6 @@
 // This file has the answers to all the quizzes as an array next to the name of the file.
 // It also has the grading functions
 
-	import 'pg' as pg;
-
-
 	//Angles
 	var AnglesMatchAns=['G','C','D','B','A','F'];
 	var AnglesQAns=['C','D','A','B','A','D','C'];
