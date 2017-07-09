@@ -136,10 +136,10 @@ function TurnBluePrimeQ(id, val){
 	}
 }
 
-function login(name){
-	console.log('here at grading')
-	window.location.href='/'
-}
+// function login(name){
+// 	console.log('here at')
+// 	window.location.href='/'
+// }
 
 function CountPrimeQ(id, val){
 	var newcolor = "#b30000";
