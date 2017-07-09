@@ -2,6 +2,9 @@
 // This file has the answers to all the quizzes as an array next to the name of the file.
 // It also has the grading functions
 
+	import { pg } from 'pg';
+
+
 	//Angles
 	var AnglesMatchAns=['G','C','D','B','A','F'];
 	var AnglesQAns=['C','D','A','B','A','D','C'];
@@ -136,10 +139,10 @@ function TurnBluePrimeQ(id, val){
 	}
 }
 
-// function login(name){
-// 	console.log('here at')
-// 	window.location.href='/'
-// }
+function login(name){
+	console.log('here at')
+	window.location.href='/'
+}
 
 function CountPrimeQ(id, val){
 	var newcolor = "#b30000";
