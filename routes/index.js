@@ -13,13 +13,22 @@ function Entry(id, score){
 }
 
 
-function login(name){
-  window.location.href='/'
-  console.log(name, 'JJJJJjjjjjj')
-}
+// function login(name){
+//   window.location.href='/'
+//   console.log(name, 'JJJJJjjjjjj')
+// }
+
+// module.exports={
+//     loginREC: function(req, res){
+//         console.log("Hello world.");
+//         res.status(200).end();
+//     }
+// };
 
 
-module.exports.login = login;
+
+
+//module.exports.login = login;
 // var readingScores = function(req, res){
 //   db.add(Entry("Bob", '90%'));
 //   //this makes a new lizard but does not update the db in hard code
@@ -47,15 +56,15 @@ module.exports.login = login;
 
 
 var home = function(req, res){
-      pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('SELECT * FROM test_table WHERE id = 1' , function(err, result) {
-      var name = result.rows[0].name;
-      done();
-      if (err)
-       { console.error(err); response.send("Error " + err); }
-    });
-    res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM});
-  });
+    //   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    // client.query('SELECT * FROM test_table WHERE id = 1' , function(err, result) {
+    //   var name = result.rows[0].name;
+    //   done();
+    //   if (err)
+    //    { console.error(err); response.send("Error " + err); }
+    // });
+     res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM});
+  // });
 };
 //   //db.add(Lizard("Bob"));
 //   //this makes a new lizard but does not update the db in hard code
@@ -69,6 +78,16 @@ var home = function(req, res){
 //   msg]
 // }
 // );
+// };
+
+var login = router.get('/login', function(req, res, next) {
+  var url = String(req.originalUrl).split('?')[1].split('+')[1];
+  console.log(url)
+  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
+})
+
+// var login = function(req, res){
+//   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
 // };
 
 /////////////////////////////Division Rules
@@ -304,10 +323,6 @@ var AllDone = function(req, res){
   res.render("AllDone",{"title": constants.TITLE.DON});
 };
 
-var login = function(req, res){
-  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
-  console.log(req, 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk')
-};
 
 module.exports.home = home;
 

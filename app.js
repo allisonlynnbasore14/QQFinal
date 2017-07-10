@@ -14,6 +14,9 @@ var express = require('express');
 var index = require('./routes/index');
 var app = express();
 
+// app.post('./routes/index', index.loginREC);
+
+
 // app.get('/db', function (request, response) {
 //   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 //     client.query('SELECT * FROM test_table', function(err, result) {
@@ -142,7 +145,14 @@ app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
-//app.listen(2200);
+// app.listen(2200);
+
+
+// var server = app.listen(8080,function(){
+//     var host="127.0.0.1";
+//     var port="8080";
+//     console.log("App is listening at http://%s:%s\n",host,port);
+// });
 
 //ONE WAY TO WRITE IT
 
