@@ -80,7 +80,7 @@ var home = function(req, res){
 // );
 // };
 
-var login = router.get('/login', function(req, res, next) {
+var login = router.post('/login', function(req, res, next) {
   var url = String(req.originalUrl).split('?')[1].split('+')[1];
   console.log(url)
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
