@@ -47,7 +47,8 @@ function CleanLoginAndSend(name11){
       if (err)
        { console.error(err); response.send("Error " + err); }
     });
-  return name1;
+  	return name1;
+	});
 }
 
 app.get('/login', index.login);
@@ -122,11 +123,11 @@ app.get('/AllDone', index.AllDone);
 
 // app.get('/db', index.db)
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+// app.listen(process.env.PORT || 3000, function(){
+//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });
 
-// app.listen(2200);
+app.listen(2200);
 
 
 // var server = app.listen(8080,function(){
