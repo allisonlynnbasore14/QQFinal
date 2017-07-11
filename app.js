@@ -33,7 +33,7 @@ var pg = require('pg');
 
 app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
-  cont name = CleanLoginAndSend(req.body.firstname)
+  const name = CleanLoginAndSend(req.body.firstname)
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
 })
 
