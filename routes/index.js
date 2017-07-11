@@ -12,9 +12,9 @@ function Entry(id, score){
   return score;
 }
 
-var bodyParser = require('body-parser');
-// create application/x-www-form-urlencoded parser 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+// var bodyParser = require('body-parser');
+// // create application/x-www-form-urlencoded parser 
+// var urlencodedParser = bodyParser.urlencoded({ extended: false })
  
 // POST /login gets urlencoded bodies 
 // var login = router.post('/login', function(req, res, next) {

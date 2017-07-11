@@ -9,68 +9,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
-
 var express = require('express');
 var index = require('./routes/index');
 var app = express();
 
 var bodyParser = require('body-parser');
-// // create application/x-www-form-urlencoded parser 
-// var urlencodedParser = bodyParser.urlencoded({ extended: false })
- 
-// // POST /login gets urlencoded bodies 
-// app.post('/login', urlencodedParser, function (req, res) {
-//   if (!req.body) return res.sendStatus(400)
-//   res.send('welcome, ' + req.body.username)
-// })
-
-
-
-
-
-// app.post('./routes/index', index.loginREC);
-
-
-// app.get('/db', function (request, response) {
-//   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-//     client.query('SELECT * FROM test_table', function(err, result) {
-//       done();
-//       if (err)
-//        { console.error(err); response.send("Error " + err); }
-//       else
-//        {app.get('/db', index.db); }
-//     });
-//   });
-// });
-
-// var db = function(req, res){
-//   });
-// };
-
-//module.exports.db = db;
-
-// pg.defaults.ssl = true;
-// pg.connect(process.env.DATABASE_URL, function(err, client) {
-//   if (err) throw err;
-//   console.log('Connected to postgres! Getting schemas...');
-
-//   client
-//     .query('SELECT table_schema,table_name FROM information_schema.tables;')
-//     .on('row', function(row) {
-//       console.log(JSON.stringify(row));
-//     });
-// });
-
-
-// const pg = require('pg');
-// const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
-
-// const client = new pg.Client(connectionString);
-// client.connect();
-// const query = client.query(
-//   'CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
-// query.on('end', () => { client.end(); });
-
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -84,7 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', index.home);
 
 
-
+var router = express.Router();
+var constants = require('../constants');
+var pg = require('pg');
 app.post('/login', urlencodedParser, function (req, res) {
   console.log('hererr', req)
   if (!req.body) return res.sendStatus(400)
@@ -283,3 +228,58 @@ app.listen(process.env.PORT || 3000, function(){
 
 
 
+// // create application/x-www-form-urlencoded parser 
+// var urlencodedParser = bodyParser.urlencoded({ extended: false })
+ 
+// // POST /login gets urlencoded bodies 
+// app.post('/login', urlencodedParser, function (req, res) {
+//   if (!req.body) return res.sendStatus(400)
+//   res.send('welcome, ' + req.body.username)
+// })
+
+
+
+
+
+// app.post('./routes/index', index.loginREC);
+
+
+// app.get('/db', function (request, response) {
+//   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+//     client.query('SELECT * FROM test_table', function(err, result) {
+//       done();
+//       if (err)
+//        { console.error(err); response.send("Error " + err); }
+//       else
+//        {app.get('/db', index.db); }
+//     });
+//   });
+// });
+
+// var db = function(req, res){
+//   });
+// };
+
+//module.exports.db = db;
+
+// pg.defaults.ssl = true;
+// pg.connect(process.env.DATABASE_URL, function(err, client) {
+//   if (err) throw err;
+//   console.log('Connected to postgres! Getting schemas...');
+
+//   client
+//     .query('SELECT table_schema,table_name FROM information_schema.tables;')
+//     .on('row', function(row) {
+//       console.log(JSON.stringify(row));
+//     });
+// });
+
+
+// const pg = require('pg');
+// const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
+
+// const client = new pg.Client(connectionString);
+// client.connect();
+// const query = client.query(
+//   'CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
+// query.on('end', () => { client.end(); });
