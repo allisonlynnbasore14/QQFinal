@@ -48,7 +48,6 @@ function CleanLoginAndSend(name11){
 	       { console.error(err); response.send("Error " + err); }
 	    });
 	});
-	return name1;
 }
 
 app.get('/login', index.login);
