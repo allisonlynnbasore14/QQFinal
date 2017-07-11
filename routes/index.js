@@ -91,9 +91,9 @@ var home = function(req, res){
 // };
 
 
-// var login = function(req, res){
-//   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
-// };
+var login = function(req, res){
+  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
+};
 
 /////////////////////////////Division Rules
 
