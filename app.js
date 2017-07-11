@@ -28,13 +28,13 @@ app.get('/', index.home);
 
 
 var router = express.Router();
-var constants = require('../constants');
+var constants = require('./constants');
 var pg = require('pg');
 app.post('/login', urlencodedParser, function (req, res) {
   console.log('hererr', req)
   if (!req.body) return res.sendStatus(400)
   console.log(req.body)
-  res.render('home')
+  res.render('home'{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":3})
 })
 
 
