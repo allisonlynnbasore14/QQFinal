@@ -33,7 +33,7 @@ var pg = require('pg');
 
 app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
-  const name = CleanLoginAndSend(req.body.firstname)
+  var name = req.body.firstname.toUpperCase().trim();
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
 })
 
