@@ -30,13 +30,25 @@ app.get('/', index.home);
 var router = express.Router();
 var constants = require('./constants');
 var pg = require('pg');
+
 app.post('/login', urlencodedParser, function (req, res) {
-  console.log('hererr', req)
   if (!req.body) return res.sendStatus(400)
-  console.log(req.body)
-  res.render('home'{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":3})
+  CleanLoginAndSend(req.body.firstname)
+  res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":3});
 })
 
+function CleanLoginAndSend(name11){
+  name1 = name11.toUpperCase().trim();
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('SELECT * FROM users WHERE id = 1' , function(err, result) {
+      var status = result.rows[0].status;
+      console.log(status)
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+    });
+  return name1;
+}
 
 app.get('/login', index.login);
 
@@ -110,11 +122,11 @@ app.get('/AllDone', index.AllDone);
 
 // app.get('/db', index.db)
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+// app.listen(process.env.PORT || 3000, function(){
+//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });
 
-// app.listen(2200);
+app.listen(2200);
 
 
 // var server = app.listen(8080,function(){
