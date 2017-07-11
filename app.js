@@ -33,21 +33,21 @@ var pg = require('pg');
 
 app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
-  var name = req.body.firstname.toUpperCase().trim();
+  var name = CleanLoginAndSend(req.body.firstname);
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
 })
 
 function CleanLoginAndSend(name){
   name = name.toUpperCase().trim();
- //    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-	//     client.query('SELECT * FROM users WHERE id = 1' , function(err, result) {
-	//       var status = result.rows[0].status;
-	//       console.log(status)
-	//       done();
-	//       if (err)
-	//        { console.error(err); response.send("Error " + err); }
-	//     });
-	// });
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+	    client.query('SELECT * FROM users WHERE id = 1' , function(err, result) {
+	      var status = result.rows[0].status;
+	      console.log(status)
+	      done();
+	      if (err)
+	       { console.error(err); response.send("Error " + err); }
+	    });
+	});
 	return name
 }
 
