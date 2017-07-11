@@ -48,9 +48,9 @@ app.post('/login', urlencodedParser, function (req, res) {
 function CleanLoginAndSend(name){
   name = name.toUpperCase().trim();
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-	    client.query('SELECT * FROM users WHERE id = 1' , function(err, result) {
+	    client.query('SELECT status FROM users WHERE id = 1' , function(err, result) {
 	    	console.log(result, '9999999999999999')
-	      var status = result.status;
+	      // var status = result.status;
 	      done();
 	      if (err)
 	       { console.error(err); response.send("Error " + err); }
