@@ -14,6 +14,20 @@ var express = require('express');
 var index = require('./routes/index');
 var app = express();
 
+var bodyParser = require('body-parser');
+// // create application/x-www-form-urlencoded parser 
+// var urlencodedParser = bodyParser.urlencoded({ extended: false })
+ 
+// // POST /login gets urlencoded bodies 
+// app.post('/login', urlencodedParser, function (req, res) {
+//   if (!req.body) return res.sendStatus(400)
+//   res.send('welcome, ' + req.body.username)
+// })
+
+
+
+
+
 // app.post('./routes/index', index.loginREC);
 
 
@@ -58,7 +72,7 @@ var app = express();
 // query.on('end', () => { client.end(); });
 
 
-
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use(logger('dev'));
@@ -68,6 +82,15 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', index.home);
+
+
+
+app.post('/', urlencodedParser, function (req, res) {
+  console.log('hererr', req)
+  if (!req.body) return res.sendStatus(400)
+  console.log(req.body)
+})
+
 
 app.get('/login', index.login);
 

@@ -12,6 +12,16 @@ function Entry(id, score){
   return score;
 }
 
+var bodyParser = require('body-parser');
+// create application/x-www-form-urlencoded parser 
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+ 
+// POST /login gets urlencoded bodies 
+// var login = router.post('/login', function(req, res, next) {
+//   var url = String(req.originalUrl).split('?')[1].split('+')[1];
+//   console.log(url)
+//   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
+// })
 
 // function login(name){
 //   window.location.href='/'
@@ -63,7 +73,7 @@ var home = function(req, res){
     //   if (err)
     //    { console.error(err); response.send("Error " + err); }
     // });
-     res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM});
+     res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":3});
   // });
 };
 //   //db.add(Lizard("Bob"));
@@ -80,15 +90,10 @@ var home = function(req, res){
 // );
 // };
 
-var login = router.post('/login', function(req, res, next) {
-  var url = String(req.originalUrl).split('?')[1].split('+')[1];
-  console.log(url)
-  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
-})
 
-// var login = function(req, res){
-//   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
-// };
+var login = function(req, res){
+  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
+};
 
 /////////////////////////////Division Rules
 

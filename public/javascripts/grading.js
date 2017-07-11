@@ -101,6 +101,14 @@ function CoverFunc(div) {
     	}
 }
 
+function ProgressFill(progressNum){
+	for (p=progressNum; p > 0; p--){
+		var newcolor ="#b30000";
+		var oldcolor = "#F0F8FF";
+		document.getElementById(p).style.backgroundColor = oldcolor;
+		document.getElementById(p).style.color = newcolor;
+	}
+}
 
 function checker(answer,correct){
 	if (answer == correct){
