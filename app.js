@@ -40,15 +40,15 @@ app.post('/login', urlencodedParser, function (req, res) {
 function CleanLoginAndSend(name11){
   name1 = name11.toUpperCase().trim();
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('SELECT * FROM users WHERE id = 1' , function(err, result) {
-      var status = result.rows[0].status;
-      console.log(status)
-      done();
-      if (err)
-       { console.error(err); response.send("Error " + err); }
-    });
-  	return name1;
+	    client.query('SELECT * FROM users WHERE id = 1' , function(err, result) {
+	      var status = result.rows[0].status;
+	      console.log(status)
+	      done();
+	      if (err)
+	       { console.error(err); response.send("Error " + err); }
+	    });
 	});
+	return name1;
 }
 
 app.get('/login', index.login);
