@@ -89,7 +89,8 @@ app.post('/login', urlencodedParser, function (req, res) {
   console.log('hererr', req)
   if (!req.body) return res.sendStatus(400)
   console.log(req.body)
-  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
+	app.get('/login', index.login);
+  //res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
 })
 
 
