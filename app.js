@@ -50,14 +50,20 @@ app.post('/login', urlencodedParser, function (req, res) {
       return res.status(500).json({success: false, data: err});
     }
 	//client.query("SELECT status FROM users WHERE id = 1");
-	    const query = client.query("SELECT status FROM users WHERE user_id = '1'"), function(err, result) {
-	   		//console.log(result.rows[0],'9999999999999999')
-	      //var status = result.status;
+	    // const query = client.query("SELECT status FROM users WHERE user_id = '1'"), function(err, result) {
+	   	// 	//console.log(result.rows[0],'9999999999999999')
+	    //   //var status = result.status;
 
-		    // query.on('row', (row) => {
-		    //   results.push(row);
-		    // });
-		    var status = String(results) + 'helllo'
+		   //  // query.on('row', (row) => {
+		   //  //   results.push(row);
+		   //  // });
+		   //  var status = String(results) + 'helllo'
+	    const query = client.query("SELECT * FROM users WHERE user_id = '1'");
+	    // Stream results back one row at a time
+	    query.on('row', (row) => {
+	      results.push(row);
+	    });
+	    console.log(results)
 	      done();
 	    };
 	  });
