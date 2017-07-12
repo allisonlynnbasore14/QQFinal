@@ -1,6 +1,4 @@
 
-
-
 var fs = require('fs')
 var mymodule = require('./mymodule.js')
 var http = require('http')
@@ -11,6 +9,7 @@ var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var express = require('express');
 var index = require('./routes/index');
+var users = require('./users');
 var app = express();
 
 var bodyParser = require('body-parser');
@@ -42,7 +41,7 @@ const client = new pg.Client(connectionString);
 app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
-
+  var id = GetIdFromName(name);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
    	if(err) {
       done();
@@ -51,7 +50,7 @@ app.post('/login', urlencodedParser, function (req, res) {
     }
     client.query('SELECT * FROM users WHERE user_id=$1', ['1'] , function(err, result) {
 	  var status = result.rows[0].status;
-	  console.log(status)
+	  
 	  //since the row object is just a hash, it can be accessed also as follows
 	  // OR console.log('name: %s', result.rows[0]['status']);
 	});
@@ -78,6 +77,11 @@ app.post('/login', urlencodedParser, function (req, res) {
 function CleanLoginAndSend(name){
   name = name.toUpperCase().trim();
   return name
+}
+
+function GetIdFromName(name){
+  console.log(users.name.id)
+  return users.name.id
 }
 
 
