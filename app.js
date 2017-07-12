@@ -57,9 +57,8 @@ app.post('/login', urlencodedParser, function (req, res) {
 	      		results.push(row);
 	    	});
 	      //var status = result.status;
-	      console.log(query)
+	      //console.log(query)
 	      done();
-	      console.log(res.json(results));
 	    });
 	});
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
