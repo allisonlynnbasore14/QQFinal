@@ -59,7 +59,7 @@ app.post('/login', urlencodedParser, function (req, res) {
 		      results.push(row);
 		      console.log(row)
 		    });
-		    var status = results.String().split('{')[1]
+		    var status = String(results).split('{')[1]
 		    console.log(status)
 	      done();
 	    });
