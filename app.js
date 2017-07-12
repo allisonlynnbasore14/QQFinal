@@ -51,6 +51,7 @@ app.post('/login', urlencodedParser, function (req, res) {
     }
     client.query("SELECT * FROM users WHERE user_id = '1'", function(err, result) {
     	var status = result.row[0].status;
+    	console.log(status)
 	  // OR 'name: %s', result.rows[0]['status']);
 	});
 	//client.query("SELECT status FROM users WHERE id = 1");
