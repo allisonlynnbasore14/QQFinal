@@ -51,7 +51,7 @@ app.post('/login', urlencodedParser, function (req, res) {
     }
 	//client.query("SELECT status FROM users WHERE id = 1");
 	    const query = client.query("SELECT status FROM users WHERE user_id = '1'" , function(err, result) {
-	   		console.log(result.rows, '9999999999999999')
+	   		console.log(result,'9999999999999999')
 	      //var status = result.status;
 	      //console.log(query)
 	      done();
