@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var express = require('express');
 var index = require('./routes/index');
-var users = require('./users');
+var users = require('./users.js');
 var app = express();
 
 var bodyParser = require('body-parser');
