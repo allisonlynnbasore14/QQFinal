@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var express = require('express');
 var index = require('./routes/index');
-var users = require('./users');
+var USERS = require('./users.js');
 var app = express();
 
 var bodyParser = require('body-parser');
@@ -48,7 +48,7 @@ app.post('/login', urlencodedParser, function (req, res) {
       console.log(err);
       return res.status(500).json({success: false, data: err});
     }
-    client.query('SELECT * FROM users WHERE user_id=$1', ['1'] , function(err, result) {
+    client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
 	  var status = result.rows[0].status;
 	  
 	  //since the row object is just a hash, it can be accessed also as follows
@@ -80,10 +80,13 @@ function CleanLoginAndSend(name){
 }
 
 function GetIdFromName(name){
-  console.log(users.name.id)
-  return users.name.id
+  var userNames = {'EUCLID':'1'}
+  // JSON.parse(name, (key, value) => { // log the current property name, the last is "".    // return the unchanged property value.
+  // });
+  return userNames[name];
+  //console.log(USERS.'EUCLID'.id)
+  //return USERS.name.id
 }
-
 
 
   // if (!req.body) return res.sendStatus(400)
@@ -173,11 +176,11 @@ app.get('/AllDone', index.AllDone);
 
 // app.get('/db', index.db)
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+// app.listen(process.env.PORT || 3000, function(){
+//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });
 
-// app.listen(2200);
+app.listen(2200);
 
 
 // var server = app.listen(8080,function(){
