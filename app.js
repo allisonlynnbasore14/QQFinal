@@ -55,11 +55,9 @@ app.post('/login', urlencodedParser, function (req, res) {
 	   		//console.log(result.rows[0],'9999999999999999')
 	      //var status = result.status;
 
-	      query.on("row", function(row,result){
-
-			result.addRow(row);
-			console.log(result)
-		 });
+		    query.on('row', (row) => {
+		      results.push(row);
+		    });
 
 	      done();
 	    });
