@@ -53,7 +53,7 @@ app.post('/login', urlencodedParser, function (req, res) {
 	    const query = client.query('SELECT status FROM users WHERE id = 1' , function(err, result) {
 	   		//console.log(result, '9999999999999999')
 	      //var status = result.status;
-	      console.log(result)
+	      console.log(query)
 	      done();
 	    });
 	});
