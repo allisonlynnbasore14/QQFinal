@@ -49,10 +49,9 @@ app.post('/login', urlencodedParser, function (req, res) {
       console.log(err);
       return res.status(500).json({success: false, data: err});
     }
-    client.query("SELECT * FROM users", function(err, result) {
+    client.query('SELECT * FROM users', function(err, result) {
     	var status = result.row[0].status;
-    	console.log(status)
-	  // OR 'name: %s', result.rows[0]['status']);
+	  // OR'name: %s', result.rows[0]['status']);
 	});
 	//client.query("SELECT status FROM users WHERE id = 1");
 	    // const query = client.query("SELECT status FROM users WHERE user_id = '1'"), function(err, result) {
