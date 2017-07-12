@@ -34,7 +34,7 @@ var pg = require('pg');
 const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
 
 const client = new pg.Client(connectionString);
-client.connect();
+//client.connect();
 // const query = client.query(
 //   'CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
 // query.on('end', () => { client.end(); });
@@ -42,23 +42,46 @@ client.connect();
 app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
+
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+   	if(err) {
+      done();
+      console.log(err);
+      return res.status(500).json({success: false, data: err});
+    }
+	//client.query("SELECT status FROM users WHERE id = 1");
+	    const query = client.query('SELECT status FROM users WHERE id = 1' , function(err, result) {
+	   		//console.log(result, '9999999999999999')
+	      //var status = result.status;
+	      console.log(result)
+	      done();
+	    });
+	});
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
 })
 
 function CleanLoginAndSend(name){
   name = name.toUpperCase().trim();
-    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-	    client.query('SELECT status FROM users WHERE id = 1' , function(err, result) {
-	    	console.log(result, '9999999999999999')
-	      // var status = result.status;
-	      done();
-	      if (err)
-	       { console.error(err); response.send("Error " + err); }
-	    });
-	});
-	return name
+  return name
 }
 
+
+
+  // if (!req.body) return res.sendStatus(400)
+  // var name = CleanLoginAndSend(req.body.firstname);
+  // pg.connect(connectionString, (err, client, done) => {
+  //   // Handle connection errors
+  //   if(err) {
+  //     done();
+  //     console.log(err);
+  //     return res.status(500).json({success: false, data: err});
+  //   }
+  //   const query = client.query('SELECT * FROM items ORDER BY id ASC');
+  //   // After all data is returned, close connection and return results
+  //   query.on('end', () => {
+  //     done();
+  //     console.log(results)
+  //     //return res.json(results);
 app.get('/login', index.login);
 
 app.get('/DRulesCopy', index.DRulesCopy);
