@@ -64,7 +64,6 @@ app.post('/login', urlencodedParser, function (req, res) {
 	      console.log(result)
 	      done();
 	    });
-	});
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
 })
 
