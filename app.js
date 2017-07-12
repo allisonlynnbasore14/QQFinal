@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var express = require('express');
 var index = require('./routes/index');
-var users = require('./users.js');
+var users = require('./users');
 var app = express();
 
 var bodyParser = require('body-parser');
@@ -30,7 +30,7 @@ var router = express.Router();
 var constants = require('./constants');
 var pg = require('pg');
 // const pg = require('pg');￼OK
-const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
+const connectionString = process.env.DATABASE_URL || 'postgres://localhost:2200';
 const results = [];
 const client = new pg.Client(connectionString);
 //client.connect();
