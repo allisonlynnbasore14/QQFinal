@@ -57,6 +57,7 @@ app.post('/login', urlencodedParser, function (req, res) {
 
 		    query.on('row', (row) => {
 		      results.push(row);
+		      console.log(row)
 		    });
 		    console.log(results)
 
