@@ -49,7 +49,7 @@ app.post('/login', urlencodedParser, function (req, res) {
       console.log(err);
       return res.status(500).json({success: false, data: err});
     }
-    client.query('SELECT * FROM users WHERE user_id=$1', function(err, result) {
+    client.query('SELECT * FROM users WHERE user_id=1', function(err, result) {
 	  var status = result.rows[0].status;
 	  console.log(status)
 	  //since the row object is just a hash, it can be accessed also as follows
