@@ -60,7 +60,7 @@ app.post('/login', urlencodedParser, function (req, res) {
 		    var status = String(results) + 'helllo'
 	      done();
 	    };
-	    
+	  });
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
 })
 
