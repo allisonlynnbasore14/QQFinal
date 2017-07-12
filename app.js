@@ -51,11 +51,11 @@ app.post('/login', urlencodedParser, function (req, res) {
     }
 	//client.query("SELECT status FROM users WHERE id = 1");
 	    const query = client.query('SELECT * FROM users' , function(err, result) {
-	   		//console.log(result, '9999999999999999')
+	   		console.log(result, '9999999999999999')
 
-	   	query.on('row', (row) => {
-      		results.push(row);
-    	});
+		   	query.on('row', (row) => {
+	      		results.push(row);
+	    	});
 	      //var status = result.status;
 	      console.log(query)
 	      done();
