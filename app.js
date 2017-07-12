@@ -57,10 +57,8 @@ app.post('/login', urlencodedParser, function (req, res) {
 
 		    query.on('row', (row) => {
 		      results.push(row);
-		      console.log(row)
 		    });
-		    var status = String(results).split('{')[1]
-		    console.log(status)
+		    var status = String(results) + 'helllo'
 	      done();
 	    });
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
