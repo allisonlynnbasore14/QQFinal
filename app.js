@@ -30,9 +30,9 @@ app.get('/', index.home);
 var router = express.Router();
 var constants = require('./constants');
 var pg = require('pg');
-// const pg = require('pg');
+// const pg = require('pg');￼OK
 const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
-
+const results = [];
 const client = new pg.Client(connectionString);
 //client.connect();
 // const query = client.query(
@@ -52,9 +52,14 @@ app.post('/login', urlencodedParser, function (req, res) {
 	//client.query("SELECT status FROM users WHERE id = 1");
 	    const query = client.query('SELECT * FROM users' , function(err, result) {
 	   		//console.log(result, '9999999999999999')
+
+	   	query.on('row', (row) => {
+      		results.push(row);
+    	});
 	      //var status = result.status;
 	      console.log(query)
 	      done();
+	      console.log(res.json(results));
 	    });
 	});
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
