@@ -63,12 +63,12 @@ app.post('/login', urlencodedParser, function (req, res) {
 		   //  //   results.push(row);
 		   //  // });
 		   //  var status = String(results) + 'helllo'
-	    const query = client.query("SELECT * FROM users WHERE user_id = '1'");
-	    // Stream results back one row at a time
-	    query.on('row', (row) => {
-	      results.push(row);
-	    });
-	    console.log(query)
+	    // const query = client.query("SELECT * FROM users WHERE user_id = '1'");
+	    // // Stream results back one row at a time
+	    // query.on('row', (row) => {
+	    //   results.push(row);
+	    // });
+	    // console.log(query)
 	      done();
 	  });
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
