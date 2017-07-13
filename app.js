@@ -108,10 +108,14 @@ function GetIdFromName(name){
     'ADA' : '20',
     'NOETHER': '21'
   }
-
+  if (userNames[name] != undefined){
+    return userNames[name];
+  } else{
+    return null;
+  }
   // JSON.parse(name, (key, value) => { // log the current property name, the last is "".    // return the unchanged property value.
   // });
-  return userNames[name];
+  //return userNames[name];
   //console.log(USERS.'EUCLID'.id)
   //return USERS.name.id
 }
