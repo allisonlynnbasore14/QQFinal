@@ -103,10 +103,13 @@ function CoverFunc(div) {
 
 function ProgressFill(progressNum){
 	for (p=progressNum; p > 0; p--){
-		var newcolor ="#b30000";
-		var oldcolor = "#F0F8FF";
+		if (p == 7|| p == 26 || p == 35 || p > 41){
+			console.log('Free Pass')
+			continue
+		} 
+		var oldcolor = "#004d99";
 		document.getElementById(p).style.backgroundColor = oldcolor;
-		document.getElementById(p).style.color = newcolor;
+		document.getElementById(p).style.color = 'white';
 	}
 }
 

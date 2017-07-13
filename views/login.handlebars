@@ -11,10 +11,10 @@
 	<div class = "Content">
 		<form action= "/login" id = "questions" name = "Questions" method="post">
 		    <input type="text" id="loginBox" name="firstname" placeholder=" Name">
-        <input type="submit" value="OK">
+        <input type="submit" class= "loginSubmit" id = "LoginBoxButton" value="Submit">
 		</form>
     <p class = 'loginError'>
-      That username was not found.
+      {{{loginMessage}}}
     </p>
 		<img class = "LoginImg" src="https://s-media-cache-ak0.pinimg.com/236x/6d/d4/e5/6dd4e555f6c3ebdaca5bd87d6de2d2d8.jpg">
   	</div>

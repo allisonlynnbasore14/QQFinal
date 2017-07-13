@@ -73,7 +73,7 @@ var home = function(req, res){
     //   if (err)
     //    { console.error(err); response.send("Error " + err); }
     // });
-     res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":3});
+     res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":2});
   // });
 };
 //   //db.add(Lizard("Bob"));
@@ -92,13 +92,14 @@ var home = function(req, res){
 
 
 var login = function(req, res){
-  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
+  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 };
 
 /////////////////////////////Division Rules
 
 var DRulesQ = function(req, res){
     res.render("DRulesQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I'});
+    console.log(req)
 };
 
 var DRulesCopy = function(req, res){

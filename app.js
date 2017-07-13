@@ -38,7 +38,7 @@ app.post('/login', urlencodedParser, function (req, res) {
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
   if(id === null){
-    res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOGIN});
+    res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found."});
   }else{
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
    	if(err) {
@@ -52,7 +52,7 @@ app.post('/login', urlencodedParser, function (req, res) {
         }
       })
 	  });
-    res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
+    res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":status});
 	};
 })
 
@@ -90,11 +90,6 @@ function GetIdFromName(name){
   } else{
     return null;
   }
-  // JSON.parse(name, (key, value) => { // log the current property name, the last is "".    // return the unchanged property value.
-  // });
-  //return userNames[name];
-  //console.log(USERS.'EUCLID'.id)
-  //return USERS.name.id
 }
 
 
@@ -185,11 +180,11 @@ app.get('/AllDone', index.AllDone);
 
 // app.get('/db', index.db)
 
-// app.listen(process.env.PORT || 3000, function(){
-//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-// });
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
-app.listen(2200);
+// app.listen(2200);
 
 
 // var server = app.listen(8080,function(){
