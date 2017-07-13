@@ -21,6 +21,9 @@
 		font-family: monaco,Consolas,Lucida Console,monos
 		text-align: center;
 		font-size: 20px;
+		position: absolute;
+		left: 250px;
+		top: 130px;
 	}
 
 	.profile{
