@@ -19,6 +19,12 @@
 	#LoginBoxButton{
 	}
 
+	#HiddenForm{
+		opacity: 0;
+		z-index: -1;
+		width: 10px;
+	}
+
 	.loginSubmit{
 		width:210px;
 		height:60px;
@@ -662,4 +668,5 @@
 		color: #004d99;
 		background-color:white;
 		border: 3px solid #004d99;
+		z-index: 40;
 	}

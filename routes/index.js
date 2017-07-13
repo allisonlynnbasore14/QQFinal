@@ -99,7 +99,7 @@ var login = function(req, res){
 
 var DRulesQ = function(req, res){
     res.render("DRulesQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I'});
-    console.log(req)
+    console.log(req.query.StatusUpdate)
 };
 
 var DRulesCopy = function(req, res){

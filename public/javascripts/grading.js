@@ -184,6 +184,7 @@ function UnCount(id){
 	document.getElementById(id).style.color = newcolor;
 }
 
+
 function processAnswers(title, guesses, type=null) {
 	var answers = title;
 	var numQuestions = answers.length;
@@ -250,12 +251,16 @@ function processAnswers(title, guesses, type=null) {
 
 	if (correct == numQuestions){
 		document.getElementById("NumberCorrect").innerHTML = Message;
+		document.getElementById('statusInput').value = 100;
+		document.forms["StatusSubmit"].submit();
 	}else if (guesses.length > numQuestions){
 		var over = guesses.length - numQuestions
 		if(type == null || type == 'includes'){
 			document.getElementById("Missed").style.opacity = 100;
 			document.getElementById("Heading").style.opacity = 0;
 			document.getElementById("Missed").innerHTML = "You miseed this one";
+			document.getElementById('statusInput').value = 0;
+			document.forms["StatusSubmit"].submit();
 		}
 		document.getElementById("NumberCorrect").innerHTML = "You answered with " + over + " too many.";
 	}else{
@@ -263,6 +268,8 @@ function processAnswers(title, guesses, type=null) {
 			document.getElementById("Missed").style.opacity = 100;
 			document.getElementById("Heading").style.opacity = 0;
 			document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQuestions;
+			document.getElementById('statusInput').value = 0;
+			document.forms["StatusSubmit"].submit();
 		}
 		document.getElementById("NumberCorrect").innerHTML = "Your score is   "+correct +"/"+numQuestions+".   You can do it! Keep trying!";
 	}
