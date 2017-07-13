@@ -18,6 +18,7 @@ var constants = module.exports = {
     	SEQUENCE: 'Determine if the sequence has a difference, ratio or neither.  Then find the 10th term and use the formulas if necessary.',
         HOME: 'Click Submit to start your next quarter quiz.',
         LOGIN: 'Type the name of the mathematician that was given to you and hit enter to get started!',
+        LOGIN_ERROR: 'Sorry, the username was not found',
     },
     TITLE:{
         ANG: 'Angles',
