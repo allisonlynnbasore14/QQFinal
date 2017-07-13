@@ -29,14 +29,9 @@ app.get('/', index.home);
 var router = express.Router();
 var constants = require('./constants');
 var pg = require('pg');
-// const pg = require('pg');￼OK
 const connectionString = process.env.DATABASE_URL || 'postgres://localhost:2200';
 const results = [];
 const client = new pg.Client(connectionString);
-//client.connect();
-// const query = client.query(
-//   'CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
-// query.on('end', () => { client.end(); });
 
 app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
@@ -50,34 +45,15 @@ app.post('/login', urlencodedParser, function (req, res) {
       done();
       console.log(err, 'jjjjjjjjjjjj');
       return res.status(500).json({success: false, data: err});
-    }
-    client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
-	  var status = result.rows[0].status;
-    if(err) {
-      done();
-      //return res.status(500).json({success: false, data: err});
-    }
-  })
-	  //since the row object is just a hash, it can be accessed also as follows
-	  // OR console.log('name: %s', result.rows[0]['status']);
-	});
-	//client.query("SELECT status FROM users WHERE id = 1");
-	    // const query = client.query("SELECT status FROM users WHERE user_id = '1'"), function(err, result) {
-	   	// 	//console.log(result.rows[0],'9999999999999999')
-	    //   //var status = result.status;
-
-		   //  // query.on('row', (row) => {
-		   //  //   results.push(row);
-		   //  // });
-		   //  var status = String(results) + 'helllo'
-	    // const query = client.query("SELECT * FROM users WHERE user_id = '1'");
-	    // // Stream results back one row at a time
-	    // query.on('row', (row) => {
-	    //   results.push(row);
-	    // });
-	    // console.log(query)
-	      done();
+      }
+      client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
+  	   var status = result.rows[0].status;
+        if(err) {
+          done();
+        }
+      })
 	  });
+	};
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
 })
 
@@ -272,7 +248,21 @@ app.listen(process.env.PORT || 3000, function(){
 
 
 
+  //client.query("SELECT status FROM users WHERE id = 1");
+      // const query = client.query("SELECT status FROM users WHERE user_id = '1'"), function(err, result) {
+      //  //console.log(result.rows[0],'9999999999999999')
+      //   //var status = result.status;
 
+       //  // query.on('row', (row) => {
+       //  //   results.push(row);
+       //  // });
+       //  var status = String(results) + 'helllo'
+      // const query = client.query("SELECT * FROM users WHERE user_id = '1'");
+      // // Stream results back one row at a time
+      // query.on('row', (row) => {
+      //   results.push(row);
+      // });
+      // console.log(query)
 
 
 
