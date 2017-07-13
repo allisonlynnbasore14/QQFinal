@@ -42,7 +42,6 @@ app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
-  console.log(id, 'IIIIIIIIIIIIIIIIIIIIIii')
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
    	if(err) {
       done();
@@ -51,7 +50,7 @@ app.post('/login', urlencodedParser, function (req, res) {
     }
     client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
 	  var status = result.rows[0].status;
-	  
+	  console.log(status, 'IIIIIIIIIIIIIIIIIIIIIii')
 	  //since the row object is just a hash, it can be accessed also as follows
 	  // OR console.log('name: %s', result.rows[0]['status']);
 	});
@@ -102,7 +101,7 @@ function GetIdFromName(name){
     'CANTOR':'18',
     'GERMAIN ': '19',
     'ADA' : '20',
-    'NOETHER': '21',
+    'NOETHER': '21'
   }
 
   // JSON.parse(name, (key, value) => { // log the current property name, the last is "".    // return the unchanged property value.
