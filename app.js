@@ -42,6 +42,7 @@ app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
+  console.log(id, 'IIIIIIIIIIIIIIIIIIIIIii')
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
    	if(err) {
       done();
@@ -80,7 +81,7 @@ function CleanLoginAndSend(name){
 }
 
 function GetIdFromName(name){
-  var userNames = {'EUCLID':'1'}
+  var userNames = {'EUCLID':'1', 'NEWTON':'2'}
   // JSON.parse(name, (key, value) => { // log the current property name, the last is "".    // return the unchanged property value.
   // });
   return userNames[name];
