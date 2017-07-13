@@ -42,7 +42,9 @@ app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
-  console.log(id)
+  if(id === null){
+    console.log('dddddddddd')
+  }else{
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
    	if(err) {
       done();
@@ -53,10 +55,9 @@ app.post('/login', urlencodedParser, function (req, res) {
 	  var status = result.rows[0].status;
     if(err) {
       done();
-      console.log("AAAAAAAAAAAAAAAAAAAAAAas");
       //return res.status(500).json({success: false, data: err});
     }
-	  console.log(status, 'IIIIIIIIIIIIIIIIIIIIIii')
+  }
 	  //since the row object is just a hash, it can be accessed also as follows
 	  // OR console.log('name: %s', result.rows[0]['status']);
 	});
