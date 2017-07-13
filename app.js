@@ -50,10 +50,10 @@ app.post('/login', urlencodedParser, function (req, res) {
     }
     client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
 	  var status = result.rows[0].status;
-    if(status==='undefined'){
-      console.log('fffff')
-    }else{
-      console.log('nnnnn')
+    if(err) {
+      done();
+      console.log("AAAAAAAAAAAAAAAAAAAAAAas");
+      //return res.status(500).json({success: false, data: err});
     }
 	  console.log(status, 'IIIIIIIIIIIIIIIIIIIIIii')
 	  //since the row object is just a hash, it can be accessed also as follows
