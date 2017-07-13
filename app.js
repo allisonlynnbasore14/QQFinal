@@ -45,7 +45,7 @@ app.post('/login', urlencodedParser, function (req, res) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
    	if(err) {
       done();
-      console.log(err);
+      console.log(err, 'jjjjjjjjjjjj');
       return res.status(500).json({success: false, data: err});
     }
     client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
