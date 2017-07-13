@@ -57,7 +57,7 @@ app.post('/login', urlencodedParser, function (req, res) {
       done();
       //return res.status(500).json({success: false, data: err});
     }
-  }
+  })
 	  //since the row object is just a hash, it can be accessed also as follows
 	  // OR console.log('name: %s', result.rows[0]['status']);
 	});
