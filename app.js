@@ -42,6 +42,7 @@ app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
+  console.log(id)
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
    	if(err) {
       done();
