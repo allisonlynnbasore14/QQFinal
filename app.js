@@ -81,7 +81,30 @@ function CleanLoginAndSend(name){
 }
 
 function GetIdFromName(name){
-  var userNames = {'EUCLID':'1', 'NEWTON':'2'}
+  var userNames = {
+    'EUCLID':'1',
+    'NEWTON':'2',
+    'ARCHIMEDES':'3',
+    'GAUSS': '4',
+    'DESCARTES' : '5',
+    'FERMAT' : '6',
+    'EULER' : '7',
+    'EINSTEIN' : '8',
+    'LEIBNIZ' : '9',
+    'HILBERT' : '10',
+    'PASCAL' : '11',
+    'TURING ' : '12',
+    'RAMANUJAN' : '13',
+    'RIEMANN' : '14',
+    'NEUMANN' : '15',
+    'PTOLEMY' : '16',
+    'ARYABHATA': '17',
+    'CANTOR':'18',
+    'GERMAIN ': '19',
+    'ADA' : '20',
+    'NOETHER': '21',
+  }
+
   // JSON.parse(name, (key, value) => { // log the current property name, the last is "".    // return the unchanged property value.
   // });
   return userNames[name];
