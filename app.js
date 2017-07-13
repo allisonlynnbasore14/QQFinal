@@ -38,7 +38,7 @@ app.post('/login', urlencodedParser, function (req, res) {
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
   if(id === null){
-    console.log('dddddddddd')
+    res.render("login",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
   }else{
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
    	if(err) {
@@ -53,8 +53,8 @@ app.post('/login', urlencodedParser, function (req, res) {
         }
       })
 	  });
+    res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
 	};
-  res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":name});
 })
 
 function CleanLoginAndSend(name){
