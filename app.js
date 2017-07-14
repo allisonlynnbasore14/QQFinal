@@ -47,12 +47,13 @@ app.post('/login', urlencodedParser, function (req, res) {
       return res.status(500).json({success: false, data: err});
       }
       client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
-  	   var status = result.rows[0].status;
+        done()
+  	     var status = result.rows[0].status;
+        console.log(status, 'MADE ITIIIIIIIIIIIIIIIIIIIIIIIIIIIIIi')
+        app.get("/home", index.home)
       })
 	  });
     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":status, "id": id});
-    console.log(status, 'MADE ITIIIIIIIIIIIIIIIIIIIIIIIIIIIIIi')
-  app.get("/home", index.home)
   };
 })
 
