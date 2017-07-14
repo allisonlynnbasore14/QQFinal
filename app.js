@@ -50,7 +50,7 @@ app.post('/login', urlencodedParser, function (req, res) {
         done()
   	     var status = result.rows[0].status;
           //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
-          app.get('/home', index.home);
+          //app.get('/home', index.home);
           res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
         // if (req.query.StatusUpdate == 'KEY'){
         //   unLockQuiz(status)
