@@ -67,7 +67,7 @@ app.post('/login', urlencodedParser, function (req, res, next) {
  function(req, res){
   const status = 3;
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
-  if (req.query.StatusUpdate == 100){
+  //if (req.query.StatusUpdate == 100){
     console.log(req.query.StatusUpdate, 'kkkkk')
     unLockQuiz(status)
   }
