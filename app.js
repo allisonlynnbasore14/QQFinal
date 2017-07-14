@@ -64,7 +64,7 @@ app.post('/login', urlencodedParser, function (req, res, next) {
  // next()
   //console.log('eeeeeeeeeeeeeeeeeeeeeeee')
     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": 4});
-},
+}
  // function(req, res){
  //  const status = 3;
   // res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
