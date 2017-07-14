@@ -68,6 +68,7 @@ app.post('/login', urlencodedParser, function (req, res, next) {
   const status = 3;
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
   if (req.query.StatusUpdate == 100){
+    console.log(req.query.StatusUpdate, 'kkkkk')
     unLockQuiz(status)
   }
 }
@@ -81,6 +82,7 @@ function CleanLoginAndSend(name){
 }
 
 function unLockQuiz(status){
+  console.log('made it hererere', status)
   var quiz = GetQuizFromStatus(status)
   app.get('/Quiz', quiz)
 }
