@@ -36,7 +36,7 @@
 		position:absolute;
 		top: 610px;
 		left: 310px;
-		z-index: 50;
+		z-index: 70;
 		color: #004d99;
 		background-color:white;
 		border: 3px solid #004d99;
@@ -506,14 +506,20 @@
 	}
 
 	#AnswerBoxButton{
-		font-weight: bold;
-		width:150px;
+		width:200px;
 		height:50px;
+		font-family: monaco,Consolas,Lucida Console,monospace;
+		cursor: crosshair;
 		font-size: 30px;
-		position: absolute;
-		left:10%;
-		top:60%;
-		z-index: 9;
+		border-radius: 4px;
+		font-weight: bold;
+		position:absolute;
+		top: 850px;
+		left: 750px;
+		color: #004d99;
+		background-color:white;
+		border: 3px solid #004d99;
+		z-index: 40;
 	}
 
 	.backimg{
@@ -654,6 +660,22 @@
 	}
 
 
+	#btn{
+		width:200px;
+		height:50px;
+		font-family: monaco,Consolas,Lucida Console,monospace;
+		cursor: crosshair;
+		font-size: 30px;
+		border-radius: 4px;
+		font-weight: bold;
+		position:absolute;
+		top: 850px;
+		left: 750px;
+		color: #004d99;
+		background-color:white;
+		border: 3px solid #004d99;
+		z-index: 40;
+	}
 	.btn{
 		width:200px;
 		height:50px;

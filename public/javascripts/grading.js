@@ -101,6 +101,10 @@ function CoverFunc(div) {
     	}
 }
 
+function StoreId(id){
+	
+}
+
 function ProgressFill(progressNum){
 	for (p=progressNum; p > 0; p--){
 		if (p == 7|| p == 26 || p == 35 || p > 41){

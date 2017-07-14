@@ -90,6 +90,10 @@ var home = function(req, res){
 // );
 // };
 
+function sendToDB(newStatus, id){
+
+}
+
 
 var login = function(req, res){
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
@@ -97,9 +101,11 @@ var login = function(req, res){
 
 /////////////////////////////Division Rules
 
-var DRulesQ = function(req, res){
-    res.render("DRulesQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I'});
-    console.log(req.query.StatusUpdate)
+var DRulesQ = function(req, res, id){
+    res.render("DRulesQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I', "id" : 3});
+    // TODO: give id to client
+    
+    sendToDB(req.query.StatusUpdate, id)
 };
 
 var DRulesCopy = function(req, res){
