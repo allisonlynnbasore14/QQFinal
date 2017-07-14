@@ -70,7 +70,7 @@ app.post('/login', urlencodedParser, function (req, res, next) {
   //if (req.query.StatusUpdate == 100){
     console.log(req.query.StatusUpdate, 'kkkkk')
     unLockQuiz(status)
-  }
+  //}
 }
 )
 
