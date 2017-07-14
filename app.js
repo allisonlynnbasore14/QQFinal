@@ -59,6 +59,8 @@ app.post('/login', urlencodedParser, function (req, res) {
 	  });
     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":status, "id": id});
   };
+
+  console.log('eeeeeeeeeeeeeeeeeeeeeeee')
   app.get('/home', index.home)
     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": 4});
 })
