@@ -72,7 +72,7 @@ app.post('/login', urlencodedParser, function (req, res, next) {
   //   console.log(req, 'kkkkk')
   //   unLockQuiz(status)
   //}
-}
+//}
 )
 
 
