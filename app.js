@@ -107,7 +107,7 @@ function GetIdFromName(name){
 }
 
 function GetQuizFromStatus(status){
-  status = status.String()
+  status = status.toString()
   var quizzes = {
     '1' : index.PercentStudy,
     '2' : index.PercentMatch,
