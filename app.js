@@ -51,9 +51,7 @@ app.post('/login', urlencodedParser, function (req, res) {
   	     var status = result.rows[0].status;
           //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
           //app.get('/home', index.home);
-          // unLockQuiz(status)
-
-          res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
+          // unLockQuiz(status
         // if (req.query.StatusUpdate == 'KEY'){
         //   unLockQuiz(status)
         // }
@@ -61,6 +59,8 @@ app.post('/login', urlencodedParser, function (req, res) {
 	  });
     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":status, "id": id});
   };
+  app.get('/home', index.home)
+    //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": 4});
 })
 
 

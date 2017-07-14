@@ -80,6 +80,7 @@ function Entry(id, score){
 
 
 var home = function(req, res){
+console.log('ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
   if (req.query.StatusUpdate == 100){
     unLockQuiz(status)
@@ -102,7 +103,16 @@ var home = function(req, res){
 // };
 
 function sendToDB(newStatus, id){
-
+  const client = new pg.Client(connectionString);
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    if(err) {
+      done();
+      return res.status(500).json({success: false, data: err});
+      }
+      client.query('UPDATE users SET status=$1 WHERE user_id$2', [newStatus, id] , function(err, result) {
+        done()
+      })
+    });
 }
 
 
@@ -116,7 +126,7 @@ var DRulesQ = function(req, res, id){
     res.render("DRulesQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I', "id" : 3});
     // TODO: give id to client
     
-    sendToDB(req.query.StatusUpdate, id)
+    //sendToDB(req.query.StatusUpdate, id)
 };
 
 var DRulesCopy = function(req, res){
