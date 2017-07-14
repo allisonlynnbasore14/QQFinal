@@ -49,11 +49,11 @@ app.post('/login', urlencodedParser, function (req, res) {
       client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
         done()
   	     var status = result.rows[0].status;
-        res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
-        if (req.query.StatusUpdate == 'KEY'){
-                  console.log(status, 'MADE ITIIIIIIIIIIIIIIIIIIIIIIIIIIIIIi')
-          unLockQuiz(status)
-        }
+          res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
+          app.get('/home', index.home);
+        // if (req.query.StatusUpdate == 'KEY'){
+        //   unLockQuiz(status)
+        // }
       })
 	  });
     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":status, "id": id});
