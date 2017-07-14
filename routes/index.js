@@ -81,7 +81,7 @@ function Entry(id, score){
 
 var home = function(req, res){
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
-  if (req.query.StatusUpdate == '100'){
+  if (req.query.StatusUpdate == 100){
     unLockQuiz(status)
   }
 };
