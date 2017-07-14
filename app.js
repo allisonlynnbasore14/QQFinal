@@ -33,7 +33,7 @@ const connectionString = process.env.DATABASE_URL || 'postgres://localhost:2200'
 const results = [];
 const client = new pg.Client(connectionString);
 
-app.post('/login', urlencodedParser, function (req, res) {
+app.post('/login', urlencodedParser, function (req, res, next) {
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
@@ -57,13 +57,15 @@ app.post('/login', urlencodedParser, function (req, res) {
         // }
       })
 	  });
+    
     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":status, "id": id});
   };
-
-  console.log('eeeeeeeeeeeeeeeeeeeeeeee')
-  app.get('/home', index.home)
+ next()
+  //console.log('eeeeeeeeeeeeeeeeeeeeeeee')
     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": 4});
-})
+}
+  app.get('/home', index.home)
+)
 
 
 
