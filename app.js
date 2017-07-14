@@ -57,20 +57,20 @@ app.post('/login', urlencodedParser, function (req, res, next) {
         // }
       })
 	  });
-    
+
     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":status, "id": id});
   };
  next()
   //console.log('eeeeeeeeeeeeeeeeeeeeeeee')
     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": 4});
-}
+},
  function(req, res){
 console.log('ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
   if (req.query.StatusUpdate == 100){
     unLockQuiz(status)
   }
-};
+}
 )
 
 
