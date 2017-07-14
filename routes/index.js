@@ -65,17 +65,29 @@ function Entry(id, score){
 // insert into test_table values (61, 'testNumber1');
 
 
+// var home = function(req, res){
+//     //   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+//     // client.query('SELECT * FROM test_table WHERE id = 1' , function(err, result) {
+//     //   var name = result.rows[0].name;
+//     //   done();
+//     //   if (err)
+//     //    { console.error(err); response.send("Error " + err); }
+//     // });
+//      res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":2});
+//   // });
+// };
+
+
+
 var home = function(req, res){
-    //   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    // client.query('SELECT * FROM test_table WHERE id = 1' , function(err, result) {
-    //   var name = result.rows[0].name;
-    //   done();
-    //   if (err)
-    //    { console.error(err); response.send("Error " + err); }
-    // });
-     res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":2});
-  // });
+  console.log('MSFR IT TO HOMEEEE')
+  res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
+  if (req.query.StatusUpdate == 'KEY'){
+    unLockQuiz(status)
+  }
 };
+
+
 //   //db.add(Lizard("Bob"));
 //   //this makes a new lizard but does not update the db in hard code
 //   var lizards = db.getAll();

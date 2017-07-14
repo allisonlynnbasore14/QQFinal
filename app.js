@@ -55,15 +55,11 @@ app.post('/login', urlencodedParser, function (req, res) {
       })
 	  });
     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":status, "id": id});
-    var home = function(req, res){
-      res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
-      if (req.query.StatusUpdate == 'KEY'){
-        unLockQuiz(status)
-      }
-    };
   app.get("/home", home)
   };
 })
+
+
 
 function CleanLoginAndSend(name){
   name = name.toUpperCase().trim();
