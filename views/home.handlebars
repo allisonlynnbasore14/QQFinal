@@ -198,13 +198,28 @@
 				<div class = 'ProgressBlock' id = '41'>
 				3
 				</div>
-				<input onclick=" window.location.href='/AnglesMatch'" type="button" value="Home">
+				<input type="submit" value="Home" name='test'>
 			</div>
 		</div>
   	</div>
  </body>
 <script type="text/javascript">
   ProgressFill({{{status}}})
+
+
+      $(document).ready(function(){
+    var user;
+    $("#submit").click(function(){
+      //user=$("#firstname").val();
+      user = 'test value'
+      $.post("https://scenic-crater-lake-37652.herokuapp.com/AllDone",{user: user}, function(data){
+        if(data==='done')
+          {
+            alert("login success");
+          }
+      });
+    });
+  });
   {{{id}}}
   console.log('JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ')
   function sendAnswers(){
