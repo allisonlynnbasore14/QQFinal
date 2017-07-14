@@ -80,9 +80,8 @@ function Entry(id, score){
 
 
 var home = function(req, res){
-  console.log('MSFR IT TO HOMEEEE')
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
-  if (req.query.StatusUpdate == 'KEY'){
+  if (req.query.StatusUpdate == '100'){
     unLockQuiz(status)
   }
 };
