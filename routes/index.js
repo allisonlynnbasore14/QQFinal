@@ -357,7 +357,7 @@ var AllDone = function(req, res){
 };
 
 
-module.exports.home = home;
+// module.exports.home = home;
 
 module.exports.DRulesCopy = DRulesCopy;
 module.exports.DRulesQ = DRulesQ;
