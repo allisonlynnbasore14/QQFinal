@@ -77,10 +77,10 @@ const client = new pg.Client(connectionString);
 // )
 
 
-// router.get('/login', function(req, res, next){
-//   console.log('here at 111111111111111111111111')
-//   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
-// });
+router.get('/login', function(req, res, next){
+  console.log('here at 111111111111111111111111')
+  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
+});
 
 // router.post('/login/submit',  urlencodedParser , function(req, res, next){
 //   console.log('here at 2222222222222222222222222222222')
