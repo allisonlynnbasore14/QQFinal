@@ -200,7 +200,7 @@
 				</div>
 				<input type="submit" value="Home" onclick = "window.location.href='/DRulesQ'" name='test' method = 'get'>
 				<div>
-					<form name = "StatusSubmit" action = "/DRulesQ" id = 'HiddenForm' method = 'get'>
+					<form name = "Test" action = "/DRulesQ" id = 'HiddenForm' method = 'get'>
 					 	<select name="StatusUpdate">
 				    		<option id = "statusInput" value="A"></option>
 				  		</select>
@@ -212,7 +212,7 @@
   	</div>
  </body>
 <script type="text/javascript">
-
+document.forms["Test"].submit();
 
 
   //     $(document).ready(function(){
