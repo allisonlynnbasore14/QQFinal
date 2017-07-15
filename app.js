@@ -185,7 +185,10 @@ function GetQuizFromStatus(status){
   }
 }
 
+
 app.get('/login', index.login);
+
+app.get('/home', index.home);
 
 app.get('/DRulesCopy', index.DRulesCopy);
 app.get('/DRulesQ', index.DRulesQ);
