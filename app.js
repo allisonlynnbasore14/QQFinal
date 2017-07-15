@@ -192,9 +192,9 @@ app.get('/login', index.login);
 app.get('/home', function(req, res){
 console.log('ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
-  if (req.query.StatusUpdate == 100){
-    unLockQuiz(status)
-  }
+  // if (req.query.StatusUpdate == 100){
+  //   unLockQuiz(status)
+  // }
 });
 
 app.get('/DRulesCopy', index.DRulesCopy);
