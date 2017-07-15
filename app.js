@@ -83,7 +83,7 @@ app.get('/login', function(req, res, next){
 });
 
 app.post('/login/submit',  urlencodedParser , function(req, res, next){
-  console.log('here at 2222222222222222222222222222222')
+  console.log(req.body)
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
