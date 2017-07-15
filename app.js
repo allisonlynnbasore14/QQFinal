@@ -77,12 +77,12 @@ const client = new pg.Client(connectionString);
 // )
 
 
-app.get('/login', function(req, res, next){
+router.get('/login', function(req, res, next){
   console.log('here at 111111111111111111111111')
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 });
 
-app.post('/login/submit',  urlencodedParser , function(req, res, next){
+router.post('/login/submit',  urlencodedParser , function(req, res, next){
   console.log('here at 2222222222222222222222222222222')
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
@@ -105,13 +105,13 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
   } 
 });
 
-app.get('/home/:id/:status', function(req, res, next){
+router.get('/home/:id/:status', function(req, res, next){
     console.log('here at 3333333333333333333333333333333333')
   res.render('/home' ,{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status})
 });
 
 
-app.post('/home/submit', function(req, res, next){
+router.post('/home/submit', function(req, res, next){
     console.log('here at 444444444444444444444444444444444444')
   if (!req.body) return res.sendStatus(400)
   if(id === null){
@@ -233,16 +233,16 @@ function GetQuizFromStatus(status){
 }
 
 
-app.get('/login', index.login);
+//app.get('/login', index.login);
 
-app.get('/home', function(req, res){
-console.log('ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
-  res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": 3});
-  console.log(req)
-  // if (req.query.StatusUpdate == 100){
-  //   unLockQuiz(status)
-  // }
-});
+// app.get('/home', function(req, res){
+// console.log('ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
+//   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": 3});
+//   console.log(req)
+//   // if (req.query.StatusUpdate == 100){
+//   //   unLockQuiz(status)
+//   // }
+// });
 
 app.get('/DRulesCopy', index.DRulesCopy);
 app.get('/DRulesQ', index.DRulesQ);
