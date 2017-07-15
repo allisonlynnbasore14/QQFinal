@@ -254,26 +254,26 @@ function processAnswers(title, guesses, type=null) {
 	CoverFunc("WhiteCover")
 
 	if (correct == numQuestions){
+		document.forms["StatusSubmit"].submit();
 		document.getElementById("NumberCorrect").innerHTML = Message;
 		document.getElementById('statusInput').value = 100;
-		document.forms["StatusSubmit"].submit();
 	}else if (guesses.length > numQuestions){
 		var over = guesses.length - numQuestions
 		if(type == null || type == 'includes'){
+			document.forms["StatusSubmit"].submit();
 			document.getElementById("Missed").style.opacity = 100;
 			document.getElementById("Heading").style.opacity = 0;
 			document.getElementById("Missed").innerHTML = "You miseed this one";
 			document.getElementById('statusInput').value = 0;
-			document.forms["StatusSubmit"].submit();
 		}
 		document.getElementById("NumberCorrect").innerHTML = "You answered with " + over + " too many.";
 	}else{
 		if(type == null || type == 'includes'){
+			document.forms["StatusSubmit"].submit();
 			document.getElementById("Missed").style.opacity = 100;
 			document.getElementById("Heading").style.opacity = 0;
 			document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQuestions;
 			document.getElementById('statusInput').value = 0;
-			document.forms["StatusSubmit"].submit();
 		}
 		document.getElementById("NumberCorrect").innerHTML = "Your score is   "+correct +"/"+numQuestions+".   You can do it! Keep trying!";
 	}
