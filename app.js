@@ -120,7 +120,6 @@ router.post('/home/submit', function(req, res, next){
       var quiz = GetQuizFromStatus(status)
       res.redirect('/' + quiz +'/' + id + '/' + status)
     }
-  }
 });
 
 
