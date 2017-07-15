@@ -82,7 +82,7 @@ app.get('/login', function(req, res, next){
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 });
 
-router.post('/login/submit',  urlencodedParser , function(req, res, next){
+app.post('/login/submit',  urlencodedParser , function(req, res, next){
   console.log('here at 2222222222222222222222222222222')
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
@@ -105,13 +105,13 @@ router.post('/login/submit',  urlencodedParser , function(req, res, next){
   } 
 });
 
-router.get('/home/:id/:status', function(req, res, next){
+app.get('/home/:id/:status', function(req, res, next){
     console.log('here at 3333333333333333333333333333333333')
   res.render('/home' ,{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status})
 });
 
 
-router.post('/home/submit', function(req, res, next){
+app.post('/home/submit', function(req, res, next){
     console.log('here at 444444444444444444444444444444444444')
   if (!req.body) return res.sendStatus(400)
   if(id === null){
