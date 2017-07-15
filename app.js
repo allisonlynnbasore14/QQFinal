@@ -105,7 +105,7 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
 });
 
 app.get('/home/:id/:status', function(req, res, next){
-    console.log('here at 3333333333333333333333333333333333')
+  console.log(req)
   res.render('/home' ,{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status})
 });
 
