@@ -53,9 +53,9 @@ app.post('/login', urlencodedParser, function (req, res, next) {
           //app.get('/home', index.home);
           // unLockQuiz(status
         // if (req.query.StatusUpdate == 'KEY'){
-        //   unLockQuiz(status)
+        unLockQuiz(1)
         // }
-        res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found."});
+        res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG });
           //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
       })
 	  });
