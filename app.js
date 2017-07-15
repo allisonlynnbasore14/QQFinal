@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('/', index.home);
+//app.get('/', index.home);
 
 
 var router = express.Router();
