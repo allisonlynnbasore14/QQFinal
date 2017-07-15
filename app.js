@@ -105,12 +105,15 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
 });
 
 app.get('/home/:id/:status', function(req, res, next){
-  console.log(req)
-  res.render('/home' ,{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status})
+  var status = req.params.status;
+  var id = req.params.id;
+  res.render('/home' ,{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status, "id": id})
 });
 
 
 app.post('/home/submit', function(req, res, next){
+  var status = req.params.status;
+  var id = req.params.id;
     console.log('here at 444444444444444444444444444444444444')
   if (!req.body) return res.sendStatus(400)
   if(id === null){
