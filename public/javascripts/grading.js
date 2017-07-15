@@ -270,6 +270,7 @@ function processAnswers(title, guesses, type=null) {
 	}else{
 		if(type == null || type == 'includes'){
 			document.forms["StatusSubmit"].submit();
+			CoverFunc("WhiteCover")
 			document.getElementById("Missed").style.opacity = 100;
 			document.getElementById("Heading").style.opacity = 0;
 			document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQuestions;
