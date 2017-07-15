@@ -82,28 +82,28 @@ app.get('/login', function(req, res, next){
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 });
 
-// router.post('/login/submit',  urlencodedParser , function(req, res, next){
-//   console.log('here at 2222222222222222222222222222222')
-//   if (!req.body) return res.sendStatus(400)
-//   var name = CleanLoginAndSend(req.body.firstname);
-//   var id = GetIdFromName(name);
-//   if(id === null){
-//     res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found.", "sendMessage" : false});
-//   }else{
-//     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-//     if(err) {
-//       done();
-//       return res.status(500).json({success: false, data: err});
-//       }
-//     client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
-//       done()
-//       var status = result.rows[0].status;
-//       //res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG });
-//       res.redirect('/home/' + id + '/' + status)
-//     })
-//     })
-//   } 
-// });
+app.post('/login/submit',  urlencodedParser , function(req, res, next){
+  console.log('here at 2222222222222222222222222222222')
+  if (!req.body) return res.sendStatus(400)
+  var name = CleanLoginAndSend(req.body.firstname);
+  var id = GetIdFromName(name);
+  if(id === null){
+    res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found.", "sendMessage" : false});
+  }else{
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    if(err) {
+      done();
+      return res.status(500).json({success: false, data: err});
+      }
+    client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
+      done()
+      var status = result.rows[0].status;
+      //res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG });
+      res.redirect('/home/' + id + '/' + status)
+    })
+    })
+  } 
+});
 
 // router.get('/home/:id/:status', function(req, res, next){
 //     console.log('here at 3333333333333333333333333333333333')
