@@ -19,7 +19,7 @@
 		<img class = "LoginImg" src="https://s-media-cache-ak0.pinimg.com/236x/6d/d4/e5/6dd4e555f6c3ebdaca5bd87d6de2d2d8.jpg">
   	</div>
 
-       <input type="submit" value="Home" onclick = "window.location.href='/home'" name='test' method = 'get'>
+       <input type="submit" value="Home" onclick = "window.location.href='/home'" name='test'>
         <div>
           <form name = "Test" id = 'HiddenForm' method = 'get'>
             <select name="StatusUpdate">
@@ -31,9 +31,9 @@
  
  </body>
 <script type="text/javascript">
-console.log({{{sendMessage}}})
 if ({{{sendMessage}}}){
   document.forms["Test"].submit();
+  window.location.href='/home'
 }
   function sendAnswers(){
     //login(document.Questions.firstname.value);

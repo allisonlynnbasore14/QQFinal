@@ -38,7 +38,7 @@ app.post('/login', urlencodedParser, function (req, res, next) {
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
   if(id === null){
-    res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found."});
+    res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found.", "sendMessage" : false});
   }else{
     // TODO: IMPORT THE DB FUNCTION FROM A DIFFRENT FILE
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
