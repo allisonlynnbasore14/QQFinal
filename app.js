@@ -191,7 +191,8 @@ app.get('/login', index.login);
 
 app.get('/home', function(req, res){
 console.log('ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
-  res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
+  res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": 3});
+  console.log(req)
   // if (req.query.StatusUpdate == 100){
   //   unLockQuiz(status)
   // }
