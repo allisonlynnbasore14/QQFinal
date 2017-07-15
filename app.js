@@ -100,9 +100,9 @@ router.post('/login/submit',  urlencodedParser , function(req, res, next){
       var status = result.rows[0].status;
       //res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG });
       res.redirect('/home/' + id + '/' + status)
-    }
-    }
-  }
+    })
+    })
+  } 
 });
 
 router.get('/home/:id/:status', function(req, res, next){
