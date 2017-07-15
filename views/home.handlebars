@@ -17,12 +17,6 @@
 		</p>
 	</div>
 	<div>
-		<form name = "StatusSubmit" id = 'HiddenForm' method = 'get'>
-		 	<select name="StatusUpdate">
-	    		<option id = "statusInput" value="KEY"></option>
-	  		</select>
-			<input type="submit">
-		</form>
 	</div>
 
 	<div class = "Content">
@@ -198,15 +192,10 @@
 				<div class = 'ProgressBlock' id = '41'>
 				3
 				</div>
-				<input type="submit" value="Home" onclick = "window.location.href='/DRulesQ'" name='test' method = 'get'>
-				<div>
-					<form name = "Test" action = "/DRulesQ" id = 'HiddenForm' method = 'get'>
-					 	<select name="StatusUpdate">
-				    		<option id = "statusInput" value="A"></option>
-				  		</select>
-						<input type="submit">
+					<form action = '/home/submit' id = "questions" name = "Questions" method="post">
+					    <input type="text" id="loginBox" name="Hello Jack" placeholder=" Name">
+			        	<input type="submit" class= "loginSubmit" id = "LoginBoxButton" value="Submit">
 					</form>
-				</div>
 			</div>
 		</div>
   	</div>
