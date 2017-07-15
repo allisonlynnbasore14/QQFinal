@@ -12,6 +12,7 @@ function Entry(id, score){
   return score;
 }
 
+
 // var bodyParser = require('body-parser');
 // // create application/x-www-form-urlencoded parser 
 // var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -116,9 +117,9 @@ function sendToDB(newStatus, id){
 }
 
 
-var login = function(req, res){
-  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
-};
+// var login = function(req, res){
+//   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
+// };
 
 /////////////////////////////Division Rules
 
