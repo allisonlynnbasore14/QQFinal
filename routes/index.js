@@ -126,7 +126,7 @@ var DRulesQ = function(req, res, id){
   console.log('here jack!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
     res.render("DRulesQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I', "id" : 3});
     // TODO: give id to client
-    
+    console.log(req)
     //sendToDB(req.query.StatusUpdate, id)
 };
 
