@@ -273,7 +273,7 @@ function processAnswers(title, guesses, type=null) {
 			document.getElementById("Heading").style.opacity = 0;
 			document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQuestions;
 			document.getElementById('statusInput').value = 0;
-			document.forms["StatusSubmit"].submit();
+			//document.forms["StatusSubmit"].submit();
 		}
 		document.getElementById("NumberCorrect").innerHTML = "Your score is   "+correct +"/"+numQuestions+".   You can do it! Keep trying!";
 	}
