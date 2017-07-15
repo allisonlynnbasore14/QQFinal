@@ -195,7 +195,7 @@ console.log('ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
   if (req.query.StatusUpdate == 100){
     unLockQuiz(status)
   }
-};);
+});
 
 app.get('/DRulesCopy', index.DRulesCopy);
 app.get('/DRulesQ', index.DRulesQ);
