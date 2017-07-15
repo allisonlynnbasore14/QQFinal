@@ -78,7 +78,6 @@ const client = new pg.Client(connectionString);
 
 
 app.get('/login', function(req, res, next){
-  console.log('here at 111111111111111111111111')
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 });
 
@@ -87,7 +86,6 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
-  console.log(id, '77777777777777777777777777777777777777777777')
   if(id === null){
     res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found.", "sendMessage" : false});
   }else{
@@ -106,22 +104,22 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
   } 
 });
 
-// router.get('/home/:id/:status', function(req, res, next){
-//     console.log('here at 3333333333333333333333333333333333')
-//   res.render('/home' ,{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status})
-// });
+app.get('/home/:id/:status', function(req, res, next){
+    console.log('here at 3333333333333333333333333333333333')
+  res.render('/home' ,{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status})
+});
 
 
-// router.post('/home/submit', function(req, res, next){
-//     console.log('here at 444444444444444444444444444444444444')
-//   if (!req.body) return res.sendStatus(400)
-//   if(id === null){
-//     console.log('STOPPED AT HOME SUBMIT')
-//   }else{
-//       var quiz = GetQuizFromStatus(status)
-//       res.redirect('/' + quiz +'/' + id + '/' + status)
-//     }
-// });
+app.post('/home/submit', function(req, res, next){
+    console.log('here at 444444444444444444444444444444444444')
+  if (!req.body) return res.sendStatus(400)
+  if(id === null){
+    console.log('STOPPED AT HOME SUBMIT')
+  }else{
+      var quiz = GetQuizFromStatus(status)
+      res.redirect('/' + quiz +'/' + id + '/' + status)
+    }
+});
 
 
 
