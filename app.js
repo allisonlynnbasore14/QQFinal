@@ -53,9 +53,9 @@ app.post('/login', urlencodedParser, function (req, res, next) {
           //app.get('/home', index.home);
           // unLockQuiz(status
         // if (req.query.StatusUpdate == 'KEY'){
-        unLockQuiz(1)
+        // unLockQuiz(1)
         // }
-        res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG });
+        res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG , "sendMessage" : true});
           //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
       })
 	  });
@@ -189,7 +189,13 @@ function GetQuizFromStatus(status){
 
 app.get('/login', index.login);
 
-app.get('/home', index.home);
+app.get('/home', var home = function(req, res){
+console.log('ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
+  res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
+  if (req.query.StatusUpdate == 100){
+    unLockQuiz(status)
+  }
+};);
 
 app.get('/DRulesCopy', index.DRulesCopy);
 app.get('/DRulesQ', index.DRulesQ);
