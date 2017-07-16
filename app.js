@@ -82,7 +82,6 @@ app.get('/login', function(req, res, next){
 });
 
 app.post('/login/submit',  urlencodedParser , function(req, res, next){
-  console.log(req.body)
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
@@ -112,9 +111,9 @@ app.get('/home/:id/:status', function(req, res, next){
 
 
 app.post('/home/submit', function(req, res, next){
-  var status = req.params.status;
-  var id = req.params.id;
-  console.log(req.params)
+  var status = req.body.status;
+  var id = req.body.id;
+  console.log(req.body)
   if (!req.body) return res.sendStatus(400)
   if(id === null){
     console.log('STOPPED AT HOME SUBMIT')
