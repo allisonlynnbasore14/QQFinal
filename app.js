@@ -14,7 +14,7 @@ var app = express();
 var descriptions = require('./descriptions.js');
 var profiles = require('./profiles.js');
 var ids = require('./ids.js');
-var names = require('./names.js');
+var userNames = require('./names.js');
 
 var bodyParser = require('body-parser');
 
@@ -88,8 +88,7 @@ app.get('/login', function(req, res, next){
 app.post('/login/submit',  urlencodedParser , function(req, res, next){
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
-  //var id = GetIdFromName(name);
-  var id = 5;
+  var id = GetIdFromName(name);
   if(id === null){
     res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found.", "sendMessage" : false});
   }else{
