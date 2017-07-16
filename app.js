@@ -284,43 +284,43 @@ function GetQuizFromStatus(status, addOne=true){
 // });
 
 app.get('/DRulesCopy/:id/:status', index.DRulesCopy);
-app.get('/DRulesQ', index.DRulesQ);
-app.get('/DRulesQ2', index.DRulesQ2);
+app.get('/DRulesQ/:id/:status', index.DRulesQ);
+app.get('/DRulesQ2/:id/:status', index.DRulesQ2);
 // app.get('/DRulesQ2', index.DRulesQ2);
 
-app.get('/PrimeNumbersCopy', index.PrimeNumbersCopy);
-app.get('/PrimeNumbers', index.PrimeNumbers);
-app.get('/PrimeNumbersQ', index.PrimeNumbersQ);
-app.get('/PrimeNumbersQ2', index.PrimeNumbersQ2);
-app.get('/PrimeNumbersList', index.PrimeNumbersList);
+app.get('/PrimeNumbersCopy/:id/:status', index.PrimeNumbersCopy);
+app.get('/PrimeNumbers/:id/:status', index.PrimeNumbers);
+app.get('/PrimeNumbersQ/:id/:status', index.PrimeNumbersQ);
+app.get('/PrimeNumbersQ2/:id/:status', index.PrimeNumbersQ2);
+app.get('/PrimeNumbersList/:id/:status', index.PrimeNumbersList);
 
-app.get('/PTheoremCopy', index.PTheoremCopy);
-app.get('/PTheoremQ', index.PTheoremQ);
-app.get('/PTheoremFill', index.PTheoremFill);
+app.get('/PTheoremCopy/:id/:status', index.PTheoremCopy);
+app.get('/PTheoremQ/:id/:status', index.PTheoremQ);
+app.get('/PTheoremFill/:id/:status', index.PTheoremFill);
 
-app.get('/SquareNumbersMatch', index.SquareNumbersMatch);
-app.get('/SquareNumbersCopy', index.SquareNumbersCopy);
-app.get('/SquareTF', index.SquareTF);
-app.get('/SquareNumbersQ', index.SquareNumbersQ);
-app.get('/SquareNumbersList', index.SquareNumbersList);
+app.get('/SquareNumbersMatch/:id/:status', index.SquareNumbersMatch);
+app.get('/SquareNumbersCopy/:id/:status', index.SquareNumbersCopy);
+app.get('/SquareTF/:id/:status', index.SquareTF);
+app.get('/SquareNumbersQ/:id/:status', index.SquareNumbersQ);
+app.get('/SquareNumbersList/:id/:status', index.SquareNumbersList);
 
-app.get('/PropsStudy', index.PropsStudy);
-app.get('/PropsExample', index.PropsExample);
-app.get('/PropsQ', index.PropsQ);
-app.get('/PropsQ2', index.PropsQ2);
-app.get('/PropsQ3', index.PropsQ3);
+app.get('/PropsStudy/:id/:status', index.PropsStudy);
+app.get('/PropsExample/:id/:status', index.PropsExample);
+app.get('/PropsQ/:id/:status', index.PropsQ);
+app.get('/PropsQ2/:id/:status', index.PropsQ2);
+app.get('/PropsQ3/:id/:status', index.PropsQ3);
 
-app.get('/AnglesQ', index.AnglesQ);
-app.get('/AnglesMatch', index.AnglesMatch);
-app.get('/AnglesQ2', index.AnglesQ2);
-app.get('/AnglesQ3', index.AnglesQ3);
-app.get('/AnglesStudy', index.AnglesStudy);
+app.get('/AnglesQ/:id/:status', index.AnglesQ);
+app.get('/AnglesMatch/:id/:status', index.AnglesMatch);
+app.get('/AnglesQ2/:id/:status', index.AnglesQ2);
+app.get('/AnglesQ3/:id/:status', index.AnglesQ3);
+app.get('/AnglesStudy/:id/:status', index.AnglesStudy);
 
-app.get('/ProbStudy', index.ProbStudy);
-app.get('/ProbQ', index.ProbQ);
-app.get('/ProbQ2', index.ProbQ2);
-app.get('/ProbTF', index.ProbTF);
-app.get('/ProbQ3', index.ProbQ3);
+app.get('/ProbStudy/:id/:status', index.ProbStudy);
+app.get('/ProbQ/:id/:status', index.ProbQ);
+app.get('/ProbQ2/:id/:status', index.ProbQ2);
+app.get('/ProbTF/:id/:status', index.ProbTF);
+app.get('/ProbQ3/:id/:status', index.ProbQ3);
 
 app.get('/PercentQ/:id/:status', index.PercentQ);
 app.get('/PercentQ2/:id/:status', index.PercentQ2);
@@ -328,31 +328,108 @@ app.get('/PercentQ3/:id/:status', index.PercentQ3);
 app.get('/PercentMatch/:id/:status', index.PercentMatch);
 app.get('/PercentStudy/:id/:status', index.PercentStudy);
 
-app.get('/PercentStudy/show/:id/:status/:numberC/:missedQ', index.PercentStudyShow);
+app.get('/FractionStudy/:id/:status', index.FractionStudy);
+app.get('/FractionGCFQ/:id/:status', index.FractionGCFQ);
+app.get('/FractionLCMQ/:id/:status', index.FractionLCMQ);
+app.get('/FractionImpQ/:id/:status', index.FractionImpQ);
+app.get('/FractionQ/:id/:status', index.FractionQ);
+app.get('/FractionQ2/:id/:status', index.FractionQ2);
 
+app.get('/SequenceQ/:id/:status', index.SequenceQ);
+app.get('/SequenceStudy/:id/:status', index.SequenceStudy);
+app.get('/SequenceQ2/:id/:status', index.SequenceQ2);
 
-app.get('/FractionStudy', index.FractionStudy);
-app.get('/FractionGCFQ', index.FractionGCFQ);
-app.get('/FractionLCMQ', index.FractionLCMQ);
-app.get('/FractionImpQ', index.FractionImpQ);
-app.get('/FractionQ', index.FractionQ);
-app.get('/FractionQ2', index.FractionQ2);
+app.get('/ExponentStudy/:id/:status', index.ExponentStudy);
+app.get('/ExponentQ/:id/:status', index.ExponentQ);
+app.get('/ExponentQ2/:id/:status', index.ExponentQ2);
+app.get('/ExponentQ3/:id/:status', index.ExponentQ3);
+app.get('/ExponentQ4/:id/:status', index.ExponentQ4);
 
-app.get('/SequenceQ', index.SequenceQ);
-app.get('/SequenceStudy', index.SequenceStudy);
-app.get('/SequenceQ2', index.SequenceQ2);
-
-app.get('/ExponentStudy', index.ExponentStudy);
-app.get('/ExponentQ', index.ExponentQ);
-app.get('/ExponentQ2', index.ExponentQ2);
-app.get('/ExponentQ3', index.ExponentQ3);
-app.get('/ExponentQ4', index.ExponentQ4);
-
-app.get('/FreePass', index.FreePass);
+app.get('/FreePass/:id/:status', index.FreePass);
 
 // app.get('/readingScores', index.readingScores);
 
-app.get('/AllDone', index.AllDone);
+app.get('/AllDone/:id/:status', index.AllDone);
+
+/// Show Urls
+
+app.get('/DRulesCopy/show/:id/:status/:numberC/:missedQ', index.DRulesCopyShow);
+app.get('/DRulesQ/show/:id/:status/:numberC/:missedQ', index.DRulesQShow);
+app.get('/DRulesQ2/show/:id/:status/:numberC/:missedQ', index.DRulesQ2Show);
+// app.get('/DRulesQ2', index.DRulesQ2);
+
+app.get('/PrimeNumbersCopy/show/:id/:status/:numberC/:missedQ', index.PrimeNumbersCopyShow);
+app.get('/PrimeNumbers/show/:id/:status/:numberC/:missedQ', index.PrimeNumbersShow);
+app.get('/PrimeNumbersQ/show/:id/:status/:numberC/:missedQ', index.PrimeNumbersQShow);
+app.get('/PrimeNumbersQ2/show/:id/:status/:numberC/:missedQ', index.PrimeNumbersQ2Show);
+app.get('/PrimeNumbersList/show/:id/:status/:numberC/:missedQ', index.PrimeNumbersListShow);
+
+app.get('/PTheoremCopy/show/:id/:status/:numberC/:missedQ', index.PTheoremCopyShow);
+app.get('/PTheoremQ/show/:id/:status/:numberC/:missedQ', index.PTheoremQShow);
+app.get('/PTheoremFill/show/:id/:status/:numberC/:missedQ', index.PTheoremFillShow);
+
+app.get('/SquareNumbersMatch/show/:id/:status/:numberC/:missedQ', index.SquareNumbersMatchShow);
+app.get('/SquareNumbersCopy/show/:id/:status/:numberC/:missedQ', index.SquareNumbersCopyShow);
+app.get('/SquareTF/show/:id/:status/:numberC/:missedQ', index.SquareTFShow);
+app.get('/SquareNumbersQ/show/:id/:status/:numberC/:missedQ', index.SquareNumbersQShow);
+app.get('/SquareNumbersList/show/:id/:status/:numberC/:missedQ', index.SquareNumbersListShow);
+
+app.get('/PropsStudy/show/:id/:status/:numberC/:missedQ', index.PropsStudyShow);
+app.get('/PropsExampleshow/:id/:status/:numberC/:missedQ', index.PropsExampleShow);
+app.get('/PropsQ/show/:id/:status/:numberC/:missedQ', index.PropsQShow);
+app.get('/PropsQ2/show/:id/:status/:numberC/:missedQ', index.PropsQ2Show);
+app.get('/PropsQ3/show/:id/:status/:numberC/:missedQ', index.PropsQ3Show);
+
+app.get('/AnglesQ/show/:id/:status/:numberC/:missedQ', index.AnglesQShow);
+app.get('/AnglesMatch/show/:id/:status/:numberC/:missedQ', index.AnglesMatchShow);
+app.get('/AnglesQ2/show/:id/:status/:numberC/:missedQ', index.AnglesQ2Show);
+app.get('/AnglesQ3/show/:id/:status/:numberC/:missedQ', index.AnglesQ3Show);
+app.get('/AnglesStudy/show/:id/:status/:numberC/:missedQ', index.AnglesStudyShow);
+
+app.get('/ProbStudy/show/:id/:status/:numberC/:missedQ', index.ProbStudyShow);
+app.get('/ProbQ/show/:id/:status/:numberC/:missedQ', index.ProbQShow);
+app.get('/ProbQ2/show/:id/:status/:numberC/:missedQ', index.ProbQ2Show);
+app.get('/ProbTF/show/:id/:status/:numberC/:missedQ', index.ProbTFShow);
+app.get('/ProbQ3/show/:id/:status/:numberC/:missedQ', index.ProbQ3Show);
+
+app.get('/PercentQ/show/:id/:status/:numberC/:missedQ', index.PercentQShow);
+app.get('/PercentQ2/show/:id/:status/:numberC/:missedQ', index.PercentQ2Show);
+app.get('/PercentQ3/show/:id/:status/:numberC/:missedQ', index.PercentQ3Show);
+app.get('/PercentMatch/show/:id/:status/:numberC/:missedQ', index.PercentMatchShow);
+app.get('/PercentStudy/show/:id/:status/:numberC/:missedQ', index.PercentStudyShow);
+
+app.get('/FractionStudy/show/:id/:status/:numberC/:missedQ', index.FractionStudyShow);
+app.get('/FractionGCFQ/show/:id/:status/:numberC/:missedQ', index.FractionGCFQShow);
+app.get('/FractionLCMQ/show/:id/:status/:numberC/:missedQ', index.FractionLCMQShow);
+app.get('/FractionImpQ/show/:id/:status/:numberC/:missedQ', index.FractionImpQShow);
+app.get('/FractionQ/show/:id/:status/:numberC/:missedQ', index.FractionQShow);
+app.get('/FractionQ2/show/:id/:status/:numberC/:missedQ', index.FractionQ2Show);
+
+app.get('/SequenceQ/show/:id/:status/:numberC/:missedQ', index.SequenceQShow);
+app.get('/SequenceStudy/show/:id/:status/:numberC/:missedQ', index.SequenceStudyShow);
+app.get('/SequenceQ2/:id/show/:id/:status/:numberC/:missedQ', index.SequenceQ2Show);
+
+app.get('/ExponentStudy/show/:id/:status/:numberC/:missedQ', index.ExponentStudyShow);
+app.get('/ExponentQ/show/:id/:status/:numberC/:missedQ', index.ExponentQShow);
+app.get('/ExponentQ2/show/:id/:status/:numberC/:missedQ', index.ExponentQ2Show);
+app.get('/ExponentQ3/show/:id/:status/:numberC/:missedQ', index.ExponentQ3Show);
+app.get('/ExponentQ4/show/:id/:status/:numberC/:missedQ', index.ExponentQ4Show);
+
+app.get('/FreePass/show/:id/:status/:numberC/:missedQ', index.FreePassShow);
+
+// app.get('/readingScores', index.readingScores);
+
+app.get('/AllDone/show/:id/:status/:numberC/:missedQ', index.AllDoneShow);
+
+
+
+
+
+
+
+
+
+
 
 // app.get('/db', index.db)
 
