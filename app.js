@@ -171,7 +171,7 @@ function GetQuizFromStatus(status){
   var newStatus = Number(status) + 1;
   var newStatusString = newStatus.toString();
   var quizzes = {
-    '1' : 'PercentStudy',
+    '1111111' : 'PercentStudy',
     '2' : index.PercentMatch,
     '3' : index.PercentQ1,
     '4' : index.PercentQ2,
@@ -183,7 +183,7 @@ function GetQuizFromStatus(status){
     '10' : index.PropsQ3,
     '11' : index.PropsQ4,
     '12' : index.FreePass,
-    '13' : index.DRulesCopy,
+    '1' : index.DRulesCopy,
     '14' : index.DRulesQ,
     '15' : index.DRulesQ2,
     '16' : index.PrimeNumbersCopy,
