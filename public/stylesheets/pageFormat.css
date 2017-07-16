@@ -6,13 +6,13 @@
 		color: #004d99;
 		font-size: 20px;
 		position: absolute;
+		left: 10px;
+		top: 10px;
 		font-weight: bold;
-		left:5%;
-		top:5%;
 		width:800px;
 		word-spacing: 5px;
-		z-index: 2;
-		height: 900px;
+		z-index: 0;
+		height: 700px;
 		font-family: monaco,Consolas,Lucida Console,monospace;
 	}
 
@@ -36,7 +36,7 @@
 		position:absolute;
 		top: 610px;
 		left: 310px;
-		z-index: 70;
+		z-index: 1;
 		color: #004d99;
 		background-color:white;
 		border: 3px solid #004d99;
@@ -669,12 +669,12 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: 850px;
-		left: 750px;
+		top: 600px;
+		left: 400px;
 		color: #004d99;
 		background-color:white;
 		border: 3px solid #004d99;
-		z-index: 40;
+		z-index: 2;
 	}
 	.btn{
 		width:200px;

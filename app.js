@@ -9,8 +9,12 @@ var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var express = require('express');
 var index = require('./routes/index');
-var USERS = require('./users.js');
 var app = express();
+
+var descriptions = require('./descriptions.js');
+var profiles = require('./profiles.js');
+var ids = require('./ids.js');
+var names = require('./names.js');
 
 var bodyParser = require('body-parser');
 
@@ -106,7 +110,18 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
 app.get('/home/:id/:status', function(req, res, next){
   var status = req.params.status;
   var id = req.params.id;
-  res.render('home' ,{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status, "id": id})
+  var avatar = GetProfileAvatarfromId(id);
+  var description = GetProfileDescriptionfromId(id);
+  var name = GetNameFromId(id);
+  res.render('home' ,{
+    "directions": constants.DIR.HOME,
+    "title": constants.TITLE.HOM,
+    "status": status,
+    "id": id,
+    "avatar" : avatar,
+    "description" : description,
+    "name": name
+    })
 });
 
 
@@ -136,32 +151,33 @@ function unLockQuiz(status){
   app.get('/Quiz', quiz)
 }
 
-function GetIdFromName(name){
-  var userNames = {
-    'EUCLID':'1',
-    'NEWTON':'2',
-    'ARCHIMEDES':'3',
-    'GAUSS': '4',
-    'DESCARTES' : '5',
-    'FERMAT' : '6',
-    'EULER' : '7',
-    'EINSTEIN' : '8',
-    'LEIBNIZ' : '9',
-    'HILBERT' : '10',
-    'PASCAL' : '11',
-    'TURING ' : '12',
-    'RAMANUJAN' : '13',
-    'RIEMANN' : '14',
-    'NEUMANN' : '15',
-    'PTOLEMY' : '16',
-    'ARYABHATA': '17',
-    'CANTOR':'18',
-    'GERMAIN ': '19',
-    'ADA' : '20',
-    'NOETHER': '21'
+function GetProfileAvatarfromId(id){
+  if (profiles[id] != undefined){
+    return profiles[id];
+  } else{
+    return null;
   }
+}
+
+function GetProfileDescriptionfromId(id){
+  if (descriptions[id] != undefined){
+    return descriptions[id];
+  } else{
+    return null;
+  }
+}
+
+function GetIdFromName(name){
   if (userNames[name] != undefined){
     return userNames[name];
+  } else{
+    return null;
+  }
+}
+
+function GetNameFromId(id){
+  if (names[id] != undefined){
+    return names[id];
   } else{
     return null;
   }
@@ -171,7 +187,7 @@ function GetQuizFromStatus(status){
   var newStatus = Number(status) + 1;
   var newStatusString = newStatus.toString();
   var quizzes = {
-    '1111111' : 'PercentStudy',
+    '1' : 'PercentStudy',
     '2' : index.PercentMatch,
     '3' : index.PercentQ1,
     '4' : index.PercentQ2,
@@ -183,7 +199,7 @@ function GetQuizFromStatus(status){
     '10' : index.PropsQ3,
     '11' : index.PropsQ4,
     '12' : index.FreePass,
-    '1' : 'DRulesCopy',
+    '13' : 'DRulesCopy',
     '14' : index.DRulesQ,
     '15' : index.DRulesQ2,
     '16' : index.PrimeNumbersCopy,
@@ -316,11 +332,11 @@ app.get('/AllDone', index.AllDone);
 
 // app.get('/db', index.db)
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+// app.listen(process.env.PORT || 3000, function(){
+//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });
 
-// app.listen(2200);
+ app.listen(2200);
 
 
 // var server = app.listen(8080,function(){

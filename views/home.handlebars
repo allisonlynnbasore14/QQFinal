@@ -10,11 +10,11 @@
   <body>
 	<div class = "profile">
 		<p class = "profileName">
-			Sophie Germain
+			{{{name}}}
 		</p>
-		<img class = "profilePic" src="http://www.heurema.com/PersonajesFQ/SophieGermain/GermainSophieN2-300px.jpg">
+		<img class = "profilePic" src={{{avatar}}}>
 		<p class = "profileDescription">
-			Marie-Sophie Germain was a French mathematician, physicist, and philosopher. Despite initial opposition from her parents and difficulties presented by society, she gained education from books in her fathers library including ones by Leonhard Euler and from correspondence with famous mathematicians such as Lagrange, Legendre, and Gauss. One of the pioneers of elasticity theory, she won the grand prize from the Paris Academy of Sciences for her essay on the subject. Her work on Fermats Last Theorem provided a foundation for mathematicians exploring the subject for hundreds of years after.
+		{{{description}}}
 		</p>
 	</div>
 	<div>
@@ -194,8 +194,8 @@
 				3
 				</div>
 					<form action = '/home/submit' id = "questions" name = "Questions" method="post">
-					    <input type="text" id="loginBox" name="id" placeholder=" Name" value = {{{id}}}>
-					    <input type="text" id="loginBox" name="status" placeholder=" Name" value={{{status}}}>
+					    <input type="text" id="HiddenForm" name="id" placeholder=" Name" value = {{{id}}}>
+					    <input type="text" id="HiddenForm" name="status" placeholder=" Name" value={{{status}}}>
 			        	<input type="submit" class= "loginSubmit" id = "LoginBoxButton" value="Submit">
 					</form>
 			</div>
@@ -205,7 +205,7 @@
  	<script type="text/javascript" src="./../javascripts/grading.js"></script>
 <script type="text/javascript">
   
-   ProgressFill(3)
+   ProgressFill({{{status}}})
  function ProgressFill(progressNum){
 	for (p=progressNum; p > 0; p--){
 		if (p == 7|| p == 26 || p == 35 || p > 41){
@@ -218,7 +218,6 @@
 	}
 }
 
-  console.log('JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ')
   function sendAnswers(){
     processAnswers( Home,
       [],'home')
