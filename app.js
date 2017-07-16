@@ -167,7 +167,8 @@ function GetIdFromName(name){
 }
 
 function GetQuizFromStatus(status){
-  console.log(status)
+  var newStatus = Number(status) + 1;
+  var newStatusString = newStatus.toString();
   var quizzes = {
     '1' : index.PercentStudy,
     '2' : index.PercentMatch,
@@ -225,8 +226,8 @@ function GetQuizFromStatus(status){
     '51' : index.SequenceQ2,
     '52' : index.AllDone
   }
-  if (quizzes[status] != undefined){
-    return quizzes[status];
+  if (quizzes[newStatusString] != undefined){
+    return quizzes[newStatusString];
   } else{
     return null;
   }
