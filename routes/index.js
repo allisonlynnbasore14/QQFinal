@@ -111,7 +111,7 @@ function StoreScoreData(status, id, numberC){
   var total = GetTotalFromStatus(status);
   console.log(total, numberC, status)
   if (total === Number(numberC)){
-    sendToDB(Number(status) + 1, id)
+    sendToDB(Number(status), id)
     return
   }
   else{
