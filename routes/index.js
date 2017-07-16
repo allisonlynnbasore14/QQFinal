@@ -130,6 +130,7 @@ var DRulesQ = function(req, res){
 };
 
 var DRulesCopy = function(req, res){
+  console.log('here at index........................')
   res.render("DRulesCopy",{"directions": constants.DIR.COPY, "title": constants.TITLE.DRU + ' II'});
 };
 
