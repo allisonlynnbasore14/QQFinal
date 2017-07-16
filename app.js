@@ -246,7 +246,7 @@ function GetQuizFromStatus(status){
 //   // }
 // });
 
-app.get('/DRulesCopy:id/:status', index.DRulesCopy);
+app.get('/DRulesCopy/:id/:status', index.DRulesCopy);
 app.get('/DRulesQ', index.DRulesQ);
 app.get('/DRulesQ2', index.DRulesQ2);
 // app.get('/DRulesQ2', index.DRulesQ2);
