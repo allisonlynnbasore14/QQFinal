@@ -77,7 +77,7 @@ const client = new pg.Client(connectionString);
 // )
 
 
-app.get('/login', function(req, res, next){
+app.get('/login/:id', function(req, res, next){
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 });
 
