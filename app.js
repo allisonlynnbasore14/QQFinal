@@ -118,6 +118,7 @@ app.post('/home/submit', function(req, res, next){
     console.log('STOPPED AT HOME SUBMIT')
   }else{
       var quiz = GetQuizFromStatus(status)
+      console.log(quiz)
       res.redirect('/' + quiz +'/' + id + '/' + status)
     }
 });
@@ -288,7 +289,7 @@ app.get('/PercentQ', index.PercentQ);
 app.get('/PercentQ2', index.PercentQ2);
 app.get('/PercentQ3', index.PercentQ3);
 app.get('/PercentMatch', index.PercentMatch);
-app.get('/PercentStudy', index.PercentStudy);
+app.get('/PercentStudy/:id/:status', index.PercentStudy);
 
 app.get('/FractionStudy', index.FractionStudy);
 app.get('/FractionGCFQ', index.FractionGCFQ);
