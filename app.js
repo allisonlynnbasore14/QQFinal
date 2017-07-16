@@ -139,6 +139,22 @@ app.post('/home/submit', function(req, res, next){
 });
 
 
+app.post('/quiz/submit', function(req, res, next){
+  var status = req.body.status;
+  var id = req.body.id;
+  var missedQ = req.body.missedQ;
+  var numberC = req.body.numberC;
+  if (!req.body) return res.sendStatus(400)
+  if(id === null){
+    console.log('STOPPED AT HOME SUBMIT')
+  }else{
+    console.log(status)
+      var quiz = GetQuizFromStatus(status, false)
+      res.redirect('/' + quiz +'/show/' + id + '/' + status + '/' + numberC + '/' + missedQ)
+    }
+});
+
+
 
 function CleanLoginAndSend(name){
   name = name.toUpperCase().trim();
@@ -183,9 +199,14 @@ function GetNameFromId(id){
   }
 }
 
-function GetQuizFromStatus(status){
-  var newStatus = Number(status) + 1;
-  var newStatusString = newStatus.toString();
+function GetQuizFromStatus(status, addOne=true){
+  if(addOne){
+    var newStatus = Number(status);
+    var newStatusString = newStatus.toString();
+  }else{
+    var newStatus = Number(status) - 1;
+    var newStatusString = newStatus.toString()
+  }
   var quizzes = {
     '1' : 'PercentStudy',
     '2' : 'PercentMatch',
@@ -301,11 +322,14 @@ app.get('/ProbQ2', index.ProbQ2);
 app.get('/ProbTF', index.ProbTF);
 app.get('/ProbQ3', index.ProbQ3);
 
-app.get('/PercentQ', index.PercentQ);
-app.get('/PercentQ2', index.PercentQ2);
-app.get('/PercentQ3', index.PercentQ3);
-app.get('/PercentMatch', index.PercentMatch);
+app.get('/PercentQ/:id/:status', index.PercentQ);
+app.get('/PercentQ2/:id/:status', index.PercentQ2);
+app.get('/PercentQ3/:id/:status', index.PercentQ3);
+app.get('/PercentMatch/:id/:status', index.PercentMatch);
 app.get('/PercentStudy/:id/:status', index.PercentStudy);
+
+app.get('/PercentStudy/show/:id/:status/:numberC/:missedQ', index.PercentStudyShow);
+
 
 app.get('/FractionStudy', index.FractionStudy);
 app.get('/FractionGCFQ', index.FractionGCFQ);

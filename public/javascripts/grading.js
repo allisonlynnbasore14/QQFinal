@@ -140,8 +140,6 @@ function TurnBlue(id, val){
 	}
 }
 
-console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
-
 function TurnBluePrimeQ(id, val){
 	var num = clickCount[val-1]
 	if ((num % 2) === 0){
@@ -191,11 +189,31 @@ function UnCount(id){
 }
 
 
+
+function DisplaySubmissionDetails(numberC, missedQ){
+	CoverFunc("WhiteCover")
+	if (numberC == missedQ){
+		var Message = "You passed!  Good Job!"
+		document.getElementById("NumberCorrect").innerHTML = Message;
+		return
+	}else if (numberC < missedQ){
+		document.getElementById("Missed").style.opacity = 100;
+		document.getElementById("Heading").style.opacity = 0;
+		document.getElementById("NumberCorrect").innerHTML = "You answered with " + over + " too many.";
+
+	}else{
+	document.getElementById("Missed").style.opacity = 100;
+	document.getElementById("Heading").style.opacity = 0;
+	document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQ;
+	document.getElementById("NumberCorrect").innerHTML = "Your score is   "+numberC +"/"+' 1000000'+".   You can do it! Keep trying!";
+	}
+}
+
 function processAnswers(title, guesses, type=null) {
 	var answers = title;
 	var numQuestions = answers.length;
 	attempt_cnt = attempt_cnt + 1
-
+	console.log('hererer')
 	if(attempt_cnt > 1){
 		if (attempt_cnt > 2){
 		document.getElementById("Error").innerHTML = "Sorry, you already submited your answers"
@@ -252,13 +270,13 @@ function processAnswers(title, guesses, type=null) {
 	if(guesses.length > answers.length){
 		correct = correct -1
 	}
-
 	CoverFunc("WhiteCover")
-
 	if (correct == numQuestions){
+		var Message = "You passed!  Good Job!"
 		document.getElementById("NumberCorrect").innerHTML = Message;
-		document.getElementById('statusInput').value = 100;
-		document.forms["StatusSubmit"].submit();
+		document.getElementById('HiddenForm3').value = correct;
+		document.getElementById('HiddenForm4').value = '0';
+		// document.forms["StatusSubmit"].submit();
 	}else if (guesses.length > numQuestions){
 		var over = guesses.length - numQuestions
 		if(type == null || type == 'includes'){
@@ -266,7 +284,7 @@ function processAnswers(title, guesses, type=null) {
 			document.getElementById("Heading").style.opacity = 0;
 			document.getElementById("Missed").innerHTML = "You miseed this one";
 			document.getElementById('statusInput').value = 0;
-			//document.forms["StatusSubmit"].submit();
+			document.forms["StatusSubmit"].submit();
 		}
 		document.getElementById("NumberCorrect").innerHTML = "You answered with " + over + " too many.";
 	}else{
@@ -275,7 +293,7 @@ function processAnswers(title, guesses, type=null) {
 			document.getElementById("Heading").style.opacity = 0;
 			document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQuestions;
 			document.getElementById('statusInput').value = 0;
-			//document.forms["StatusSubmit"].submit();
+			document.forms["StatusSubmit"].submit();
 		}
 		document.getElementById("NumberCorrect").innerHTML = "Your score is   "+correct +"/"+numQuestions+".   You can do it! Keep trying!";
 	}

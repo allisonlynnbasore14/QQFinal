@@ -19,7 +19,24 @@
 	#LoginBoxButton{
 	}
 
-	#HiddenForm{
+	#HiddenForm1{
+		opacity: 0;
+		z-index: -1;
+		width: 10px;
+	}
+
+	#HiddenForm2{
+		opacity: 0;
+		z-index: -1;
+		width: 10px;
+	}
+
+	#HiddenForm3{
+		opacity: 0;
+		z-index: -1;
+		width: 10px;
+	}
+	#HiddenForm4{
 		opacity: 0;
 		z-index: -1;
 		width: 10px;

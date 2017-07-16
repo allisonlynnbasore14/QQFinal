@@ -3,6 +3,10 @@ var express = require('express');
 var router = express.Router();
 var constants = require('../constants');
 var pg = require('pg');
+const connectionString = process.env.DATABASE_URL || 'postgres://localhost:2200';
+
+var totals = require('../totals.js');
+
 //function that constructs and returns lizard object
 function Entry(id, score){
   var score = {
@@ -103,13 +107,38 @@ function Entry(id, score){
 // );
 // };
 
+function StoreScoreData(status, id, numberC){
+  var total = GetTotalFromStatus(status);
+  console.log(total, numberC, status)
+  if (total === Number(numberC)){
+    sendToDB(Number(status) + 1, id)
+    return
+  }
+  else{
+    return
+  }
+}
+
+function GetTotalFromStatus(status){
+    var newStatus = Number(status) - 1;
+    var newStatusString = newStatus.toString();
+  if (totals[newStatusString] != undefined){
+    return totals[newStatusString];
+  } else{
+    return null;
+  }
+}
+
 function sendToDB(newStatus, id){
+  console.log('ppppppppppppppppppppppppp')
   const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if(err) {
+      console.log('EEEEEEEEEEEEEEEe')
       done();
       return res.status(500).json({success: false, data: err});
       }
+            console.log('yyyyyyyyyyyyyyyyyyyyyyyyy')
       client.query('UPDATE users SET status=$1 WHERE user_id$2', [newStatus, id] , function(err, result) {
         done()
       })
@@ -124,9 +153,7 @@ function sendToDB(newStatus, id){
 /////////////////////////////Division Rules
 
 var DRulesQ = function(req, res){
-    res.render("DRulesQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I', "id" : 3});
-    // TODO: give id to client
-    //sendToDB(req.query.StatusUpdate, id)
+    res.render("DRulesQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I'});
 };
 
 var DRulesCopy = function(req, res){
@@ -281,7 +308,16 @@ var PercentMatch = function(req, res){
 };
 
 var PercentStudy = function(req, res){
-  res.render("PercentStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I'});
+  res.render("PercentStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":false,  "numberC" : 0, "missedQ":0});
+};
+
+var PercentStudyShow = function(req, res){
+  var numberC = req.params.numberC;
+  var missedQ = req.params.missedQ;
+  var id = req.params.id;
+  var status = req.params.status;
+  StoreScoreData(status, id, numberC)
+  res.render("PercentStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : numberC, "missedQ":missedQ});
 };
 
 /////////////////////////////Fraction
@@ -403,6 +439,8 @@ module.exports.PercentQ2 = PercentQ2;
 module.exports.PercentQ3 = PercentQ3;
 module.exports.PercentMatch = PercentMatch;
 module.exports.PercentStudy = PercentStudy;
+
+module.exports.PercentStudyShow = PercentStudyShow;
 
 module.exports.FractionGCFQ = FractionGCFQ;
 module.exports.FractionLCMQ = FractionLCMQ;
