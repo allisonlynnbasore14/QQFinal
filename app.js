@@ -114,7 +114,7 @@ app.get('/home/:id/:status', function(req, res, next){
 app.post('/home/submit', function(req, res, next){
   var status = req.params.status;
   var id = req.params.id;
-    console.log('here at 444444444444444444444444444444444444')
+  console.log(req.params)
   if (!req.body) return res.sendStatus(400)
   if(id === null){
     console.log('STOPPED AT HOME SUBMIT')
