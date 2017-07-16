@@ -142,7 +142,7 @@ function sendToDB(newStatus, id){
       client.query('SELECT * FROM test_table', function(err, result){
         console.log(result)
       
-}      client.query('UPDATE users SET status=$newStatus WHERE user_id=$id', [newStatus, id] , function(err, result) {
+})     client.query('UPDATE users SET status=$newStatus WHERE user_id=$id', [newStatus, id] , function(err, result) {
         done()
       })
     });
