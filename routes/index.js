@@ -130,6 +130,7 @@ function GetTotalFromStatus(status){
 }
 
 function sendToDB(newStatus, id){
+  console.log(id, newStatus, '9999999999999999999999999999999999999999999')
   const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if(err) {
