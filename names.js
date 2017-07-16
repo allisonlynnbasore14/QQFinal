@@ -1,0 +1,23 @@
+  var names = module.exports = {
+    '1':'Euclid',
+    '2':'Newton',
+    '3':'Archimedes',
+    '4':'Gauss',
+    '5':'Descartes',
+    '6':'Fermat',
+    '7':'Euler',
+    '8':'Einstein',
+    '9':'Leibniz',
+    '10':'Hilbert',
+    '11':'Pascal',
+    '12':'Turing',
+    '13':'Ramanujan',
+    '14':'Riemann',
+    '15':'Neumann',
+    '16':'Ptolemy',
+    '17':'Aryabhata',
+    '18':'Cantor',
+    '19':'Germain',
+    '20':'Ada',
+    '21':'Noether'
+  };
