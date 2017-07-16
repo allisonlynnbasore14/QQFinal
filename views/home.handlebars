@@ -3,6 +3,9 @@
 
 <html>
 <head>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+	 <link rel = "stylesheet" type = "text/css" href = "/../stylesheets/pageFormat.css" />
 </head>
   <body>
 	<div class = "profile">
@@ -199,21 +202,21 @@
 		</div>
   	</div>
  </body>
- 	<script type="text/javascript" src="./public/javascripts/grading.js"></script>
+ 	<script type="text/javascript" src="./../javascripts/grading.js"></script>
 <script type="text/javascript">
   
    ProgressFill(3)
-//  function ProgressFill(progressNum){
-// 	for (p=progressNum; p > 0; p--){
-// 		if (p == 7|| p == 26 || p == 35 || p > 41){
-// 			console.log('Free Pass')
-// 			continue
-// 		} 
-// 		var oldcolor = "#004d99";
-// 		document.getElementById(p).style.backgroundColor = oldcolor;
-// 		document.getElementById(p).style.color = 'white';
-// 	}
-// }
+ function ProgressFill(progressNum){
+	for (p=progressNum; p > 0; p--){
+		if (p == 7|| p == 26 || p == 35 || p > 41){
+			console.log('Free Pass')
+			continue
+		} 
+		var oldcolor = "#004d99";
+		document.getElementById(p).style.backgroundColor = oldcolor;
+		document.getElementById(p).style.color = 'white';
+	}
+}
 
   console.log('JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ')
   function sendAnswers(){
