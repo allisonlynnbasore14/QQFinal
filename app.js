@@ -88,7 +88,8 @@ app.get('/login', function(req, res, next){
 app.post('/login/submit',  urlencodedParser , function(req, res, next){
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
-  var id = GetIdFromName(name);
+  //var id = GetIdFromName(name);
+  var id = 5;
   if(id === null){
     res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found.", "sendMessage" : false});
   }else{
