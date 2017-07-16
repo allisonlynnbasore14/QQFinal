@@ -43,8 +43,8 @@
 	}
 
 	.loginSubmit{
-		width:210px;
-		height:60px;
+		width:410px;
+		height:100px;
 		font-family: monaco,Consolas,Lucida Console,monospace;
 		cursor: crosshair;
 		font-size: 30px;
