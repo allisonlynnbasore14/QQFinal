@@ -183,7 +183,7 @@ function GetQuizFromStatus(status){
     '10' : index.PropsQ3,
     '11' : index.PropsQ4,
     '12' : index.FreePass,
-    '1' : index.DRulesCopy,
+    '1' : 'DRulesCopy',
     '14' : index.DRulesQ,
     '15' : index.DRulesQ2,
     '16' : index.PrimeNumbersCopy,
