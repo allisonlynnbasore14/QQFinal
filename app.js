@@ -113,7 +113,7 @@ app.get('/home/:id/:status', function(req, res, next){
 app.post('/home/submit', function(req, res, next){
   var status = req.body.status;
   var id = req.body.id;
-  console.log(req.body)
+  console.log(req.body[0])
   if (!req.body) return res.sendStatus(400)
   if(id === null){
     console.log('STOPPED AT HOME SUBMIT')
