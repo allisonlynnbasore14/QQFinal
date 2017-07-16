@@ -201,7 +201,7 @@ function GetNameFromId(id){
 
 function GetQuizFromStatus(status, addOne=true){
   if(addOne){
-    var newStatus = Number(status);
+    var newStatus = Number(status)+1;
     var newStatusString = newStatus.toString();
   }else{
     var newStatus = Number(status) - 1;
