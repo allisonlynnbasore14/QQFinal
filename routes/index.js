@@ -139,7 +139,7 @@ function sendToDB(newStatus, id){
       return res.status(500).json({success: false, data: err});
       }
             console.log('yyyyyyyyyyyyyyyyyyyyyyyyy')
-           client.query('UPDATE users SET status=0 WHERE user_id=2', function(err, result) {
+           client.query('UPDATE users SET status=$1 WHERE user_id=$2', [newStatus, id] , function(err, result) {
         done()
       })
     });
