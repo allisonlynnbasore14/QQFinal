@@ -106,8 +106,7 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
 app.get('/home/:id/:status', function(req, res, next){
   var status = req.params.status;
   var id = req.params.id;
-  //res.render('home' ,{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status, "id": id})
-  res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
+  res.render('home' ,{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status, "id": id})
 });
 
 
