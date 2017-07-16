@@ -210,7 +210,7 @@ function GetQuizFromStatus(status, addOne=true){
   var quizzes = {
     '1' : 'PercentStudy',
     '2' : 'PercentMatch',
-    '3' : 'PercentQ1',
+    '3' : 'PercentQ',
     '4' : 'PercentQ2',
     '5' : 'PercentQ3',
     '6' : 'PropsStudy',
