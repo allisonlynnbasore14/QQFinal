@@ -140,6 +140,8 @@ function TurnBlue(id, val){
 	}
 }
 
+console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+
 function TurnBluePrimeQ(id, val){
 	var num = clickCount[val-1]
 	if ((num % 2) === 0){

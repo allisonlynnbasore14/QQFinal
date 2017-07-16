@@ -123,10 +123,9 @@ function sendToDB(newStatus, id){
 
 /////////////////////////////Division Rules
 
-var DRulesQ = function(req, res, id){
+var DRulesQ = function(req, res){
     res.render("DRulesQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I', "id" : 3});
     // TODO: give id to client
-    console.log(req)
     //sendToDB(req.query.StatusUpdate, id)
 };
 
