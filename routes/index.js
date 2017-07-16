@@ -139,6 +139,9 @@ function sendToDB(newStatus, id){
       return res.status(500).json({success: false, data: err});
       }
             console.log('yyyyyyyyyyyyyyyyyyyyyyyyy')
+      client.query('SELECT * FROM test_table', function(err, result){
+        console.log(result)
+      }
       client.query('UPDATE users SET status=$newStatus WHERE user_id$id', [newStatus, id] , function(err, result) {
         done()
       })
