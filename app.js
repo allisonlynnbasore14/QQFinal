@@ -14,7 +14,7 @@ var app = express();
 var descriptions = require('./descriptions.js');
 var profiles = require('./profiles.js');
 var ids = require('./ids.js');
-var userNames = require('./names.js');
+var names = require('./names.js');
 
 var bodyParser = require('body-parser');
 
@@ -168,8 +168,8 @@ function GetProfileDescriptionfromId(id){
 }
 
 function GetIdFromName(name){
-  if (userNames[name] != undefined){
-    return userNames[name];
+  if (ids[name] != undefined){
+    return ids[name];
   } else{
     return null;
   }
