@@ -286,7 +286,7 @@ var ProbQ3 = function(req, res){
 var ProbStudy = function(req, res){
   res.render("ProbStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PRB + ' V', "show":false,  "numberC" : 0, "missedQ":0});
 };
-, "show":false,  "numberC" : 0, "missedQ":0
+
 /////////////////////////////Percent
 
 var PercentQ = function(req, res){
