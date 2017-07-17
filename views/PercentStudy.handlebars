@@ -39,6 +39,9 @@
 
 	//processAnswers( PercentStudyAns, [])
   function sendAnswers(){
+ 
+ 	document.getElementById('HiddenForm1').value = {{{id}}};
+	document.getElementById('HiddenForm2').value = {{{status}}};
     processAnswers( PercentStudyAns,
       [])
 	document.forms["StatusSubmit"].submit();
