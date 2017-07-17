@@ -18,7 +18,7 @@ function Entry(id, score){
 
 function StoreScoreData(status, id, numberC){
   console.log('SIN', status, id, numberC)
-  var total = GetTotalFromStatus(status);
+  var total = GetTotalFromStatus((Number(status) - 1).toString());
   console.log(total, numberC, status)
   if (total === Number(numberC)){
     sendToDB(Number(status), id)
@@ -300,17 +300,17 @@ var AllDone = function(req, res){
 
 var DRulesQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("DRulesQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("DRulesQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var DRulesCopyShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("DRulesCopy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("DRulesCopy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var DRulesQ2Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("DRulesQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("DRulesQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 // var DRulesQ2 = function(req, res){
@@ -320,265 +320,265 @@ var DRulesQ2Show = function(req, res){
 /////////////////////////////Prime Numbers
 var PrimeNumbersShow = function(req, res){
    StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PrimeNumbers",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PrimeNumbers",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PrimeNumbersCopyShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PrimeNumbersCopy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PrimeNumbersCopy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PrimeNumbersQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PrimeNumbersQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PrimeNumbersQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PrimeNumbersQ2Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PrimeNumbersQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PrimeNumbersQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PrimeNumbersListShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PrimeNumbersList",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PrimeNumbersList",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Square Numbers
 var SquareNumbersMatchShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("SquareNumbersMatch",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("SquareNumbersMatch",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var SquareNumbersCopyShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("SquareNumbersCopy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});;
+  res.render("SquareNumbersCopy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});;
 };
 
 var SquareTFShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("SquareTF",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("SquareTF",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var SquareNumbersQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("SquareNumbersQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("SquareNumbersQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var SquareNumbersListShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("SquareNumbersList",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("SquareNumbersList",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////PTheorem
 var PTheoremCopyShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PTheoremCopy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PTheoremCopy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PTheoremQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PTheoremQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PTheoremQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PTheoremFillShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PTheoremFill",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PTheoremFill",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Props
 
 var PropsQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PropsQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PropsQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PropsQ2Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PropsQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PropsQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PropsExampleShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PropsExample",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PropsExample",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PropsQ3Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PropsQ3",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PropsQ3",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PropsStudyShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PropsStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PropsStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Angles
 
 var AnglesQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("AnglesQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("AnglesQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var AnglesMatchShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("AnglesMatch",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("AnglesMatch",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var AnglesQ2Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("AnglesQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("AnglesQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var AnglesQ3Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("AnglesQ3",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("AnglesQ3",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var AnglesStudyShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("AnglesStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("AnglesStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Prob
 
 var ProbQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("ProbQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("ProbQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var ProbQ2Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("ProbQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("ProbQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var ProbTFShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("ProbTF",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("ProbTF",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var ProbQ3Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("ProbQ3",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("ProbQ3",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var ProbStudyShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("ProbStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("ProbStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Percent
 
 var PercentQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PercentQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PercentQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PercentQ2Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PercentQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PercentQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PercentQ3Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PercentQ3",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PercentQ3",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PercentMatchShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PercentMatch",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PercentMatch",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PercentStudyShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PercentStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("PercentStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Fraction
 
 var FractionGCFQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("FractionGCFQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("FractionGCFQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var FractionLCMQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("FractionLCMQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("FractionLCMQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var FractionImpQShow= function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("FractionImpQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("FractionImpQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var FractionQShow= function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("FractionQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("FractionQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var FractionQ2Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("FractionQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("FractionQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var FractionStudyShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("FractionStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("FractionStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Sequences
 
 var SequenceQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("SequenceQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("SequenceQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var SequenceStudyShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("SequenceStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("SequenceStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var SequenceQ2Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("SequenceQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("SequenceQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Exponents
 
 var ExponentStudyShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("ExponentStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("ExponentStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var ExponentQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("ExponentQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("ExponentQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var ExponentQ2Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("ExponentQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("ExponentQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var ExponentQ3Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("ExponentQ3",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("ExponentQ3",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var ExponentQ4Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("ExponentQ4",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("ExponentQ4",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Other
 
 var FreePassShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("FreePass",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("FreePass",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var AllDoneShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("AllDone",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ});
+  res.render("AllDone",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 
