@@ -93,7 +93,7 @@
 
 
 
-	  var totals = module.exports = {
+	  var totals = {
     '1' : 0,
     '2' : 8,
     '3' : 10,
