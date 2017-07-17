@@ -122,24 +122,26 @@ function StoreScoreData(status, id, numberC){
 
 function GetTotalFromStatus(status){
   console.log(status, 'statuslllllllllllllllllllllllllllll')
-    var newStatus = Number(status) + 2 ;
-    var newStatusString = newStatus.toString();
-  if (totals[newStatusString] != undefined){
-    return totals[newStatusString];
+    var oldstatus = Number(status) + 1 ;
+    var oldStatusString = oldStatus.toString();
+  if (totals[oldStatusString] != undefined){
+    return totals[oldStatusString];
   } else{
     return null;
   }
 }
 
-function sendToDB(newStatus, id){
-  console.log(id, newStatus, '9999999999999999999999999999999999999999999')
+function sendToDB(oldStatus, id){
+  var newStatus = Number(oldStatus) + 1 ;
+  var newStatusString = newStatus.toString();
+  console.log(id, newStatusString, '9999999999999999999999999999999999999999999')
   const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if(err) {
       done();
       return res.status(500).json({success: false, data: err});
       }
-           client.query('UPDATE users SET status=$1 WHERE user_id=$2', [newStatus, id] , function(err, result) {
+           client.query('UPDATE users SET status=$1 WHERE user_id=$2', [newStatusString, id] , function(err, result) {
         done()
       })
     });
