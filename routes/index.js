@@ -120,6 +120,7 @@ function StoreScoreData(status, id, numberC){
 }
 
 function GetTotalFromStatus(status){
+  console.log(status, 'statuslllllllllllllllllllllllllllll')
     var newStatus = Number(status) - 2;
     var newStatusString = newStatus.toString();
   if (totals[newStatusString] != undefined){
