@@ -306,7 +306,7 @@ var PercentMatch = function(req, res){
 };
 
 var PercentStudy = function(req, res){
-  res.render("PercentStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":false,  "numberC" : 0, "missedQ":0});
+  res.render("PercentStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.id});
 };
 
 /////////////////////////////Fraction
