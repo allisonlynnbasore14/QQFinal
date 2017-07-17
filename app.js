@@ -149,7 +149,7 @@ app.post('/quiz/submit', function(req, res, next){
     console.log('STOPPED AT HOME SUBMIT')
   }else{
     console.log(status)
-      var quiz = GetQuizFromStatus(status, false)
+      var quiz = GetQuizFromStatus(status)
       res.redirect('/' + quiz +'/show/' + id + '/' + status + '/' + numberC + '/' + missedQ)
     }
 });
@@ -199,12 +199,15 @@ function GetNameFromId(id){
   }
 }
 
-function GetQuizFromStatus(status, addOne=true){
-  if(addOne){
+function GetQuizFromStatus(status, addOne='2'){
+  if(addOne==='1'){
     var newStatus = Number(status)+1;
     var newStatusString = newStatus.toString();
-  }else{
+  }else if(addOne==='-1'){
     var newStatus = Number(status) - 1;
+    var newStatusString = newStatus.toString()
+  }else{
+    var newStatus = Number(status);
     var newStatusString = newStatus.toString()
   }
   var quizzes = {
