@@ -108,6 +108,7 @@ function Entry(id, score){
 // };
 
 function StoreScoreData(status, id, numberC){
+  console.log('SIN', status, id, numberC)
   var total = GetTotalFromStatus(status);
   console.log(total, numberC, status)
   if (total === Number(numberC)){
