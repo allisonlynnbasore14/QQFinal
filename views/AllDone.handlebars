@@ -7,7 +7,7 @@
 	<title>
 		QuarterQuizes
 	</title>
-	  <script type="text/javascript" src="../../javascripts/grading.js"></script>
+  	<script type="text/javascript" src="/javascripts/grading.js"></script>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 	<style>
@@ -144,6 +144,10 @@
     } else {
         x.style.display = 'none';
     	}
+	}
+
+	if ({{{show}}}){
+		DisplaySubmissionDetails({{{numberC}}}, {{{missedQ}}})
 	}
 
 </script>

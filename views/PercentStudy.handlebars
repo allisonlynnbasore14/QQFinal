@@ -4,7 +4,7 @@
 <html>
 
 <head>
-  <script type="text/javascript" src="/javascripts/grading.js"></script>
+	<script type="text/javascript" src="/javascripts/grading.js"></script>
 </head>
 
 
@@ -36,17 +36,15 @@
 	</div>
  </body>
 <script type="text/javascript">
-
-	//processAnswers( PercentStudyAns, [])
-  function sendAnswers(){
- 	setValues({{{id}}}, {{{status}}});
-    processAnswers( PercentStudyAns,
-      [])
-	document.forms["StatusSubmit"].submit();
-  }
-if ({{{show}}}){
-	DisplaySubmissionDetails({{{numberC}}}, {{{missedQ}}})
-}
+  	function sendAnswers(){
+	 	setValues({{{id}}}, {{{status}}});
+	    processAnswers( PercentStudyAns,
+	      [])
+		document.forms["StatusSubmit"].submit();
+  	}
+	if ({{{show}}}){
+		DisplaySubmissionDetails({{{numberC}}}, {{{missedQ}}})
+	}
 </script>
 
 </body>

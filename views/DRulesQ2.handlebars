@@ -4,7 +4,7 @@
 <html>
 
 <head>
-	<script type="text/javascript" src="../../javascripts/grading.js"></script>
+	<script type="text/javascript" src="/javascripts/grading.js"></script>
 </head>
 
 
@@ -70,12 +70,16 @@
 	function sendAnswers(){
 		processAnswers(	DRulesQ2Ans,
 			guesses, 'checkbox')
+		setValues({{{id}}}, {{{status}}});
+		document.forms["StatusSubmit"].submit();
 	}
 
 	function Mark(id){
 		guesses.push(id); 
 	}
-
+	if ({{{show}}}){
+		DisplaySubmissionDetails({{{numberC}}}, {{{missedQ}}})
+	}
 </script>
 
 

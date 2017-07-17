@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <script type="text/javascript" src="../../javascripts/grading.js"></script>
+	<script type="text/javascript" src="/javascripts/grading.js"></script>
 </head>
 
 <body>
@@ -21,6 +21,11 @@
 	function sendAnswers(){
 		processAnswers(	PrimeNumbersListAns,
 			[document.getElementById("Poem").value], 'copy')
+		setValues({{{id}}}, {{{status}}});
+		document.forms["StatusSubmit"].submit();
+	}
+	if ({{{show}}}){
+		DisplaySubmissionDetails({{{numberC}}}, {{{missedQ}}})
 	}
 </script>
 

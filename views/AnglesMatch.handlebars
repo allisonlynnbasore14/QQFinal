@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	 <script type="text/javascript" src="../../javascripts/grading.js"></script>
+	<script type="text/javascript" src="/javascripts/grading.js"></script>
 </head>
 
 <body>
@@ -88,6 +88,9 @@
 		</form>
 	</div>
 <script type="text/javascript">
+	if ({{{show}}}){
+		DisplaySubmissionDetails({{{numberC}}}, {{{missedQ}}})
+	}
 	function sendAnswers(){
 		processAnswers(	AnglesMatchAns,
 			[document.Questions.Submission1.value,
@@ -96,6 +99,8 @@
 			document.Questions.Submission4.value,
 			document.Questions.Submission5.value,
 			document.Questions.Submission6.value])
+		setValues({{{id}}}, {{{status}}});
+		document.forms["StatusSubmit"].submit();
 	}
 </script>
 

@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <script type="text/javascript" src="../../javascripts/grading.js"></script>
+	<script type="text/javascript" src="/javascripts/grading.js"></script>
 </head>
     <body>
 
@@ -40,7 +40,12 @@
       document.Questions.Submission6.value,
       document.Questions.Submission7.value
       ], 'includes')
+		setValues({{{id}}}, {{{status}}});
+		document.forms["StatusSubmit"].submit();
   }
+	if ({{{show}}}){
+		DisplaySubmissionDetails({{{numberC}}}, {{{missedQ}}})
+	}
 </script>
 </body>
 

@@ -4,7 +4,7 @@
 <html>
 
 <head>
-  <script type="text/javascript" src="../../javascripts/grading.js"></script>
+  <script type="text/javascript" src="/javascripts/grading.js"></script>
 </head>
 
   <body>
@@ -99,6 +99,11 @@
       document.Questions.Submission8.value,
       document.Questions.Submission9.value
       ])
+    setValues({{{id}}}, {{{status}}});
+    document.forms["StatusSubmit"].submit();
+  }
+  if ({{{show}}}){
+    DisplaySubmissionDetails({{{numberC}}}, {{{missedQ}}})
   }
 </script>
 
