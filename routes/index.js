@@ -61,7 +61,7 @@ function sendToDBResults(id, score){
       done();
       return res.status(500).json({success: false, data: err});
       }
-           client.query('UPDATE results SET score=$1, date=$2 WHERE user_id=$2', [score, date, id] , function(err, result) {
+           client.query('UPDATE results SET score=$1 WHERE user_id=$2', [score, id] , function(err, result) {
         done()
       })
     });
