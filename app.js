@@ -132,7 +132,7 @@ app.post('/home/submit', function(req, res, next){
   if(id === null){
     console.log('STOPPED AT HOME SUBMIT')
   }else{
-      var quiz = GetQuizFromStatus(status. '1')
+      var quiz = GetQuizFromStatus(status,'1')
       console.log(id)
       res.redirect('/' + quiz +'/' + id + '/' + status)
     }
