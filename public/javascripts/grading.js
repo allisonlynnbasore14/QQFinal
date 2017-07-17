@@ -274,8 +274,6 @@ function processAnswers(title, guesses, type=null) {
 	if (correct == numQuestions){
 		var Message = "You passed!  Good Job!"
 		document.getElementById("NumberCorrect").innerHTML = Message;
-		document.getElementById('HiddenForm1').value = {{{id}}};
-		document.getElementById('HiddenForm2').value = {{{status}}};
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = '0';
 		// document.forms["StatusSubmit"].submit();
