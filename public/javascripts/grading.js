@@ -125,6 +125,11 @@ function checker(answer,correct){
 	}
 }
 
+function setValues(id, status){
+ 	document.getElementById('HiddenForm1').value = id;
+	document.getElementById('HiddenForm2').value = status;
+}
+
 CoverFunc("WhiteCover")
 var attempt_cnt = 0
 
