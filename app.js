@@ -79,7 +79,11 @@ const client = new pg.Client(connectionString);
   //}
 //}
 // )
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1;
 
+console.log(mm, dd, 'ddddddddddddddd')
 
 app.get('/login', function(req, res, next){
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
@@ -436,11 +440,11 @@ app.get('/AllDone/show/:id/:status/:numberC/:missedQ', index.AllDoneShow);
 
 // app.get('/db', index.db)
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+// app.listen(process.env.PORT || 3000, function(){
+//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });
 
- // app.listen(2200);
+ app.listen(2200);
 
 
 // var server = app.listen(8080,function(){

@@ -17,16 +17,14 @@ function Entry(id, score){
 }
 
 function StoreScoreData(status, id, numberC){
-  console.log('SIN', status, id, numberC)
   var total = GetTotalFromStatus((Number(status) - 1).toString());
-  console.log(total, numberC, status)
   if (total === Number(numberC)){
-    sendToDB(Number(status), id)
-    return
+    sendToDBUsers(Number(status), id)
   }
   else{
-    return
   }
+  var score = (Number(numberC)/total).toString();
+  sendToDBResults(id, score);
 }
 
 function GetTotalFromStatus(status){
@@ -39,7 +37,7 @@ function GetTotalFromStatus(status){
   }
 }
 
-function sendToDB(oldStatus, id){
+function sendToDBUsers(oldStatus, id){
   var newStatus = Number(oldStatus) + 1 ;
   var newStatusString = newStatus.toString();
   const client = new pg.Client(connectionString);
@@ -54,6 +52,26 @@ function sendToDB(oldStatus, id){
     });
 }
 
+function sendToDBResults(id, score){
+  var date = getDate();
+  console.log(id, date, score, 'IDS')
+  const client = new pg.Client(connectionString);
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    if(err) {
+      done();
+      return res.status(500).json({success: false, data: err});
+      }
+           client.query('UPDATE results SET score=$1, date=$2 WHERE user_id=$2', [score, date, id] , function(err, result) {
+        done()
+      })
+    });
+}
+
+
+function getDate(){
+  var today = new Date();
+  return today.toDateString()
+}
 
 // var login = function(req, res){
 //   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
