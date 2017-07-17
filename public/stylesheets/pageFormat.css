@@ -259,9 +259,10 @@
 
 	#questionsPercentQ{
 		position: absolute;
+		top: 5%;
+		left: 45%;
 		line-height: 50px;
-		width: 200px;
-		height: 200px;
+		width:46%;
 	}
 
 	#questions{
@@ -639,9 +640,7 @@
 	#questionsPercent{
 		line-height: 40px;
 		margin: 20px;
-		left: 175px;
-		top: 300px;
-		width: 550px;
+		width: 300px;
 	}
 
 	.TablePercent{
