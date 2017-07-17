@@ -281,7 +281,6 @@ function processAnswers(title, guesses, type=null) {
 		document.getElementById("NumberCorrect").innerHTML = Message;
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = '0';
-		// document.forms["StatusSubmit"].submit();
 	}else if (guesses.length > numQuestions){
 		var over = guesses.length - numQuestions
 		if(type == null || type == 'includes'){
