@@ -640,7 +640,10 @@
 	#questionsPercent{
 		line-height: 40px;
 		margin: 20px;
+		left: 175px;
+		top: 300px;
 		width: 300px;
+		height: 200px;
 	}
 
 	.TablePercent{
