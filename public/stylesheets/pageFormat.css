@@ -259,10 +259,8 @@
 
 	#questionsPercentQ{
 		position: absolute;
-		top: 5%;
-		left: 45%;
 		line-height: 50px;
-		width:46%;
+		width: 200px;
 	}
 
 	#questions{
