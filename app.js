@@ -79,11 +79,7 @@ const client = new pg.Client(connectionString);
   //}
 //}
 // )
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1;
 
-console.log(mm, dd, 'ddddddddddddddd')
 
 app.get('/login', function(req, res, next){
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
