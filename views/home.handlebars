@@ -197,6 +197,8 @@
 		</div>
   	</div>
  </body>
+ 	<script type="text/javascript" src="/javascripts/grading.js"></script>
+
 <script type="text/javascript">
    ProgressFill({{{status}}})
  function ProgressFill(progressNum){
@@ -214,8 +216,8 @@
   function sendAnswers(){
 	document.getElementById('HiddenForm1').value = {{{id}}};
 	document.getElementById('HiddenForm2').value = {{{status}}};
-    processAnswers( Home,
-      [],'home')
+    // processAnswers( Home,
+    //   [],'home')
   }
 
 </script>
