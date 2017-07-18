@@ -125,6 +125,7 @@ app.get('/home/:id/:status', function(req, res, next){
 
 
 app.post('/home/submit', function(req, res, next){
+  console.log(req.body)
   var status = req.body.status;
   console.log(status, 'status at home submit')
   var id = req.body.id;
