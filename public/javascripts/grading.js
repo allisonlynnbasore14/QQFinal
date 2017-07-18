@@ -281,11 +281,9 @@ function DisplaySubmissionDetails(numberC, missedQ){
 }
 
 function processAnswers(title, guesses, type=null) {
-	console.log('lllllllllllllllllllllllllllllll')
 	var answers = title;
 	var numQuestions = answers.length;
 	attempt_cnt = attempt_cnt + 1
-	console.log('hererer')
 	if(attempt_cnt > 1){
 		if (attempt_cnt > 2){
 		document.getElementById("Error").innerHTML = "Sorry, you already submited your answers"
@@ -355,9 +353,13 @@ function processAnswers(title, guesses, type=null) {
 			document.getElementById("Missed").style.opacity = 100;
 			document.getElementById("Heading").style.opacity = 0;
 			document.getElementById("Missed").innerHTML = "You miseed this one";
+			document.getElementById('HiddenForm3').value = '0';
+			document.getElementById('HiddenForm4').value = '0';
 		}
 		document.getElementById("NumberCorrect").innerHTML = "You answered with " + over + " too many.";
 	}else{
+		document.getElementById('HiddenForm3').value = correct;
+		document.getElementById('HiddenForm4').value = missedQuestions;
 		if(type == null || type == 'includes'){
 			document.getElementById("Missed").style.opacity = 100;
 			document.getElementById("Heading").style.opacity = 0;
