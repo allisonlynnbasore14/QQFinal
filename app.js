@@ -100,7 +100,7 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
     client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
       done()
       var status = result.rows[0].status;
-      //res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG });
+        console.log(status, 'status at pre pre homoe submit')
       res.redirect('/home/' + id + '/' + status)
     })
     })
@@ -113,6 +113,7 @@ app.get('/home/:id/:status', function(req, res, next){
   var avatar = GetProfileAvatarfromId(id);
   var description = GetProfileDescriptionfromId(id);
   var name = GetNameFromId(id);
+    console.log(status, 'status at pre home submit')
   res.render('home' ,{
     "directions": constants.DIR.HOME,
     "title": constants.TITLE.HOM,
