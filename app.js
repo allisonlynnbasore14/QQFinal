@@ -286,7 +286,7 @@ function GetQuizFromStatus(status, addOne='2'){
 //   // }
 // });
 
-app.get('/AngieBasoreKey', index.AngieBasoreKey);
+// app.get('/AngieBasoreKey', index.AngieBasoreKey);
 
 app.get('/DRulesCopy/:id/:status', index.DRulesCopy);
 app.get('/DRulesQ/:id/:status', index.DRulesQ);
