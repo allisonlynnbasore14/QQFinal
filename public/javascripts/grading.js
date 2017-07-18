@@ -361,6 +361,7 @@ function processAnswers(title, guesses, type=null) {
 	}else{
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = missedQuestions.toString();
+		console.log(missedQuestions)
 		if(type == null || type == 'includes'){
 			document.getElementById("Missed").style.opacity = 100;
 			document.getElementById("Heading").style.opacity = 0;
