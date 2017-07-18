@@ -23,7 +23,7 @@ function StoreScoreData(status, id, numberC){
   }
   else{
   }
-  var score = (Number(numberC)/total).toString();
+  var score = numberC
   sendToDBResults(id, score);
 }
 
@@ -76,6 +76,12 @@ function getDate(){
 // var login = function(req, res){
 //   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 // };
+
+
+var AngieBasoreKey = function(req, res){
+    // Pull from db
+    res.render("ScoreDisplay",{});//{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+};
 
 /////////////////////////////Division Rules
 

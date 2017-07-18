@@ -26,6 +26,7 @@
 	var FractionImpQAns=['C', 'B'];
 	var FractionLCMQAns= ['B','D'];
 	var FractionQAns= ['C','A','D'];
+	var FractionQ2Ans= ['D', 'A', 'B', 'B'];
 
 	// PTheorem
 	var PTheoremCopyAns=['hypotenuse','legs','equal','triangle','Theorem','square','sum','right'];
@@ -72,6 +73,7 @@
 
 	// Sequence
 	var SequenceQAns= ['B','A','C','A','D'];
+	var SequenceQ2Ans= ['B','D'];
 	var SequenceStudyAns= [];
 
 	// Square Numbers
