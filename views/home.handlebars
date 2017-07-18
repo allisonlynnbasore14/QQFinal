@@ -195,8 +195,8 @@
 				</div>
 			</div>
 			<form action = '/home/submit' name = "HomeSubmit" method = 'post'>
-			    <input type="text" id="HiddenForm1" name="id" placeholder=" Name" value = 10>
-			    <input type="text" id="HiddenForm2" name="status" placeholder=" Name" value=10>
+			    <input type="text" id="HiddenFormHome1" name="id" placeholder=" Name" value = 10>
+			    <input type="text" id="HiddenFormHome2" name="status" placeholder=" Name" value=10>
 				<input id = 'HomeSubmitButton' type="button" value="Submit" onClick="sendAnswers()">
 			</form>
 		</div>
@@ -219,10 +219,10 @@
 }
 
   function sendAnswers(){
-  	console.log(document.getElementById('HiddenForm2').value)
-	document.getElementById('HiddenForm1').value = {{{id}}};
-	document.getElementById('HiddenForm2').value = {{{status}}};
-	console.log(document.getElementById('HiddenForm2').value)
+  	console.log(document.getElementById('HiddenFormHome2').value)
+	document.getElementById('HiddenFormHome1').value = {{{id}}};
+	document.getElementById('HiddenFormHome2').value = {{{status}}};
+	console.log(document.getElementById('HiddenFormHome2').value)
 	document.forms["HomeSubmit"].submit()
   }
 
