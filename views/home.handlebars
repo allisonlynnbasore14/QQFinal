@@ -194,7 +194,7 @@
 				3
 				</div>
 			</div>
-			<form action = '/home/submit' name = "StatusSubmit" id = 'HiddenForm' method = 'post'>
+			<form action = '/home/submit' name = "HomeSubmit" id = 'HiddenForm' method = 'post'>
 			    <input type="text" id="HiddenForm1" name="id" placeholder=" Name" value = 2>
 			    <input type="text" id="HiddenForm2" name="status" placeholder=" Name" value=2>
 			    <input type="text" id="HiddenForm3" name="numberC" placeholder=" Name" value=10>
@@ -223,6 +223,7 @@
   function sendAnswers(){
 	document.getElementById('HiddenForm1').value = {{{id}}};
 	document.getElementById('HiddenForm2').value = {{{status}}};
+	document.forms["HomeSubmit"].submit()
   }
 
 </script>
