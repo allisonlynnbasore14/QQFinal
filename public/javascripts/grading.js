@@ -257,8 +257,7 @@ function UnCount(id){
 
 
 function DisplaySubmissionDetails(numberC, missedQ){
-	console.log(numberC, missedQ)
-	console.log(missedQ)
+	//for (m = 0; m < missedQ; m++)
 	CoverFunc("WhiteCover")
 	if (numberC == missedQ){
 		var Message = "You passed!  Good Job!"
