@@ -488,7 +488,7 @@ var ProbStudyShow = function(req, res){
 
 var PercentQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PercentQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
+  res.render("PercentQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":(req.params.missedQ).toString(), "id" : req.params.id, "status":req.params.status});
 };
 
 var PercentQ2Show = function(req, res){

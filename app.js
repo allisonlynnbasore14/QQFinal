@@ -141,8 +141,7 @@ app.post('/home/submit', function(req, res, next){
 app.post('/quiz/submit', function(req, res, next){
   var status = req.body.status;
   var id = req.body.id;
-  var missedQ = req.body.missedQ.toString();
-  console.log(missedQ)
+  var missedQ = req.body.missedQ;
   var numberC = req.body.numberC;
   if (!req.body) return res.sendStatus(400)
   if(id === null){
