@@ -143,14 +143,13 @@ app.post('/quiz/submit', function(req, res, next){
   var id = req.body.id;
   var missedQ = req.body.missedQ;
   var numberC = req.body.numberC;
-  console.log(numberC, missedQ, '@@@@@@@@@@@@@@@@@@@@@@@@@@')
   if (!req.body) return res.sendStatus(400)
   if(id === null){
     console.log('STOPPED AT HOME SUBMIT')
   }else{
       var quiz = GetQuizFromStatus(status, '1')
       var nextStatus = Number(status) + 1;
-      res.redirect('/' + quiz +'/show/' + id + '/' + nextStatus + '/' + numberC + '/' + missedQ)
+      res.redirect('/' + quiz +'/show/' + id + '/' + nextStatus + '/' + numberC + '/' + missedQ.toString())
     }
 });
 

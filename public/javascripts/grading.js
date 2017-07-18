@@ -257,7 +257,7 @@ function UnCount(id){
 
 
 function DisplaySubmissionDetails(numberC, missedQ){
-	console.log(numberC, missedQ[3])
+	console.log(numberC, missedQ)
 	console.log(missedQ)
 	CoverFunc("WhiteCover")
 	if (numberC == missedQ){
