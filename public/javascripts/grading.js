@@ -281,6 +281,7 @@ function DisplaySubmissionDetails(numberC, missedQ){
 }
 
 function processAnswers(title, guesses, type=null) {
+	console.log('lllllllllllllllllllllllllllllll')
 	var answers = title;
 	var numQuestions = answers.length;
 	attempt_cnt = attempt_cnt + 1
