@@ -93,7 +93,7 @@
 
 
 
-	  var totals = {
+	var totals = {
     '1' : 0,
     '2' : 8,
     '3' : 10,
@@ -256,7 +256,7 @@ function UnCount(id){
 
 
 
-function DisplaySubmissionDetails(numberC, missedQ){
+function DisplaySubmissionDetails(numberC, missedQ, quiz){
 	//for (m = 0; m < missedQ; m++)
 	CoverFunc("WhiteCover")
 	if (numberC == missedQ){
@@ -269,11 +269,11 @@ function DisplaySubmissionDetails(numberC, missedQ){
 		document.getElementById("NumberCorrect").innerHTML = "You answered with too many.";
 
 	}else{
-	  // if (totals[nu] != undefined){
-   //  	return totals[oldStatusString];
-	  // } else{
-	  //   return null;
-	  // }
+	  if (totals[quiz] != undefined){
+    	return totals[quiz];
+	  } else{
+	    return null;
+	  }
 	document.getElementById("Missed").style.opacity = 100;
 	document.getElementById("Heading").style.opacity = 0;
 	document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQ;
@@ -347,7 +347,6 @@ function processAnswers(title, guesses, type=null) {
 		document.getElementById("NumberCorrect").innerHTML = Message;
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = '0';
-		console.log('ddddddddd', correct)
 	}else if (guesses.length > numQuestions){
 		var over = guesses.length - numQuestions
 		if(type == null || type == 'includes'){
