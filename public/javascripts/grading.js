@@ -360,7 +360,7 @@ function processAnswers(title, guesses, type=null) {
 		document.getElementById("NumberCorrect").innerHTML = "You answered with " + over + " too many.";
 	}else{
 		document.getElementById('HiddenForm3').value = correct;
-		document.getElementById('HiddenForm4').value = missedQuestions;
+		document.getElementById('HiddenForm4').value = missedQuestions.toString();
 		if(type == null || type == 'includes'){
 			document.getElementById("Missed").style.opacity = 100;
 			document.getElementById("Heading").style.opacity = 0;
