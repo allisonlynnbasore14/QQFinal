@@ -127,13 +127,16 @@ app.get('/home/:id/:status', function(req, res, next){
 
 app.post('/home/submit', function(req, res, next){
   var status = req.body.status;
+  console.log(status, 'status at home submit')
   var id = req.body.id;
   if (!req.body) return res.sendStatus(400)
   if(id === null){
     console.log('STOPPED AT HOME SUBMIT')
   }else{
-      var quiz = GetQuizFromStatus(status,'1')
-      res.redirect('/' + quiz +'/' + id + '/' + status)
+      var quiz = GetQuizFromStatus(status,'1');
+      var newStatus = Number(status)+1;
+      var newStatusString = newStatus.toString();
+      res.redirect('/' + quiz +'/' + id + '/' + newStatusString)
     }
 });
 
@@ -147,9 +150,8 @@ app.post('/quiz/submit', function(req, res, next){
   if(id === null){
     console.log('STOPPED AT HOME SUBMIT')
   }else{
-      var quiz = GetQuizFromStatus(status, '1')
-      var nextStatus = Number(status) + 1;
-      res.redirect('/' + quiz +'/show/' + id + '/' + nextStatus + '/' + numberC + '/' + missedQ)
+      var quiz = GetQuizFromStatus(status)
+      res.redirect('/' + quiz +'/show/' + id + '/' + status + '/' + numberC + '/' + missedQ)
     }
 });
 
