@@ -141,7 +141,8 @@ app.post('/home/submit', function(req, res, next){
 app.post('/quiz/submit', function(req, res, next){
   var status = req.body.status;
   var id = req.body.id;
-  var missedQ = req.body.missedQ;
+  var missedQ = req.body.missedQ.toString();
+  console.log(missedQ)
   var numberC = req.body.numberC;
   if (!req.body) return res.sendStatus(400)
   if(id === null){
@@ -149,7 +150,7 @@ app.post('/quiz/submit', function(req, res, next){
   }else{
       var quiz = GetQuizFromStatus(status, '1')
       var nextStatus = Number(status) + 1;
-      res.redirect('/' + quiz +'/show/' + id + '/' + nextStatus + '/' + numberC + '/' + missedQ.toString())
+      res.redirect('/' + quiz +'/show/' + id + '/' + nextStatus + '/' + numberC + '/' + missedQ)
     }
 });
 
