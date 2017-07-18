@@ -266,7 +266,7 @@ function DisplaySubmissionDetails(numberC, missedQ){
 	}else if (numberC < missedQ){
 		document.getElementById("Missed").style.opacity = 100;
 		document.getElementById("Heading").style.opacity = 0;
-		document.getElementById("NumberCorrect").innerHTML = "You answered with " + over + " too many.";
+		document.getElementById("NumberCorrect").innerHTML = "You answered with too many.";
 
 	}else{
 	  // if (totals[nu] != undefined){
