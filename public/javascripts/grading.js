@@ -270,14 +270,14 @@ function DisplaySubmissionDetails(numberC, missedQ, quiz){
 
 	}else{
 	  if (totals[quiz] != undefined){
-    	return totals[quiz];
+    	var total = totals[quiz];
 	  } else{
-	    return null;
+	    var total = 100;
 	  }
 	document.getElementById("Missed").style.opacity = 100;
 	document.getElementById("Heading").style.opacity = 0;
 	document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQ;
-	document.getElementById("NumberCorrect").innerHTML = "Your score is   "+numberC +"/"+' 1000000'+".   You can do it! Keep trying!";
+	document.getElementById("NumberCorrect").innerHTML = "Your score is   "+numberC +"/"+ total+".   You can do it! Keep trying!";
 	}
 }
 
