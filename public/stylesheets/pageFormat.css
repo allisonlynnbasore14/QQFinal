@@ -31,6 +31,18 @@
 		width: 10px;
 	}
 
+	#HiddenFormHome1{
+		opacity: 0;
+		z-index: -1;
+		width: 10px;
+	}
+
+	#HiddenFormHome2{
+		opacity: 0;
+		z-index: -1;
+		width: 10px;
+	}
+
 	#HiddenForm3{
 		opacity: 0;
 		z-index: -1;
@@ -549,8 +561,8 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: 850px;
-		left: 750px;
+		top: 60px;
+		left: 10px;
 		color: #004d99;
 		background-color:white;
 		border: 3px solid #004d99;
