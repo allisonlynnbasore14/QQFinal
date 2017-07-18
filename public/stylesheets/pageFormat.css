@@ -42,6 +42,23 @@
 		width: 10px;
 	}
 
+	#HomeSubmit{
+		width:380px;
+		height:100px;
+		font-family: monaco,Consolas,Lucida Console,monospace;
+		cursor: crosshair;
+		font-size: 30px;
+		border-radius: 4px;
+		font-weight: bold;
+		position:absolute;
+		top: 610px;
+		left: 290px;
+		z-index: 1;
+		color: #004d99;
+		background-color:white;
+		border: 3px solid #004d99;
+	}
+
 	.loginSubmit{
 		width:380px;
 		height:100px;
