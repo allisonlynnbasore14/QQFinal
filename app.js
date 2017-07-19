@@ -82,7 +82,6 @@ const client = new pg.Client(connectionString);
 
 
 app.get('/login', function(req, res, next){
-  sendToDBUsers('7', '3')
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 });
 
