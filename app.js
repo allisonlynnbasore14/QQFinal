@@ -82,6 +82,7 @@ const client = new pg.Client(connectionString);
 
 
 app.get('/login', function(req, res, next){
+  sendToDBUsers('6', '3')
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 });
 
@@ -108,9 +109,9 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
 
 
 
-sendToDBUsers('6', '3')
 
 function sendToDBUsers(oldStatus, id){
+  console.log('heee', oldStatus)
   var newStatus = Number(oldStatus);
   var newStatusString = newStatus.toString();
   const client = new pg.Client(connectionString);
