@@ -38,7 +38,7 @@ function GetTotalFromStatus(status){
 }
 
 function sendToDBUsers(oldStatus, id){
-  var newStatus = Number(oldStatus) + 1 ;
+  var newStatus = Number(oldStatus);
   var newStatusString = newStatus.toString();
   const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
