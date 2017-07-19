@@ -356,7 +356,7 @@ function DisplaySubmissionDetails(numberC, missedQ, quiz){
 		document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQ;
 		document.getElementById("NumberCorrect").innerHTML = "You answered with too many.";
 		return
-	}else if (missedQ === 'Over') {
+	}else if (missedQ.toString() === 'Over') {
 		document.getElementById("Missed").style.opacity = 100;
 		document.getElementById("Heading").style.opacity = 0;
 		document.getElementById("Missed").innerHTML = "You answered with too many.";
