@@ -318,7 +318,7 @@ function processAnswers(title, guesses, type=null) {
 		correct = correct -1
 	}
 	CoverFunc("WhiteCover")
-	if (correct == numQuestions){
+	if (correct === numQuestions){
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = '0';
 	}else if (guesses.length > numQuestions){
@@ -328,6 +328,7 @@ function processAnswers(title, guesses, type=null) {
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = missedQuestions.toString();
 	}
+	console.log(missedQuestions, correct, 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk')
 
 }
 
