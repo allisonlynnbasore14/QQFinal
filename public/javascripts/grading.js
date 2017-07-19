@@ -108,7 +108,7 @@
     '10' : 8,
     '11' : 0,
     '12' : 1,
-    '13' : 13,
+    '13' : 3,
     '14' : 3,
     '15' : 12,
     '16' : 13,
@@ -277,7 +277,6 @@ function processAnswers(title, guesses, type=null) {
 				}
 			};
 			if (wordIncluded === answers.length){
-				console.log('100!!!!!!!!!!!!!!!!!');
 				correct = correct + 1;
 				missedQuestions = 0;
 			}
