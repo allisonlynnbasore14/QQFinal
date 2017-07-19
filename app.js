@@ -108,6 +108,7 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
 
 app.get('/home/:id/:status', function(req, res, next){
   var status = req.params.status;
+  console.log(status, 'AT HOMEE')
   var id = req.params.id;
   var avatar = GetProfileAvatarfromId(id);
   var description = GetProfileDescriptionfromId(id);
@@ -134,8 +135,7 @@ app.post('/home/submit', function(req, res, next){
     console.log('STOPPED AT HOME SUBMIT')
   }else{
       var quiz = GetQuizFromStatus(status,'1');
-      var newStatus = Number(status);
-      console.log(newStatus)
+      var newStatus = Number(status)+1;
       var newStatusString = newStatus.toString();
       res.redirect('/' + quiz +'/' + id + '/' + newStatusString)
     }
