@@ -9,7 +9,7 @@ var constants = module.exports = {
     	ANGLE: 'Use the angles given to classify the type of triangle.',
     	PROPERTY: 'Choose an example of each property.',
     	FILL: 'Fill in the blanks to answer the questions.',
-        FREE: 'Hit submit and prepare for the next quiz',
+        FREE: 'Notify Mrs.Basore that you got a Free Pass!',
     	CLICK_PRIME: 'Click all the prime numbers under 100.',
     	LIST_PRIME: 'List all the prime numbers 100.',
     	LIST_SQUARE_NUMBERS: 'List the first 15 Square Numbers.',
