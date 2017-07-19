@@ -315,7 +315,7 @@ function processAnswers(title, guesses, type=null) {
 
 	}
 
-	if missedQuestions.length === 0{
+	if (missedQuestions.length === 0){
 		missedQuestions = [0]
 	}
 
