@@ -107,7 +107,7 @@
     '9' : 8,
     '10' : 8,
     '11' : 0,
-    '12' : 0,
+    '12' : 1,
     '13' : 13,
     '14' : 3,
     '15' : 12,
@@ -256,33 +256,6 @@ function UnCount(id){
 	document.getElementById(id).style.color = newcolor;
 }
 
-
-
-function DisplaySubmissionDetails(numberC, missedQ, quiz){
-	//for (m = 0; m < missedQ; m++)
-	CoverFunc("WhiteCover")
-	if (numberC == missedQ){
-		var Message = "You passed!  Good Job!"
-		document.getElementById("NumberCorrect").innerHTML = Message;
-		return
-	}else if (numberC < missedQ){
-		document.getElementById("Missed").style.opacity = 100;
-		document.getElementById("Heading").style.opacity = 0;
-		document.getElementById("NumberCorrect").innerHTML = "You answered with too many.";
-
-	}else{
-	  if (totals[quiz] != undefined){
-    	var total = totals[quiz];
-	  } else{
-	    var total = 100;
-	  }
-	document.getElementById("Missed").style.opacity = 100;
-	document.getElementById("Heading").style.opacity = 0;
-	document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQ;
-	document.getElementById("NumberCorrect").innerHTML = "Your score is   "+numberC +"/"+ total+".   You can do it! Keep trying!";
-	}
-}
-
 function processAnswers(title, guesses, type=null) {
 	var answers = title;
 	var numQuestions = answers.length;
@@ -297,12 +270,16 @@ function processAnswers(title, guesses, type=null) {
 	var missedQuestions = [];
 	switch(type){
 		case 'copy':
+			var wordIncluded = 0;
 			for (p=0; p <numQuestions; p++){
 				if (guesses[0].includes(answers[p])){
-					correct = correct + 1
+					wordIncluded = wordIncluded + 1
 				}
+			};
+			if (wordIncluded === answers.length){
+				console.log('100!!!!!!!!!!!!!!!!!');
+				correct = correct + 1;
 			}
-			var Message = "You passed!  Good Job!";
 			break;
 		case 'checkbox':
 			for(m = 0; m < numQuestions; m++){
@@ -310,7 +287,6 @@ function processAnswers(title, guesses, type=null) {
 					correct = correct + 1
 				}
 			}
-			var Message = "You passed!  Good Job!";
 			break;
 		case 'includes':
 			for(m = 0; m < numQuestions; m++){
@@ -320,10 +296,8 @@ function processAnswers(title, guesses, type=null) {
 					missedQuestions.push(m+1)
 				}
 			}
-			var Message = "You passed!  Good Job!";
 			break;
 		case 'home':
-			var Message = "Tough Times Never Last, But Tough People Do.";
 		default:
 		for(m = 0; m < numQuestions; m++){
 			if (typeof(answers[m]) === 'string'){
@@ -345,33 +319,62 @@ function processAnswers(title, guesses, type=null) {
 	}
 	CoverFunc("WhiteCover")
 	if (correct == numQuestions){
-		var Message = "You passed!  Good Job!"
-		document.getElementById("NumberCorrect").innerHTML = Message;
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = '0';
 	}else if (guesses.length > numQuestions){
-		var over = guesses.length - numQuestions
-		if(type == null || type == 'includes'){
-			document.getElementById("Missed").style.opacity = 100;
-			document.getElementById("Heading").style.opacity = 0;
-			document.getElementById("Missed").innerHTML = "You missed this one";
-			document.getElementById('HiddenForm3').value = '0';
-			document.getElementById('HiddenForm4').value = '0';
-		}else{
-			document.getElementById('HiddenForm3').value = correct;
-			document.getElementById('HiddenForm4').value = 'NULL';
+		document.getElementById('HiddenForm3').value = correct;
+		document.getElementById('HiddenForm4').value = 'Over';
 		}
-		document.getElementById("NumberCorrect").innerHTML = "You answered with " + over + " too many.";
 	}else{
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = missedQuestions.toString();
-		console.log(missedQuestions)
-		if(type == null || type == 'includes'){
-			document.getElementById("Missed").style.opacity = 100;
-			document.getElementById("Heading").style.opacity = 0;
-			document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQuestions;
-		}
-		document.getElementById("NumberCorrect").innerHTML = "Your score is   "+correct +"/"+numQuestions+".   You can do it! Keep trying!";
 	}
 
 }
+
+
+function DisplaySubmissionDetails(numberC, missedQ, quiz){
+	if (totals[quiz] != undefined){
+   	  var total = totals[quiz];
+	} else{
+	  var total = 100;
+	}
+	CoverFunc("WhiteCover")
+	if (numberC == total){
+		var Message = "You passed!  Good Job!"
+		document.getElementById("NumberCorrect").innerHTML = Message;
+		return
+	}else if (numberC < total){
+		document.getElementById("Missed").style.opacity = 100;
+		document.getElementById("Heading").style.opacity = 0;
+		document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQ;
+		document.getElementById("NumberCorrect").innerHTML = "You answered with too many.";
+	}else if (missedQ === 'Over') {
+		document.getElementById("Missed").style.opacity = 100;
+		document.getElementById("Heading").style.opacity = 0;
+		document.getElementById("Missed").innerHTML = "You answered with too many.";
+		document.getElementById("NumberCorrect").innerHTML = "You can do it! Keep trying!";
+	}else{
+		document.getElementById("Missed").style.opacity = 100;
+		document.getElementById("Heading").style.opacity = 0;
+		document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQ;
+		document.getElementById("NumberCorrect").innerHTML = "Your score is   "+numberC +"/"+ total+".   You can do it! Keep trying!";
+	}
+}
+
+
+/// Messsages
+
+
+// var Message = "Tough Times Never Last, But Tough People Do.";
+// var Message = "You passed!  Good Job!"
+// document.getElementById("NumberCorrect").innerHTML = Message;
+
+// var over = guesses.length - numQuestions
+// document.getElementById("Missed").style.opacity = 100;
+// document.getElementById("Heading").style.opacity = 0;
+// document.getElementById("Missed").innerHTML = "You missed this one";
+// document.getElementById("NumberCorrect").innerHTML = "You answered with " + over + " too many.";
+
+// document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQuestions;
+// document.getElementById("NumberCorrect").innerHTML = "Your score is   "+correct +"/"+numQuestions+".   You can do it! Keep trying!";
