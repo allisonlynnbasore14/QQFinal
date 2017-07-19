@@ -344,6 +344,7 @@ function processAnswers(title, guesses, type=null) {
 		correct = correct -1
 	}
 	CoverFunc("WhiteCover")
+	console.log(correct, numQuestions, type)
 	if (correct == numQuestions){
 		var Message = "You passed!  Good Job!"
 		document.getElementById("NumberCorrect").innerHTML = Message;
@@ -354,7 +355,7 @@ function processAnswers(title, guesses, type=null) {
 		if(type == null || type == 'includes'){
 			document.getElementById("Missed").style.opacity = 100;
 			document.getElementById("Heading").style.opacity = 0;
-			document.getElementById("Missed").innerHTML = "You miseed this one";
+			document.getElementById("Missed").innerHTML = "You missed this one";
 			document.getElementById('HiddenForm3').value = '0';
 			document.getElementById('HiddenForm4').value = '0';
 		}
