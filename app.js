@@ -106,6 +106,25 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
   } 
 });
 
+
+
+sendToDBUsers(6, 3)
+
+function sendToDBUsers(oldStatus, id){
+  var newStatus = Number(oldStatus);
+  var newStatusString = newStatus.toString();
+  const client = new pg.Client(connectionString);
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    if(err) {
+      done();
+      return res.status(500).json({success: false, data: err});
+      }
+           client.query('UPDATE users SET status=$1 WHERE user_id=$2', [newStatusString, id] , function(err, result) {
+        done()
+      })
+    });
+}
+
 app.get('/home/:id/:status', function(req, res, next){
   var status = req.params.status;
   console.log(status, 'AT HOMEE')
