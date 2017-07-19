@@ -221,7 +221,7 @@ function GetQuizFromStatus(status, addOne='2'){
     '5' : 'PercentQ3',
     '6' : 'PropsStudy',
     '7' : 'PropsExample',
-    '8' : 'PropsQ1',
+    '8' : 'PropsQ',
     '9' : 'PropsQ2',
     '10' : 'PropsQ3',
     '11' : 'FreePass',
