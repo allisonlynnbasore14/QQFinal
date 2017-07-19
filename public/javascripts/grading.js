@@ -279,6 +279,7 @@ function processAnswers(title, guesses, type=null) {
 			if (wordIncluded === answers.length){
 				console.log('100!!!!!!!!!!!!!!!!!');
 				correct = correct + 1;
+				missedQuestions = 0;
 			}
 			break;
 		case 'checkbox':
@@ -314,6 +315,10 @@ function processAnswers(title, guesses, type=null) {
 
 	}
 
+	if missedQuestions.length === 0{
+		missedQuestions = [0]
+	}
+
 	if(guesses.length > answers.length){
 		correct = correct -1
 	}
@@ -328,7 +333,6 @@ function processAnswers(title, guesses, type=null) {
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = missedQuestions.toString();
 	}
-	console.log(missedQuestions, correct, 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk')
 
 }
 
