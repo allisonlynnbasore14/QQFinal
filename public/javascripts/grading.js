@@ -344,7 +344,6 @@ function processAnswers(title, guesses, type=null) {
 		correct = correct -1
 	}
 	CoverFunc("WhiteCover")
-	console.log(correct, numQuestions, type)
 	if (correct == numQuestions){
 		var Message = "You passed!  Good Job!"
 		document.getElementById("NumberCorrect").innerHTML = Message;
@@ -358,6 +357,9 @@ function processAnswers(title, guesses, type=null) {
 			document.getElementById("Missed").innerHTML = "You missed this one";
 			document.getElementById('HiddenForm3').value = '0';
 			document.getElementById('HiddenForm4').value = '0';
+		}else{
+			document.getElementById('HiddenForm3').value = correct;
+			document.getElementById('HiddenForm4').value = 'NULL';
 		}
 		document.getElementById("NumberCorrect").innerHTML = "You answered with " + over + " too many.";
 	}else{
