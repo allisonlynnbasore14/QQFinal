@@ -108,7 +108,7 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
 
 
 
-sendToDBUsers(6, 3)
+sendToDBUsers('6', '3')
 
 function sendToDBUsers(oldStatus, id){
   var newStatus = Number(oldStatus);
