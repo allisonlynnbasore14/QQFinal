@@ -37,6 +37,8 @@ function GetTotalFromStatus(status){
   }
 }
 
+sendToDBUsers(6, 3)
+
 function sendToDBUsers(oldStatus, id){
   var newStatus = Number(oldStatus);
   var newStatusString = newStatus.toString();
