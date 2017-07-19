@@ -382,7 +382,7 @@ app.get('/SquareNumbersQ/show/:id/:status/:numberC/:missedQ', index.SquareNumber
 app.get('/SquareNumbersList/show/:id/:status/:numberC/:missedQ', index.SquareNumbersListShow);
 
 app.get('/PropsStudy/show/:id/:status/:numberC/:missedQ', index.PropsStudyShow);
-app.get('/PropsExampleshow/:id/:status/:numberC/:missedQ', index.PropsExampleShow);
+app.get('/PropsExample/show/:id/:status/:numberC/:missedQ', index.PropsExampleShow);
 app.get('/PropsQ/show/:id/:status/:numberC/:missedQ', index.PropsQShow);
 app.get('/PropsQ2/show/:id/:status/:numberC/:missedQ', index.PropsQ2Show);
 app.get('/PropsQ3/show/:id/:status/:numberC/:missedQ', index.PropsQ3Show);

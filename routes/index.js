@@ -169,7 +169,7 @@ var PropsQ2 = function(req, res){
 };
 
 var PropsExample = function(req, res){
-  res.render("PropsExample",{"directions": constants.DIR.PROPERTY, "title": constants.TITLE.PRO + ' III', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.statusv});
+  res.render("PropsExample",{"directions": constants.DIR.PROPERTY, "title": constants.TITLE.PRO + ' III', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var PropsQ3 = function(req, res){
