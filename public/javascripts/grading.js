@@ -324,7 +324,6 @@ function processAnswers(title, guesses, type=null) {
 	}else if (guesses.length > numQuestions){
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = 'Over';
-		}
 	}else{
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = missedQuestions.toString();
