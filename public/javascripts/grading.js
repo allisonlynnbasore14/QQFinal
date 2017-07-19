@@ -348,21 +348,26 @@ function DisplaySubmissionDetails(numberC, missedQ, quiz){
 		var Message = "You passed!  Good Job!"
 		document.getElementById("NumberCorrect").innerHTML = Message;
 		return
+	else if(missedQ.length === 1 && missedQ[0]===0){
+		document.getElementById("NumberCorrect").innerHTML = "You did not get them all. Try again next time!";	
 	}else if (numberC < total){
 		document.getElementById("Missed").style.opacity = 100;
 		document.getElementById("Heading").style.opacity = 0;
 		document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQ;
 		document.getElementById("NumberCorrect").innerHTML = "You answered with too many.";
+		return
 	}else if (missedQ === 'Over') {
 		document.getElementById("Missed").style.opacity = 100;
 		document.getElementById("Heading").style.opacity = 0;
 		document.getElementById("Missed").innerHTML = "You answered with too many.";
 		document.getElementById("NumberCorrect").innerHTML = "You can do it! Keep trying!";
+		return
 	}else{
 		document.getElementById("Missed").style.opacity = 100;
 		document.getElementById("Heading").style.opacity = 0;
 		document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQ;
 		document.getElementById("NumberCorrect").innerHTML = "Your score is   "+numberC +"/"+ total+".   You can do it! Keep trying!";
+		return
 	}
 }
 
