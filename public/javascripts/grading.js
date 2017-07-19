@@ -348,7 +348,7 @@ function DisplaySubmissionDetails(numberC, missedQ, quiz){
 		var Message = "You passed!  Good Job!"
 		document.getElementById("NumberCorrect").innerHTML = Message;
 		return
-	else if(missedQ.length === 1 && missedQ[0]===0){
+	}else if(missedQ.length === 1 && missedQ[0]===0){
 		document.getElementById("NumberCorrect").innerHTML = "You did not get them all. Try again next time!";	
 	}else if (numberC < total){
 		document.getElementById("Missed").style.opacity = 100;
