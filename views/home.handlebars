@@ -68,13 +68,13 @@
 				<u>Division Rules</u>
 				</div>
 				<div class = 'ProgressBlock' id = '12'>
-				12
+				11
 				</div>
 				<div class = 'ProgressBlock' id = '13'>
-				13
+				12
 				</div>
 				<div class = 'ProgressBlock' id = '14'>
-				14
+				13
 				</div>
 			</div>
 			<div class = 'ProgressRow'>
@@ -82,19 +82,19 @@
 				<u>PrimeNumber</u>
 				</div>
 				<div class = 'ProgressBlock' id = '15'>
-				15
+				14
 				</div>
 				<div class = 'ProgressBlock' id = '16'>
-				16
+				15
 				</div>
 				<div class = 'ProgressBlock' id = '17'>
-				17
+				16
 				</div>
 				<div class = 'ProgressBlock' id = '18'>
-				18
+				17
 				</div>
 				<div class = 'ProgressBlock' id = '19'>
-				19
+				18
 				</div>
 			</div>
 			<div class = 'ProgressRow'>
@@ -102,19 +102,19 @@
 				<u>Exponents</u>
 				</div>
 				<div class = 'ProgressBlock' id = '20'>
-				20
+				19
 				</div>
 				<div class = 'ProgressBlock' id = '21'>
-				21
+				20
 				</div>
 				<div class = 'ProgressBlock' id = '22'>
-				22
+				21
 				</div>
 				<div class = 'ProgressBlock' id = '24'>
-				24
+				22
 				</div>
 				<div class = 'ProgressBlock' id = '25'>
-				25
+				23
 				</div>
 			</div>
 			<div class = 'ProgressRow'>
@@ -122,22 +122,22 @@
 				<u>Fractions</u>
 				</div>
 				<div class = 'ProgressBlock' id = '26'>
-				26
+				24
 				</div>
 				<div class = 'ProgressBlock' id = '27'>
-				27
+				25
 				</div>
 				<div class = 'ProgressBlock' id = '28'>
-				28
+				26
 				</div>
 				<div class = 'ProgressBlock' id = '29'>
-				29
+				27
 				</div>
 				<div class = 'ProgressBlock' id = '30'>
-				30
+				28
 				</div>
 				<div class = 'ProgressBlock' id = '31'>
-				31
+				29
 				</div>
 			</div>
 		<!-- 	Free Pass Here -->
@@ -146,19 +146,19 @@
 				<u>Square Numbers</u>
 				</div>
 				<div class = 'ProgressBlock' id = '33'>
-				33
+				30
 				</div>
 				<div class = 'ProgressBlock' id = '34'>
-				34
+				31
 				</div>
 				<div class = 'ProgressBlock' id = '35'>
-				35
+				32
 				</div>
 				<div class = 'ProgressBlock' id = '36'>
-				36
+				33
 				</div>
 				<div class = 'ProgressBlock' id = '37'>
-				37
+				34
 				</div>
 			</div>
 			<div class = 'ProgressRow'>
@@ -166,13 +166,13 @@
 				<u>Pythagorean Theorem</u>
 				</div>
 				<div class = 'ProgressBlock' id = '38'>
-				38
+				35
 				</div>
 				<div class = 'ProgressBlock' id = '39'>
-				39
+				36
 				</div>
 				<div class = 'ProgressBlock' id = '40'>
-				40
+				37
 				</div>
 			</div>
 			<div class = 'ProgressRow'>
@@ -180,19 +180,19 @@
 				<u>Angles</u>
 				</div>
 				<div class = 'ProgressBlock' id = '41'>
-				41
+				38
 				</div>
 				<div class = 'ProgressBlock' id = '42'>
-				42
+				39
 				</div>
 				<div class = 'ProgressBlock' id = '43'>
-				43
+				40
 				</div>
 				<div class = 'ProgressBlock' id = '44'>
-				44
+				41
 				</div>
 				<div class = 'ProgressBlock' id = '45'>
-				45
+				42
 				</div>
 			</div>
 		<!-- 	Free Pass Here -->
@@ -201,19 +201,19 @@
 				<u>Probability</u>
 				</div>
 				<div class = 'ProgressBlock' id = '47'>
-				47
+				43
 				</div>
 				<div class = 'ProgressBlock' id = '48'>
-				48
+				44
 				</div>
 				<div class = 'ProgressBlock' id = '49'>
-				49
+				45
 				</div>
 				<div class = 'ProgressBlock' id = '50'>
-				50
+				46
 				</div>
 				<div class = 'ProgressBlock' id = '51'>
-				51
+				47
 				</div>
 			</div>
 			<div class = 'ProgressRow'>
@@ -221,13 +221,14 @@
 				<u>Sequences</u>
 				</div>
 				<div class = 'ProgressBlock' id = '52'>
-				52
+				48
 				</div>
 				<div class = 'ProgressBlock' id = '53'>
-				53
-				</div>
+				49
+				</div>'>
+				50
 				<div class = 'ProgressBlock' id = '54'>
-				54
+				51
 				</div>
 			</div>
 			<form action = '/home/submit' name = "HomeSubmit" method = 'post'>
@@ -244,6 +245,7 @@
    ProgressFill({{{status}}})
  function ProgressFill(progressNum){
 	for (p=progressNum; p > 0; p--){
+		console.log(p)
 		if (p == 7|| p == 26 || p == 35 || p > 41){
 			console.log('Free Pass')
 			continue

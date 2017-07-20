@@ -547,7 +547,7 @@
 	.ProgressRow{
 	    display: flex;
 	    flex-direction: row;
-	    margin: 35px;
+	    padding: 20px 0px 100px 20px;
 	    justify-content: center;
 	}
 
