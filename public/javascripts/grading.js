@@ -337,7 +337,7 @@ function processAnswers(title, guesses, type=null) {
 
 
 function DisplaySubmissionDetails(numberC, missedQ, quiz){
-	document.getElementsId("SubmitForProcessing").style.opacity = 0;
+	document.getElementById("SubmitForProcessing").style.opacity = 0;
 	if (totals[quiz] != undefined){
    	  var total = totals[quiz];
 	} else{
