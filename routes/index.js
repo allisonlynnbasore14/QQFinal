@@ -679,6 +679,8 @@ module.exports.FreePass = FreePass;
 
 module.exports.AllDone = AllDone;
 
+module.exports.AngieBasoreKey = AngieBasoreKey;
+
 
 
 
