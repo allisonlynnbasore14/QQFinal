@@ -345,7 +345,6 @@ function DisplaySubmissionDetails(numberC, missedQ, quiz){
 	CoverFunc("WhiteCover")
 	if (numberC == total){
 		var Message = "You passed!  Good Job!"
-		document.getElementById("Missed").style.opacity = 100;
 		document.getElementById("NumberCorrect").innerHTML = Message;
 		return
 	}else if(missedQ.length === 1 && missedQ[0]===0){
