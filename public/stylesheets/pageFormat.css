@@ -419,8 +419,10 @@
 	}
 
 	.HomeContent{
+		position: absolute;
+		top:250px;
 		width:870px;
-		left:420px;
+		left:450px;
 	}
 
 	#WordsProbQ{
