@@ -409,13 +409,18 @@
 		color: #004d99;
 		position: absolute;
 		left:450px;
-		top:220px;
+		top:120px;
 		width: 300px;
 		background-color: white;
 		padding: 10px;
 		height: 500px;
 		display: flex;
 		align-content: center;
+	}
+
+	.HomeContent{
+		width:870px;
+		left:420px;
 	}
 
 	#WordsProbQ{
