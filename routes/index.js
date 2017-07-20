@@ -54,7 +54,6 @@ function sendToDBUsers(oldStatus, id){
 
 function sendToDBResults(id, score){
   var date = getDate();
-  console.log(id, date, score, 'IDS')
   const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if(err) {
