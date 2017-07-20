@@ -63,8 +63,8 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: 620px;
-		left: 325px;
+		top: 600px;
+		left: 295px;
 		z-index: 1;
 		color: #004d99;
 		background-color:white;
@@ -380,7 +380,9 @@
 	}
 
 	#PropsExmple{
-		margin-top:50px;
+		position: absolute;
+		left:150px;
+		top:200px;
 		text-align: center;
 	}
 
@@ -409,7 +411,7 @@
 		color: #004d99;
 		position: absolute;
 		left:450px;
-		top:120px;
+		top:220px;
 		width: 300px;
 		background-color: white;
 		padding: 10px;
