@@ -80,8 +80,8 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: 620px;
-		left: 325px;
+		top: 600px;
+		left: 295px;
 		z-index: 1;
 		color: #004d99;
 		background-color:white;
@@ -667,7 +667,6 @@
 	#questionsMatch{
 		position: absolute;
 		left: 400px;
-		top: 20px;
 		width: 200px;
 	}
 
@@ -785,4 +784,5 @@
 		background-color:white;
 		border: 3px solid #004d99;
 		z-index: 40;
+		opacity: 100;
 	}
