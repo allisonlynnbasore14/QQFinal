@@ -441,11 +441,11 @@ app.get('/AllDone/show/:id/:status/:numberC/:missedQ', index.AllDoneShow);
 
 // app.get('/db', index.db)
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+// app.listen(process.env.PORT || 3000, function(){
+//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });
 
- // app.listen(2200);
+ app.listen(2200);
 
 
 // var server = app.listen(8080,function(){
