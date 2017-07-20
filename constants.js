@@ -19,6 +19,7 @@ var constants = module.exports = {
         HOME: 'Click Submit to start your next quarter quiz.',
         LOGIN: 'Type the name of the mathematician that was given to you and hit enter to get started!',
         LOGIN_ERROR: 'Sorry, the username was not found',
+        KEY: 'Everyday that a new submission comes in, this page will reset with the new scores.'
     },
     TITLE:{
         ANG: 'Angles',
@@ -35,7 +36,8 @@ var constants = module.exports = {
         DRU: 'Division Rules',
         DON: 'Horray!',
         HOM: 'Welcome to Quarter Quizzes!',
-        LOG: 'Login to QQ'
+        LOG: 'Login to QQ',
+        KEY: 'Welcome Angela'
     },
     ORDER:{
 

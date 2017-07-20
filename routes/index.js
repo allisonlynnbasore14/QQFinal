@@ -79,7 +79,7 @@ function getDate(){
 
 var AngieBasoreKey = function(req, res){
     // Pull from db
-    res.render("ScoreDisplay",{});//{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+    res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', 'scores'=['Ada':100, 'Bob':10]});//{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Division Rules
