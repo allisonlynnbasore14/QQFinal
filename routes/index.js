@@ -88,6 +88,7 @@ function getDateAndScore(id){
       }
       client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
         done()
+        console.log(result.rows[0].date, 'dbdbdbd')
         return result.rows[0].date;//, result.rows[0].score;
       })
     })
@@ -102,6 +103,7 @@ function getScoresforDisplay(){
     people[i] = names[(id).toString()]
     const date = getDateAndScore(id);
     //scores[i] = score;
+    console.log(date)
     dates[i] = date;
   }
   console.log(people, scores, dates)
