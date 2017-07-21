@@ -144,17 +144,16 @@ console.log('{{{data}}}')
     '20':'Ada',
     '21':'Noether'
   };
-const data = '{{{data}}}'
 const people = [];
-const id= [];
-const scores = [];
-const dates = [];
+const ids= {{{ids}}};
+const scores = {{{scores}}};
+const dates = {{{dates}}};
+console.log(dates, scores, ids, 'DSI')
   for (i=0;i<20;i++){
-  	date[i]=data.rows[i].date;
-  	id[i]=data.rows[i].date;
-  	scores[i] = data.rows[i].date;
+  	var id = i+ 1;
+    people[i] = names[(id).toString()]
   }
- console.log(id, scores, dates)
+ console.log(ids, scores, dates, people)
 //var people = '{{{people}}}'.split(',');
 // var scores = '{{{scores}}}'.split(',');
 
