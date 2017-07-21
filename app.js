@@ -168,10 +168,15 @@ app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
     }
     client.query('SELECT * FROM results', function(err, result) {
       done()
-      const data = result.rows;
-      var people = ['Ada','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally'];
-      var scores = [100, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7,4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7]
-      res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "scores":scores, "data":data , "people":people});
+      const dates = [];
+      const scores = [];
+      const ids = [];
+      for (i=0;i<20;i++){
+        dates[i]=data.rows[i].date;
+        ids[i]=data.rows[i].user_id;
+        scores[i] = data.rows[i].score;
+      }
+      res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "dates": dates,"scores":scores, "ids":ids});
     })
   }) 
 });
