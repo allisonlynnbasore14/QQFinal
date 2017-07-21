@@ -159,6 +159,78 @@ app.post('/quiz/submit', function(req, res, next){
 });
 
 
+app.get('/AngieBasoreKey', function(req, res, next){
+  const client = new pg.Client(connectionString);
+  var resultingData = pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+  if(err) {
+    done();
+    console.log('error')
+    return ('none')
+    }
+    client.query('SELECT * FROM results', function(err, result) {
+      done()
+      const data = result.rows[0]
+      var people = ['Ada','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally'];
+      var scores = [100, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7,4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+      res.redirect("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "scores":scores, "people":people "data":data});
+    })
+  }) 
+};
+
+/// INtegrate this to dispaly the score pagedata
+
+// function getDateAndScore(id){
+//     const client = new pg.Client(connectionString);
+//     var resultingData = pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+//     if(err) {
+//       done();
+//       console.log('error')
+//       return ('none')
+//       }
+//       client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
+//         done()
+
+//         result.rows[0]
+//         return ('yes');//result.rows[0].score;
+//       })
+//     }) 
+//     return resultingData
+// }
+
+// function getScoresforDisplay(){
+//   const people = [];
+//   const scores = [];
+//   const dates = [];
+//   for (i=0;i<20;i++){
+//     var id = i+ 1;
+//     people[i] = names[(id).toString()]
+//     dates[i] = 0;
+//     scores[i] = 0;
+//     //const [date, score] = getDateAndScore(id);
+//     console.log(getDateAndScore(id))
+//     // scores[i] = score;
+//     // dates[i] = date;
+//   }
+//   console.log(people, scores, dates)
+// }
+
+
+// var AngieBasoreKey = function(req, res){
+//   getScoresforDisplay()
+//     // Pull from db
+
+//     var people = ['Ada','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally'];
+//     var scores = [100, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7,4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+//     res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "scores":scores, "people":people}); 
+//     //{"directions": constants.DIR.ANSWERQ,"title": constants.TITLE.DRU + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+// };
+
+
+
+
+
+
+
 
 function CleanLoginAndSend(name){
   name = name.toUpperCase().trim();
@@ -288,8 +360,6 @@ function GetQuizFromStatus(status, addOne='2'){
 //   //   unLockQuiz(status)
 //   // }
 // });
-
-app.get('/AngieBasoreKey', index.AngieBasoreKey);
 
 app.get('/DRulesCopy/:id/:status', index.DRulesCopy);
 app.get('/DRulesQ/:id/:status', index.DRulesQ);
