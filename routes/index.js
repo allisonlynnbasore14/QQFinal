@@ -88,21 +88,20 @@ function getDateAndScore(id){
       }
       client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
         done()
-        return result.rows[0].date, result.rows[0].score;
+        return result.rows[0].date;//, result.rows[0].score;
       })
     })
 }
 
 function getScoresforDisplay(){
-  const client = new pg.Client(connectionString);
   const people = [];
   const scores = [];
   const dates = [];
   for (i=0;i<20;i++){
     var id = i+ 1;
     people[i] = names[(id).toString()]
-    const [date, score] = getDateAndScore(id);
-    scores[i] = score;
+    const date = getDateAndScore(id);
+    //scores[i] = score;
     dates[i] = date;
   }
   console.log(people, scores, dates)
