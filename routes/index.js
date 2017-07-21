@@ -84,13 +84,13 @@ function getDateAndScore(id){
     if(err) {
       done();
       console.log('error')
-      return 
+      return ('none')
       }
       client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
         done()
-        return 'yes'//result.rows[0].score;
+        return ('yes');//result.rows[0].score;
       })
-    })
+    }) 
 }
 
 function getScoresforDisplay(){
