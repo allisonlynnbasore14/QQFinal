@@ -159,13 +159,13 @@ app.post('/quiz/submit', function(req, res, next){
 });
 
 
-app.get('/AngieBasoreKey', function(req, res, next){
+app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
   const client = new pg.Client(connectionString);
   var resultingData = pg.connect(process.env.DATABASE_URL, function(err, client, done) {
   if(err) {
     done();
     console.log('error')
-    return ('none')
+    res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found.", "sendMessage" : false});
     }
     client.query('SELECT * FROM results', function(err, result) {
       done()
