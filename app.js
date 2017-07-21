@@ -172,9 +172,9 @@ app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
       const scores = [];
       const ids = [];
       for (i=0;i<20;i++){
-        dates[i]=data.rows[i].date;
-        ids[i]=data.rows[i].user_id;
-        scores[i] = data.rows[i].score;
+        dates[i]=result.rows[i].date;
+        ids[i]=result.rows[i].user_id;
+        scores[i] = result.rows[i].score;
       }
       res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "dates": dates,"scores":scores, "ids":ids});
     })
