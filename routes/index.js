@@ -80,7 +80,7 @@ function getDate(){
 
 function getDateAndScore(id){
     const client = new pg.Client(connectionString);
-    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    var resultingData = pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if(err) {
       done();
       console.log('error')
@@ -91,6 +91,7 @@ function getDateAndScore(id){
         return ('yes');//result.rows[0].score;
       })
     }) 
+    return resultingData
 }
 
 function getScoresforDisplay(){
