@@ -77,16 +77,9 @@ function getDate(){
 //   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 // };
 
-function getScoresforDisplay(){
-  const people = [];
-  const scores = [];
-  const dates = [];
-  const client = new pg.Client(connectionString);
-  for (i=0;i<20;i++){
-    var id = i+ 1;
-    people[i] = names[(id).toString()]
 
-    // Get scrore and date from database with id
+function getDateAndScore(id){
+    const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if(err) {
       done();
@@ -95,11 +88,22 @@ function getScoresforDisplay(){
       }
       client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
         done()
-        console.log(result.rows[0].date)
-        dates[i] = result.rows[0].date;
-        scores[i] = result.rows[0].score;
+        return [result.rows[0].date, result.rows[0].score];
       })
     })
+}
+
+function getScoresforDisplay(){
+  const client = new pg.Client(connectionString);
+  const people = [];
+  const scores = [];
+  const dates = [];
+  for (i=0;i<20;i++){
+    var id = i+ 1;
+    people[i] = names[(id).toString()]
+    const [date, score] = getDateAndScore(id);
+    scores[i] = score;
+    dates[i] = date;
   }
   console.log(people, scores, dates)
 }
