@@ -172,7 +172,7 @@ app.get('/AngieBasoreKey', function(req, res, next){
       const data = result.rows[0]
       var people = ['Ada','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally'];
       var scores = [100, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7,4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7]
-      res.redirect("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "scores":scores, "people":people, "data":data});
+      res.redirect("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "scores":scores, "data":data , "people":people});
     })
   }) 
 };
