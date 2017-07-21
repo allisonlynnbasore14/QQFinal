@@ -170,11 +170,11 @@ app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
     console.log('2222222222222222222222222')
     client.query('SELECT * FROM results', function(err, result) {
       done()
-      const data = result.rows[0];
+      const data = [result.rows];
       console.log(data)
       var people = ['Ada','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally'];
       var scores = [100, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7,4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7]
-      res.redirect("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "scores":scores, "data":data , "people":people});
+      res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "scores":scores, "data":data , "people":people});
     })
   }) 
 });
@@ -362,6 +362,8 @@ function GetQuizFromStatus(status, addOne='2'){
 //   //   unLockQuiz(status)
 //   // }
 // });
+
+//app.get('/AngieBasoreKey', index.AngieBasoreKey);
 
 app.get('/DRulesCopy/:id/:status', index.DRulesCopy);
 app.get('/DRulesQ/:id/:status', index.DRulesQ);
