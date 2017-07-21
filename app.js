@@ -175,7 +175,7 @@ app.get('/AngieBasoreKey', function(req, res, next){
       res.redirect("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "scores":scores, "data":data , "people":people});
     })
   }) 
-};
+});
 
 /// INtegrate this to dispaly the score pagedata
 
