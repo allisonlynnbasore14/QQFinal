@@ -102,9 +102,10 @@ function getScoresforDisplay(){
     people[i] = names[(id).toString()]
     dates[i] = 0;
     scores[i] = 0;
-    const [date, score] = getDateAndScore(id);
-    scores[i] = score;
-    dates[i] = date;
+    //const [date, score] = getDateAndScore(id);
+    console.log(getDateAndScore(id))
+    // scores[i] = score;
+    // dates[i] = date;
   }
   console.log(people, scores, dates)
 }
