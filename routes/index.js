@@ -79,14 +79,33 @@ function getDate(){
 
 function getScoresforDisplay(){
   const people = [];
+  const scores = [];
+  const dates = [];
+  const client = new pg.Client(connectionString);
   for (i=0;i<20;i++){
-    people[i] = names[toString(i-1)]
+    var id = i+ 1;
+    people[i] = names[(id).toString()]
+
+    // Get scrore and date from database with id
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    if(err) {
+      done();
+      console.log('error')
+      return 
+      }
+      client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
+        done()
+        dates[i] = result.rows[0].date;
+        scores[i] = result.rows[0].score;
+      })
+    })
   }
-  console.log(people, 'plllllllllllllllllllllllllll')
+  console.log(people, scores, dates)
 }
 
 
 var AngieBasoreKey = function(req, res){
+  getScoresforDisplay()
     // Pull from db
 
     var people = ['Ada','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally'];

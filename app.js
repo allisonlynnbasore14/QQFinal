@@ -97,11 +97,11 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
       done();
       return res.status(500).json({success: false, data: err});
       }
-    client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
-      done()
-      var status = result.rows[0].status;
-      res.redirect('/home/' + id + '/' + status)
-    })
+      client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
+        done()
+        var status = result.rows[0].status;
+        res.redirect('/home/' + id + '/' + status)
+      })
     })
   } 
 });
