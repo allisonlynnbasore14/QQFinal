@@ -120,30 +120,54 @@
  </body>
 
 <script type="text/javascript">
-console.log('{{{scores}}}', '{{{people}}}')
+console.log('{{{data}}}')
+  var names ={
+    '1':'Euclid',
+    '2':'Newton',
+    '3':'Archimedes',
+    '4':'Gauss',
+    '5':'Descartes',
+    '6':'Fermat',
+    '7':'Euler',
+    '8':'Einstein',
+    '9':'Leibniz',
+    '10':'Hilbert',
+    '11':'Pascal',
+    '12':'Turing',
+    '13':'Ramanujan',
+    '14':'Riemann',
+    '15':'Neumann',
+    '16':'Ptolemy',
+    '17':'Aryabhata',
+    '18':'Cantor',
+    '19':'Germain',
+    '20':'Ada',
+    '21':'Noether'
+  };
+const people = [];
+const id= [];
+const scores = [];
+const dates = [];
+  for (i=0;i<20;i++){
+  	date[i]=data.rows[i].date;
+  	id[i]=data.rows[i].date;
+  	scores[i] = data.rows[i].date;
+  }
+ console.log(id, scores, dates)
 var people = '{{{people}}}'.split(',');
 var scores = '{{{scores}}}'.split(',');
-console.log(people);
-for (i=0;i<people.length -1;i++){
-	document.getElementById(i).innerHTML = people[i];
-	console.log(i+20)
-	document.getElementById(i+20).innerHTML = scores[i];
-}
 
-	//{{{scores}}}
- //  function sendAnswers(){
- //    processAnswers( PercentQ2Ans,
- //      [document.Questions.Submission1.value,
- //      document.Questions.Submission2.value,
- //      document.Questions.Submission3.value
- //      ])
-	// 	setValues({{{id}}}, {{{status}}});
-	// 	console.log({{{id}}}, {{{status}}})
-	// 	document.forms["StatusSubmit"].submit();
- //  }
-	// if ({{{show}}}){
-	// 	DisplaySubmissionDetails({{{numberC}}}, [{{{missedQ}}}], {{{status}}})
-	// }
+    var id = i+ 1;
+    people[i] = names[(id).toString()]
+
+
+// for (i=0;i<people.length -1;i++){
+// 	document.getElementById(i).innerHTML = people[i];
+// 	console.log(i+20)
+// 	document.getElementById(i+20).innerHTML = scores[i];
+// }
+
+
 </script>
 </body>
 
