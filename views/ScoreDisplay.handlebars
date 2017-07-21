@@ -150,8 +150,8 @@ const scores = [{{{scores}}}];
 const dateString = '{{{dates}}}';
 const dates = dateString.split(',')
 console.log(dates, scores, ids, 'DSI')
-  for (i=0;i<20;i++){
-  	var id = i+ 1;
+  for (i=0;i<ids.length;i++){
+  	var id = ids[i];
     people[i] = names[(id).toString()]
   }
  console.log(ids, scores, dates, people)
