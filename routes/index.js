@@ -82,7 +82,7 @@ function getScoresforDisplay(){
   const scores = [];
   const dates = [];
   const client = new pg.Client(connectionString);
-  for (i=0;i<20;i++){
+  for (i=0;i<2;i++){
     var id = i+ 1;
     people[i] = names[(id).toString()]
 
