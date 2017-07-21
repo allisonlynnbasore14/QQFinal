@@ -95,7 +95,7 @@ function getScoresforDisplay(){
       }
       client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
         done()
-        console.log(result.rows)
+        console.log(result.rows.date)
         dates[i] = result.rows[0].date;
         scores[i] = result.rows[0].score;
       })
