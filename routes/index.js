@@ -93,12 +93,12 @@ function getScoresforDisplay(){
       console.log('error')
       return 
       }
-      //client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
+      client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
         done()
-        // dates[i] = result.rows[0].date;
-        // scores[i] = result.rows[0].score;
+        dates[i] = result.rows[0].date;
+        scores[i] = result.rows[0].score;
       })
-   //})
+    })
   }
   console.log(people, scores, dates)
 }
