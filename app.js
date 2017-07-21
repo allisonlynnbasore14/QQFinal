@@ -160,16 +160,18 @@ app.post('/quiz/submit', function(req, res, next){
 
 
 app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
-  const client = new pg.Client(connectionString);
+  console.log('11111111111111')
   var resultingData = pg.connect(process.env.DATABASE_URL, function(err, client, done) {
   if(err) {
     done();
     console.log('error')
     res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found.", "sendMessage" : false});
     }
+    console.log('2222222222222222222222222')
     client.query('SELECT * FROM results', function(err, result) {
       done()
-      const data = result.rows[0]
+      const data = result.rows[0];
+      console.log(data)
       var people = ['Ada','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally'];
       var scores = [100, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7,4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7]
       res.redirect("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "scores":scores, "data":data , "people":people});
