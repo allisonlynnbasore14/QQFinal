@@ -6,6 +6,7 @@ var pg = require('pg');
 const connectionString = process.env.DATABASE_URL || 'postgres://localhost:2200';
 
 var totals = require('../totals.js');
+var names = require('../names.js');
 
 //function that constructs and returns lizard object
 function Entry(id, score){
@@ -76,10 +77,22 @@ function getDate(){
 //   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 // };
 
+function getScoresforDisplay(){
+  const people = [];
+  for (i=0;i<20;i++){
+    people[i] = names[toString(i-1)]
+  }
+  console.log(people, 'plllllllllllllllllllllllllll')
+}
+
 
 var AngieBasoreKey = function(req, res){
     // Pull from db
-    res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', 'scores'=['Ada':100, 'Bob':10]});//{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+
+    var people = ['Ada','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally'];
+    var scores = [100, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7,4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+    res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "scores":scores, "people":people}); 
+    //{"directions": constants.DIR.ANSWERQ,"title": constants.TITLE.DRU + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Division Rules

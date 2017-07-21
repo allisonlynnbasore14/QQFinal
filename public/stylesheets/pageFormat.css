@@ -16,6 +16,11 @@
 		font-family: monaco,Consolas,Lucida Console,monospace;
 	}
 
+	#ScoreHeadings{
+		font-weight: 900px;
+		color:black;
+	}
+
 	#LoginBoxButton{
 	}
 
@@ -23,6 +28,14 @@
 		opacity: 0;
 		z-index: -1;
 		width: 10px;
+	}
+
+	.ScoreTable{
+		width: 600px;
+		position: absolute;
+		left: 100px;
+		text-align: center;
+		font-weight: bold;
 	}
 
 	#HiddenForm2{
