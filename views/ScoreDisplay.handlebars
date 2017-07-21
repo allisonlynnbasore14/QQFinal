@@ -147,7 +147,8 @@ console.log('{{{data}}}')
 const people = [];
 const ids= [{{{ids}}}];
 const scores = [{{{scores}}}];
-const dates = [{{{dates}}}];
+const dateString = '{{{dates}}}';
+const dates = dateString.split(',')
 console.log(dates, scores, ids, 'DSI')
   for (i=0;i<20;i++){
   	var id = i+ 1;
