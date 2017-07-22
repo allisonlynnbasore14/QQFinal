@@ -81,8 +81,6 @@
 	  });
 	}
 
-	var test = ['mike','james','james','alex'];
-	var testBis = ['alex', 'yuri', 'jabari'];
 	console.log(uniqueArray(test.concat(testBis)));
 
 
@@ -96,6 +94,7 @@
 	}
 
 	function Mark(id){
+		console.log(guesses)
 		console.log(guesses.indexOf(id))
 		if (guesses.indexOf(id) > 0){
 			guesses.push(id); 
