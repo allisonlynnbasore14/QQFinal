@@ -369,6 +369,7 @@ function DisplaySubmissionDetails(numberC, missedQ, quiz){
 	  var total = 100;
 	}
 	CoverFunc("WhiteCover")
+	console.log(total, missedQ, '0000000000000000000')
 	if (numberC == total){
 		var Message = "You passed!  Good Job!"
 		document.getElementById("NumberCorrect").innerHTML = Message;
