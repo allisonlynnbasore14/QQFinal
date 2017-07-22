@@ -90,7 +90,6 @@
 				guessesFinal.push(uniqueGuesses[i])
 			}
 		}
-		console.log(guessesFinal)
 		processAnswers(	DRulesQ2Ans,
 			guessesFinal, 'checkbox')
 		setValues({{{id}}}, {{{status}}});
@@ -98,13 +97,10 @@
 	}
 
 	function Mark(id){
-		console.log(guesses)
-		console.log(guesses.indexOf(id))
 		if (guesses.indexOf(id) < 0){
 			guesses.push(id); 
 		}else{
 			guesses[guesses.indexOf(id)] = null; 
-			console.log(guesses, '!!!!!!!!!!')
 			return
 		}
 	}
