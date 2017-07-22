@@ -96,10 +96,11 @@
 	function Mark(id){
 		console.log(guesses)
 		console.log(guesses.indexOf(id))
-		if (guesses.indexOf(id) > 0){
+		if (guesses.indexOf(id) < 0){
 			guesses.push(id); 
 		}else{
-			console.log('yep')
+			delete  guesses[guesses.indexOf(id)]; 
+			console.log(guesses)
 			return
 		}
 	}
