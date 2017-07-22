@@ -81,8 +81,6 @@
 	  });
 	}
 
-	console.log(uniqueArray(test.concat(testBis)));
-
 
 	function sendAnswers(){
 		var uniqueGuesses = uniqueArray(guesses);
@@ -100,7 +98,7 @@
 			guesses.push(id); 
 		}else{
 			delete  guesses[guesses.indexOf(id)]; 
-			console.log(guesses)
+			console.log(guesses, '!!!!!!!!!!')
 			return
 		}
 	}
