@@ -22,6 +22,7 @@
 	var ExponentQ4Ans= ['Y2','Y1','N2','N1','Y1','Y1','N2','Y2','B','C'];
 
 	// Fractions
+	var FractionStudyAns= [];
 	var FractionGCFQAns=['A','D'];
 	var FractionImpQAns=['C', 'B'];
 	var FractionLCMQAns= ['B','D'];
