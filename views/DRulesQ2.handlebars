@@ -97,7 +97,7 @@
 		if (guesses.indexOf(id) < 0){
 			guesses.push(id); 
 		}else{
-			delete  guesses[guesses.indexOf(id)]; 
+			guesses[guesses.indexOf(id)] = null; 
 			console.log(guesses, '!!!!!!!!!!')
 			return
 		}
