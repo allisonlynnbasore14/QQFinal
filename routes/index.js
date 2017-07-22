@@ -59,6 +59,8 @@ function sendToDBUsers(oldStatus, id){
 
 
 function sendToDBResults(id, score){
+  var test = AlreadySubmitedToday(3)
+console.log(test)
   var date = getDate();
   const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
@@ -90,8 +92,6 @@ function AlreadySubmitedToday(id){
   })
 }
 
-var test = AlreadySubmitedToday(3)
-console.log(test)
 
 
 
