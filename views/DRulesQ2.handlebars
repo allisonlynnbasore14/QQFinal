@@ -71,6 +71,7 @@
 	function sendAnswers(){
 		processAnswers(	DRulesQ2Ans,
 			guesses, 'checkbox')
+		console.log(guesses)
 		setValues({{{id}}}, {{{status}}});
 		document.forms["StatusSubmit"].submit();
 	}
