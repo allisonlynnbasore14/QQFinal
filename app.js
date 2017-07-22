@@ -491,7 +491,7 @@ app.get('/FractionQ2/show/:id/:status/:numberC/:missedQ', index.FractionQ2Show);
 
 app.get('/SequenceQ/show/:id/:status/:numberC/:missedQ', index.SequenceQShow);
 app.get('/SequenceStudy/show/:id/:status/:numberC/:missedQ', index.SequenceStudyShow);
-app.get('/SequenceQ2/:id/show/:id/:status/:numberC/:missedQ', index.SequenceQ2Show);
+app.get('/SequenceQ2/show/:id/:status/:numberC/:missedQ', index.SequenceQ2Show);
 
 app.get('/ExponentStudy/show/:id/:status/:numberC/:missedQ', index.ExponentStudyShow);
 app.get('/ExponentQ/show/:id/:status/:numberC/:missedQ', index.ExponentQShow);
