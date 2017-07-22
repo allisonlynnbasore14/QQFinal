@@ -342,7 +342,7 @@ function GetQuizFromStatus(status, addOne='2'){
     '49' : 'ProbTF',
     '50' : 'ProbQ3',
     '51' : 'SequenceStudy',
-    '52' : 'SequenceQ1',
+    '52' : 'SequenceQ',
     '53' : 'SequenceQ2',
     '54' : 'AllDone'
   }
