@@ -30,6 +30,14 @@
 		width: 10px;
 	}
 
+	#FracImg{
+		position: absolute;
+		left: 400px;
+		top: 100px;
+		width: 300px;
+		height: 300px;
+	}
+
 	.ScoreTable{
 		width: 600px;
 		position: absolute;
@@ -443,13 +451,12 @@
 
 	#WordsProbQ{
 		position: absolute;
-		left: 300px;
-		top: 400px;
+		top: 420px;
 		color: #b30000;
 		font-size: 20px;
 		z-index: 22;
 		font-weight: bold;
-		width: 400px;
+		width: 800px;
 	}
 
 	#Words{
@@ -708,6 +715,13 @@
 		font-family: monaco,Consolas,Lucida Console,monospace;
 		font-size: 17px;
 		font-weight: bold;
+	}
+
+	.studyHelp{
+		font-weight: bold;
+		font-family: monaco,Consolas,Lucida Console,monospace;
+		position: absolute;
+		top: 75px;
 	}
 
 	#questionsPercent{
