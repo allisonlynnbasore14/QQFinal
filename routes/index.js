@@ -153,27 +153,31 @@ var PTheoremFill = function(req, res){
 
 /////////////////////////////Props
 
+var PropsStudy = function(req, res){
+  res.render("PropsStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PRO + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+};
+
 var PropsQ = function(req, res){
-  res.render("PropsQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.PRO + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("PropsQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.PRO + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var PropsQ2 = function(req, res){
-  res.render("PropsQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.PRO + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("PropsQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.PRO + ' III', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var PropsExample = function(req, res){
-  res.render("PropsExample",{"directions": constants.DIR.PROPERTY, "title": constants.TITLE.PRO + ' III', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("PropsExample",{"directions": constants.DIR.PROPERTY, "title": constants.TITLE.PRO + ' IV', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var PropsQ3 = function(req, res){
-  res.render("PropsQ3",{"directions": constants.DIR.PROPERTY, "title": constants.TITLE.PRO + ' IV', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
-};
-
-var PropsStudy = function(req, res){
-  res.render("PropsStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PRO + ' V', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("PropsQ3",{"directions": constants.DIR.PROPERTY, "title": constants.TITLE.PRO + ' V', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Angles
+
+var AnglesStudy = function(req, res){
+  res.render("AnglesStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.ANG + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+};
 
 var AnglesQ = function(req, res){
   res.render("AnglesQ",{"directions": constants.DIR.PROPERTY, "title": constants.TITLE.ANG + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
@@ -191,33 +195,34 @@ var AnglesQ3 = function(req, res){
   res.render("AnglesQ3",{"directions": constants.DIR.ANGLE, "title": constants.TITLE.ANG + ' V', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
-var AnglesStudy = function(req, res){
-  res.render("AnglesStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.ANG + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
-};
 
 /////////////////////////////Prob
 
+var ProbStudy = function(req, res){
+  res.render("ProbStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PRB + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+};
+
 var ProbQ = function(req, res){
-  res.render("ProbQ",{"directions": constants.DIR.FILL, "title": constants.TITLE.PRB + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("ProbQ",{"directions": constants.DIR.FILL, "title": constants.TITLE.PRB + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var ProbQ2 = function(req, res){
-  res.render("ProbQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.PRB + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("ProbQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.PRB + ' III', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var ProbTF = function(req, res){
-  res.render("ProbTF",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.PRB + ' III', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("ProbTF",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.PRB + ' IV', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var ProbQ3 = function(req, res){
-  res.render("ProbQ3",{"directions": constants.DIR.DICE, "title": constants.TITLE.PRB + ' IV', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
-};
-
-var ProbStudy = function(req, res){
-  res.render("ProbStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PRB + ' V', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("ProbQ3",{"directions": constants.DIR.DICE, "title": constants.TITLE.PRB + ' V', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Percent
+
+var PercentStudy = function(req, res){
+  res.render("PercentStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+};
 
 var PercentQ = function(req, res){
   res.render("PercentQ",{"directions": constants.DIR.FILL, "title": constants.TITLE.PER + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
@@ -235,14 +240,14 @@ var PercentMatch = function(req, res){
   res.render("PercentMatch",{"directions": constants.DIR.MATCH, "title": constants.TITLE.PER + ' V', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
-var PercentStudy = function(req, res){
-  res.render("PercentStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
-};
-
 /////////////////////////////Fraction
 
+var FractionStudy = function(req, res){
+  res.render("FractionStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.FRA + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+};
+
 var FractionGCFQ = function(req, res){
-  res.render("FractionGCFQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.FRA + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("FractionGCFQ",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.FRA + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var FractionLCMQ = function(req, res){
@@ -261,18 +266,14 @@ var FractionQ2 = function(req, res){
   res.render("FractionQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.FRA + ' VI', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
-var FractionStudy = function(req, res){
-  res.render("FractionStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.FRA + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
-};
-
 /////////////////////////////Sequences
-
-var SequenceQ = function(req, res){
-  res.render("SequenceQ",{"directions": constants.DIR.SEQUENCE, "title": constants.TITLE.SQU + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
-};
 
 var SequenceStudy = function(req, res){
   res.render("SequenceStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.SQU + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+};
+
+var SequenceQ = function(req, res){
+  res.render("SequenceQ",{"directions": constants.DIR.SEQUENCE, "title": constants.TITLE.SQU + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var SequenceQ2 = function(req, res){
