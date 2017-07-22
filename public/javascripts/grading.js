@@ -345,6 +345,7 @@ function processAnswers(title, guesses, type=null) {
 	if(guesses.length > answers.length){
 		correct = correct -1
 	}
+	console.log(answers, guesses, "00000000000000000000000000000000000")
 	CoverFunc("WhiteCover")
 	if (correct === numQuestions){
 		document.getElementById('HiddenForm3').value = correct;
