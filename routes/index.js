@@ -78,14 +78,14 @@ function AlreadySubmitedToday(id){
   client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
     done()
     var date = result.rows[0].date;
-  })
   const today = new Date()
-  if (today === date){
-    console.log('Already submitted today')
-    return true
-  }else{
-    return false
-  }
+    if (today === date){
+      console.log('Already submitted today')
+      return true
+    }else{
+      return false
+    }
+  })
 }
 
 var test = AlreadySubmitedToday(3)
