@@ -259,7 +259,6 @@ function UnCount(id){
 function processAnswers(title, guesses, type=null) {
 	var answers = title;
 	var numQuestions = answers.length;
-	console.log(answers, guesses, '000000000000000000000000000000000000000000000000000000000000000000')
 	attempt_cnt = attempt_cnt + 1
 	if(attempt_cnt > 1){
 		if (attempt_cnt > 2){
@@ -327,6 +326,7 @@ function processAnswers(title, guesses, type=null) {
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = '0';
 	}else if (guesses.length > numQuestions){
+		console.log(answers, guesses, '000000000000000000000000000000000000000000000000000000000000000000')
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = '100';
 	}else{
