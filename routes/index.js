@@ -74,6 +74,7 @@ function sendToDBResults(id, score){
 
 
 function AlreadySubmitedToday(id){
+  const client = new pg.Client(connectionString);
   client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
     done()
     var date = result.rows[0].date;
