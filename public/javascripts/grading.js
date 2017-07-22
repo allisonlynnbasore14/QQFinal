@@ -308,8 +308,8 @@ function processAnswers(title, guesses, type=null) {
 				if (answers[m]=== guesses[m]){
 					correct = correct + 1
 				}
-				missedQuestions.push('100')
 			}
+			missedQuestions.push('100')
 			break;
 		case 'includes':
 			for(m = 0; m < numQuestions; m++){
