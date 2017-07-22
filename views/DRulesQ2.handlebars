@@ -84,9 +84,15 @@
 
 	function sendAnswers(){
 		var uniqueGuesses = uniqueArray(guesses);
-		console.log(uniqueGuesses)
+		var guessesFinal = [];
+		for (i=0;i<uniqueGuesses.length;i++){
+			if (uniqueGuesses[i] = !null){
+				guessesFinal.push(uniqueGuesses[i])
+			}
+		}
+		console.log(guessesFinal)
 		processAnswers(	DRulesQ2Ans,
-			uniqueGuesses, 'checkbox')
+			guessesFinal, 'checkbox')
 		setValues({{{id}}}, {{{status}}});
 		document.forms["StatusSubmit"].submit();
 	}
