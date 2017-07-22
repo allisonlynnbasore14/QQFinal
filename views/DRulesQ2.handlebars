@@ -57,7 +57,7 @@
 		  		27,411
 		  		<input type="checkbox" onClick = "Mark('A801')" size="10" name="A8O1">
 		  		<input type="checkbox" onClick = "Mark('A802')" size="10" name="A8O2">
-		  		<input type="checkbox" onClick="Mark('A803')" size="10" name="A8O3">
+		  		<input type="checkbox" onClick="Mark('A803')" size="10" name="A8O3" id="TEST">
 		  		<br>
 			</form>
 		</div>
@@ -71,7 +71,6 @@
 	function sendAnswers(){
 		processAnswers(	DRulesQ2Ans,
 			guesses, 'checkbox')
-		console.log(guesses)
 		setValues({{{id}}}, {{{status}}});
 		document.forms["StatusSubmit"].submit();
 	}

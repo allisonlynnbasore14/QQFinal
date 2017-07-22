@@ -333,13 +333,29 @@ function processAnswers(title, guesses, type=null) {
 		correct = correct -1
 	}
 	CoverFunc("WhiteCover")
+	console.log('HHHHHHHHHHHHHHHHHHHH')
 	if (correct === numQuestions){
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = '0';
 	}else if (guesses.length > numQuestions){
-		console.log(answers, guesses, '000000000000000000000000000000000000000000000000000000000000000000')
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = '100';
+		if (type === 'checkbox'){
+			// Here is a check for if it is DRuleQ2 where the guesses should be longer than the answers. Here We just test if they go over, all correct, or under.
+			if (correct > numQuestions){
+			document.getElementById('HiddenForm3').value = correct;
+			document.getElementById('HiddenForm4').value = '100';
+			console.log('under')
+			}else if (correct === numQuestions){
+			document.getElementById('HiddenForm3').value = correct;
+			document.getElementById('HiddenForm4').value = '0';	
+			console.log('right')
+			}else{
+			document.getElementById('HiddenForm3').value = correct;
+			document.getElementById('HiddenForm4').value = missedQ;	
+			console.log('under')				
+			}
+		}
 	}else{
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = missedQuestions.toString();
