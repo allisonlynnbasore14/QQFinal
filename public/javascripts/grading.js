@@ -380,7 +380,7 @@ function DisplaySubmissionDetails(numberC, missedQ, quiz){
 		document.getElementById("Missed").style.opacity = 100;
 		document.getElementById("Heading").style.opacity = 0;
 		document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQ;
-		document.getElementById("NumberCorrect").innerHTML = "Keep trying!";
+		document.getElementById("NumberCorrect").innerHTML = "Keep trying! You can do it next time!";
 		return
 	}else if (missedQ.toString() === '100') {
 		document.getElementById("Missed").style.opacity = 100;
