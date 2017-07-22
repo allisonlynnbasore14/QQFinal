@@ -259,6 +259,7 @@ function UnCount(id){
 function processAnswers(title, guesses, type=null) {
 	var answers = title;
 	var numQuestions = answers.length;
+	console.log(answers, guesses)
 	attempt_cnt = attempt_cnt + 1
 	if(attempt_cnt > 1){
 		if (attempt_cnt > 2){
