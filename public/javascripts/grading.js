@@ -298,6 +298,18 @@ function processAnswers(title, guesses, type=null) {
 					correct = correct + 1
 				}
 			}
+		case 'Primes':
+			for(m = 0; m < numQuestions; m++){
+				if (typeof(answers[m]) === 'string'){
+					guesses[m] = guesses[m].toUpperCase()
+					answers[m] = answers[m].toUpperCase()
+					guesses[m] = guesses[m].trim()
+				}
+				if (answers[m]=== guesses[m]){
+					correct = correct + 1
+				}
+				missedQuestions.push('100')
+			}
 			break;
 		case 'includes':
 			for(m = 0; m < numQuestions; m++){
