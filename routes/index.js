@@ -18,13 +18,16 @@ function Entry(id, score){
 }
 
 function StoreScoreData(status, id, numberC){
+  console.log('22222222222222222222222222222222222222222222')
+  var score = numberC
   var total = GetTotalFromStatus((Number(status) - 1).toString());
-  if (total === Number(numberC)){
+  if (total === Number(score)){
+    console.log('111111111111111111')
     sendToDBUsers(Number(status), id)
+    sendToDBResults(id, score);
   }
   else{
   }
-  var score = numberC
   sendToDBResults(id, score);
 }
 
@@ -329,6 +332,7 @@ var DRulesCopyShow = function(req, res){
 };
 
 var DRulesQ2Show = function(req, res){
+  console.log('333333333333333333333333')
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
   res.render("DRulesQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PER + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
