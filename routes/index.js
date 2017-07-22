@@ -105,19 +105,20 @@ var PrimeNumbers = function(req, res){
 };
 
 var PrimeNumbersCopy = function(req, res){
-  res.render("PrimeNumbersCopy",{"directions": constants.DIR.COPY, "title": constants.TITLE.DRU + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("PrimeNumbersCopy",{"directions": constants.DIR.COPY, "title": constants.TITLE.PIN + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var PrimeNumbersQ = function(req, res){
-  res.render("PrimeNumbersQ",{"directions": constants.DIR.COMP_PRIME, "title": constants.TITLE.DRU + ' III', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("PrimeNumbersQ",{"directions": constants.DIR.COMP_PRIME, "title": constants.TITLE.PIN + ' III', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var PrimeNumbersQ2 = function(req, res){
-  res.render("PrimeNumbersQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' IV', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  console.log('here')
+  res.render("PrimeNumbersQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.PIN + ' IV', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var PrimeNumbersList = function(req, res){
-  res.render("PrimeNumbersList",{"directions": constants.DIR.LIST_PRIME, "title": constants.TITLE.DRU + ' V', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("PrimeNumbersList",{"directions": constants.DIR.LIST_PRIME, "title": constants.TITLE.PIN + ' V', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Square Numbers
