@@ -57,7 +57,7 @@
 		  		27,411
 		  		<input type="checkbox" onClick = "Mark('A801')" size="10" name="A8O1">
 		  		<input type="checkbox" onClick = "Mark('A802')" size="10" name="A8O2">
-		  		<input type="checkbox" onClick="Mark('A803')" size="10" name="A8O3" id="TEST">
+		  		<input type="checkbox" onClick = "Mark('A803')" size="10" name="A8O3">
 		  		<br>
 			</form>
 		</div>
@@ -96,7 +96,12 @@
 	}
 
 	function Mark(id){
-		guesses.push(id); 
+		if (guesses.indexOf(id) > 0){
+			guesses.push(id); 
+		}else{
+			console.log('yep')
+			return
+		}
 	}
 	if ({{{show}}}){
 		DisplaySubmissionDetails({{{numberC}}}, [{{{missedQ}}}], {{{status}}})
