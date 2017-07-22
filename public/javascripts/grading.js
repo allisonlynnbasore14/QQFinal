@@ -327,7 +327,7 @@ function processAnswers(title, guesses, type=null) {
 		document.getElementById('HiddenForm4').value = '0';
 	}else if (guesses.length > numQuestions){
 		document.getElementById('HiddenForm3').value = correct;
-		document.getElementById('HiddenForm4').value = 'Over';
+		document.getElementById('HiddenForm4').value = '100';
 	}else{
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = missedQuestions.toString();
@@ -356,7 +356,7 @@ function DisplaySubmissionDetails(numberC, missedQ, quiz){
 		document.getElementById("Missed").innerHTML = "You missed the following questions: " + missedQ;
 		document.getElementById("NumberCorrect").innerHTML = "You answered with too many.";
 		return
-	}else if (missedQ.toString() === 'Over') {
+	}else if (missedQ.toString() === '100') {
 		document.getElementById("Missed").style.opacity = 100;
 		document.getElementById("Heading").style.opacity = 0;
 		document.getElementById("Missed").innerHTML = "You answered with too many.";
