@@ -309,7 +309,7 @@ function processAnswers(title, guesses, type=null) {
 					correct = correct + 1
 				}
 			}
-			missedQuestions.push('All')
+			missedQuestions.push('0')
 			break;
 		case 'includes':
 			for(m = 0; m < numQuestions; m++){
