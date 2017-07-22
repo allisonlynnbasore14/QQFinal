@@ -126,9 +126,9 @@
     '22' : 9,
     '23' : 9,
     '24' : 10,
-    '25' : 0,
 
-    '26' : 0,
+    '25' : 0,
+    '26' : 2,
     '27' : 2,
     '28' : 2,
     '29' : 2,
@@ -376,7 +376,7 @@ function DisplaySubmissionDetails(numberC, missedQ, quiz){
 		document.getElementById("NumberCorrect").innerHTML = Message;
 		return
 	}else if(missedQ.length === 1 && missedQ[0]===0){
-		document.getElementById("NumberCorrect").innerHTML = "You did not get them all. Try again next time!";	
+		document.getElementById("NumberCorrect").innerHTML = "Nice, Keep up the good work!";	
 	}else if (numberC < total){
 		document.getElementById("Missed").style.opacity = 100;
 		document.getElementById("Heading").style.opacity = 0;
