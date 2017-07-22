@@ -291,6 +291,7 @@ function processAnswers(title, guesses, type=null) {
 				correct = correct + 1;
 				missedQuestions = 0;
 			}
+			console.log(correct)
 			break;
 		case 'checkbox':
 			for(m = 0; m < numQuestions; m++){
