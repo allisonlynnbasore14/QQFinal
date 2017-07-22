@@ -329,6 +329,7 @@ function processAnswers(title, guesses, type=null) {
 				guesses[m] = guesses[m].toUpperCase()
 				answers[m] = answers[m].toUpperCase()
 				guesses[m] = guesses[m].trim()
+				console.log(answers[m], guesses[m])
 			}
 			if (answers[m]=== guesses[m]){
 				correct = correct + 1
