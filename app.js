@@ -132,7 +132,7 @@ app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
       const dates = [];
       const scores = [];
       const ids = [];
-      for (i=0;i<20;i++){
+      for (i=0;i<21;i++){
         dates[i]=result.rows[i].date;
         ids[i]=result.rows[i].user_id;
         scores[i] = result.rows[i].score;
