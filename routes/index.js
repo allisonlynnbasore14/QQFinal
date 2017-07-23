@@ -53,16 +53,15 @@ function sendToDBUsers(oldStatus, id){
 
 function sendToDBResults(id, score){  
   // So this function will not update the score if the day is the same
-  var date = getDate();
   const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if(err) {
       done();
       return res.status(500).json({success: false, data: err});
       }
-      console.log('lllllllllllll', score, date, id)
           client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
           var date = result.rows[0].date;
+          console.log('ddddddddddddd', date)
         const today = new Date().toDateString()
           if (today === !date){
             console.log('hhhhhhhhhhhhhhhhhhhhhhh', 'SDI', score, date, id)
