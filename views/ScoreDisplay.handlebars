@@ -153,6 +153,7 @@ document.getElementById('SubmitForProcessing').value = 'Submit';
     '19':'Germain',
     '20':'Ada',
     '21':'Noether'
+    '22':'Open',
   };
 const people = [];
 const ids= [{{{ids}}}];
@@ -169,8 +170,8 @@ console.log(ids)
   for (i=0;i<ids.length;i++){
   	console.log(i)
   	document.getElementById(i).innerHTML = dates[i];
-	document.getElementById(i+21).innerHTML = people[i];
-	document.getElementById(i+42).innerHTML = scores[i];
+	document.getElementById(i+22).innerHTML = people[i];
+	document.getElementById(i+44).innerHTML = scores[i];
 	console.log(people[i])
   }
   console.log(scores, ids, dates)
