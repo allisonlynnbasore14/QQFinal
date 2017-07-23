@@ -69,9 +69,9 @@ function sendToDBResults(id, score){
       return res.status(500).json({success: false, data: err});
       }
           client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
-          console.log(result, '9000000000909999999-------------------')
           var date = result.rows[0].date;
         const today = new Date()
+        console.log(today, date)
           if (today === date){
             console.log('Already submitted today')
             return true
