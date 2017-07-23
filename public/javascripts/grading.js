@@ -340,7 +340,6 @@ function processAnswers(title, guesses, type=null) {
 				correct = correct + 1;
 			}
 			if(tooManyIncluded){
-				console.log('TOOOOOOOOOOOOOOOOoo')
 				correct = correct -1;
 				missedQuestions.push('1');
 			}
@@ -395,13 +394,12 @@ function DisplaySubmissionDetails(numberC, missedQ, quiz){
 	  var total = 100;
 	}
 	CoverFunc("WhiteCover")
-	console.log(total, missedQ, '0000000000000000000')
 	if (numberC == total){
 		var Message = "You passed!  Good Job!"
 		document.getElementById("NumberCorrect").innerHTML = Message;
 		return
 	}else if(missedQ.length === 1 && missedQ[0]===0){
-		document.getElementById("NumberCorrect").innerHTML = "Nice, Keep up the good work!";	
+		document.getElementById("NumberCorrect").innerHTML = "Nice Try, Keep up the good work!";	
 	}else if (numberC < total){
 		document.getElementById("Missed").style.opacity = 100;
 		document.getElementById("Heading").style.opacity = 0;
