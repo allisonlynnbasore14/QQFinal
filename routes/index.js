@@ -74,9 +74,7 @@ function sendToDBResults(id, score){
         console.log(today, date)
           if (today === date){
             console.log('Already submitted today')
-            return true
-          }else{
-            return false
+            done()
           }
         })
         client.query('UPDATE results SET score=$1, date=$2 WHERE user_id=$3', [score, date, id] , function(err, result) {
