@@ -59,8 +59,8 @@ function sendToDBUsers(oldStatus, id){
 
 
 function sendToDBResults(id, score){
-  var test = AlreadySubmitedToday(3)
-console.log(test)
+//   var test = AlreadySubmitedToday(3)
+// console.log(test)
   var date = getDate();
   const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
@@ -68,6 +68,18 @@ console.log(test)
       done();
       return res.status(500).json({success: false, data: err});
       }
+          client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
+          done()
+          console.log(result, '9000000000909999999-------------------')
+          var date = result.rows[0].date;
+        const today = new Date()
+          if (today === date){
+            console.log('Already submitted today')
+            return true
+          }else{
+            return false
+          }
+        })
         client.query('UPDATE results SET score=$1, date=$2 WHERE user_id=$3', [score, date, id] , function(err, result) {
         done()
       })
