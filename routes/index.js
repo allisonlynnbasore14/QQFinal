@@ -72,17 +72,15 @@ function sendToDBResults(id, score){
           var date = result.rows[0].date;
         const today = new Date().toDateString()
         console.log(today, date)
-          if (today === date){
-            console.log('Already submitted today')
+          if (today === !date){
+            client.query('UPDATE results SET score=$1, date=$2 WHERE user_id=$3', [score, date, id] , function(err, result) {
+            console.log('yyyyyyyyyyyyyyyyyyyyyyyyyy')
+            done()
+            })
             done()
             return
           }
         })
-        client.query('UPDATE results SET score=$1, date=$2 WHERE user_id=$3', [score, date, id] , function(err, result) {
-          console.log('yyyyyyyyyyyyyyyyyyyyyyyyyy')
-        done()
-
-      })
     });
 }
 
