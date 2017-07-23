@@ -61,9 +61,9 @@ function sendToDBResults(id, score){
       }
           client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
           var date = result.rows[0].date;
-          if (date === 0){
+          if (date === '0'){
             console.log('yo')
-            var date = 1;
+            date = 1;
           }
           console.log('ddddddddddddd', date)
         const today = new Date().toDateString()
