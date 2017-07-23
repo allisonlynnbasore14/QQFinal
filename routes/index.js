@@ -81,7 +81,9 @@ function sendToDBResults(id, score){
           }
         })
         client.query('UPDATE results SET score=$1, date=$2 WHERE user_id=$3', [score, date, id] , function(err, result) {
+          console.log('yyyyyyyyyyyyyyyyyyyyyyyyyy')
         done()
+
       })
     });
 }
