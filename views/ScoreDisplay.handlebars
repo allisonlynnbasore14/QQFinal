@@ -157,8 +157,9 @@ const dates = dateString.split(',')
   for (i=0;i<ids.length;i++){
   	document.getElementById(i).innerHTML = dates[i];
 	document.getElementById(i+20).innerHTML = people[i];
-	document.getElementById(i+40).innerHTML = scores[i];
+	document.getElementById(i+40).innerHTML = scores[i].toString();
   }
+  console.log(scores)
 
 
 //var people = '{{{people}}}'.split(',');
