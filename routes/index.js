@@ -11,8 +11,8 @@ var names = require('../names.js');
 function StoreScoreData(status, id, numberC){
   // Calls the function to send to the results and user database tables
   // Only send the information to user database if the user passed thier quiz
-  var score = numberC
   var total = GetTotalFromStatus((Number(status) - 1).toString());
+  var score = numberC + '/100';
   if (total === Number(score)){
     sendToDBUsers(Number(status), id)
     sendToDBResults(id, score);
@@ -76,6 +76,11 @@ function sendToDBResults(id, score){
         })
     });
 }
+
+function GetScoreFromNumberMissed(missedQ){
+
+}
+
 
 function getDate(){
   // gets today's date in the proper format
