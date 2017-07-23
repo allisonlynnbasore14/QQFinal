@@ -337,11 +337,13 @@ function processAnswers(title, guesses, type=null) {
 			};
 			if (wordIncluded === answers.length){
 				correct = correct + 1;
-				if(tooManyIncluded){
-					correct = correct -1;
-				}
-				missedQuestions = 0;
 			}
+			if(tooManyIncluded){
+				console.log('TOOOOOOOOOOOOOOOOoo')
+				correct = correct -1;
+				missedQuestions.push('1');
+			}
+			missedQuestions = 0;
 			break;
 		case 'home':
 		default:
