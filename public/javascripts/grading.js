@@ -26,7 +26,7 @@
 	var FractionGCFQAns=['A','D'];
 	var FractionImpQAns=['C', 'B'];
 	var FractionLCMQAns= ['B','D'];
-	var FractionQAns= ['C','A','D'];
+	var FractionQAns= ['C','A'];
 	var FractionQ2Ans= ['D', 'A', 'B', 'B'];
 
 	// PTheorem
@@ -131,7 +131,7 @@
     '26' : 2,
     '27' : 2,
     '28' : 2,
-    '29' : 3,
+    '29' : 2,
     '30' : 4,
 
     '31' : 0,
@@ -320,6 +320,27 @@ function processAnswers(title, guesses, type=null) {
 				}else{
 					missedQuestions.push(m+1)
 				}
+			}
+			break;
+		case 'includesPrime':
+			var wordIncluded = 0;
+			for (p=0; p <numQuestions; p++){
+				if (guesses[0].includes(answers[p])){
+					wordIncluded = wordIncluded + 1
+				}
+				var badAnswers = ['2','4','51','33','45','63','93','81'];
+				for (q=0; q <numQuestions; q++){
+					if (guesses[0].includes(badAnswers[q])){
+						tooManyIncluded = true;
+					}
+				}
+			};
+			if (wordIncluded === answers.length){
+				correct = correct + 1;
+				if(tooManyIncluded){
+					correct = correct -1;
+				}
+				missedQuestions = 0;
 			}
 			break;
 		case 'home':

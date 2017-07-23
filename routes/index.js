@@ -59,6 +59,9 @@ function sendToDBUsers(oldStatus, id){
 
 
 function sendToDBResults(id, score){
+
+// So this function will not update the score if the day is the same
+
 //   var test = AlreadySubmitedToday(3)
 // console.log(test)
   var date = getDate();
@@ -74,7 +77,6 @@ function sendToDBResults(id, score){
         console.log(today, date)
           if (today === !date){
             client.query('UPDATE results SET score=$1, date=$2 WHERE user_id=$3', [score, date, id] , function(err, result) {
-            console.log('yyyyyyyyyyyyyyyyyyyyyyyyyy')
             done()
             })
             done()
@@ -90,7 +92,6 @@ function AlreadySubmitedToday(id){
   const client = new pg.Client(connectionString);
   client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
     done()
-    console.log(result, '9000000000909999999-------------------')
     var date = result.rows[0].date;
   const today = new Date()
     if (today === date){
@@ -307,15 +308,15 @@ var FractionQ2 = function(req, res){
 /////////////////////////////Sequences
 
 var SequenceStudy = function(req, res){
-  res.render("SequenceStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.SQU + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("SequenceStudy",{"directions": constants.DIR.STUDY, "title": constants.TITLE.SEQ + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var SequenceQ = function(req, res){
-  res.render("SequenceQ",{"directions": constants.DIR.SEQUENCE, "title": constants.TITLE.SQU + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("SequenceQ",{"directions": constants.DIR.SEQUENCE, "title": constants.TITLE.SEQ + ' II', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var SequenceQ2 = function(req, res){
-  res.render("SequenceQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.SQU + ' III', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("SequenceQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.SEQ + ' III', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 /////////////////////////////Exponents
@@ -347,7 +348,7 @@ var FreePass = function(req, res){
 };
 
 var AllDone = function(req, res){
-  res.render("AllDone",{"title": constants.TITLE.DON, "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("AllDone",{"directions": constants.DIR.DONE, "title": constants.TITLE.DON, "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 

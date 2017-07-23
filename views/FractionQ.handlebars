@@ -27,15 +27,6 @@
 	    		<option value="C"> 5&frasl;98 because 9&frasl;10 times 7 is 63&frasl;70, 5&frasl;14 times 7 is 35&frasl;98, and 63 + 35 is 98.</option>
 	    		<option value="D"> 5&frasl;98 because 9&frasl;10 times 7 is 63&frasl;70, 5&frasl;14 times 7 is 35&frasl;98, and 63 - 35 is 98.</option>
 	  		</select>
-	  		<br>
-	  		3. What are the steps for multiplying mixed numbers?
-	  		<select name="Submission3" style = "width:600px;">
-	    		<option value="A">  With the first fraction, multiply the denominator by the whole number. Add that product to the numerator. Repeat for second fraction. Reduce. Multiply the numerators and denominators.
-	    		 </option>
-	    		<option value="B"> With the first fraction, add the denominator to the whole number. Multiply that product to the numerator. Repeat for second fraction. Reduce. Multiply the numerators and denominators.</option>
-	    		<option value="C"> With the first fraction, multiply the numerator by the whole number. Add that product to the denominator. Repeat for second fraction. Reduce. Multiply the numerators and denominators.</option>
-	    		<option value="D"> With the first fraction, multiply the denominator by the whole number. Add that product to the numerator. Repeat for second fraction. Reduce. Add the numerators and denominators. </option>
-	  		</select>
 		</form>
 	</div>
 
@@ -43,8 +34,7 @@
   function sendAnswers(){
     processAnswers( FractionQAns,
       [document.Questions.Submission1.value,
-      document.Questions.Submission2.value,
-      document.Questions.Submission3.value])
+      document.Questions.Submission2.value])
 		setValues({{{id}}}, {{{status}}});
 		document.forms["StatusSubmit"].submit();
   }

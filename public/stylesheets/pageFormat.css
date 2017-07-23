@@ -24,6 +24,11 @@
 	#LoginBoxButton{
 	}
 
+	#SEQ2Body{
+		position: absolute;
+		top: 200px;
+	}
+
 	#HiddenForm1{
 		opacity: 0;
 		z-index: -1;
@@ -201,9 +206,9 @@
 	.PrimeNumbersQ{
 		color: white;
 		position: absolute;
-		left: 300px;
+		left: 150px;
 		top: 50px;
-		width: 300px;
+		width: 500px;
 	}
 
 	.SquenceHelp{
@@ -222,9 +227,26 @@
 		height: 300px;
 	}
 
+	.SequenceQ2Help{
+		font-size: 15px;
+		position: absolute;
+		top: 10px;
+		font-weight: bold;
+		width: 800px;
+		text-align: center;
+		font-family: monaco,Consolas,Lucida Console,monospace;	
+	}
+
 	.line{
 		width:780px;
 		border: 2px solid black;
+	}
+
+	.lineSEQ{
+		width:780px;
+		border-top-style: solid;
+		position: absolute;
+		top:150px;
 	}
 
 	.Table{
@@ -298,6 +320,21 @@
 		position: absolute;
 		left:33%;
 		top: 30%;
+		z-index: 25;
+	}
+
+	.PTPic{
+		position: absolute;
+		z-index: 25;
+		left: 250px;
+		top: 150px;	
+	}
+
+	.PicAng{
+		width: 170px;
+		height: 160px;
+		position: absolute;
+		left: 200px;
 		z-index: 25;
 	}
 
@@ -387,17 +424,13 @@
 	}
 
 	.img2{
-		width: 50%;
 		position: absolute;
-		height: 40%;
 		left: 10%;
-		top:50%;
+		top:300px;
 	}
 
 	.img1{
-		width: 60%;
 		position: absolute;
-		height: 60%;
 		left: 30%;
 	}
 
@@ -413,10 +446,10 @@
 		border-color:black;
 		border-width: 5px;
 		height:35%;
-		width: 90%;
+		width: 100%;
+		top: 200px;
+		left: -5px;
 		position: absolute;
-		top:25%;
-		left:15%;
 		word-wrap: break-word;
 	}
 
@@ -643,6 +676,19 @@
 		top:2%;
 		word-wrap: break-word;
 	}
+
+	#PoemDRules{
+		text-align: initial;
+		border-radius: 20px;
+		border-color:black;
+		border-width: 5px;
+		height:500px;
+		width: 40%;
+		position: absolute;
+		left:55%;
+		top:2%;
+		word-wrap: break-word;
+	}
 	
 	#AnswerDisplay{
 		font-size: 500%;
@@ -660,7 +706,48 @@
 		z-index: 22;
 		text-align: center;
 		top: 10%;
+		left: 140px;
 		width: 500px;
+	}
+
+	.TocopyDRules{
+		font-size:17px;
+		position: absolute;
+		font-weight: bold;
+		z-index: 22;
+		text-align: center;
+		top: 10%;
+		left: -40px;
+		width: 500px;
+
+	}
+
+	.DoneBody{
+		font-size:30px;
+		position: absolute;
+		font-weight: bold;
+		z-index: 22;
+		text-align: center;
+		left: 195px;
+		width: 500px;
+	}
+
+	.celebrate1{
+		position: absolute;
+		left:55%;
+		top:40%;
+		width: 330px;
+		height: 300px;
+		z-index: 33;
+	}
+
+	.celebrate2{
+		position: absolute;
+		left:5%;
+		top:40%;
+		width: 300px;
+		height: 300px;
+		z-index: 34;
 	}
 
 	#CopySquare{
@@ -691,6 +778,24 @@
 		width: 200px;
 	}
 
+	#questionsMatchSqu{
+		position: absolute;
+		left: 400px;
+		width: 230px;
+		line-height: 60px;
+	}
+
+	.imgPN{
+		position: absolute;
+		top:250px;
+		left: 100px;
+	}
+
+	#SeqQ{
+		position: absolute;
+		top: 200px;
+	}
+
 	table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -712,6 +817,16 @@
 		left: 450px;
 		top: 10px;
 		width: 400px;
+		font-family: monaco,Consolas,Lucida Console,monospace;
+		font-size: 17px;
+		font-weight: bold;
+	}
+
+	.SequenceQHelp2{
+		position: absolute;
+		width: 400px;
+		left: 230px;
+		top: 30px;
 		font-family: monaco,Consolas,Lucida Console,monospace;
 		font-size: 17px;
 		font-weight: bold;
@@ -813,4 +928,12 @@
 		border: 3px solid #004d99;
 		z-index: 40;
 		opacity: 100;
+	}
+
+
+	#AngQ2Body{
+		line-height: 5px;
+		top: 150px;
+		font-size: 5px;
+		position: absolute;
 	}

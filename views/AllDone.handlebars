@@ -10,49 +10,6 @@
   	<script type="text/javascript" src="/javascripts/grading.js"></script>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-	<style>
-	.primebutton{
-		width: 50px;
-		float: left;
-		background-color: white;
-		box-shadow: 0px 0px 2px gray;
-		margin: 10px;
-	}
-
-	.celebrate1{
-		position: absolute;
-		left:63%;
-		top:40%;
-		width: 300px;
-		height: 300px;
-		z-index: 33;
-	}
-
-	.celebrate2{
-		position: absolute;
-		left:5%;
-		top:40%;
-		width: 300px;
-		height: 300px;
-		z-index: 34;
-	}
-
-	.PrimeNumbers{
-		color: white;
-		width: 450px;
-		position: absolute;
-		left:28%;
-		top: 20%;
-	}
-
-	.Tocopy{
-		font-size: 40px;
-		position: absolute;
-		left:2%;
-	}
-
-	</style>
-
 </head>
 
 
@@ -60,91 +17,19 @@
 	<p id='AnswerDisplay'>
 	</p>
 	<div class = "WhiteBox">
-		<p class = "Tocopy">
+		<p class = "DoneBody">
 			Congratulations!
-
 			You have completed all of your Quarter Quizzes!
-
 		</p>
 
 	<img class = "celebrate1" src="https://media.giphy.com/media/Is1O1TWV0LEJi/giphy.gif">
 
 	<img class = "celebrate2" src="https://media.giphy.com/media/26ybvc933ySAi978s/giphy.gif">
-	<input class= "btn" type="button" value="Submit" onClick="processAnswers()">
 		</form>
 	</div>
 
   <img class = "backimg" src="http://www.timvandevall.com/wp-content/uploads/2013/10/Printable-Notebook-Paper-04.jpg">
 <script type="text/javascript">
-
-    CoverFunc("WhiteCover")
-	var attempt_cnt = 0
-
-	var correct = 1;
-	var total = 1;
-
-    function processAnswers() {
-   	attempt_cnt = attempt_cnt + 1
-	if(attempt_cnt > 1){
-		if (attempt_cnt > 2){
-		document.getElementById("Error").innerHTML = "Sorry, you already submited your answers"
-			}
-		return
-	}
-
-		CoverFunc("WhiteCover")
-	
-		if (correct == total){
-			document.getElementById("NumberCorrect").innerHTML = "You are done!";
-		}else{
-			document.getElementById("NumberCorrect").innerHTML = "Your score is   "+correct +"/"+total + ".   You can do it! Keep trying!";
-		}
-
-	}
-
-	function TurnBlue(id, val){
-		var num = clickCount[val-1]
-		if ((num % 2) === 0){
-			Count(id, val)
-			clickCount[val-1] = clickCount[val-1] + 1
-		} else{
-			UnCount(id, val)
-			clickCount[val-1] = clickCount[val-1] + 1
-		}
-	}
-
-	function Count(id, val){
-		var newcolor = "#b30000";
-		var oldcolor = "#F0F8FF";
-		guesses[val-1] = id
-		document.getElementById(id).style.backgroundColor = newcolor;
-		document.getElementById(id).style.color = oldcolor;
-	}
-
-	function UnCount(id, val){
-		var newcolor = "#b30000";
-		var oldcolor = "#F0F8FF";
-		guesses[val-1] = 0
-		document.getElementById(id).style.backgroundColor = oldcolor;
-		document.getElementById(id).style.color = newcolor;
-	}
-
-
-	function checker(answer,correct){
-		if (answer == correct){
-			return Boolean(3>2);
-		}else{
-			return Boolean(2>3);
-		}
-	}
-	function CoverFunc(div) {
-    var x = document.getElementById(div);
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    	}
-	}
 
 	if ({{{show}}}){
 		DisplaySubmissionDetails({{{numberC}}}, {{{missedQ}}})
