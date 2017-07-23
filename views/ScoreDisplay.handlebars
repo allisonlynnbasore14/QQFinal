@@ -146,10 +146,10 @@ document.getElementById('SubmitForProcessing').value = 'Submit';
   };
 const people = [];
 const ids= [{{{ids}}}];
-const scores = [{{{scores}}}];
-console.log(scores)
+const scoresString = '{{{scores}}}';
+const scores = scoresString.split(',');
 const dateString = '{{{dates}}}';
-const dates = dateString.split(',')
+const dates = dateString.split(',');
   for (i=0;i<ids.length;i++){
   	var id = ids[i];
     people[i] = names[(id).toString()]
