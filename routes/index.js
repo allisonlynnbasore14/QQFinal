@@ -63,7 +63,7 @@ function sendToDBResults(id, score){
           var date = result.rows[0].date;
           console.log('ddddddddddddd', date)
         const today = new Date().toDateString()
-          if (today === !date){
+          if (today === date){
             console.log('hhhhhhhhhhhhhhhhhhhhhhh', 'SDI', score, date, id)
             client.query('UPDATE results SET score=$1, date=$2 WHERE user_id=$3', [score, date, id] , function(err, result) {
             done()
