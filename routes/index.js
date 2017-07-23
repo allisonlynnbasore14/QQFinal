@@ -60,10 +60,12 @@ function sendToDBResults(id, score){
       done();
       return res.status(500).json({success: false, data: err});
       }
+      console.log('lllllllllllll', score, date, id)
           client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
           var date = result.rows[0].date;
         const today = new Date().toDateString()
           if (today === !date){
+            console.log('hhhhhhhhhhhhhhhhhhhhhhh', 'SDI', score, date, id)
             client.query('UPDATE results SET score=$1, date=$2 WHERE user_id=$3', [score, date, id] , function(err, result) {
             done()
             })
