@@ -8,21 +8,12 @@ const connectionString = process.env.DATABASE_URL || 'postgres://localhost:2200'
 var totals = require('../totals.js');
 var names = require('../names.js');
 
-//function that constructs and returns lizard object
-function Entry(id, score){
-  var score = {
-    id: id,
-    score: score,
-  };
-  return score;
-}
-
 function StoreScoreData(status, id, numberC){
-  console.log('22222222222222222222222222222222222222222222')
+  // Calls the function to send to the results and user database tables
+  // Only send the information to user database if the user passed thier quiz
   var score = numberC
   var total = GetTotalFromStatus((Number(status) - 1).toString());
   if (total === Number(score)){
-    console.log('111111111111111111')
     sendToDBUsers(Number(status), id)
     sendToDBResults(id, score);
   }
@@ -32,6 +23,7 @@ function StoreScoreData(status, id, numberC){
 }
 
 function GetTotalFromStatus(status){
+  // Gets the total number of question in a certain quiz based ont he status of the user
     var oldStatus = Number(status) + 1 ;
     var oldStatusString = oldStatus.toString();
   if (totals[oldStatusString] != undefined){
@@ -42,6 +34,7 @@ function GetTotalFromStatus(status){
 }
 
 function sendToDBUsers(oldStatus, id){
+  // updates the status of the user
   var newStatus = Number(oldStatus);
   var newStatusString = newStatus.toString();
   const client = new pg.Client(connectionString);
@@ -58,12 +51,8 @@ function sendToDBUsers(oldStatus, id){
 }
 
 
-function sendToDBResults(id, score){
-
-// So this function will not update the score if the day is the same
-
-//   var test = AlreadySubmitedToday(3)
-// console.log(test)
+function sendToDBResults(id, score){  
+  // So this function will not update the score if the day is the same
   var date = getDate();
   const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
@@ -74,7 +63,6 @@ function sendToDBResults(id, score){
           client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
           var date = result.rows[0].date;
         const today = new Date().toDateString()
-        console.log(today, date)
           if (today === !date){
             client.query('UPDATE results SET score=$1, date=$2 WHERE user_id=$3', [score, date, id] , function(err, result) {
             done()
@@ -86,35 +74,11 @@ function sendToDBResults(id, score){
     });
 }
 
-
-function AlreadySubmitedToday(id){
-  console.log('erere')
-  const client = new pg.Client(connectionString);
-  client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
-    done()
-    var date = result.rows[0].date;
-  const today = new Date()
-    if (today === date){
-      console.log('Already submitted today')
-      return true
-    }else{
-      return false
-    }
-  })
-}
-
-
-
-
 function getDate(){
+  // gets today's date in the proper format
   var today = new Date();
   return today.toDateString()
 }
-
-// var login = function(req, res){
-//   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
-// };
-
 
 /////////////////////////////Division Rules
 
@@ -130,10 +94,6 @@ var DRulesQ2 = function(req, res){
   res.render("DRulesQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' III', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
-// var DRulesQ2 = function(req, res){
-//   res.render("DRulesQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' IV'});
-// };
-
 /////////////////////////////Prime Numbers
 var PrimeNumbers = function(req, res){
   res.render("PrimeNumbers",{"directions": constants.DIR.CLICK_PRIME, "title": constants.TITLE.PIN + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
@@ -148,7 +108,6 @@ var PrimeNumbersQ = function(req, res){
 };
 
 var PrimeNumbersQ2 = function(req, res){
-  console.log('here')
   res.render("PrimeNumbersQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.PIN + ' IV', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
@@ -355,8 +314,6 @@ var AllDone = function(req, res){
 //// SHOW URLS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
 var DRulesQShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
   res.render("DRulesQ",{"directions": constants.DIR.STUDY, "title": constants.TITLE.DIR + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
@@ -371,10 +328,6 @@ var DRulesQ2Show = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
   res.render("DRulesQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.DIR + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
-
-// var DRulesQ2 = function(req, res){
-//   res.render("DRulesQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.DRU + ' IV'});
-// };
 
 /////////////////////////////Prime Numbers
 var PrimeNumbersShow = function(req, res){
@@ -643,12 +596,11 @@ var AllDoneShow = function(req, res){
 
 
 
-// module.exports.home = home;
+// Regular Versions
 
 module.exports.DRulesCopy = DRulesCopy;
 module.exports.DRulesQ = DRulesQ;
 module.exports.DRulesQ2 = DRulesQ2;
-// module.exports.DRulesQ2 = DRulesQ2;
 
 module.exports.PrimeNumbers = PrimeNumbers;
 module.exports.PrimeNumbersQ = PrimeNumbersQ;
@@ -709,20 +661,14 @@ module.exports.ExponentQ4 = ExponentQ4;
 
 module.exports.FreePass = FreePass;
 
-// module.exports.readingScores = readingScores;
 
-// module.exports.login = login;
+// Show Versions
 
 module.exports.AllDone = AllDone;
-
-
-
-
 
 module.exports.DRulesCopyShow = DRulesCopyShow;
 module.exports.DRulesQShow = DRulesQShow;
 module.exports.DRulesQ2Show = DRulesQ2Show;
-// module.exports.DRulesQ2 = DRulesQ2;
 
 module.exports.PrimeNumbersShow = PrimeNumbersShow;
 module.exports.PrimeNumbersQShow = PrimeNumbersQShow;
@@ -783,129 +729,4 @@ module.exports.ExponentQ4Show = ExponentQ4Show;
 
 module.exports.FreePassShow = FreePassShow;
 
-// module.exports.readingScores = readingScores;
-
-// module.exports.login = login;
-
 module.exports.AllDoneShow = AllDoneShow;
-
-
-// var Liz = function(req, res){
-//   var lizards = db.getAll();
-//   console.log(lizards)
-//   var msg = "Lizard names are: ";
-//   lizards.forEach(function(liz){
-//     msg = msg + liz.name + ",";
-//   })
-//   res.render("lizards", {"lizard": [
-//   msg]
-// });
-// };
-
-// //get all lizard names
-// router.get('/names', function(req, res, next){
-//   var lizards = db.getAll();
-//   var msg = "Lizard names are: ";
-//   lizards.forEach(function(liz){
-//     msg = msg + liz.name + ",";
-//   })
-//   res.render(msg);
-// });
-
-// // create new lizard named Bob
-// router.get('/new', function(req, res, next) {
-//   db.add(Lizard("Bob"));
-//   res.render("Added lizard!");
-// });
-
-// module.exports = router;
-
-// var bodyParser = require('body-parser');
-// // create application/x-www-form-urlencoded parser 
-// var urlencodedParser = bodyParser.urlencoded({ extended: false })
- 
-// POST /login gets urlencoded bodies 
-// var login = router.post('/login', function(req, res, next) {
-//   var url = String(req.originalUrl).split('?')[1].split('+')[1];
-//   console.log(url)
-//   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG})
-// })
-
-// function login(name){
-//   window.location.href='/'
-//   console.log(name, 'JJJJJjjjjjj')
-// }
-
-// module.exports={
-//     loginREC: function(req, res){
-//         console.log("Hello world.");
-//         res.status(200).end();
-//     }
-// };
-
-
-
-
-//module.exports.login = login;
-// var readingScores = function(req, res){
-//   db.add(Entry("Bob", '90%'));
-//   //this makes a new lizard but does not update the db in hard code
-//   var scores = db.getAll();
-//   console.log(scores)
-//   var msg = "The scores are: ";
-//   scores.forEach(function(scr){
-//     msg = msg + scr.id + "," + scr.score;
-//   })
-//   res.render("readingScores", {"SCORE": [ msg ] } );
-// };
-
-
-
-// const pg = require('pg');
-// const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
-
-// const client = new pg.Client(connectionString);
-// client.connect();
-// const query = client.query(
-//   'CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
-// query.on('end', () => { client.end(); });
-
-// insert into test_table values (61, 'testNumber1');
-
-
-// var home = function(req, res){
-//     //   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-//     // client.query('SELECT * FROM test_table WHERE id = 1' , function(err, result) {
-//     //   var name = result.rows[0].name;
-//     //   done();
-//     //   if (err)
-//     //    { console.error(err); response.send("Error " + err); }
-//     // });
-//      res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":2});
-//   // });
-// };
-
-
-
-// var home = function(req, res){
-// console.log('ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
-//   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": 3});
-//   if (req.query.StatusUpdate == 100){
-//     unLockQuiz(status)
-//   }
-// };
-
-
-//   //db.add(Lizard("Bob"));
-//   //this makes a new lizard but does not update the db in hard code
-//   var lizards = db.getAll();
-//   var msg = "Lizard names are: ";
-//   lizards.forEach(function(liz){
-//     msg = msg + liz.name + ",";
-//   })
-//   //res.render("home","This is my tempory home. It is not where I belong.")
-//   res.render("home", {"name": [
-//   msg]
-// }
-// );
-// };

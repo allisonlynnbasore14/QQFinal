@@ -15,6 +15,7 @@ var descriptions = require('./descriptions.js');
 var profiles = require('./profiles.js');
 var ids = require('./ids.js');
 var names = require('./names.js');
+var quizzes = require('./quizzes.js');
 
 var bodyParser = require('body-parser');
 
@@ -27,8 +28,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
-//app.get('/', index.home);
-
 
 var router = express.Router();
 var constants = require('./constants');
@@ -37,55 +36,13 @@ const connectionString = process.env.DATABASE_URL || 'postgres://localhost:2200'
 const results = [];
 const client = new pg.Client(connectionString);
 
-// app.post('/login', urlencodedParser, function (req, res, next) {
-//   if (!req.body) return res.sendStatus(400)
-//   var name = CleanLoginAndSend(req.body.firstname);
-//   var id = GetIdFromName(name);
-//   if(id === null){
-//     res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found.", "sendMessage" : false});
-//   }else{
-//     // TODO: IMPORT THE DB FUNCTION FROM A DIFFRENT FILE
-//     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-//    	if(err) {
-//       done();
-//       return res.status(500).json({success: false, data: err});
-//       }
-//       client.query('SELECT * FROM users WHERE user_id=$1', [id] , function(err, result) {
-//         done()
-//   	     var status = result.rows[0].status;
-//           //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
-//           //app.get('/home', index.home);
-//           // unLockQuiz(status
-//         // if (req.query.StatusUpdate == 'KEY'){
-//         // unLockQuiz(1)
-//         // }
-//         res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG , "sendMessage" : true});
-//           //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
-//       })
-// 	  });
-
-//     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status":status, "id": id});
-//   };
-//  // next()
-//   //console.log('eeeeeeeeeeeeeeeeeeeeeeee')
-//     //res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": 4});
-// }
- // function(req, res){
- //  const status = 3;
-  // res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": status});
-  // //if (req.query.StatusUpdate == 100){
-  //   console.log(req, 'kkkkk')
-  //   unLockQuiz(status)
-  //}
-//}
-// )
-
-
 app.get('/login', function(req, res, next){
+  // handles the orginal login page
   res.render('login', {"directions": constants.DIR.LOGIN, "title": constants.TITLE.LOG, "loginMessage": ""})
 });
 
 app.post('/login/submit',  urlencodedParser , function(req, res, next){
+  // on login submit, it send the user to the home page
   if (!req.body) return res.sendStatus(400)
   var name = CleanLoginAndSend(req.body.firstname);
   var id = GetIdFromName(name);
@@ -108,6 +65,7 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
 
 
 app.get('/home/:id/:status', function(req, res, next){
+  // apon being redirected by the login submit button it renders the home page
   var status = req.params.status;
   console.log(status, 'AT HOMEE')
   var id = req.params.id;
@@ -127,6 +85,7 @@ app.get('/home/:id/:status', function(req, res, next){
 
 
 app.post('/home/submit', function(req, res, next){
+  // apon home submit it send the user to the proper quiz
   console.log(req.body)
   var status = req.body.status;
   console.log(status, 'status at home submit')
@@ -144,6 +103,7 @@ app.post('/home/submit', function(req, res, next){
 
 
 app.post('/quiz/submit', function(req, res, next){
+  // once on the right quiz path, it renders the correct quiz
   var status = req.body.status;
   var id = req.body.id;
   var missedQ = req.body.missedQ;
@@ -160,6 +120,7 @@ app.post('/quiz/submit', function(req, res, next){
 
 
 app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
+  // dispalys the lasted scores for each student
   var resultingData = pg.connect(process.env.DATABASE_URL, function(err, client, done) {
   if(err) {
     done();
@@ -181,73 +142,15 @@ app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
   }) 
 });
 
-/// INtegrate this to dispaly the score pagedata
-
-// function getDateAndScore(id){
-//     const client = new pg.Client(connectionString);
-//     var resultingData = pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-//     if(err) {
-//       done();
-//       console.log('error')
-//       return ('none')
-//       }
-//       client.query('SELECT * FROM results WHERE user_id=$1', [id] , function(err, result) {
-//         done()
-
-//         result.rows[0]
-//         return ('yes');//result.rows[0].score;
-//       })
-//     }) 
-//     return resultingData
-// }
-
-// function getScoresforDisplay(){
-//   const people = [];
-//   const scores = [];
-//   const dates = [];
-//   for (i=0;i<20;i++){
-//     var id = i+ 1;
-//     people[i] = names[(id).toString()]
-//     dates[i] = 0;
-//     scores[i] = 0;
-//     //const [date, score] = getDateAndScore(id);
-//     console.log(getDateAndScore(id))
-//     // scores[i] = score;
-//     // dates[i] = date;
-//   }
-//   console.log(people, scores, dates)
-// }
-
-
-// var AngieBasoreKey = function(req, res){
-//   getScoresforDisplay()
-//     // Pull from db
-
-//     var people = ['Ada','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally','Bob', 'Sam', 'Tammy', 'Rad', 'Allison', 'Basore', 'Carry', 'Barry', 'Olly', 'Tally'];
-//     var scores = [100, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7,4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7]
-//     res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "scores":scores, "people":people}); 
-//     //{"directions": constants.DIR.ANSWERQ,"title": constants.TITLE.DRU + ' I', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
-// };
-
-
-
-
-
-
-
 
 function CleanLoginAndSend(name){
+  // Cleans up the login name for the database to interpet
   name = name.toUpperCase().trim();
   return name
 }
 
-function unLockQuiz(status){
-  console.log('made it hererere', status)
-  var quiz = GetQuizFromStatus(status)
-  app.get('/Quiz', quiz)
-}
-
 function GetProfileAvatarfromId(id){
+  // finds the profile url form the id of the user
   if (profiles[id] != undefined){
     return profiles[id];
   } else{
@@ -256,6 +159,7 @@ function GetProfileAvatarfromId(id){
 }
 
 function GetProfileDescriptionfromId(id){
+  // gets the description of the user from the id of the user
   if (descriptions[id] != undefined){
     return descriptions[id];
   } else{
@@ -264,6 +168,7 @@ function GetProfileDescriptionfromId(id){
 }
 
 function GetIdFromName(name){
+  // gets the id of the user from the name of the user
   if (ids[name] != undefined){
     return ids[name];
   } else{
@@ -272,6 +177,7 @@ function GetIdFromName(name){
 }
 
 function GetNameFromId(id){
+  // gets the name from the id of the user
   if (names[id] != undefined){
     return names[id];
   } else{
@@ -280,6 +186,7 @@ function GetNameFromId(id){
 }
 
 function GetQuizFromStatus(status, addOne='2'){
+  // Finds the previous, current, or next quiz for the user
   if(addOne==='1'){
     var newStatus = Number(status)+1;
     var newStatusString = newStatus.toString();
@@ -290,62 +197,6 @@ function GetQuizFromStatus(status, addOne='2'){
     var newStatus = Number(status);
     var newStatusString = newStatus.toString()
   }
-  var quizzes = {
-    '1' : 'PercentStudy',
-    '2' : 'PercentQ',
-    '3' : 'PercentQ2',
-    '4' : 'PercentQ3',
-    '5' : 'PercentMatch',
-    '6' : 'PropsStudy',
-    '7' : 'PropsQ',
-    '8' : 'PropsQ2',
-    '9' : 'PropsQExample',
-    '10' : 'PropsQ3',
-    '11' : 'FreePass',
-    '12' : 'DRulesQ',
-    '13' : 'DRulesCopy',
-    '14' : 'DRulesQ2',
-    '15' : 'PrimeNumbers',
-    '16' : 'PrimeNumbersCopy',
-    '17' : 'PrimeNumbersQ',
-    '18' : 'PrimeNumbersQ2',
-    '19' : 'PrimeNumbersList',
-    '20' : 'ExponentStudy',
-    '21' : 'ExponentQ',
-    '22' : 'ExponentQ2',
-    '23' : 'ExponentQ3',
-    '24' : 'ExponentQ4',
-    '25' : 'FractionStudy',
-    '26' : 'FractionGCFQ',
-    '27' : 'FractionLCMQ',
-    '28' : 'FractionImpQ',
-    '29' : 'FractionQ',
-    '30' : 'FractionQ2',
-    '31' : 'FreePass',
-    '32' : 'SquareNumbersMatch',
-    '33' : 'SquareNumbersCopy',
-    '34' : 'SquareTF',
-    '35' : 'SquareNumbersQ',
-    '36' : 'SquareNumbersList',
-    '37' : 'PTheoremCopy',
-    '38' : 'PTheoremQ',
-    '39' : 'PTheoremFill',
-    '40' : 'AnglesStudy',
-    '41' : 'AnglesQ',
-    '42' : 'AnglesMatch',
-    '43' : 'AnglesQ2',
-    '44' : 'AnglesQ3',
-    '45' : 'FreePass',
-    '46' : 'ProbStudy',
-    '47' : 'ProbQ',
-    '48' : 'ProbQ2',
-    '49' : 'ProbTF',
-    '50' : 'ProbQ3',
-    '51' : 'SequenceStudy',
-    '52' : 'SequenceQ',
-    '53' : 'SequenceQ2',
-    '54' : 'AllDone'
-  }
   if (quizzes[newStatusString] != undefined){
     return quizzes[newStatusString];
   } else{
@@ -353,24 +204,9 @@ function GetQuizFromStatus(status, addOne='2'){
   }
 }
 
-
-//app.get('/login', index.login);
-
-// app.get('/home', function(req, res){
-// console.log('ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
-//   res.render("home",{"directions": constants.DIR.HOME, "title": constants.TITLE.HOM, "status": 3});
-//   console.log(req)
-//   // if (req.query.StatusUpdate == 100){
-//   //   unLockQuiz(status)
-//   // }
-// });
-
-//app.get('/AngieBasoreKey', index.AngieBasoreKey);
-
 app.get('/DRulesCopy/:id/:status', index.DRulesCopy);
 app.get('/DRulesQ/:id/:status', index.DRulesQ);
 app.get('/DRulesQ2/:id/:status', index.DRulesQ2);
-// app.get('/DRulesQ2', index.DRulesQ2);
 
 app.get('/PrimeNumbersCopy/:id/:status', index.PrimeNumbersCopy);
 app.get('/PrimeNumbers/:id/:status', index.PrimeNumbers);
@@ -431,8 +267,6 @@ app.get('/ExponentQ4/:id/:status', index.ExponentQ4);
 
 app.get('/FreePass/:id/:status', index.FreePass);
 
-// app.get('/readingScores', index.readingScores);
-
 app.get('/AllDone/:id/:status', index.AllDone);
 
 /// Show Urls
@@ -440,7 +274,6 @@ app.get('/AllDone/:id/:status', index.AllDone);
 app.get('/DRulesCopy/show/:id/:status/:numberC/:missedQ', index.DRulesCopyShow);
 app.get('/DRulesQ/show/:id/:status/:numberC/:missedQ', index.DRulesQShow);
 app.get('/DRulesQ2/show/:id/:status/:numberC/:missedQ', index.DRulesQ2Show);
-// app.get('/DRulesQ2', index.DRulesQ2);
 
 app.get('/PrimeNumbersCopy/show/:id/:status/:numberC/:missedQ', index.PrimeNumbersCopyShow);
 app.get('/PrimeNumbers/show/:id/:status/:numberC/:missedQ', index.PrimeNumbersShow);
@@ -501,222 +334,8 @@ app.get('/ExponentQ4/show/:id/:status/:numberC/:missedQ', index.ExponentQ4Show);
 
 app.get('/FreePass/show/:id/:status/:numberC/:missedQ', index.FreePassShow);
 
-// app.get('/readingScores', index.readingScores);
-
 app.get('/AllDone/show/:id/:status/:numberC/:missedQ', index.AllDoneShow);
-
-
-
-
-
-
-
-
-
-
-
-// app.get('/db', index.db)
 
 app.listen(process.env.PORT || 2000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-
- // app.listen(2200);
-
-
-// var server = app.listen(8080,function(){
-//     var host="127.0.0.1";
-//     var port="8080";
-//     console.log("App is listening at http://%s:%s\n",host,port);
-// });
-
-//ONE WAY TO WRITE IT
-
-// var server = http.createServer(function(request,response){
-
-// console.log("We got one!")
-// response.write("hi")
-// response.end()
-
-// });
-
-
-// server.listen(3000);
-
-
-//ONE WAY TO WRITE IT
-
-// var server = http.createServer(function(request,response){
-
-
-  // if (!req.body) return res.sendStatus(400)
-  // var name = CleanLoginAndSend(req.body.firstname);
-  // pg.connect(connectionString, (err, client, done) => {
-  //   // Handle connection errors
-  //   if(err) {
-  //     done();
-  //     console.log(err);
-  //     return res.status(500).json({success: false, data: err});
-  //   }
-  //   const query = client.query('SELECT * FROM items ORDER BY id ASC');
-  //   // After all data is returned, close connection and return results
-  //   query.on('end', () => {
-  //     done();
-  //     console.log(results)
-  //     //return res.json(results);
-
-
-// });
-
-
-// server.listen()
-
-
-
-// //ONE WAY TO WRITE 
-
-// //ONE WAY TO WRITE IT
-
-// http.createServer(function (request, response) {
-//    // Send the HTTP header 
-//    // HTTP Status: 200 : OK
-//    // Content Type: text/plain
-//    response.writeHead(200, {'Content-Type': 'text/plain'});
-   
-//    // Send the response body as "Hello World"
-//    response.end('Hello World\n');
-// }).listen(8081);
-
-// // Console will print the message
-// console.log('Cook');
-
-
-
-
-
-
-  //client.query("SELECT status FROM users WHERE id = 1");
-      // const query = client.query("SELECT status FROM users WHERE user_id = '1'"), function(err, result) {
-      //  //console.log(result.rows[0],'9999999999999999')
-      //   //var status = result.status;
-
-       //  // query.on('row', (row) => {
-       //  //   results.push(row);
-       //  // });
-       //  var status = String(results) + 'helllo'
-      // const query = client.query("SELECT * FROM users WHERE user_id = '1'");
-      // // Stream results back one row at a time
-      // query.on('row', (row) => {
-      //   results.push(row);
-      // });
-      // console.log(query)
-
-
-
-
-
-
-
-
-
-
-
-
-//Server running at http://127.0.0.1:8081/
-
-
-// function bar(callback){
-
-
-//console.log("HELLO WORLD")
-
-//var total = 0
-//console.log(process.argv.length)
-//for(i=2; i<process.argv.length;i++){
-//	var n = Number(process.argv[i]);
-//	total = total + n
-//}
-
-//console.log(total)
-
-
-//NOTE. I AM NOT SURE WHAT IS HAPPENING HERE
-
-// 	foo(function(err, data)){
-// 		if(err){
-// 			return callback(err)
-// 				}
-// 		var path = process.argv[2]
-// 		var fil = process.argv[3]
-// 		console.log(mymodule(path, fil,callback))
-// 		callback(null, data)
-		
-
-// 	}
-
-// }
-
-
-
-
-
-//var fill = fs.readdir(path, callback)
-
-
-
-
-// // create application/x-www-form-urlencoded parser 
-// var urlencodedParser = bodyParser.urlencoded({ extended: false })
- 
-// // POST /login gets urlencoded bodies 
-// app.post('/login', urlencodedParser, function (req, res) {
-//   if (!req.body) return res.sendStatus(400)
-//   res.send('welcome, ' + req.body.username)
-// })
-
-
-
-
-
-// app.post('./routes/index', index.loginREC);
-
-
-// app.get('/db', function (request, response) {
-//   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-//     client.query('SELECT * FROM test_table', function(err, result) {
-//       done();
-//       if (err)
-//        { console.error(err); response.send("Error " + err); }
-//       else
-//        {app.get('/db', index.db); }
-//     });
-//   });
-// });
-
-// var db = function(req, res){
-//   });
-// };
-
-//module.exports.db = db;
-
-// pg.defaults.ssl = true;
-// pg.connect(process.env.DATABASE_URL, function(err, client) {
-//   if (err) throw err;
-//   console.log('Connected to postgres! Getting schemas...');
-
-//   client
-//     .query('SELECT table_schema,table_name FROM information_schema.tables;')
-//     .on('row', function(row) {
-//       console.log(JSON.stringify(row));
-//     });
-// });
-
-
-// const pg = require('pg');
-// const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
-
-// const client = new pg.Client(connectionString);
-// client.connect();
-// const query = client.query(
-//   'CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
-// query.on('end', () => { client.end(); });
