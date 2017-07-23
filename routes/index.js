@@ -12,7 +12,8 @@ function StoreScoreData(status, id, numberC){
   // Calls the function to send to the results and user database tables
   // Only send the information to user database if the user passed thier quiz
   var total = GetTotalFromStatus((Number(status) - 1).toString());
-  var score = numberC + '/100';
+  var score = numberC + '/' + total;
+  score = score.toString();
   if (total === Number(score)){
     sendToDBUsers(Number(status), id)
     sendToDBResults(id, score);
