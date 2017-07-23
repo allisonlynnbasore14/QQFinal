@@ -331,6 +331,7 @@ function processAnswers(title, guesses, type=null) {
 				var badAnswers = ['2','4','51','33','45','63','93','81'];
 				for (q=0; q <numQuestions; q++){
 					if (guesses[0].includes(badAnswers[q])){
+						console.log(guesses[0], badAnswers[q])
 						tooManyIncluded = true;
 					}
 				}
