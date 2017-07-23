@@ -17,7 +17,7 @@
     'PTOLEMY' : '16',
     'ARYABHATA': '17',
     'CANTOR':'18',
-    'GERMAIN ': '19',
+    'GERMAIN': '19',
     'ADA' : '20',
     'NOETHER': '21'
   }

@@ -20,6 +20,7 @@ var quizzes = require('./quizzes.js');
 var bodyParser = require('body-parser');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
+// This line makes it so the documents can be .handlebars
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use(logger('dev'));
