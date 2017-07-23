@@ -155,10 +155,11 @@ console.log(ids)
   	var id = ids[i];
     people[i] = names[(id).toString()]
   }
-  for (i=0;i<ids.length + 1;i++){
+  for (i=0;i<ids.length;i++){
   	document.getElementById(i).innerHTML = dates[i];
 	document.getElementById(i+20).innerHTML = people[i];
 	document.getElementById(i+40).innerHTML = scores[i];
+	console.log(people[i])
   }
   console.log(scores, ids, dates)
 
