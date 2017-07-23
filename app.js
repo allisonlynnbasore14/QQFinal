@@ -67,7 +67,6 @@ app.post('/login/submit',  urlencodedParser , function(req, res, next){
 app.get('/home/:id/:status', function(req, res, next){
   // apon being redirected by the login submit button it renders the home page
   var status = req.params.status;
-  console.log(status, 'AT HOMEE')
   var id = req.params.id;
   var avatar = GetProfileAvatarfromId(id);
   var description = GetProfileDescriptionfromId(id);
@@ -137,6 +136,7 @@ app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
         ids[i]=result.rows[i].user_id;
         scores[i] = result.rows[i].score;
       }
+      console.log(scores)
       res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "dates": dates,"scores":scores, "ids":ids});
     })
   }) 
