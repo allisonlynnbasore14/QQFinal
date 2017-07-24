@@ -128,7 +128,6 @@ app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
     res.render("login",{"directions": constants.DIR.LOGIN_ERROR, "title": constants.TITLE.LOG, "loginMessage": "That username was not found.", "sendMessage" : false});
     }
     client.query('SELECT * FROM results', function(err, result) {
-      done()
       const dates = [];
       const scores = [];
       const ids = [];
@@ -137,11 +136,22 @@ app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
         ids[i]=result.rows[i].user_id;
         scores[i] = result.rows[i].score;
       }
-      console.log(scores)
+      client.query('SELECT * FROM users', function(err, result) {
+      var statusArray = []
+      for (i=0;i<21;i++){
+        statusArray[i]=result.rows[i].status;
+      }
+      console.log(statusArray)
+        done()
+      })
       res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "dates": dates,"scores":scores, "ids":ids});
     })
   }) 
 });
+
+
+
+
 
 
 function CleanLoginAndSend(name){
