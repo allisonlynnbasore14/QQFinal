@@ -186,13 +186,31 @@ const dateString = '{{{dates}}}';
 const dates = dateString.split(',');
 const statusArray = '{{{statusArray}}}';
 const statuses = statusArray.split(',');
+const statusIds = '{{{statusIds}}}';
+const idsStatus = statusIds.split(',');
+const orderedStatus = [];
+
 console.log(statuses)
   for (i=0;i<ids.length;i++){
   	var id = ids[i];
     people[i] = names[(id).toString()]
   }
+  console.log(ids)
+  for (i=0;i<idsStatus.length;i++){
+  	correctOrderId = i
+  	orderedStatus[i] = names
+
+  	// I need an array of status in the order that the rest of the ids are in
+  	// start with array of ids corresponding to the statues
+  	// 
+
+
+  	var id = ids[i];
+    people[i] = names[(id).toString()]
+
+
+  }
   for (i=0;i<ids.length;i++){
-  	console.log(i)
   	document.getElementById(i).innerHTML = dates[i];
 	document.getElementById(i+22).innerHTML = people[i];
 	document.getElementById(i+44).innerHTML = scores[i];

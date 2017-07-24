@@ -137,13 +137,14 @@ app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
         scores[i] = result.rows[i].score;
       }
       client.query('SELECT * FROM users', function(err, result) {
-      const statusArray = []
+      const statusArray = [];
+      const statusIds = [];
       for (i=0;i<21;i++){
         statusArray[i]=result.rows[i].status;
+        statusIds[i]=result.rows[i].user_id;
       }
         done()
-      console.log(statusArray)
-      res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "dates": dates,"scores":scores, "ids":ids, "statusArray": statusArray});
+      res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "dates": dates,"scores":scores, "ids":ids, "statusArray": statusArray, "statusIds":  statusIds});
       })
     })
   }) 
