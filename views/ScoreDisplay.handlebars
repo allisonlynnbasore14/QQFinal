@@ -187,12 +187,10 @@ const dates = dateString.split(',');
 const statusArray = '{{{statusArray}}}';
 const statuses = statusArray.split(',');
 console.log(statuses)
-console.log(ids)
   for (i=0;i<ids.length;i++){
   	var id = ids[i];
     people[i] = names[(id).toString()]
   }
-  console.log(ids.length)
   for (i=0;i<ids.length;i++){
   	console.log(i)
   	document.getElementById(i).innerHTML = dates[i];
@@ -200,7 +198,6 @@ console.log(ids)
 	document.getElementById(i+44).innerHTML = scores[i];
 	console.log(people[i])
   }
-  console.log(scores, ids, dates)
 
 
 //var people = '{{{people}}}'.split(',');
