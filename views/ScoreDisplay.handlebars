@@ -200,7 +200,9 @@ console.log(ids[1])
   	correctOrderId = ids[m];
   	statusfromCorrectId = statuses[idsStatus[(Number(correctOrderId)-1).toString()]];
   	console.log(statusfromCorrectId)
-  	orderedStatus[i] = statusfromCorrectId.toString();
+  	if (statusfromCorrectId.toString() != 'undefined'){
+  		orderedStatus[i] = statusfromCorrectId.toString();
+  	}
   }
   console.log(orderedStatus)
   for (i=0;i<ids.length;i++){
