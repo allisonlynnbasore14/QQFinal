@@ -142,9 +142,9 @@ app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
         statusArray[i]=result.rows[i].status;
       }
         done()
-      })
       console.log(statusArray)
       res.render("ScoreDisplay",{"directions": constants.DIR.KEY,"title": constants.TITLE.KEY, "show":false,  "numberC" : 0, "missedQ":0, "id" : '0', "status":'0', "dates": dates,"scores":scores, "ids":ids, "statusArray": statusArray});
+      })
     })
   }) 
 });
