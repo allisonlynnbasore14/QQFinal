@@ -195,10 +195,13 @@ console.log(statuses)
   	var id = ids[i];
     people[i] = names[(id).toString()]
   }
-  console.log(ids)
-  for (i=0;i<idsStatus.length;i++){
-  	correctOrderId = i
-  	orderedStatus[i] = names
+
+  for (m=0;m<idsStatus.length;m++){
+  	correctOrderId = ids[m];
+  	console.log(correctOrderId)
+  	statusfromCorrectId = idsStatus[(Number(correctOrderId)-1).toString];
+  	console.log(statusfromCorrectId)
+  	orderedStatus[i] = statusfromCorrectId;
 
   	// I need an array of status in the order that the rest of the ids are in
   	// start with array of ids corresponding to the statues
