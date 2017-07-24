@@ -202,22 +202,13 @@ console.log(ids[1])
   	statusfromCorrectId = idsStatus[(Number(correctOrderId)-1).toString()];
   	console.log(statusfromCorrectId)
   	orderedStatus[i] = statusfromCorrectId;
-
-  	// I need an array of status in the order that the rest of the ids are in
-  	// start with array of ids corresponding to the statues
-  	// 
-
-
-  	var id = ids[i];
-    people[i] = names[(id).toString()]
-
-
   }
+  console.log(orderedStatus)
   for (i=0;i<ids.length;i++){
   	document.getElementById(i).innerHTML = dates[i];
 	document.getElementById(i+22).innerHTML = people[i];
 	document.getElementById(i+44).innerHTML = scores[i];
-	document.getElementById(i+66).innerHTML = statuses[i];
+	document.getElementById(i+66).innerHTML = orderedStatus[i];
   }
 
 
