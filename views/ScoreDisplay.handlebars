@@ -200,9 +200,9 @@ console.log(statuses, 'SSS')
   for (m=0;m<idsStatus.length;m++){
   	correctOrderId = ids[m];
   	statusfromCorrectId = statuses[statusIds.indexOf((Number(correctOrderId)).toString())];
-  	console.log('ADSD',statusIds.indexOf((Number(correctOrderId)).toString()))
   	console.log(correctOrderId)
   	console.log(statusfromCorrectId)
+  		console.log('ADSD',statusIds.indexOf((Number(correctOrderId)).toString()))
   	if (statusfromCorrectId != undefined){
   		orderedStatus[m] = statusfromCorrectId;
   	}else{
