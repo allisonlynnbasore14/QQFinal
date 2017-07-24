@@ -190,7 +190,7 @@ const statusIds = '{{{statusIds}}}';
 const idsStatus = statusIds.split(',');
 const orderedStatus = [];
 
-console.log(statuses)
+console.log(statusIds)
   for (i=0;i<ids.length;i++){
   	var id = ids[i];
     people[i] = names[(id).toString()]
@@ -204,7 +204,7 @@ console.log(statuses)
   	if (statusfromCorrectId != undefined){
   		orderedStatus[m] = statusfromCorrectId;
   	}else{
-  		orderedStatus[m] = 0;
+  		orderedStatus[m] = '0';
   	}
   }
   console.log(orderedStatus)
