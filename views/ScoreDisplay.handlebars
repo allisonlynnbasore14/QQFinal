@@ -199,6 +199,7 @@ console.log(ids[1])
   for (m=0;m<idsStatus.length;m++){
   	correctOrderId = ids[m];
   	console.log((Number(correctOrderId)).toString(), 'CDD')
+  	  	console.log(idsStatus[(Number(correctOrderId)).toString()], 'AAAA')
   	statusfromCorrectId = statuses[idsStatus[(Number(correctOrderId)).toString()]];
   	if (statusfromCorrectId != undefined){
   		console.log(statusfromCorrectId)
