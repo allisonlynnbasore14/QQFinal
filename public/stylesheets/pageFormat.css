@@ -47,6 +47,7 @@
 		width: 600px;
 		position: absolute;
 		left: 100px;
+		top: -10px;
 		text-align: center;
 		font-weight: bold;
 	}
