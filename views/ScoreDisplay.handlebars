@@ -198,7 +198,7 @@ console.log(statuses)
 
   for (m=0;m<idsStatus.length;m++){
   	correctOrderId = ids[m];
-  	statusfromCorrectId = statuses[(Number(correctOrderId)-1).toString()];
+  	statusfromCorrectId = statuses[statusIds.indexOf((Number(correctOrderId)-1).toString())];
   	console.log(correctOrderId)
   	console.log(statusfromCorrectId)
   	if (statusfromCorrectId != undefined){
