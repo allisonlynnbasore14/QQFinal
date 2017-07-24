@@ -137,7 +137,7 @@ app.get('/AngieBasoreKey', urlencodedParser , function(req, res, next){
         scores[i] = result.rows[i].score;
       }
       client.query('SELECT * FROM users', function(err, result) {
-      var statusArray = []
+      const statusArray = []
       for (i=0;i<21;i++){
         statusArray[i]=result.rows[i].status;
       }
