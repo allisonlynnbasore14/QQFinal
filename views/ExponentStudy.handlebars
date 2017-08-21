@@ -32,7 +32,7 @@
 		(7<sup>5</sup>)&frasl;(7<sup>2</sup>) = 7<sup>5-2</sup> = 7<sup>3</sup>
 		</div>
 		<form>
-			<textarea name = "ExponentStudy" class = "ExponentStudy" >
+			<textarea name = "ExponentStudy" class = "ExponentStudy" id = "ExponentStudy">
 			</textarea>
 		</form>
 	</div>
@@ -41,7 +41,7 @@
 <script type="text/javascript">
   function sendAnswers(){
     processAnswers( ExponentStudyAns,
-      [])
+      [document.getElementById("ExponentStudy").value], 'copy')
 		setValues({{{id}}}, {{{status}}});
 		document.forms["StatusSubmit"].submit();
   }
