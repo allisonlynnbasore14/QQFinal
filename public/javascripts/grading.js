@@ -75,7 +75,7 @@
 	// Sequence
 	var SequenceQAns= ['B','A','C','A','D'];
 	var SequenceQ2Ans= ['B','D'];
-	var SequenceStudyAns= [];
+	var SequenceStudyAns= [ 'terms', 'have' , 'difference', 'Example' , 'difference' 'term' , 'formula' , 'number' ,'place', 'difference', 'ratio' , 'two','IV'];
 
 	// Square Numbers
 	var SquareNumbersCopyAns =['square','number','has','root','whole','integer'];
