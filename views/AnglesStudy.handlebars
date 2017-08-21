@@ -10,8 +10,14 @@
 
   <body>
 	<div class = "Content">
-		<img class = "img1" src="https://dj1hlxw0wr920.cloudfront.net/userfiles/wyzfiles/fb1d732d-28ca-4f24-849a-423ee34e8a74.gif">
-		<img class = "img2" src="https://math8geometry.wikispaces.com/file/view/compandsupp.gif/33819891/compandsupp.gif">
+		<img class = "imgAngle" src="https://dj1hlxw0wr920.cloudfront.net/userfiles/wyzfiles/fb1d732d-28ca-4f24-849a-423ee34e8a74.gif">
+		<div class = "AnglesWords">
+			Complementary angles add up to 90 degrees. Supplementary angels add up to 180. In the pictures, the angles that equal 56 and 124 add up to 180 degrees. Angle F is equal to 124 degrees because they are vertical angles. Angles G and F are equal because they are alternate interior angles. 
+		</div>
+		<form name = "AnglesStudy">
+			 <textarea name = "AnglesStudy" class = "AnglesStudy" >
+			 </textarea>
+		</form>
 	</div>
 
  </body>
@@ -19,7 +25,7 @@
 <script type="text/javascript">
 	function sendAnswers(){
 		processAnswers(	AnglesStudyAns,
-			[])
+			[document.getElementById("AngleStudy").value], 'copy')
 		setValues({{{id}}}, {{{status}}});
 		document.forms["StatusSubmit"].submit();
 	}

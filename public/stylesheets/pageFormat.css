@@ -24,6 +24,12 @@
 	#LoginBoxButton{
 	}
 
+	.PercentStudy{
+
+
+	}
+
+
 	#SEQ2Body{
 		position: absolute;
 		top: 200px;
@@ -90,8 +96,8 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: 600px;
-		left: 295px;
+		top: -50px;
+		left: -360px;
 		z-index: 1;
 		color: #004d99;
 		background-color:white;
@@ -107,8 +113,8 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: 600px;
-		left: 285px;
+		top: 100px;
+		left: -370px;
 		z-index: 1;
 		color: #004d99;
 		background-color:white;
@@ -130,7 +136,7 @@
 
 	.profile{
 		position: absolute;
-		left: 100px;
+		left: 70px;
 		top: 500px;
 		border: 7px solid #004d99;
 		padding: 8px;
@@ -265,6 +271,16 @@
 		height:550px;
 	}
 
+	#ExponentStudy{
+		position: absolute;
+		left: -10px;
+		top: 5px;
+		width: 500px;
+		line-height: 50px;
+		font-weight: bold;
+		font-size: 20px;
+	}
+
 	.Nums{
 		font-size: 20px;
 		font-weight: bold;
@@ -373,8 +389,8 @@
 
 	#PropsStudyPic{
 		position: absolute;
-		left: 120px;
 		top: 100px;
+		width: 500px;
 	}
 
 	#questionsProbTF{
@@ -433,6 +449,19 @@
 	.img1{
 		position: absolute;
 		left: 30%;
+	}
+
+	.AnglesWords{
+		width: 300px;
+		font-size:20px;
+		font-weight:bold;
+		line-height: 50px
+	}
+
+	.imgAngle{
+		position: absolute;
+		top:5px;
+		left:300px;
 	}
 
 	#PropsExmple{
@@ -530,7 +559,7 @@
 		font-family: monaco,Consolas,Lucida Console,monospace;
 		position: absolute;
 		left:100px;
-		top:300px;
+		top:30px;
 	}
 
 	#Heading{
@@ -675,6 +704,90 @@
 		position: absolute;
 		left:55%;
 		top:2%;
+		word-wrap: break-word;
+	}
+
+	.PercentStudy{
+		text-align: initial;
+		border-radius: 20px;
+		border-color:black;
+		border-width: 5px;
+		height: 300px;
+		width: 40%;
+		position: absolute;
+		left:55%;
+		top:30%;
+		word-wrap: break-word;
+	}
+
+	.AnglesStudy{
+		text-align: initial;
+		border-radius: 20px;
+		border-color:black;
+		border-width: 5px;
+		height: 200px;
+		width: 60%;
+		position: absolute;
+		left:40%;
+		top:50%;
+		word-wrap: break-word;
+	}
+
+	.ProbStudy{
+		text-align: initial;
+		border-radius: 20px;
+		border-color:black;
+		border-width: 5px;
+		height: 200px;
+		width: 800px;
+		position: absolute;
+		left:5%;
+		top:55%;
+		word-wrap: break-word;
+	}
+
+	.ProbStudyWords{
+		line-height: 30px;
+		font-size:20px;
+	}
+
+	.FractionStudy{
+		text-align: initial;
+		border-radius: 20px;
+		border-color:black;
+		border-width: 5px;
+		height: 500px;
+		width: 40%;
+		position: absolute;
+		left:55%;
+		top:5%;
+		word-wrap: break-word;
+	}
+
+	.ExponentStudy{
+		text-align: initial;
+		border-radius: 20px;
+		border-color:black;
+		border-width: 5px;
+		height: 500px;
+		width: 35%;
+		position: absolute;
+		left:65%;
+		top:5%;
+		word-wrap: break-word;
+	}
+
+
+	.PropsStudy{
+		text-align: initial;
+		border-radius: 20px;
+		border-color:black;
+		border-width: 5px;
+		height: 500px;
+		width: 30%;
+		position: absolute;
+		left:69%;
+		top:5%;
 		word-wrap: break-word;
 	}
 
@@ -900,8 +1013,8 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: 600px;
-		left: 400px;
+		top: 200px;
+		left: 100px;
 		color: #004d99;
 		background-color:white;
 		border: 3px solid #004d99;
@@ -922,8 +1035,8 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: 850px;
-		left: 750px;
+		top: 200px;
+		left: 100px;
 		color: #004d99;
 		background-color:white;
 		border: 3px solid #004d99;

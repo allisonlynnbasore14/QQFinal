@@ -33,13 +33,17 @@
 		75% of 4 is 3
 		<br>
 		</div>
+		<form name = "PercentStudy">
+		 <textarea name = "PercentStudy" class = "PercentStudy" >
+		 </textarea>
+		</form>
 	</div>
  </body>
 <script type="text/javascript">
   	function sendAnswers(){
 	 	setValues({{{id}}}, {{{status}}});
 	    processAnswers( PercentStudyAns,
-	      [])
+	      [document.getElementById("PercentStudy").value], 'copy')
 		document.forms["StatusSubmit"].submit();
   	}
 	if ({{{show}}}){

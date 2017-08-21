@@ -190,20 +190,15 @@ const statusIds = '{{{statusIds}}}';
 const idsStatus = statusIds.split(',');
 const orderedStatus = [];
 
-console.log(idsStatus)
-console.log(statuses, 'SSS')
-console.log(ids)
   for (i=0;i<ids.length;i++){
   	var id = ids[i];
     people[i] = names[(id).toString()]
   }
 
   for (m=0;m<idsStatus.length;m++){
+  	// this is for translating the correct order for the status since it comes from a diffrent database
   	correctOrderId = ids[m];
   	statusfromCorrectId = statuses[idsStatus.indexOf((Number(correctOrderId)).toString())];
-  	console.log(correctOrderId)
-  	console.log(statusfromCorrectId)
-  		console.log('ADSD',statusIds.indexOf((Number(correctOrderId)).toString()))
   	if (statusfromCorrectId != undefined){
   		orderedStatus[m] = statusfromCorrectId;
   	}else{
@@ -217,21 +212,6 @@ console.log(ids)
 	document.getElementById(i+44).innerHTML = scores[i];
 	document.getElementById(i+66).innerHTML = orderedStatus[i];
   }
-
-
-//var people = '{{{people}}}'.split(',');
-// var scores = '{{{scores}}}'.split(',');
-
-    // var id = i+ 1;
-    // people[i] = names[(id).toString()]
-
-
-// for (i=0;i<people.length -1;i++){
-// 	document.getElementById(i).innerHTML = people[i];
-// 	console.log(i+20)
-// 	document.getElementById(i+20).innerHTML = scores[i];
-// }
-
 
 </script>
 </body>

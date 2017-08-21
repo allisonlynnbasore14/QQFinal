@@ -7,22 +7,22 @@
 	var AnglesQAns=['C','D','A','B','A','D','C'];
 	var AnglesQ2Ans=['B','C','B','B','D','C','A'];
 	var AnglesQ3Ans=['C','D','A','B'];
-	var AnglesStudyAns= [];
+	var AnglesStudyAns= ['angles','add','90','degrees','up','180','56','124','G','F','because','alternate','interior'];
 
 	// Division Rules
-	var DRulesCopyAns= ["#2","#3","#4","#5","#6","#10",'even','hero','even','end','biggest','fine','know'];
+	var DRulesCopyAns= ["#2","#3","#4","#5","#6",'even','hero','even','end','biggest','fine'];
 	var DRulesQ2Ans= ['A101','A201','A202','A303','A402','A403','A601','A602','A603','A701','A703','A802'];
 	var DRulesQAns= ['Y1', '1','D'];
 
 	// Exponents
-	var ExponentStudyAns= [];
+	var ExponentStudyAns= ['exponential', 'power','represents','repeated','multiplication','multiplying','powers','add','exponent','power','zero','value','subtract','exponents','dividing','negative'];
 	var ExponentQAns= ['Y1','N1','N2','Y2','N2','N1','Y2','Y1','C'];
 	var ExponentQ2Ans= ['N1','N2','Y1','N1','Y1','N2','Y2','N1','B'];
 	var ExponentQ3Ans= ['N1','N1','N2','Y2','Y1','N1','N1','Y1','B'];
 	var ExponentQ4Ans= ['Y2','Y1','N2','N1','Y1','Y1','N2','Y2','B','C'];
 
 	// Fractions
-	var FractionStudyAns= [];
+	var FractionStudyAns= ['GCF','used','reducing','LCM', 'combining','fractions','reduce','number','that','goes','numbers','go','into'];
 	var FractionGCFQAns=['A','D'];
 	var FractionImpQAns=['C', 'B'];
 	var FractionLCMQAns= ['B','D'];
@@ -39,7 +39,7 @@
 	var PercentQAns= ['37','37/100','25','.25','2/3','37.5','3/8','5','0.002','1/500'];
 	var PercentQ2Ans=['D','A','D'];
 	var PercentQ3Ans=['C','B','D','A'];
-	var PercentStudyAns=[];
+	var PercentStudyAns=['Percent','out','100','Just','decimal','twice','three','quarters','part','whole','means','multiply','equal'];
 
 	// Prime Numbers
 	var PrimeNumbersAns= [
@@ -62,7 +62,7 @@
 	var ProbQAns= ['want','total','not wanted','factorial','3!','multiply','percent'];
 	var ProbQ2Ans=  ['A','D','C','B','A'];
 	var ProbQ3Ans= ['C','C','C','C'];
-	var ProbStudyAns= [];
+	var ProbStudyAns= ['want/total','want/not','symbol','!','point','pair','dice','rolling','four','five'];
 	var ProbTFAns=  ['F','T','T','T','T','T','F','T'];
 
 	// Prop
@@ -70,7 +70,7 @@
 	var PropsQAns= ['A','D','B','D','B','D'];
 	var PropsQ2Ans= ['C','E','D','B','E','A','D','B'];
 	var PropsQ3Ans= ['C','D','E','A','D','B','E','A'];
-	var PropsStudyAns= [];
+	var PropsStudyAns= ['change', 'the','addends','adding','0','number','change','property','can', 'property','and','combines'];
 
 	// Sequence
 	var SequenceQAns= ['B','A','C','A','D'];

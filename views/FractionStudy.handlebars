@@ -16,14 +16,17 @@
 	  		LCM is used for combining fractions.
 	  		<br><br>
 	  		GCF – Greatest Common Factor
-			Biggest number that goes into numbers
+			Biggest number that goes into numbers.
 			Used to reduce fractions.
 			<br><br>
 			LCM – Least Common Multiple
 			Smallest number that numbers go into.
 			Used to combine fractions. 
 	  	</p>
-		<img id = "FracImg" class = "FractionStudyImg" src="http://sites.saschina.org/jcurran/files/2015/09/Venn-Diagram-1c24k4a.jpg">
+		<form name = "FractionStudy">
+		 <textarea name = "FractionStudy" class = "FractionStudy" >
+		 </textarea>
+		</form>
 	</div>
 
  </body>
@@ -31,7 +34,7 @@
 <script type="text/javascript">
 	function sendAnswers(){
 		processAnswers(	FractionStudyAns,
-			[])
+			[document.getElementById("FractionStudy").value], 'copy')
 		setValues({{{id}}}, {{{status}}});
 		document.forms["StatusSubmit"].submit();
 	}

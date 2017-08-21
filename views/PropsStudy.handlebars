@@ -10,13 +10,17 @@
   <body>
 	<div class = "Content">
 		 <img id = "PropsStudyPic" src="http://www.mathatube.com/sitebuilder/images/addition_properties-777-600x339.jpg">
+    <form name = "PropsStudy">
+     <textarea name = "PropsStudy" class = "PropsStudy" >
+     </textarea>
+    </form>
 	</div>
 
  </body>
 <script type="text/javascript">
   function sendAnswers(){
     processAnswers( PropsStudyAns,
-      [])
+    [document.getElementById("PropsStudy").value], 'copy')
     setValues({{{id}}}, {{{status}}});
     document.forms["StatusSubmit"].submit();
   }
