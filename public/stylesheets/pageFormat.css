@@ -271,6 +271,12 @@
 		height:550px;
 	}
 
+	.SequenceQuestions{
+		position: absolute;
+		line-height: 40px;
+		width:400px;
+	}
+
 	#ExponentStudy{
 		position: absolute;
 		left: -10px;
@@ -279,6 +285,18 @@
 		line-height: 50px;
 		font-weight: bold;
 		font-size: 20px;
+	}
+
+	.SequenceStudy{
+		text-align: initial;
+		border-radius: 20px;
+		border-color:black;
+		border-width: 5px;
+		height: 400px;
+		width: 40%;
+		position: absolute;
+		left:55%;
+		word-wrap: break-word;
 	}
 
 	.Nums{

@@ -9,7 +9,7 @@
 
   <body>
 	<div class = "Content">
-		<div id = 'questions'>
+		<div class = 'SequenceQuestions'>
 			<div id = 'NumsHeading'>
 				Arithmetic Sequence: terms have a difference:
 			</div>
@@ -34,13 +34,17 @@
 			</div>
 				one I, two II, three III, four IV, five V,   	ten X,    fifty L,   100  C,   500 D,   1000 M.
 		</div>
+			<form name = "SequenceStudy">
+			 <textarea name = "SequenceStudy" id = "SequenceStudy" class = "SequenceStudy" >
+			 </textarea>
+			</form>
 	</div>
  </body>
 
 <script type="text/javascript">
   function sendAnswers(){
     processAnswers( SequenceStudyAns,
-      [])
+      [document.getElementById("SequenceStudy").value],)
 		setValues({{{id}}}, {{{status}}});
 		document.forms["StatusSubmit"].submit();
   }
