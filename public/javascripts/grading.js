@@ -285,6 +285,7 @@ function processAnswers(title, guesses, type=null) {
 			var wordIncluded = 0;
 			console.log(guesses[0])
 			for (p=0; p <numQuestions; p++){
+				console.log(answers[p])
 				if (guesses[0].includes(answers[p])){
 					wordIncluded = wordIncluded + 1
 				}
@@ -393,6 +394,7 @@ function DisplaySubmissionDetails(numberC, missedQ, quiz){
 	} else{
 	  var total = 100;
 	}
+	console.log(total, numberC, 'HERe')
 	CoverFunc("WhiteCover")
 	if (numberC == total){
 		var Message = "You passed!  Good Job!"
