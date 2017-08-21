@@ -283,6 +283,7 @@ function processAnswers(title, guesses, type=null) {
 	switch(type){
 		case 'copy':
 			var wordIncluded = 0;
+			console.log(guesses[0])
 			for (p=0; p <numQuestions; p++){
 				if (guesses[0].includes(answers[p])){
 					wordIncluded = wordIncluded + 1
