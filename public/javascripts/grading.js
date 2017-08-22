@@ -70,7 +70,7 @@
 	var PropsQAns= ['A','D','B','D','B','D'];
 	var PropsQ2Ans= ['C','E','D','B','E','A','D','B'];
 	var PropsQ3Ans= ['C','D','E','A','D','B','E','A'];
-	var PropsStudyAns= ['change', 'the','addends','adding','0','number','change','property','can', 'property','and','combines'];
+	var PropsStudyAns= ['change', 'the','addends','0','number','change','property','can', 'property','and','combines'];
 
 	// Sequence
 	var SequenceQAns= ['B','A','C','A','D'];
