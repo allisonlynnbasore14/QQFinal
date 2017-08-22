@@ -96,7 +96,7 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: -50px;
+		top: 150px;
 		left: -360px;
 		z-index: 1;
 		color: #004d99;
@@ -113,7 +113,7 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: 100px;
+		top: 150px;
 		left: -370px;
 		z-index: 1;
 		color: #004d99;
@@ -1031,7 +1031,7 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: 200px;
+		top: 400px;
 		left: 100px;
 		color: #004d99;
 		background-color:white;
@@ -1053,7 +1053,7 @@
 		border-radius: 4px;
 		font-weight: bold;
 		position:absolute;
-		top: 200px;
+		top: 400px;
 		left: 100px;
 		color: #004d99;
 		background-color:white;
