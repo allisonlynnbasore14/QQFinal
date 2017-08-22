@@ -39,7 +39,7 @@
 	var PercentQAns= ['37','37/100','25','.25','2/3','37.5','3/8','5','0.002','1/500'];
 	var PercentQ2Ans=['D','A','D'];
 	var PercentQ3Ans=['C','B','D','A'];
-	var PercentStudyAns=['Percent','out','100','Just','decimal','twice','three','quarters','part','whole','means','multiply','equal'];
+	var PercentStudyAns=['Percent','out','100','decimal','twice','three','quarters','whole','means', '4','3'];
 
 	// Prime Numbers
 	var PrimeNumbersAns= [
