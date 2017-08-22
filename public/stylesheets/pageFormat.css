@@ -277,7 +277,7 @@
 		width:400px;
 	}
 
-	#ExponentStudyQuestion{
+	#ExponentStudyQuestions{
 		position: absolute;
 		left: -10px;
 		top: 5px;
@@ -788,9 +788,9 @@
 		border-color:black;
 		border-width: 5px;
 		height: 500px;
-		width: 35%;
+		width: 45%;
 		position: absolute;
-		left:65%;
+		left:55%;
 		top:5%;
 		word-wrap: break-word;
 	}
