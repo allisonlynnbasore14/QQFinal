@@ -43,7 +43,7 @@ function sendToDBUsers(oldStatus, id){
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if(err) {
       done();
-      console.log("FAILED AT SEND TO USERS)
+      console.log("FAILED AT SEND TO USERS")
       return res.status(500).json({success: false, data: err});
       }
       console.log('AHAH', newStatusString, id)
