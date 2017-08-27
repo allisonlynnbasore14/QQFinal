@@ -15,7 +15,7 @@ function StoreScoreData(status, id, numberC){
   var score = numberC + '/' + total;
   score = score.toString();
   console.log(score, total)
-  if (total === Number(score)){
+  if (total === numberC){
     sendToDBUsers(Number(status), id)
     sendToDBResults(id, score);
   }
