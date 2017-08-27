@@ -38,12 +38,15 @@ function sendToDBUsers(oldStatus, id){
   // updates the status of the user
   var newStatus = Number(oldStatus);
   var newStatusString = newStatus.toString();
+  console.log('AHAH', newStatusString, id)
   const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if(err) {
       done();
+      console.log("FAILED AT SEND TO USERS)
       return res.status(500).json({success: false, data: err});
       }
+      console.log('AHAH', newStatusString, id)
       client.query('UPDATE users SET status=$1 WHERE user_id=$2', [newStatusString, id] , function(err, result) {
         done()
       })
