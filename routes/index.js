@@ -39,7 +39,6 @@ function sendToDBUsers(oldStatus, id){
   // updates the status of the user
   var newStatus = Number(oldStatus);
   var newStatusString = newStatus.toString();
-  console.log('AHAH', newStatusString, id)
   const client = new pg.Client(connectionString);
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if(err) {
