@@ -60,7 +60,7 @@
 
 	// Prob
 	var ProbQAns= ['want','total','not wanted','factorial','3!','multiply','percent'];
-	var ProbQ2Ans=  ['A','D','C','B','A'];
+	var ProbQ2Ans=  ['A','D','D','B','A'];
 	var ProbQ3Ans= ['C','C','C','C'];
 	var ProbStudyAns= ['want/total','want/not','symbol','!','point','pair','dice','rolling','four','five'];
 	var ProbTFAns=  ['F','T','T','T','T','T','F','T'];
