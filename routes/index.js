@@ -171,7 +171,7 @@ var PropsQ2 = function(req, res){
 };
 
 var PropsQExample = function(req, res){
-  res.render("PropsExample",{"directions": constants.DIR.PROPERTY, "title": constants.TITLE.PRO + ' IX', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("PropsQExample",{"directions": constants.DIR.PROPERTY, "title": constants.TITLE.PRO + ' IX', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var PropsQ3 = function(req, res){
@@ -418,7 +418,7 @@ var PropsQ2Show = function(req, res){
 
 var PropsQExampleShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
-  res.render("PropsExample",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PPRO+ ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
+  res.render("PropsQExample",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PPRO+ ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
 var PropsQ3Show = function(req, res){
@@ -626,7 +626,7 @@ module.exports.SquareNumbersQ = SquareNumbersQ;
 module.exports.SquareNumbersList = SquareNumbersList;
 
 module.exports.PropsQ = PropsQ;
-module.exports.PropsExample = PropsExample;
+module.exports.PropsQExample = PropsQExample;
 module.exports.PropsQ2 = PropsQ2;
 module.exports.PropsQ3 = PropsQ3;
 module.exports.PropsStudy = PropsStudy;
@@ -694,7 +694,7 @@ module.exports.SquareNumbersQShow = SquareNumbersQShow;
 module.exports.SquareNumbersListShow = SquareNumbersListShow;
 
 module.exports.PropsQShow = PropsQShow;
-module.exports.PropsExampleShow = PropsExampleShow;
+module.exports.PropsQExampleShow = PropsQExampleShow;
 module.exports.PropsQ2Show = PropsQ2Show;
 module.exports.PropsQ3Show = PropsQ3Show;
 module.exports.PropsStudyShow = PropsStudyShow;
