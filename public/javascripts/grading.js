@@ -66,7 +66,7 @@
 	var ProbTFAns=  ['F','T','T','T','T','T','F','T'];
 
 	// Prop
-	var PropsExampleAns= ['D','C','B','A']
+	var PropsQExampleAns= ['D','C','B','A']
 	var PropsQAns= ['A','D','B','D','B','D'];
 	var PropsQ2Ans= ['C','E','D','B','E','A','D','B'];
 	var PropsQ3Ans= ['C','D','E','A','D','B','E','A'];

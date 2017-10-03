@@ -237,7 +237,7 @@ app.get('/SquareNumbersQ/:id/:status', index.SquareNumbersQ);
 app.get('/SquareNumbersList/:id/:status', index.SquareNumbersList);
 
 app.get('/PropsStudy/:id/:status', index.PropsStudy);
-app.get('/PropsExample/:id/:status', index.PropsExample);
+app.get('/PropsQExample/:id/:status', index.PropsQExample);
 app.get('/PropsQ/:id/:status', index.PropsQ);
 app.get('/PropsQ2/:id/:status', index.PropsQ2);
 app.get('/PropsQ3/:id/:status', index.PropsQ3);
@@ -304,7 +304,7 @@ app.get('/SquareNumbersQ/show/:id/:status/:numberC/:missedQ', index.SquareNumber
 app.get('/SquareNumbersList/show/:id/:status/:numberC/:missedQ', index.SquareNumbersListShow);
 
 app.get('/PropsStudy/show/:id/:status/:numberC/:missedQ', index.PropsStudyShow);
-app.get('/PropsExample/show/:id/:status/:numberC/:missedQ', index.PropsExampleShow);
+app.get('/PropsQExample/show/:id/:status/:numberC/:missedQ', index.PropsQExampleShow);
 app.get('/PropsQ/show/:id/:status/:numberC/:missedQ', index.PropsQShow);
 app.get('/PropsQ2/show/:id/:status/:numberC/:missedQ', index.PropsQ2Show);
 app.get('/PropsQ3/show/:id/:status/:numberC/:missedQ', index.PropsQ3Show);

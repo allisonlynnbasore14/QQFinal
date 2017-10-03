@@ -170,7 +170,7 @@ var PropsQ2 = function(req, res){
   res.render("PropsQ2",{"directions": constants.DIR.ANSWERQ, "title": constants.TITLE.PRO + ' VIII', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
-var PropsExample = function(req, res){
+var PropsQExample = function(req, res){
   res.render("PropsExample",{"directions": constants.DIR.PROPERTY, "title": constants.TITLE.PRO + ' IX', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
@@ -416,7 +416,7 @@ var PropsQ2Show = function(req, res){
   res.render("PropsQ2",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PRO + ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
 
-var PropsExampleShow = function(req, res){
+var PropsQExampleShow = function(req, res){
   StoreScoreData(req.params.status, req.params.id, req.params.numberC)
   res.render("PropsExample",{"directions": constants.DIR.STUDY, "title": constants.TITLE.PPRO+ ' I', "show":true , "numberC" : req.params.numberC, "missedQ":req.params.missedQ, "id" : req.params.id, "status":req.params.status});
 };
