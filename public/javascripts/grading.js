@@ -302,7 +302,7 @@ function processAnswers(title, guesses, type=null) {
 				}
 			}
 
-			console.log(correct)
+			
 		case 'Primes':
 			for(m = 0; m < numQuestions; m++){
 				if (typeof(answers[m]) === 'string'){
@@ -363,14 +363,14 @@ function processAnswers(title, guesses, type=null) {
 				missedQuestions.push(m+1)
 			}
 		}
-		console.log(correct)
 
 	}
 
 	if (missedQuestions.length === 0){
 		missedQuestions = [0]
 	}
-
+	console.log(correct)
+	console.log(correct)
 	if(guesses.length > answers.length){
 		correct = correct -1
 	}
