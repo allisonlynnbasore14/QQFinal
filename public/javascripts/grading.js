@@ -293,7 +293,7 @@ function processAnswers(title, guesses, type=null) {
 				correct = correct + 1;
 				missedQuestions = 0;
 			}
-			console.log(correct)
+			
 			break;
 		case 'checkbox':
 			for(m = 0; m < numQuestions; m++){
@@ -301,6 +301,8 @@ function processAnswers(title, guesses, type=null) {
 					correct = correct + 1
 				}
 			}
+
+			console.log(correct)
 		case 'Primes':
 			for(m = 0; m < numQuestions; m++){
 				if (typeof(answers[m]) === 'string'){
@@ -361,6 +363,7 @@ function processAnswers(title, guesses, type=null) {
 				missedQuestions.push(m+1)
 			}
 		}
+		console.log(correct)
 
 	}
 
@@ -372,9 +375,6 @@ function processAnswers(title, guesses, type=null) {
 		correct = correct -1
 	}
 	CoverFunc("WhiteCover")
-	console.log(correct)
-	console.log(numQuestions)
-	console.log(answers.length)
 	if (correct === numQuestions){
 		document.getElementById('HiddenForm3').value = correct;
 		document.getElementById('HiddenForm4').value = '0';
