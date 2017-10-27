@@ -53,6 +53,7 @@
 		71,0,73,0,0,0,0,0,79,0,
 		0,0,83,0,0,0,0,0,89,0,
 		0,0,0,0,0,0,97,0,0,0];
+
 	var PrimeNumbersCopyAns= ['prime', 'number', 'is','only', 'divisible', 'one','itself', 'is', 'an', 'identity', 'is', 'not', 'prime'];
 	var PrimeNumbersListAns= ['2','3','5','7','11','13','17','19','23','29','31','37','41','43','47','53','59','61','67','71','73','79','83','89','97'];
 	var PrimeNumbersQAns= [51,72,0,87,0,0,0,0,91,63,100];
@@ -300,6 +301,10 @@ function processAnswers(title, guesses, type=null) {
 					correct = correct + 1
 				}
 			}
+			console.log(correct)
+			console.log('AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHh')
+			console.log(answers)
+			console.log(guesses)
 		case 'Primes':
 			for(m = 0; m < numQuestions; m++){
 				if (typeof(answers[m]) === 'string'){
