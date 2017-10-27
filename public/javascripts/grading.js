@@ -304,6 +304,7 @@ function processAnswers(title, guesses, type=null) {
 
 			
 		case 'Primes':
+			console.log("At Primes")
 			for(m = 0; m < numQuestions; m++){
 				if (typeof(answers[m]) === 'string'){
 					guesses[m] = guesses[m].toUpperCase()
@@ -317,6 +318,7 @@ function processAnswers(title, guesses, type=null) {
 			missedQuestions.push('0')
 			break;
 		case 'includes':
+		console.log("Includes")
 			for(m = 0; m < numQuestions; m++){
 				if (guesses[m].includes(answers[m])){
 					correct = correct + 1
@@ -326,6 +328,7 @@ function processAnswers(title, guesses, type=null) {
 			}
 			break;
 		case 'includesPrime':
+			console.log("At INclude Primes")
 			var wordIncluded = 0;
 			for (p=0; p <numQuestions; p++){
 				if (guesses[0].includes(answers[p])){
@@ -350,6 +353,7 @@ function processAnswers(title, guesses, type=null) {
 			break;
 		case 'home':
 		default:
+		console.log("At Home")
 		for(m = 0; m < numQuestions; m++){
 			if (typeof(answers[m]) === 'string'){
 				guesses[m] = guesses[m].toUpperCase()
