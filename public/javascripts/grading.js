@@ -301,8 +301,7 @@ function processAnswers(title, guesses, type=null) {
 					correct = correct + 1
 				}
 			}
-
-			
+			break;
 		case 'Primes':
 			console.log("At Primes")
 			for(m = 0; m < numQuestions; m++){
