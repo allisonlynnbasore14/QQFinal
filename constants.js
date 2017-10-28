@@ -10,7 +10,7 @@ var constants = module.exports = {
     	PROPERTY: 'Choose an example of each property.',
     	FILL: 'Fill in the blanks to answer the questions.',
         FREE: 'Notify Mrs.Basore that you got a Problem Pass!',
-    	CLICK_PRIME: 'Click all the prime numbers under 100.',
+    	CLICK_PRIME: 'Use the prime number sieve to sift out all the composite and leave 25 prime numbers. Select the first prime number and then mentally discount all multiples composites of that number.  Continue this method with the first four prime numbers until all twenty-five prime numbers are selected. ',
     	LIST_PRIME: 'List all the prime numbers 100.',
     	LIST_SQUARE_NUMBERS: 'List the first 15 Square Numbers.',
     	COMP_PRIME: 'Click the composite numbers, but leave the prime numbers alone.',
