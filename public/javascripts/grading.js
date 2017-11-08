@@ -57,7 +57,7 @@
 	var PrimeNumbersCopyAns= ['prime', 'number', 'is','only', 'divisible', 'one','itself', 'is', 'an', 'identity', 'is', 'not', 'prime'];
 	var PrimeNumbersListAns= ['2','3','5','7','11','13','17','19','23','29','31','37','41','43','47','53','59','61','67','71','73','79','83','89','97'];
 	var PrimeNumbersQAns= [51,72,0,87,0,0,0,0,91,63,100];
-	var PrimeNumbersQ2Ans= ['N1','2','58','B','25','B','B'];
+	var PrimeNumbersQ2Ans= ['N1','2','100','B','25','B','B'];
 
 	// Prob
 	var ProbQAns= ['want','total','not wanted','factorial','3!','multiply','percent'];
