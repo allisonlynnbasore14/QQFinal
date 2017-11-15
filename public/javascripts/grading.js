@@ -327,7 +327,7 @@ function processAnswers(title, guesses, type=null) {
 			}
 			break;
 		case 'includesPrime':
-			console.log("At INclude Primes")
+			console.log("At Include Primes")
 			var wordIncluded = 0;
 			for (p=0; p <numQuestions; p++){
 				if (guesses[0].includes(answers[p])){
@@ -352,7 +352,6 @@ function processAnswers(title, guesses, type=null) {
 			break;
 		case 'home':
 		default:
-		console.log("At Home")
 		for(m = 0; m < numQuestions; m++){
 			if (typeof(answers[m]) === 'string'){
 				guesses[m] = guesses[m].toUpperCase()
