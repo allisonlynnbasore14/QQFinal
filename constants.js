@@ -22,6 +22,7 @@ var constants = module.exports = {
         LOGIN_ERROR: 'Sorry, the username was not found',
         KEY: 'Everytime a user sends a submission, this page will reset with their new scores. It will not record a test taken on the same day',
         DONE: 'Show Mrs.Basore this page. Nice Work!'
+        SQR1: 'Type all the square roots into the box. To write a square root use sq. Ex: sq1 = 1'
     },
     TITLE:{
         ANG: 'Angles',

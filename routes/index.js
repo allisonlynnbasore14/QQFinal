@@ -128,7 +128,7 @@ var SquareNumbersMatch = function(req, res){
 };
 
 var SquareNumbersCopy = function(req, res){
-  res.render("SquareNumbersCopy",{"directions": constants.DIR.COPY, "title": constants.TITLE.SQU + ' XXXIII', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
+  res.render("SquareNumbersCopy",{"directions": constants.DIR.SQR1, "title": constants.TITLE.SQU + ' XXXIII', "show":false,  "numberC" : 0, "missedQ":0, "id" : req.params.id, "status":req.params.status});
 };
 
 var SquareTF = function(req, res){
