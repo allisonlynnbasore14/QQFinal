@@ -79,7 +79,7 @@
 	var SequenceStudyAns= [ 'terms', 'have' , 'difference', 'Example' ,'term' , 'formula' , 'number' ,'place', 'difference', 'ratio' , 'two','IV'];
 
 	// Square Numbers
-	var SquareNumbersCopyAns =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','sq1','sq2','sq3','sq4','sq5'];
+	var SquareNumbersCopyAns =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','sq1','sq4','sq9','sq16','sq25'];
 	var SquareNumbersListAns= ['1','4','9','16','25','36','49','64','81','100','121','144','169','196','225'];
 	var SquareNumbersMatchAns =['D','L','I','B','G','A','O','C','M','E','N','F','J','K','H'];
 	var SquareNumbersQAns= ['D','B','A','C'];
