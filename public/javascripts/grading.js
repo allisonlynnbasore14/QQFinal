@@ -83,7 +83,7 @@
 	var SquareNumbersListAns= ['1','4','9','16','25','36','49','64','81','100','121','144','169','196','225'];
 	var SquareNumbersMatchAns =['D','L','I','B','G','A','O','C','M','E','N','F','J','K','H'];
 	var SquareNumbersQAns= ['D','B','A','C'];
-	var SquareTFAns= ['F','F','T','T','F','T','T','F'];
+	var SquareTFAns= ['F','F','T','T','F','T','T'];
 
 	// Free Pass
 	var FreePass = [];
