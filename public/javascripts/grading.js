@@ -24,7 +24,7 @@
 	// Fractions
 	var FractionStudyAns= ['GCF','used','reducing','LCM', 'combining','fractions','reduce','number','that','goes','numbers','go','into'];
 	var FractionGCFQAns=['A','D'];
-	var FractionImpQAns=['C', 'B'];
+	var FractionImpQAns=['C', 'A'];
 	var FractionLCMQAns= ['B','D'];
 	var FractionQAns= ['C','A'];
 	var FractionQ2Ans= ['D', 'A', 'B', 'B'];
