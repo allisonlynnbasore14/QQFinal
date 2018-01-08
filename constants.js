@@ -22,7 +22,8 @@ var constants = module.exports = {
         LOGIN_ERROR: 'Sorry, the username was not found',
         KEY: 'Everytime a user sends a submission, this page will reset with their new scores. It will not record a test taken on the same day',
         DONE: 'Show Mrs.Basore this page. Nice Work!',
-        SQR1: 'Type all the square roots into the box. To write a square root use sq. Ex: sq1 = 1'
+        SQR1: 'Type all the square roots into the box. To write a square root use sq. Ex: sq1 = 1',
+        PRIME2: 'Use tester values (2, 3, 5, 7) and click on ONLY the composite values.'
     },
     TITLE:{
         ANG: 'Angles',
